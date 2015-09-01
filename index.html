@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>Chris Seaton</title>
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<meta name="viewport" content="initial-scale=1.0">
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/normalize/2.1.0/normalize.css">
+
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="home.css">
+
+</head>
+
+<body>
+
+<article>
+
+<header>
+<h1>Chris Seaton <span class="postnom">MEng (Bris)</span></h1>
+<img src="chrisseaton.jpeg" width="167" height="250" alt="Chris Seaton">
+</header>
+
+<section id="intro">
+
+<p>I am a PhD student at the <a href="http://www.manchester.ac.uk/">University of
+Manchester</a>, where I am researching programming languages and irregular
+parallelism. I am also a member of the Virtual Machine research group at <a
+href="http://labs.oracle.com">Oracle Labs</a>, where I work on implementing
+programming languages using the <a
+href="http://openjdk.java.net/projects/graal/">next generation of Java Virtual
+Machine</a>.</p>
+
+<p>In my spare time I develop an <a href="http://www.merseyburns.com/">award
+winning medical app</a> that is the first app regulated as a medical device in
+the UK, and run a consultancy to help clients such as the NHS to develop
+revolutionary medical software.</p>
+
+<p>Between my undergraduate degree and starting my PhD I commissioned as an
+officer in the British Army, first in the regulars and now in the reserves. I've
+led both on operations and in training units in the UK and around the world.</p>
+
+</section>
+
+<section>
+
+<div class="buttons">
+<a href="chris-seaton-cv.pdf"><i class="icon-file-alt"></i> My CV</a>
+<a href="http://github.com/chrisseaton/"><i class="icon-github-alt"></i> My code on GitHub</a>
+<a href="mailto:chris@chrisseaton.com"><i class="icon-envelope-alt"></i> Email me</a>
+<a href="https://twitter.com/ChrisGSeaton"><i class="icon-twitter"></i> Follow me</a>
+<a href="http://www.linkedin.com/in/chrisgseaton"><i class="icon-linkedin-sign"></i> Connect with me</a>
+</div>
+
+</section>
+
+<hr>
+
+<section>
+
+<h2>What do I do?</h2>
+
+<div class="third">
+
+<h3>Computer Science</h3>
+
+<p>I am a PhD student at the <a href="http://www.manchester.ac.uk/">University of
+Manchester</a>, part of the Advanced Processor Technologies research group and
+under the supervision of Professor Ian Watson and <a
+href="http://apt.cs.manchester.ac.uk/people/mlujan/">Doctor Mikel Luján</a>. My
+research interests are in programming languages and irregular parallelism,
+employing research including dataflow, transactional memory, and optimistic and
+speculative execution.</p>
+
+<p>Simply put, I am trying to solve the problem of how to make software run in
+parallel when it is very hard to find any part of the program that can run
+independently of any other. See <a
+href="http://www.youtube.com/watch?v=B1hh2kpGNQ4">this video of me talking</a>
+for some background.</p>
+
+</div>
+
+<div class="third">
+
+<h3>Medical Software</h3>
+
+<p>I am also interested in how software can support the medical profession. In a
+small team with senior plastic surgeons I have developed a medical app, <a
+href="http://www.merseyburns.com/">Mersey Burns</a> for calculating fluids for
+burns patients all the way from idea to releasing on the app store, awards
+success, NHS funding and approval as the first regulated and CE marked medical
+app in the UK. There are multiple academic publications describing Mersey Burns,
+and I have been invited to talk to the industry about how we have achieved so
+much.</p>
+
+<p>With my colleagues I now run a commercial consultancy, <a
+href="http://www.medicapps.co.uk/">Medicapps Ltd</a>, to pass on our unique
+experience and knowledge.</p>
+
+</div>
+
+<div class="third">
+
+<h3>Awards and Prizes</h3>
+
+<ul class="awards">
+<li><i class="icon-trophy"></i>Hele Shaw Prize, University of Bristol, 2007</li>
+<li><i class="icon-trophy"></i>Winner, Excellence in Mobile Healthcare and overall winner, eHealth Awards, 2013</li>
+<li><i class="icon-trophy"></i>Highly Commended, Improving Care with Technology, Health Service Journal Awards, 2013</li>
+<li><i class="icon-trophy"></i>Highly Commended, Innovative Mobile App of the Year, BCS UK IT Industry Awards, 2013</li>
+<li><i class="icon-trophy"></i>Best Paper Award, MULTIPROG, 2012</li>
+<li><i class="icon-trophy"></i>Winner, NHS North West Innovations Awards, 2011</li>
+<li><i class="icon-trophy"></i>Highly Commended, eHealth Awards, 2012</li>
+</ul>
+
+</div>
+
+</section>
+
+<hr>
+
+<section>
+
+<h2>Projects</h2>
+
+<div class="project-logo">
+
+<p>
+<a href="rubytruffle/"><img alt="Ruby Logo (Copyright (c) 2006, Yukihiro Matsumoto. Licensed
+under the terms of Creative Commons Attribution-ShareAlike 2.5.)" src="rubytruffle/ruby.png" width="96" height="96"></a>
+</p>
+
+<p>
+<a href="rubytruffle/"><img alt="JRuby Logo (Copyright (c) 2011, Tony Price. Licensed
+under the terms of Creative Commons Attribution-NoDerivs 3.0 Unported (CC BY-ND 3.0))." src="rubytruffle/jruby.png" width="96" height="96"></a>
+</p>
+
+</div>
+
+<div class="project-details">
+
+<h3>JRuby+Truffle</h3>
+
+<p><a href="rubytruffle/">JRuby+Truffle</a> started as my internship project at Oracle Labs in early 2013. It is an implementation of the Ruby programming language on the JVM, using the Graal JIT compiler and the Truffle AST interpreter framework. RubyTruffle can achieve peak performance well beyond that possible in JRuby at the same time as being a significantly simpler system. In early 2014 it was open sourced and integrated into JRuby.</p>
+
+<div class="buttons" style="text-align: right;">
+<a href="rubytruffle/" class="less-significant">Learn more <i class="icon-arrow-right"></i></a>
+</div>
+
+</div>
+
+<div class="project-logo">
+
+<p>
+<a href="http://www.merseyburns.com/"><img alt="Mersey Burns Logo" src="mb.png" width="96" height="96"></a>
+</p>
+
+<p>
+<a href="http://itunes.apple.com/gb/app/mersey-burns/id481808668?mt=8"><img alt="Available on the App Store" src="appstore.png" width="150" height="45"></a>
+</p>
+
+<p>
+<a href="https://play.google.com/store/apps/details?id=com.merseyburns"><img alt="Available on the Google Play Store" src="playstore.png" width="150" height="52"></a>
+</p>
+
+</div>
+
+<div class="project-details">
+
+<h3>Mersey Burns</h3>
+
+<p><a href="http://www.merseyburns.com/">Mersey Burns</a> is a free iPhone® app
+for doctors to calculate how much fluid to give to a burns patient, making a
+traditional pen-and-paper method faster and more accurate. It is the first app
+in the UK regulated and CE marked as a medical device.</p>
+
+<ul class="awards">
+<li><i class="icon-trophy"></i>Winner, Excellence in Mobile Healthcare and overall winner, eHealth Awards, 2013</li>
+<li><i class="icon-trophy"></i>Highly Commended, Improving Care with Technology, Health Service Journal Awards, 2013</li>
+<li><i class="icon-trophy"></i>Highly Commended, Innovative Mobile App of the Year, BCS UK IT Industry Awards, 2013</li>
+<li><i class="icon-trophy"></i>Highly Commended, eHealth Awards, 2012</li>
+<li><i class="icon-trophy"></i>Winner, NHS North West Innovations Awards, 2011</li>
+</ul>
+
+<div class="buttons" style="text-align: right;">
+<a href="http://www.merseyburns.com/">Learn more <i class="icon-arrow-right"></i></a>
+</div>
+
+</div>
+
+<div class="project-logo">
+
+<a href="katahdin/">
+<img alt="Katahdin Logo" src="katahdin.png" width="96" height="96">
+</a>
+
+</div>
+
+<div class="project-details">
+
+<h3>Katahdin</h3>
+
+<p><a href="katahdin/">Katahdin</a> was my master’s work at the University of
+Bristol. It is a research programming language where the syntax and semantics of
+the language are mutable at runtime. This allows for multiple languages to be
+implemented in a single runtime, and for different languages to be used in
+different parts of the same program, the same function, or even the same line.
+My research built on contemporary work on parsing expression grammars and
+packrat parsing.</p>
+
+<div class="buttons" style="text-align: right;">
+<a href="katahdin/" class="less-significant">Learn more <i class="icon-arrow-right"></i></a>
+</div>
+
+</div>
+
+</section>
+
+<hr>
+
+<section>
+
+<h2>Publications<span class="hide-small">, Presentations and Talks</span></h2>
+
+<div class="buttons" style="float: right; margin-top: -3.5em;">
+<a href="http://scholar.google.co.uk/citations?user=ykthVegAAAAJ"><i class="icon-beaker"></i> <span class="hide-small">My work on </span>Google Scholar</a>
+</div>
+
+<h3>Thesis</h3>
+
+<ul class="publications">
+    <li>
+        C. Seaton. <strong><a href="katahdin/katahdin.pdf">A programming language where the syntax and semantics are mutable at runtime</a></strong>. Master’s thesis, University of Bristol, 2007.<br>
+        <span class="smaller">
+            <a href="katahdin/katahdin.pdf">PDF</a>,
+            <a href="http://github.com/chrisseaton/katahdin/">Code</a>,
+            <a href="katahdin/katahdin-slides.pdf">Slides</a>,
+            <a href="katahdin/katahdin.bib">BibTeX</a>
+        </span><br>
+        <i class="icon-trophy"></i> Winner, Hele Shaw Prize
+    </li>
+</ul>
+
+<h3>Research Papers</h3>
+
+<ul class="publications">
+    <li>
+        B. Daloze, C. Seaton, D. Bonetta, H. Mössenböck. <strong>Techniques and Applications for Guest-Language Safepoints</strong>. In Proceedings of the 10th Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS), 2015.<br>
+        <span class="smaller">
+            (to appear - ask me for a preprint)
+        </span>
+    </li>
+
+    <li>
+        S. Marr, C. Seaton, S. Ducasse. <strong>Zero-Overhead Metaprogramming: Reflection and Metaobject Protocols Fast and without Compromises</strong>. In Proceedings of the 36th Conference on Programming Language Design and Implementation (PLDI), 2015.<br>
+        <span class="smaller">
+            (to appear - ask me for a preprint)
+        </span>
+    </li>
+
+    <li>
+        M. Grimmer, C. Seaton, T. Würthinger, H. Mössenböck. <strong><a href="rubytruffle/modularity15/rubyextensions.pdf">Dynamically Composing Languages in a Modular Way: Supporting C Extensions for Dynamic Languages</a></strong>. In Proceedings of the 14th International Conference on Modularity, 2015.<br>
+        <span class="smaller">
+            <a href="rubytruffle/modularity15/rubyextensions.pdf">PDF</a>
+        </span>
+    </li>
+
+    <li>
+        J. Barnes, A. Duffy, N. Hamnett, J. McPhail, C. Seaton, K. Shokrollahi, M. I. James, P. McArthur, and R. Pritchard-Jones, <strong><a href="http://emj.bmj.com/content/early/2014/11/04/emermed-2013-203416.short">The Mersey Burns App: evolving a model of validation</a></strong>, Emerg Med J, pp. emermed–2013–203416, Nov. 2014.<br>
+        <span class="smaller">
+            <a href="http://emj.bmj.com/content/early/2014/11/04/emermed-2013-203416.short">PDF (BMJ paywall)</a>,
+            <a href="emj14/mersey-burns.bib">BibTeX</a>,
+        </span>
+    </li>
+
+    <li>
+        A. Wöß, C. Wirth, D. Bonetta, C. Seaton, C. Humer, and H. Mössenböck. <strong><a href="rubytruffle/pppj14-om/pppj14-om.pdf">An object storage model for the Truffle language implementation framework</a></strong>. In Proceedings of the International Conference on Principles and Practices of Programming on the Java Platform (PPPJ), 2014.<br>
+        <span class="smaller">
+            <a href="rubytruffle/pppj14-om/pppj14-om.pdf">PDF</a>,
+            <a href="rubytruffle/pppj14-om/pppj14-om.bib">BibTeX</a>
+        </span>
+    </li>
+
+    <li>
+        C. Seaton, M. L. Van De Vanter, and M. Haupt. <strong><a href="http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf">Debugging at full speed</a></strong>. In Proceedings of the 8th Workshop on Dynamic Languages and Applications (DYLA), 2014.<br>
+        <span class="smaller">
+            <a href="http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf">PDF</a>,
+            <a href="http://lafo.ssw.uni-linz.ac.at/truffle/debugging/dyla14-debugging-artifact-0557a4f756d4.tar.gz">Code</a>,
+            <a href="rubytruffle/dyla14/debugging-at-full-speed.bib">BibTeX</a>
+        </span>
+    </li>
+
+    <li>
+        D. Goodman, S. Khan, C. Seaton, Y. Guskov, B. Khan, M. Luj&aacute;n, and I. Watson. <strong><a href="dfm2012/dfscala.pdf">DFScala: High level dataflow support for Scala</a></strong>. In Proceedings of the 2nd International Workshop on Data-Flow Models For Extreme Scale Computing (DFM), 2012.<br>
+        <span class="smaller">
+            <a href="dfm2012/dfscala.pdf">PDF</a>,
+            <a href="http://apt.cs.manchester.ac.uk/projects/TERAFLUX/DFScala/">Code</a>,
+            <a href="dfm2012/dfm12-dfscala.pdf">Slides</a>,
+            <a href="dfm2012/dfscala.bib">BibTeX</a>
+        </span>
+    </li>
+
+    <li>
+        C. Seaton, D. Goodman, M. Luj&aacute;n, and I. Watson. <strong><a href="multiprog2012/seaton-multiprog2012.pdf">Applying dataflow and transactions to Lee routing.</a></strong> In Proceedings of the 7th Workshop on Programmability Issues for Heterogeneous Multicores (MULTIPROG), 2012.<br>
+        <span class="smaller">
+            <a href="multiprog2012/seaton-multiprog2012.pdf">PDF</a>,
+            <a href="multiprog2012/seaton-slides-multiprog2012.pdf">Slides</a>,
+            <a href="multiprog2012/seaton-multiprog2012.bib">BibTeX</a>
+        </span><br>
+        <i class="icon-trophy"></i> Winner, Best Paper Award
+    </li>
+</ul>
+
+<h3>Journal Editorial</h3>
+
+<ul class="publications">
+    <li>
+        S. S. Sofos, R. Pritchard-Jones, C. Seaton, J. Dingley, P. McArthur, and K. Shokrollahi. <strong><a href="http://journals.lww.com/annalsplasticsurgery/Fulltext/2012/09000/Medical_Innovation_A_Starting_Point_for_Plastic.1.aspx">Medical innovation&mdash;a starting point for plastic surgeons</a></strong>. Annals of Plastic Surgery, 69(3):225–7, Sep 2012.<br>
+        <span class="smaller">
+            <a href="http://journals.lww.com/annalsplasticsurgery/Fulltext/2012/09000/Medical_Innovation_A_Starting_Point_for_Plastic.1.aspx">Publisher</a>,
+            <a href="aps-innovation/aps-innovation.bib">BibTeX</a>
+        </span>
+    </li>
+</ul>
+
+<h3>Summer Schools</h3>
+
+<ul class="publications">
+    <li>
+        Chris Seaton. <strong>Implementing Ruby Using Truffle and Graal</strong>. At the European Conference on Object Oriented Programming (ECOOP) Summer School. 2014.<br>
+        <span class="smaller">
+            <a href="rubytruffle/ecoop14/ecoop14-ruby-truffle.pdf">Slides</a>
+        </span>
+    </li>
+</ul>
+
+<h3>Invited Talk</h3>
+
+<ul class="publications">
+    <li>
+        Chris Seaton, Medicapps Ltd. <strong><a href="mobilehealthcare2012/mobilehealthcare-merseyburns-chris-seaton-25-sep-12.pdf">Developing an app from idea to market and awards success with no funding</a></strong>. At the Mobile Healthcare Industry Summit. 2012.<br>
+        <span class="smaller">
+            <a href="mobilehealthcare2012/mobilehealthcare-merseyburns-chris-seaton-25-sep-12.pdf">Slides</a>
+        </span>
+    </li>
+</ul>
+
+<h3>Presentations</h3>
+
+<ul class="publications">
+    <li>
+        Chris Seaton. <strong><a href="rubytruffle/deoptimizing">Deoptimizing Ruby</a></strong>. At RubyConf. 2014.<br>
+        <span class="smaller">
+            <a href="http://confreaks.tv/videos/rubyconf2014-deoptimizing-ruby">Video</a>,
+            <a href="rubytruffle/deoptimizing/deoptimizing-ruby.pdf">Slides</a>,
+            <a href="rubytruffle/deoptimizing/">Blog post</a>
+        </span>
+    </li>
+
+    <li>
+        Christian Wimmer and Chris Seaton. <strong><a href="jvmls13-one-vm/jvmls13-one-vm.pdf">One VM to Rule Them All</a></strong>. At the JVM Language Summit. 2013.<br>
+        <span class="smaller">
+            <a href="http://medianetwork.oracle.com/video/player/2623645003001">Video</a>,
+            <a href="jvmls13-one-vm/jvmls13-one-vm.pdf">Slides</a>
+        </span>
+    </li>
+
+    <li>
+        Chris Seaton. <strong><a href="http://www.youtube.com/watch?v=B1hh2kpGNQ4">The Challenges of Irregular Parallelism</a></strong>. At the University of Manchester Computer Science Research Showcase. 2012.<br>
+        <span class="smaller">
+            <a href="http://www.youtube.com/watch?v=B1hh2kpGNQ4">Video</a>,
+            <a href="research-showcase-2012/seaton-irregular-parallelism-slides.pdf">Slides</a>
+        </span>
+    </li>
+
+    <li>
+        C. Seaton, D. Goodman, M. Luj&aacute;n, and I. Watson. <strong><a href="eurotmwtm2012/wtm12-dataflow-lee-slides.pdf">Applying dataflow and transactions to Lee routing</a></strong>. At the 1<sup>st</sup> EuroTM Workshop on Transactional Memory (EuroTM). 2012.<br>
+        <span class="smaller">
+            <a href="eurotmwtm2012/wtm12-dataflow-lee-slides.pdf">Slides</a>
+        </span>
+    </li>
+</ul>
+
+<h3>Posters</h3>
+
+<ul class="publications">
+    <li>
+        Chris Seaton. <strong><a href="research-symposium-2012/seaton-irregular-parallelism-poster.pdf">The Challenges of Irregular Parallelism</a></strong>. At the University of Manchester School of Computer Science Research Symposium. 2012.<br>
+        <span class="smaller">
+            <a href="research-symposium-2012/seaton-irregular-parallelism-poster.pdf">Poster</a>
+        </span><br>
+        <i class="icon-trophy"></i> Winner, Best Poster Award
+    </li>
+
+    <li>
+        Mr R Pritchard Jones, Mr C Seaton, Mr N Hamnett, Mr I James, Professor P McArthur. <strong>Mersey Burns Tool — Improving Assessment and Resuscitation</strong>. British Association of Plastic and Reconstructive Surgeons Summer Meeting. 2011.<br>
+        <span class="smaller">
+            <a href="http://www.bapras.org.uk/downloaddoc.asp?id=654">Programme and Abstracts</a>
+        </span><br>
+    </li>
+</ul>
+
+<h3>Community</h3>
+
+<ul class="publications">
+    <li>
+        Maintainer of <a href="http://rubybib.org/">The Ruby Bibliography</a>
+    </li>
+    <li>
+        Dynamic Languages Symposium (DLS) program committee member, 2014
+    </li>
+</ul>
+
+</section>
+
+<hr>
+
+<footer>
+<p>Copyright © Chris Seaton 2015</p>
+</footer>
+
+</article>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37318201-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

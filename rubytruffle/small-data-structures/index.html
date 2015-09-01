@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>Optimising Small Data Structures in JRuby+Truffle</title>
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<meta name="viewport" content="initial-scale=1.0">
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/normalize/2.1.0/normalize.css">
+
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+
+<link rel="stylesheet" href="../../common.css">
+<link rel="stylesheet" href="../../article.css">
+
+  <style type="text/css">
+code > span.kw { color: #43a8ed; }
+code > span.dv { color: #44aa43; }
+code > span.bn { color: #44aa43; }
+code > span.fl { color: #44aa43; }
+code > span.ch { color: #049b0a; }
+code > span.st { color: #049b0a; }
+code > span.co { color: #0066ff; }
+code > span.al { color: #ffff00; }
+code > span.fu { color: #ff9358; }
+  </style>
+
+</head>
+
+<body>
+
+<article>
+
+<header>
+<h1 class="article-smaller">Optimising Small Data Structures in JRuby+Truffle</h1>
+<h2><a href="/">Chris Seaton</a>, 13 August 2014</h2>
+&nbsp;
+</header>
+
+<p>Small data structures such as arrays and hashes with just a few elements or key-value pairs are very common in Ruby programs. They're typically used to implement many patterns in idiomatic Ruby code. For example an array with just two or three elements is often used to implement a kind of multiple return, and a hash with just a couple of key-value pairs is often used to implement keyword arguments.</p>
+<p>Of course, some of these data structures will grow as the program runs, but it's intuitively a reasonable hypothesis that many arrays and hashes begin small and stay small. If that's the case, then we want to optimise for that.</p>
+<p>Our immediate motivation for this work was that we found that small arrays and hashes were very common in the <code>chunky_png</code> and <code>psd.rb</code> gems that we wanted to experiment with optimising using Truffle. As we explained in a <a href="http://www.chrisseaton.com/rubytruffle/pushing-pixels/">previous blog post</a>, both of these gems use many small arrays and hashes in the inner loop of image processing routines. Examples include storing pixel values as a small <code>{r:, g:, b:}</code> hash, or creating a small array of <code>[n, min, max]</code> and sorting it to clamp a value in bounds.</p>
+<p>In this blog post we'll show what <a href="http://www.chrisseaton.com/rubytruffle/">JRuby+Truffle</a> does to optimise these small data structures. It will help to explain how we are able to entirely constant fold the acid test benchmark in the previous post.</p>
+<h2 id="storage-strategies">Storage Strategies</h2>
+<p>As a Ruby programmer you may think that the <code>Array</code> and <code>Hash</code> data structures that you use every day are implemented using one fixed algorithm no matter what they contain. This is generally the case in other implementations of Ruby. MRI will always use a C <code>VALUE*</code> to implement an array, and will always use a full hash table with an array of pointers to a linked list of buckets to implement a hash. JRuby and Rubinius work in a very similar way.</p>
+<p>The problem with this is that it's often way over the top for what we actually need. An array that only ever contains <code>Fixnum</code> values could be implemented as a <code>int*</code> array, saving us the work of tagging and untagging the value. A hash that only contains three key-value pairs doesn't need all of the indirection of a list of buckets and it could be better implemented as a single flat array of keys and values.</p>
+<p>We have to meet the contract that the <code>Array</code> and <code>Hash</code> classes specify, which includes the explicit contract such as the methods they provide, and the implicit contract that is the algorithmic complexity of these methods. But as long as we can do that, we're free to implement these data structures however we like.</p>
+<p>JRuby+Truffle uses a novel variant of a technique that is already in use in the various PyPy projects, called strategies, <a href="http://tratt.net/laurie/research/pubs/html/bolz_diekmann_tratt__storage_strategies_for_collections_in_dynamically_typed_languages/">published by Carl Friedrich Bolz, Lukas Diekmann and Laurence Tratt</a>. The idea is that we have a range of different ways of implementing each data structure. Each array and hash references the strategy that they're currently using and you delegate operations to the current strategy. As the program runs, objects can change their strategy if the current one isn't appropriate any more.</p>
+<p>In JRuby+Truffle our most simple strategy is the <code>null</code> strategy. If a hash or array is empty, we don't allocate any storage at all. Many operations on a <code>null</code> strategy are often no-ops returning constant values.</p>
+<p>If your array does include elements we have strategies to implement it as Java <code>int[]</code>, <code>long[]</code> and <code>double[]</code>. Storing immediate objects in these arrays requires no boxing or tagging. In some loops this means we can stop allocating objects all together, which is definitely a key part of optimising Ruby. If you have a big heterogeneous array with objects of many different types, you'll eventually end up using the last-resort <code>Object[]</code> strategy. We can put anything in here, but we'll have to box any immediate objects, and that may mean allocating them on the heap. Our last-resort strategy is the one that JRuby and MRI use all of the time.</p>
+<p>At the moment our implementation of hashes currently includes just two simple specialisations as well as <code>null</code> - one that uses a full Java linked hash table, and a simpler case where we represent the hash as a flattened Java <code>Object[]</code>. That is, a hash <code>{a: 1, b: 2, c: 3}</code> will be represented as <code>new Object[]{new Symbol('a'), new Integer(1), new Symbol('b'), new Integer(2), new Symbol('c'), new Integer(3)}</code>. Instead of hashing a key and doing a lookup we can do a simple linear search through this array. As long as we only use this specialisation up to some limited maximum size we can still meet the <em>O(1)</em> lookup time implicit contract.</p>
+<p>The PyPy paper referenced above describes how they have some 17 storage strategies, so we probably have some more work to do. We'll introduce more as we find applications or benchmarks to exercise them.</p>
+<h2 id="specialising-for-small-arrays-and-hashes">Specialising for Small Arrays and Hashes</h2>
+<p>JRuby+Truffle includes extra strategies for arrays and hashes that we arbitrarily consider to be 'small'. That's currently less than four array elements, or four key-value pairs. We found that this constant worked well for our benchmarks, but it's configurable and we'll keep experimenting with it as we run other programs.</p>
+<p>For these objects, we always allocate enough space for them to contain three elements of key-value pairs, even if they're not using them. When we know that's always going to be the case, we can use simpler and more uniform operations that don't depend on the size of the array.</p>
+<p>Consider the case of a <code>Array#each</code>. For an array of arbitrary size, this is implemented something like this:</p>
+<pre class="sourceCode java"><code class="sourceCode java"><span class="kw">for</span> (<span class="dt">int</span> n = <span class="dv">0</span>; n &lt; array.<span class="fu">length</span>; n++) {
+  block.<span class="fu">call</span>(array[n]);
+}</code></pre>
+<p>If the array is using the small strategy, we can make the loop iteration count constant at our maximum size, and include a test for the actual size of the array inside the loop.</p>
+<pre class="sourceCode java"><code class="sourceCode java"><span class="kw">for</span> (<span class="dt">int</span> n = <span class="dv">0</span>; n &lt; <span class="dv">3</span>; n++) {
+  <span class="kw">if</span> (n &lt; array.<span class="fu">size</span>)
+    block.<span class="fu">call</span>(array[n]);
+}</code></pre>
+<p>The key difference here is that as this array is of a constant size, it can be easily unrolled by the compiler. In Truffle we call this loop explosion, and it can be forced through an annotation to ensure that it's performed. This means the compiler can automatically turn the loop into a series of loop bodies without any branches or loop variables.</p>
+<pre class="sourceCode java"><code class="sourceCode java"><span class="kw">if</span> (<span class="dv">0</span> &lt; array.<span class="fu">size</span>) block.<span class="fu">call</span>(array[<span class="dv">0</span>]);
+<span class="kw">if</span> (<span class="dv">1</span> &lt; array.<span class="fu">size</span>) block.<span class="fu">call</span>(array[<span class="dv">1</span>]);
+<span class="kw">if</span> (<span class="dv">2</span> &lt; array.<span class="fu">size</span>) block.<span class="fu">call</span>(array[<span class="dv">2</span>]);</code></pre>
+<p>Unlike with an array of variable number of iterations, these three statements are now clearly independent and can be pipelined much more effectively by a processor than a loop with branches.</p>
+<p>We could probably achieve the same effect by specialising <code>Array#each</code> for the number of elements in an array, but the advantage of our current approach is that it's very simple.</p>
+<p>Another example is <code>Array#sort</code>. Java has a high performance implementation of array sorting routines, which happen to use Tim sort. This is very good code that performs well on a wide range of arrays, but it's also complicated. When compiling code, simple but theoretically slow is often better than complex but theoretically fast. When we're working with a small array we want as simple as possible, so we actually use our own simple implementation of insertion sort. You may not think of that as a fast algorithm, but it's simple enough to inline, which means the compiler can see it all and optimise it alongside the rest of our code. If we used the more complicated Tim sort, we would have to call it as a normal method and the compiler would stop optimising.</p>
+<p>The same approach works for hashes as well. The <code>Hash#merge</code> method returns a new hash that includes the contents of two hashes, with priority given to the first. Here there are two data structures involved, and they may have different strategies. We have written specialised versions of <code>Hash#merge</code> for some specific combinations of two strategies that have obvious optimisations. For example merging a <code>null</code> hash with one that uses an array specialisation can be implemented as a very simple array copy of the second hash's array.</p>
+<pre class="sourceCode ruby"><code class="sourceCode ruby"><span class="kw">public</span> <span class="dt">RubyHash</span> mergeObjectArrayNull(<span class="dt">RubyHash</span> hash, <span class="dt">RubyHash</span> other) {
+    final <span class="dt">Object</span>[] store = (<span class="dt">Object</span>[]) hash.getStore();
+    final <span class="dt">Object</span>[] copy = <span class="dt">Arrays</span>.copyOf(
+      store, <span class="dt">RubyContext</span>.<span class="dt">HASHES_SMALL</span> * <span class="dv">2</span>);
+    <span class="kw">return</span> new <span class="dt">RubyHash</span>(getContext().getCoreLibrary().getHashClass(),
+      hash.getDefaultBlock(), copy, hash.getStoreSize());
+}</code></pre>
+<p>That's an awful lot simpler than enumerating one Java <code>HashMap</code> and looking up in another. In fact, it doesn't even contain any loops, just a memory copy which can be vectorised.</p>
+<p>The Truffle framework includes excellent support for declaratively adding new specialisations for particular situations. The annotation for that merge specialisation is:</p>
+<pre class="sourceCode ruby"><code class="sourceCode ruby"><span class="ot">@Specialization</span>(guards = {<span class="st">&quot;isObjectArray&quot;</span>, <span class="st">&quot;isOtherNull&quot;</span>}, order = <span class="dv">1</span>)</code></pre>
+<p>This says that this specialisation applies if the first hash is an object array, and the second is <code>null</code>. The ordering argument is about controlling the latice that these specialisations form - we want any switch to other specialisations to be monotonic. Also take a look at the specialisations for <a href="https://github.com/jruby/jruby/blob/bd12275b137b1daafc28a058b16ea91a361dfd15/core/src/main/java/org/jruby/truffle/nodes/core/ArrayNodes.java#L1323-L1491"><code>Array#each</code></a> and <a href="https://github.com/jruby/jruby/blob/bd12275b137b1daafc28a058b16ea91a361dfd15/core/src/main/java/org/jruby/truffle/nodes/core/ArrayNodes.java#L3036-L3162"><code>Array#sort</code></a>.</p>
+<p>The great thing about Truffle is that you just have to specify a list of these specialisations, and it will automatically use the correct one, or will combine multiple specialisations if your method is polymorphic.</p>
+<h2 id="allocation-removal">Allocation Removal</h2>
+<p>We've said that in a compiler it's often better to have simpler code that is inline, rather than more complicated code which you have to call in a library. A key reason for this is allocation removal, or as we talk about in Graal, scalar replacement of aggregates. That means instead of allocating an object on the heap, we allocate it on the stack, or even in registers.</p>
+<p>The compiler can do this if it can see where an object is allocated, where it is used, and that it can't be seen by anyone else who might expect it to be in the heap (this test is called escape analysis). We described above how our special strategies are designed to produce simple code for simple cases. This helps the allocation removal as our simpler specialisations are generally much more amenable to allocation removal. They're also faster and use less memory to compile.</p>
+<h2 id="dataflow-analysis">Dataflow Analysis</h2>
+<p>Dataflow analysis of data structures follows on from allocation removal. If the compiler has determined that a data structures does not escape and it has removed the allocation of it, we can then say that that if we put a value into the data structure and then take it out again, perhaps by a method like <code>Array#each</code> or a more complicated method like <code>Array#sort</code>, we can replace the code that takes the value out with the value we were going to put in, and entirely skip the part that actually uses the data structure.</p>
+<p>This way we can follow values as they pass through various core library methods and in and out of data structures. You may think that you're creating a temporary array and sorting it, but in the final code you really have an inline version of insertion sort that's working on registers and never even allocates an array. If the values you are sorting are constant, or some of them are constant, those constants are also folded through the operations that we've inlined.</p>
+<p>We get all of this for free from Truffle and Graal - the only work we need to do in the JRuby backend is to make our code amenable to these optimisations, and that's what the strategies do.</p>
+<h2 id="summary">Summary</h2>
+<p>Truffle is all about specialisation. Here we've talked about specialisations for the way data structures are implemented. For simpler cases we use simpler strategies, which allow for simpler implementations of operations on them. That simpler code is easier to optimise and produces better machine code, and we end up with a faster program at the end.</p>
+<p>The acid test benchmark presented in our <a href="http://www.chrisseaton.com/rubytruffle/pushing-pixels/">previous blog post</a> is fast because of the use of several of these strategies working together.</p>
+<p>Of course it's not the case that JRuby and Rubinius haven't implemented strategies because they haven't thought of it. I know that Charles Nutter has been considering more efficient implementations of small hashes for a while, and 9k recently gained <a href="https://github.com/jruby/jruby/pull/1676">an optimisation for empty hashes</a> that is also in MRI. But in general JRuby and Rubinius will always fully heap-allocate arrays and hashes in their current implementations, and almost always box or tag immediate objects like <code>Fixum</code> and <code>Float</code>. If you're allocating on the heap, the speedup from these optimisations will be relatively minimal.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../deoptimizing/">Deoptimizing Ruby</a></li>
+  <li><a href="../cext/">Very High Performance C Extensions For JRuby+Truffle</a></li>
+  <li><a href="../pushing-pixels/">Pushing Pixels with JRuby+Truffle</a></li>
+  <li><a href="../set_trace_func/">Tracing With Zero Overhead in JRuby+Truffle</a></li>
+  <li><a href="../how-method-dispatch-works-in-jruby-truffle/">How Method Dispatch Works in JRuby+Truffle</a></li>
+  <li><a href="../announcement/">A Truffle/Graal High Performance Backend for JRuby</a></li>
+  <li><a href="../..">Chris Seaton's website</a></li>
+</ul>
+
+<hr>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'chrisseaton'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<hr>
+
+<footer>
+<p>Copyright © Chris Seaton 2014</p>
+<p>Opinions are my own.</p>
+</footer>
+
+</article>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37318201-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

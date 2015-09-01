@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>Pushing Pixels with JRuby+Truffle</title>
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<meta name="viewport" content="initial-scale=1.0">
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/normalize/2.1.0/normalize.css">
+
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+
+<link rel="stylesheet" href="../../common.css">
+<link rel="stylesheet" href="../../article.css">
+
+  <style type="text/css">
+code > span.kw { color: #43a8ed; }
+code > span.dv { color: #44aa43; }
+code > span.bn { color: #44aa43; }
+code > span.fl { color: #44aa43; }
+code > span.ch { color: #049b0a; }
+code > span.st { color: #049b0a; }
+code > span.co { color: #0066ff; }
+code > span.al { color: #ffff00; }
+code > span.fu { color: #ff9358; }
+  </style>
+
+</head>
+
+<body>
+
+<article>
+
+<header>
+<h1 class="article-smaller">Pushing Pixels with JRuby+Truffle</h1>
+<h2><a href="/">Chris Seaton</a>, 10 July 2014</h2>
+<img src="cmyk.png" style="max-width: 100%;" alt="The Ruby logo is Copyright © 2006, Yukihiro Matsumoto. It is licensed under the terms of the Creative Commons Attribution-ShareAlike 2.5 License agreement. This version is modified.">
+</header>
+
+<p>We've been talking about the new <a href="https://github.com/jruby/jruby/wiki/Truffle">high-performance Truffle backend in JRuby</a> for a while now, but so far the only benchmarks we've been running are the classic synthetic benchmarks from the Computer Language Benchmarks Game. These benchmarks are useful to study and we should be able to optimise them well as they're generally simple and easy to understand, but some people make the reasonable point that they may be unrepresentative of real Ruby programs written by real Ruby users. The risk is that our implementation is not as fast when running these real programs.</p>
+<p>In this blog post we'll show that when running 43 benchmarks which have been taken unmodified from real gems, JRuby+Truffle is on average 9x as fast as JRuby and up to 28x as fast. Compared to MRI it is on average 9x as fast and up to 45x. Compared to Rubinius it is on average 8x and up to 344x. JRuby+Truffle runs Ruby code on average 80% as fast as MRI runs the equivalent native C extensions and up to 21x. This is even faster than we can run synthetic benchmarks, so in this blog post we'll explain what it is about real Ruby code that makes this possible and what the limitations are in existing implementations of Ruby.</p>
+<figure>
+<img src="summary.png" alt="Summary graph" />
+</figure>
+<p>Remember that JRuby+Truffle does all this while still supporting the language features that make it Ruby, such as Fixnum to Bignum promotion, monkey patching basic operators, bindings, <code>#eval</code> and so on. We even support <code>set_trace_func</code> enabled by default, which JRuby and Rubinius currently do not. In fact as we will describe, it is the more dynamic aspects of Ruby where JRuby+Truffle really excels in performance.</p>
+<p>For more background on JRuby+Truffle, read the <a href="../">previous blog posts</a>.</p>
+<h2 id="gems">Gems</h2>
+<p>The challenge we started with was to find some real Ruby code that was written to do something useful and not just to be a benchmark. We still needed something that does a lot of computation rather than a lot of IO, as Truffle can't magically make your network return data more quickly. We also wanted something that was fairly self-contained, instead of being part of a huge Rails application.</p>
+<p>We found that the <code>chunky_png</code> and <code>psd.rb</code> gems were what we were looking for. <a href="https://github.com/wvanbergen/chunky_png"><code>chunky_png</code></a> reads and writes PNG image files, and includes utilities for general image and colour processing. It was written by <a href="https://github.com/wvanbergen">Willem van Bergen</a> and others for <a href="http://www.floorplanner.com/">floorplanner.com</a>. <a href="https://cosmos.layervault.com/psdrb.html"><code>psd.rb</code></a> reads and writes the complex Photoshop file format and was written by <a href="https://github.com/meltingice">Ryan LeFevre</a> and <a href="https://github.com/kellysutton">Kelly Sutton</a> at <a href="https://layervault.com">LayerVault</a> and others. Both of these gems are pure Ruby code. We know that the existing implementations of Ruby aren't fast enough for the users of these gems, as they've both also written native C extension gems, <a href="https://github.com/wvanbergen/oily_png"><code>oily_png</code></a> and <a href="https://github.com/layervault/psd_native"><code>psd-native</code></a>. These replace key methods in the Ruby code with native code to improve performance. That was a good indication that people had found this code did not run fast enough in existing implementations of Ruby.</p>
+<p>We took all the methods for which native versions had been written and wrote a harness to run both the Ruby and native versions as benchmarks. The routines include code for extracting colour channels, composing colour values, RLE encoding, resampling, general utility routines and more.</p>
+<p>We haven't modified the methods - we use them straight out of the gem source code although we do mock some objects to remove IO. For example instead of returning bytes from a file, we return bytes from an array. We haven't been selective about which methods we try to run - we're running all of them for which there is a native version.</p>
+<h2 id="difficult-to-optimise-patterns">Difficult to Optimise Patterns</h2>
+<p>Both <code>chunky_png</code> and <code>psd.rb</code> include some patterns of Ruby code that are extremely difficult for existing implementations of Ruby to optimise. We want to emphasise that this section absolutely isn't a criticism of the authors of the gems. They're free to write whatever code with whatever abstractions they want and we believe it's the job of a Ruby implementation to run it as fast as possible, without expressing an opinion on it. There are native versions of these gems so the idea is probably that the Ruby version is high-level and designed to be easy to read while the native code is designed for performance in production. That's a perfectly fine way to design a gem. Of course, ideally Ruby's implementation would be good enough to run the high level Ruby code fast anyway and there wouldn't be a need for the native code.</p>
+<h3 id="lots-of-small-methods">Lots of Small Methods</h3>
+<p>Both of the gems are fairly well factored into small methods. For example <a href="https://github.com/wvanbergen/chunky_png/blob/efd61c8d0ddcabdcf09fb44f8e8c1ba709995940/lib/chunky_png/color.rb#L187-L189">this method</a> for extracting the red component of colour packed into a <code>Fixnum</code>:</p>
+<pre class="sourceCode ruby"><code class="sourceCode ruby"><span class="kw">def</span> r(value)
+  (value &amp; <span class="bn">0xff000000</span>) &gt;&gt; <span class="dv">24</span>
+<span class="kw">end</span></code></pre>
+<p>Again this is a good design decision, but it does make optimisation more difficult for traditional implementations of Ruby. A conventional JVM used by JRuby will only inline so far, and in many of these benchmarks we're going to have spent that inlining budget before we get to the interesting bit. If you don't inline far enough it has a knock-on effect where more values escape and constants cannot be propogated. Rubinius and its LLVM-based JIT also stops inlining far too early for many of these benchmarks.</p>
+<h3 id="method_missing-respond_to-and-send"><code>#method_missing</code>, <code>#respond_to?</code> and <code>#send</code></h3>
+<p>You may think of meta-programming methods like <code>#method_missing</code>, <code>#respond_to?</code> and <code>#send</code> as something that should be used perhaps just to facilitate rare cases like mocking objects for testing, if at all, but the reality is that code is being written such as these gems that use these methods in the inner loop. For example <code>psd.rb</code> uses <code>#method_missing</code>, <code>#respond_to?</code> and <code>#send</code> to implement a kind of module import. In <a href="https://github.com/layervault/psd.rb/blob/e14d652ddc705e865d8b2b897d618b25d78bcc7c/lib/psd/renderer/compose.rb#L23">this line</a> they call the method <code>#r</code>.</p>
+<pre class="sourceCode ruby"><code class="sourceCode ruby">new_r = blend_channel(r(bg), r(fg), mix_alpha)</code></pre>
+<p>That method isn't defined in this scope, so we run <code>#method_missing</code> <a href="https://github.com/layervault/psd.rb/blob/e14d652ddc705e865d8b2b897d618b25d78bcc7c/lib/psd/renderer/compose.rb#L327-L330">here</a>. That calls <code>#respond_to?</code> and then <code>#send</code> to call the correct method from another module.</p>
+<pre class="sourceCode ruby"><code class="sourceCode ruby"><span class="kw">def</span> method_missing(method, *args, &amp;block)
+  <span class="kw">return</span> <span class="dt">ChunkyPNG</span>::<span class="dt">Color</span>.send(method, *args) ↩
+    <span class="kw">if</span> <span class="dt">ChunkyPNG</span>::<span class="dt">Color</span>.respond_to?(method)
+  normal(*args)
+<span class="kw">end</span></code></pre>
+<p>They could have imported the module (they've actually changed this one example in a newer release since we started work to do that) but they chose not to. That's their decision and it's the compiler's job to deal with that and deliver the same performance anyway.</p>
+<p>In one extreme case the inner loop of a compose operation on an image <a href="https://github.com/layervault/psd.rb/blob/e14d652ddc705e865d8b2b897d618b25d78bcc7c/lib/psd/renderer/blender.rb#L31-L36">calls <code>#send</code> with a method name that is a dynamic string</a>, which <a href="https://github.com/layervault/psd.rb/blob/e14d652ddc705e865d8b2b897d618b25d78bcc7c/lib/psd/renderer/compose.rb#L18-L29">runs a method</a> which makes a call that results in <code>#method_missing</code>, which in turn calls <code>#respond_to?</code> and <code>#send</code> as above. We think for each pixel in the image there are 7 calls to <code>#send</code> and 6 each to <code>#method_missing</code> and <code>#respond_to?</code>. Again, this is the code they wrote and the implementations of Ruby should be making it fast even though it looks strange.</p>
+<h3 id="temporary-arrays-and-hashes">Temporary Arrays and Hashes</h3>
+<p>Both gems also make very heavy use of temporary arrays and hashes. In the most extreme example, <code>psd.rb</code> represents pixel values as a hash of <code>{r:,g:,b:}</code> values, <a href="https://github.com/layervault/psd.rb/blob/e14d652ddc705e865d8b2b897d618b25d78bcc7c/lib/psd/color.rb#L117-L122">in the inner loop of an image processing routine</a>. One hash is created, then mapped to an array, then another hash is created with the result. The hashes and arrays don't escape the method so we should be able to just use the values that we take out of them directly without actually creating the objects.</p>
+<pre class="sourceCode ruby"><code class="sourceCode ruby"><span class="kw">def</span> cmyk_to_rgb(c, m, y, k)
+  <span class="dt">Hash</span>[{
+    r: (<span class="dv">65535</span> - (c * (<span class="dv">255</span> - k) + (k &lt;&lt; <span class="dv">8</span>))) &gt;&gt; <span class="dv">8</span>,
+    g: (<span class="dv">65535</span> - (m * (<span class="dv">255</span> - k) + (k &lt;&lt; <span class="dv">8</span>))) &gt;&gt; <span class="dv">8</span>,
+    b: (<span class="dv">65535</span> - (y * (<span class="dv">255</span> - k) + (k &lt;&lt; <span class="dv">8</span>))) &gt;&gt; <span class="dv">8</span>
+  }.map { |k, v| [k, <span class="dt">Util</span>.clamp(v, <span class="dv">0</span>, <span class="dv">255</span>)] }]
+<span class="kw">end</span></code></pre>
+<p>Another example is the inner loop utility method <a href="https://github.com/layervault/psd.rb/blob/e14d652ddc705e865d8b2b897d618b25d78bcc7c/lib/psd/util.rb#L14-L16"><code>clamp</code></a> in <code>psd.rb</code>, which returns a value between two bounds. This has been implemented by putting the values into an array, sorting it, and taking the middle value. Again this is a fine way to write Ruby code - nice and expressive - but if the implementation actually allocates an array and then calls another method to sort it you are not going to achieve much performance.</p>
+<pre class="sourceCode ruby"><code class="sourceCode ruby"><span class="kw">def</span> clamp(num, min, max)
+  [min, num, max].sort[<span class="dv">1</span>]
+<span class="kw">end</span></code></pre>
+<h2 id="the-acid-test">The Acid Test</h2>
+<p>We can put several of these difficult to optimise patterns together in a single acid test to illustrate their impact. This code calls a method on an object which isn't defined, and so goes through <code>#method_missing</code>, which uses <code>#respond_to?</code> to check if a module can handle the method, and then uses <code>#send</code> to delegate. The method that is finally run puts the parameters into a hash, calls <code>#map</code> and then indexes the resulting array. It then creates another array and sorts it to find the middle value of the parameters, and adds this to the other value.</p>
+<p>This code is built up from patterns that are found on the critical path in the gems we're using, so it's not a contrived example. This is the Ruby code that people want to run, so we want to run it as fast as possible.</p>
+<pre class="sourceCode ruby"><code class="sourceCode ruby"><span class="kw">module</span> <span class="dt">Foo</span>
+  extend <span class="dv">self</span>
+
+  <span class="kw">def</span> foo(a, b, c)
+    hash = {a: a, b: b, c: c}
+    array = hash.map { |k, v| v }
+    x = array[<span class="dv">0</span>]
+    y = [a, b, c].sort[<span class="dv">1</span>]
+    x + y
+  <span class="kw">end</span>
+
+<span class="kw">end</span>
+
+<span class="kw">class</span> <span class="dt">Bar</span>
+
+  <span class="kw">def</span> method_missing(method, *args)
+    <span class="kw">if</span> <span class="dt">Foo</span>.respond_to?(method)
+      <span class="dt">Foo</span>.send(method, *args)
+    <span class="kw">else</span>
+      <span class="dv">0</span>
+    <span class="kw">end</span>
+  <span class="kw">end</span>
+
+<span class="kw">end</span>
+
+bar = <span class="dt">Bar</span>.new
+
+loop <span class="kw">do</span>
+  start = <span class="dt">Time</span>.now
+
+  <span class="dv">1_000_000</span>.times <span class="kw">do</span>
+    <span class="co"># This block should be compiled to the constant Fixnum value 22</span>
+    bar.foo(<span class="dv">14</span>, <span class="dv">8</span>, <span class="dv">6</span>)
+  <span class="kw">end</span>
+
+  puts <span class="dt">Time</span>.now - start
+<span class="kw">end</span></code></pre>
+<p>A sufficiently smart implementation of Ruby should be able to inline and constant fold through all of that code to compile the <code>#times</code> block at the bottom into a single constant value of <code>22</code>, probably plus some guards of some kind. The <code>#method_missing</code>, <code>#respond_to?</code> and <code>#send</code> can all be handled by inline polymoprhic caches and inlined into the caller. The values put into the hash and arrays can be taken out again as we can determine that they don't escape the method. The <code>#map</code> operation can be evaluated at compile time as the receiver and arguments are all constant, as can the <code>#sort</code> and the <code>#+</code>. Of course we have to speculate that the methods will not be redefined by some other thread as the code is running, but if they are we can use dynamic deoptimisation to transfer back to the interpreter and handle that case.</p>
+<p>Unlike all other implementations of Ruby, JRuby+Truffle is actually able to do all of this and literally produces machine code that is <code>guard(); return 22</code>. Proving that we can do this is a little too technically involved for this post but if you want to do it for yourself <a href="mailto:chris.seaton@oracle.com">contact us</a> and we'll show you how to do it by inspecting the generated IR. The guards we are left with are not trivial at the moment, so there is still work to be done, but as the final value is constant the optimisations can continue even further from this point if you had more code.</p>
+<p>The following graph shows the speedup when running this benchmark on different implementations. We aren't infinitely faster, as the guards still have a runtime cost.</p>
+<figure>
+<img src="acid.png" alt="Acid test results" />
+</figure>
+<h2 id="performance">Performance</h2>
+<p>We compared Truffle to the latest versions of MRI (2.1.2), Rubinius (2.2.10), JRuby (1.7.13 with <code>invokedynamic</code>) and Topaz (nightly). For MRI and Rubinius we also compared against the native code.</p>
+<p>All experiments were run on a system with 2 Intel Xeon E5345 processors with 4 cores each at 2.33 GHz and 64 GB of RAM. We used 64bit Ubuntu Linux 13.04, using system default compilers. Where an unmodified Java VM was required, we used the 64bit JDK 1.8.0u5. For JRuby+Truffle we used the Graal VM version 0.3. Each iteration lasts for at least several seconds for MRI and was sampled 30 times. We discarded the first 15 runs to allow VMs to reach steady state, as verified informally using lag plots.</p>
+<p>The graph at the start of this post shows the summary, with the geometric mean across all the benchmarks relative to MRI. The following two graphs show the speedup of individual benchmarks relative to MRI. We show the results both in linear (twice as tall is twice as fast) and logarithmic (taller is exponentially faster) to better see the differences. Click on the graphs for high-resolution PDFs.</p>
+<figure>
+<a href="detail-speedup.pdf"><img src="detail-speedup.png" alt="Detail graph" /></a>
+</figure>
+<figure>
+<a href="detail-speedup-log.pdf"><img src="detail-speedup-log.png" alt="Detail graph (logarithmic)" /></a>
+</figure>
+<p>The performance of both the current version of JRuby and Rubinius is severely limited on these benchmarks. Neither implementation is able to perform much better than MRI, and they're often actually worse. We're not testing JRuby's new IR backend as it's early days for their JIT, but they may be able to make some of the same optimisations as we are. It's definitely a step in the right direction as using their IR they can manually inline and bypass normal JVM budgets and their dataflow analysis may be able to trace values through data structures. Topaz does pretty well, but not quite as good as us. To be fair to them, they have been inactive for around a year and we were seriously impressed they do as well as they do considering they haven't even tried running these benchmarks themselves.</p>
+<p>Sometimes JRuby+Truffle outperforms the native code. How can this be? Surely we can't be doing better than the C code? The problem is that the actual native code is fast, but the API calls they use to call back into MRI or Rubinius are not. If C code allocates a hash, it's always going to actually call <code>malloc</code> and allocate it on the heap, where when JRuby+Truffle runs Ruby code that creates a hash it can choose to allocate it on the heap, on the stack, or not at all. Going into native code creates a barrier that prevents many of these optimisations and more. This is most clear in our smaller benchmarks, such as <a href="https://github.com/wvanbergen/chunky_png/blob/efd61c8d0ddcabdcf09fb44f8e8c1ba709995940/lib/chunky_png/color.rb#L187-L189"><code>chunky_color_r</code></a>, where the barrier is a higher proportion of the runtime.</p>
+<p>The code we used to run these benchmarks and produce the graphs is open source in the JRuby project on GitHub. Please feel free to have a go at reproducing our results for yourselves.</p>
+<p>Some of the benchmarks fail to run in some implementations. Two of the native versions when running in Rubinius didn't finish in reasonable time. MRI produces a different result for one of the native versions - we're not sure if this is an error or permissible variance in the result. Topaz can't run a handful of the benchmarks, probably due to missing features. This is all documented in the <a href="https://github.com/jruby/pushing-pixels-benchmarks">benchmark repository</a>.</p>
+<h2 id="future-work">Future Work</h2>
+<p>Over the next few weeks on this blog we'll highlight some of the key optimisations we use to achieve this performance, so follow <a href="https://twitter.com/chrisgseaton">@ChrisGSeaton</a> on Twitter if you want to see when new posts are published.</p>
+<p>If you are wondering what the tradeoff is here and you look at the raw data (in the repository), you might notice that we do take a little longer to warm up (to start running quickly) than the other implementations. This kind of powerful optimisation isn't free but we're focusing on long-running server applications and we're also still working to reduce the warmup time.</p>
+<p>An obvious final question is whether we will support running the C extensions. You don't always have equivalent Ruby code and if Rubinius can also run the C code maybe it could still be a better choice. JRuby used to have experimental support for C extensions but it has since been removed. The answer is yes - JRuby+Truffle can also run the C extensions, and we can run them very fast. But we're afraid that's work we're not ready to talk about yet so it will have to wait.</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>We'll take the opportunity to say that without JRuby to build on, we wouldn't be where we are today. JRuby+Truffle is just one part of JRuby and we depend on the excellent work done by the rest of the project. JRuby+Truffle also depends entirely on the work of the rest of the Graal and Truffle teams at Oracle and JKU Linz.</p>
+<p>We're grateful for the open source gems we used written by <a href="https://github.com/wvanbergen">Willem van Bergen</a>, <a href="https://github.com/meltingice">Ryan LeFevre</a>, <a href="https://github.com/kellysutton">Kelly Sutton</a>, and others.</p>
+
+<hr>
+
+<ul>
+  <li><a href="../deoptimizing/">Deoptimizing Ruby</a></li>
+  <li><a href="../cext/">Very High Performance C Extensions For JRuby+Truffle</a></li>
+  <li><a href="../small-data-structures/">Optimising Small Data Structures in JRuby+Truffle</a></li>
+  <li><a href="../set_trace_func/">Tracing With Zero Overhead in JRuby+Truffle</a></li>
+  <li><a href="../how-method-dispatch-works-in-jruby-truffle/">How Method Dispatch Works in JRuby+Truffle</a></li>
+  <li><a href="../announcement/">A Truffle/Graal High Performance Backend for JRuby</a></li>
+  <li><a href="../..">Chris Seaton's website</a></li>
+</ul>
+
+<hr>
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'chrisseaton'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+<hr>
+
+<footer>
+<p>Copyright © Chris Seaton 2014</p>
+<p>Opinions are my own.</p>
+</footer>
+
+</article>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37318201-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

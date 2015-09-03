@@ -35,19 +35,19 @@ views expressed are my own and not those of Oracle.
 
 # Research Papers
 
-*    F. Niephaus, M. Springer, T. Felgentreff, T. Pape, R. Hirschfeld. **Call-target-specific Method Arguments**. In Proceedings of the 10th Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS), 2015.<br>
+*    F. Niephaus, M. Springer, T. Felgentreff, T. Pape, R. Hirschfeld. [Call-target-specific Method Arguments](https://github.com/HPI-SWA-Lab/TargetSpecific-ICOOOLPS/raw/gh-pages/call_target_specific_method_arguments.pdf). In Proceedings of the 10th Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS), 2015.<br>
         <span class="smaller">
-            (to appear)
+            <a href="https://github.com/HPI-SWA-Lab/TargetSpecific-ICOOOLPS/raw/gh-pages/call_target_specific_method_arguments.pdf">PDF</a>
         </span>
 
-*    B. Daloze, C. Seaton, D. Bonetta, H. Mössenböck. **Techniques and Applications for Guest-Language Safepoints**. In Proceedings of the 10th Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS), 2015.<br>
+*    B. Daloze, C. Seaton, D. Bonetta, H. Mössenböck. [Techniques and Applications for Guest-Language Safepoints](icooolps15-safepoints/safepoints.pdf). In Proceedings of the 10th Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS), 2015.<br>
         <span class="smaller">
-            (to appear - ask me for a preprint)
+            <a href="icooolps15-safepoints/safepoints.pdf">PDF</a>
         </span>
 
-*    S. Marr, C. Seaton, S. Ducasse. **Zero-Overhead Metaprogramming: Reflection and Metaobject Protocols Fast and without Compromises**. In Proceedings of the 36th Conference on Programming Language Design and Implementation (PLDI), 2015.<br>
+*    S. Marr, C. Seaton, S. Ducasse. [Zero-Overhead Metaprogramming: Reflection and Metaobject Protocols Fast and without Compromises](pldi15-metaprogramming/pldi15-marr-et-al-zero-overhead-metaprogramming.pdf). In Proceedings of the 36th Conference on Programming Language Design and Implementation (PLDI), 2015.<br>
         <span class="smaller">
-            (to appear - ask me for a preprint)
+            <a href="pldi15-metaprogramming/pldi15-marr-et-al-zero-overhead-metaprogramming.pdf">PDF</a>
         </span>
 
 *    M. Grimmer, C. Seaton, T. Würthinger, H. Mössenböck. [Dynamically Composing Languages in a Modular Way: Supporting C Extensions for Dynamic Languages](modularity15/rubyextensions.pdf). In Proceedings of the 14th International Conference on Modularity, 2015.<br>

@@ -24,7 +24,9 @@ The solution to this problem is a technique called *deoptimization*. To deoptimi
 
 Several Ruby implementations use some form of deoptimization to a greater or less degree, including JRuby and Rubinius, but none use deoptimization as pervasively or as aggressively as does Truffle, a new high performance backend for JRuby. JRuby+Truffle is a research project of Oracle Labs and is now an open source component of JRuby. It uses a new just-in-time compiler for the JVM written in Java called Graal. As Graal is a Java library and not native code it can expose a Java API, which the application can use to directly control the just-in-time compiler. This is powerful but tricky, so a framework called Truffle helps us by taking a high-level Ruby interpreter and using Graal on your behalf to emit machine code. JRuby+Tuffle doesn't have a bytecode format - it goes straight from high-level interpreter to machine code.
 
-This blog post is the companion piece to our RubyConf 2014 Talk, *Deoptimizing Ruby*. We'll provide some more background and technical depth here, and will provide pointers to where you can find more information. We'll add the video of the talk here when it's released.
+This blog post is the companion piece to our RubyConf 2014 Talk, *Deoptimizing Ruby*. We'll provide some more background and technical depth here, and will provide pointers to where you can find more information.
+
+<iframe width="720" height="433" src="//www.youtube.com/embed/z-YVygbDHLE" frameborder="0" allowfullscreen></iframe>
 
 ## Why is Ruby Hard to Optimize?
 

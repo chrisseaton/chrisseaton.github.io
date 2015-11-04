@@ -1,49 +1,12 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-
-<meta charset="utf-8">
-<title>Tracing With Zero Overhead in JRuby+Truffle</title>
-
-<!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
-<meta name="viewport" content="initial-scale=1.0">
-
-<link rel="stylesheet" href="http://cdn.jsdelivr.net/normalize/2.1.0/normalize.css">
-
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300">
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata">
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
-
-<link rel="stylesheet" href="../../common.css">
-<link rel="stylesheet" href="../../article.css">
-
-  <style type="text/css">
-code > span.kw { color: #43a8ed; }
-code > span.dv { color: #44aa43; }
-code > span.bn { color: #44aa43; }
-code > span.fl { color: #44aa43; }
-code > span.ch { color: #049b0a; }
-code > span.st { color: #049b0a; }
-code > span.co { color: #0066ff; }
-code > span.al { color: #ffff00; }
-code > span.fu { color: #ff9358; }
-  </style>
-
-</head>
-
-<body>
-
-<article>
-
-<header>
-<h1 class="article-smaller">Tracing With Zero Overhead in JRuby+Truffle</h1>
-<h2><a href="/">Chris Seaton</a>, 15 June 2014</h2>
-<img src="trace.png" style="max-width: 50%;" alt="JRuby/Truffle">
-</header>
+---
+layout: article
+title: Tracing With Zero Overhead in JRuby+Truffle
+author: Chris Seaton
+date: 15 June 2014
+image: trace.png
+image_alt: Tracing
+copyright: Copyright © Chris Seaton 2014
+---
 
 <p>The new <a href="https://github.com/jruby/jruby/wiki/Truffle">Truffle backend in JRuby</a> gives us an extremely fast implementation of Ruby, but as well as being fast its architecture allows us to tackle some of the features of Ruby that are traditionally seen as being very hard to implement, often in a refreshingly simple way.</p>
 <p>Ruby's core library has a method <a href="http://ruby-doc.org/core-2.1.2/Kernel.html#method-i-set_trace_func"><code>Kernel#set_trace_func</code></a> that allows you to install a method to be called as the interpreter traces through your program. It's called on every source code line, every time you call or return from a method, and on some other events. The method is passed some information about the program state, including a <a href="http://ruby-doc.org/core-2.1.2/Binding.html"><code>Binding</code></a> object - an object like a hash that holds all the local variables in scope at the point the method was called.</p>
@@ -149,58 +112,3 @@ code > span.fu { color: #ff9358; }
 <h2 id="more-details">More Details</h2>
 <p>A more formal description of how we implemented and evaluated <code>set_trace_func</code> and our prototype debugger was the subject of the paper <a href="http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf">Debugging at Full Speed</a> by <a href="http://www.chrisseaton.com/">Chris Seaton</a>, <a href="http://vandevanter.net/mlvdv/">Michael Van de Vanter</a> and <a href="https://labs.oracle.com/pls/apex/f?p=labs:bio:0:44">Michael Haupt</a>, all of Oracle Labs, presented at the 2014 Workshop on Dynamic Languages and Applications in Edinburgh. The paper includes a full evaluation and a link to the experimental harness we built so you can reproduce the results.</p>
 <p>If you'd like to know any more, please get in touch!</p>
-
-<hr>
-
-<ul>
-  <li><a href="../deoptimizing/">Deoptimizing Ruby</a></li>
-  <li><a href="../cext/">Very High Performance C Extensions For JRuby+Truffle</a></li>
-  <li><a href="../small-data-structures/">Optimising Small Data Structures in JRuby+Truffle</a></li>
-  <li><a href="../pushing-pixels/">Pushing Pixels with JRuby+Truffle</a></li>
-  <li><a href="../how-method-dispatch-works-in-jruby-truffle/">How Method Dispatch Works in JRuby+Truffle</a></li>
-  <li><a href="../announcement/">A Truffle/Graal High Performance Backend for JRuby</a></li>
-  <li><a href="../..">Chris Seaton's website</a></li>
-</ul>
-
-<hr>
-
-<div id="disqus_thread"></div>
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'chrisseaton'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-
-<hr>
-
-<footer>
-<p>Copyright © Chris Seaton 2014</p>
-<p>Opinions are my own.</p>
-</footer>
-
-</article>
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37318201-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-</body>
-</html>

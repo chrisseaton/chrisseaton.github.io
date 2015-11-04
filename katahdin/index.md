@@ -101,8 +101,7 @@ add one in just a minute.
 
     My master’s thesis describing the background, theory, implementation and
     current status of Katahdin. Also published as a technical report at the
-    University of Bristol. There is a [BibTeX record](katahdin.bib) of the
-    thesis if you want to cite it in your work.
+    University of Bristol.
 
 *   [Thesis defence slides](katahdin-slides.pdf)
 

@@ -62,15 +62,13 @@ views expressed are my own and not those of Oracle.
 
 *    A. Wöß, C. Wirth, D. Bonetta, C. Seaton, C. Humer, and H. Mössenböck. [An object storage model for the Truffle language implementation framework](pppj14-om/ppj14-om.pdf). In Proceedings of the International Conference on Principles and Practices of Programming on the Java Platform (PPPJ), 2014.<br>
         <span class="smaller">
-            <a href="pppj14-om/ppj14-om.pdf">PDF</a>,
-            <a href="pppj14-om/ppj14-om.bib">BibTeX</a>
+            <a href="pppj14-om/ppj14-om.pdf">PDF</a>
         </span>
 
 *   C. Seaton, M. L. Van De Vanter, and M. Haupt. [Debugging at full speed](http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf). In Proceedings of the 8th Workshop on Dynamic Languages and Applications (DYLA), 2014.<br>
         <span class="smaller">
             <a href="http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf">PDF</a>,
-            <a href="http://lafo.ssw.uni-linz.ac.at/truffle/debugging/dyla14-debugging-artifact-0557a4f756d4.tar.gz">Code</a>,
-            <a href="/rubytruffle/dyla14/debugging-at-full-speed.bib">BibTeX</a>
+            <a href="http://lafo.ssw.uni-linz.ac.at/truffle/debugging/dyla14-debugging-artifact-0557a4f756d4.tar.gz">Code</a>
         </span>
 
 ----

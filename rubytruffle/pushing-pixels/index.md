@@ -175,3 +175,5 @@ An obvious final question is whether we will support running the C extensions. Y
 We'll take the opportunity to say that without JRuby to build on, we wouldn't be where we are today. JRuby+Truffle is just one part of JRuby and we depend on the excellent work done by the rest of the project. JRuby+Truffle also depends entirely on the work of the rest of the Graal and Truffle teams at Oracle and JKU Linz.
 
 We're grateful for the open source gems we used written by [Willem van Bergen](https://github.com/wvanbergen), [Ryan LeFevre](https://github.com/meltingice), [Kelly Sutton](https://github.com/kellysutton), and others.
+
+{% include jrubytrufflelinks.html %}

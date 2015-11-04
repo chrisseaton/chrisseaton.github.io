@@ -280,3 +280,5 @@ The OpenJDK JVM, HotSpot, uses deoptimization extensively [2, 3] and the new Gra
 5. G. Duboscq, T. Würthinger, and H. Mössenböck, "[Speculation without regret: reducing deoptimization meta-data in the Graal compiler](http://dl.acm.org/citation.cfm?id=2647521)," presented at the PPPJ '14: Proceedings of the 2014 International Conference on Principles and Practices of Programming on the Java platform: Virtual machines, Languages, and Tools, New York, New York, USA, 2014, pp. 187–193.
 
 6. C. Seaton, M. L. Van De Vanter, and M. Haupt, "[Debugging at Full Speed](http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf)," presented at the Proceedings of the 8th Workshop on Dynamic Languages and Applications (DYLA), 2014.
+
+{% include jrubytrufflelinks.html %}

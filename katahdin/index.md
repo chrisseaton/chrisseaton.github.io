@@ -1,4 +1,12 @@
-# Katahdin
+---
+layout: article
+title: Katahdin
+author: Chris Seaton
+date: 2007
+image: katahdin.png
+image_alt: Katahdin
+copyright: Copyright © 2007-2012 Chris Seaton
+---
 
 Katahdin is a programming language where the syntax and semantics are mutable at
 runtime. It was the 2007 master’s project of [Chris
@@ -120,5 +128,3 @@ add one in just a minute.
 The Katahdin [source code](http://github.com/chrisseaton/katahdin/) is
 available from GitHub, or as [katahdin-0.2.tar.gz](katahdin-0.2.tar.gz). It is
 available as public domain, or BSD licence if that causes problems for you.
-
-Copyright © Chris Seaton 2007-2012

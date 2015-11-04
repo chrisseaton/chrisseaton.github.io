@@ -114,3 +114,5 @@ Truffle is all about specialisation. Here we've talked about specialisations for
 The acid test benchmark presented in our [previous blog post](http://www.chrisseaton.com/rubytruffle/pushing-pixels/) is fast because of the use of several of these strategies working together.
 
 Of course it's not the case that JRuby and Rubinius haven't implemented strategies because they haven't thought of it. I know that Charles Nutter has been considering more efficient implementations of small hashes for a while, and 9k recently gained [an optimisation for empty hashes](https://github.com/jruby/jruby/pull/1676) that is also in MRI. But in general JRuby and Rubinius will always fully heap-allocate arrays and hashes in their current implementations, and almost always box or tag immediate objects like `Fixum` and `Float`. If you're allocating on the heap, the speedup from these optimisations will be relatively minimal.
+
+{% include jrubytrufflelinks.html %}

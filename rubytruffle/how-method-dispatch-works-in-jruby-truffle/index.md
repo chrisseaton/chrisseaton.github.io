@@ -309,3 +309,5 @@ Looking at the simple example of `add_and_subtract` and following it all the way
 There's a lot of work going on behind the scenes in Truffle, Graal and the JVM to enable the techniques we've discussed, but the interfaces that Truffle provides makes using them easy. For example, the `Assumption` object has only two methods that you need to understand - `check` and `invalidate`, and that provides access to one of the most powerful techniques in the JVM, deoptimization.
 
 If you want to get involved in Truffle development in JRuby, or want to know more about what we've talked about, feel free to get in touch with me.
+
+{% include jrubytrufflelinks.html %}

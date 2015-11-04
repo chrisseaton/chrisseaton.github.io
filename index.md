@@ -160,7 +160,11 @@ in the UK regulated and CE marked as a medical device.</p>
 
 <ul class="publications">
     <li>
-        C. Seaton. <strong>Specialising Dynamic Techniques for Implementing the Ruby Programming Langauge</strong>. PhD thesis, University of Manchester, 2015.
+        C. Seaton. <strong><a href="phd">Specialising Dynamic Techniques for Implementing the Ruby Programming Langauge</a></strong>. PhD thesis, University of Manchester, 2015.<br>
+        <span class="smaller">
+            <a href="phd">Abstract</a>,
+            <a href="phd/specialising-ruby.pdf">PDF</a>
+        </span>
     </li>
 
     <li>

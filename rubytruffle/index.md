@@ -44,7 +44,13 @@ views expressed are my own and not those of Oracle.
 
 ----
 
-# Research Papers
+# Research Papers and Thesis
+
+*    C. Seaton. <strong><a href="phd">Specialising Dynamic Techniques for Implementing the Ruby Programming Langauge</a></strong>. PhD thesis, University of Manchester, 2015.<br>
+        <span class="smaller">
+            <a href="../phd">Abstract</a>,
+            <a href="../phd/specialising-ruby.pdf">PDF</a>
+        </span>
 
 *    M. Grimmer, C. Seaton, R. Schatz, T. Würthinger, H. Mössenböck. **High-Performance Cross-Language Interoperability in a Multi-Language Runtime**. In Proceedings of 11th Dynamic Languages Symposium (DLS).<br>
         <span class="smaller">

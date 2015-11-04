@@ -1,34 +1,12 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-
-<meta charset="utf-8">
-<title>Chris Seaton</title>
-
-<!--[if lt IE 9]>
-<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-
-<meta name="viewport" content="initial-scale=1.0">
-
-<link rel="stylesheet" href="http://cdn.jsdelivr.net/normalize/2.1.0/normalize.css">
-
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300">
-<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata">
-<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
-
-<link rel="stylesheet" href="common.css">
-<link rel="stylesheet" href="home.css">
-
-</head>
-
-<body>
-
-<article>
+---
+layout: home
+title: Chris Seaton
+author: Chris Seaton
+copyright: Copyright © 2015 Chris Seaton
+---
 
 <header>
-<h1>Doctor Chris Seaton</span></h1>
+<h1>Doctor Chris Seaton</h1>
 <img src="chrisseaton.jpeg" width="250" height="250" alt="Chris Seaton">
 </header>
 
@@ -37,7 +15,7 @@
 <p>I'm a Research Manager at the Virtual Machine Group in <a
 href="http://labs.oracle.com">Oracle Labs</a>, where I lead the work to implement Ruby using the <a
 href="http://openjdk.java.net/projects/graal/">next generation of Java Virtual
-Machine technology</a>, and other projects.<p>
+Machine technology</a>, and other projects.</p>
 
 <p>Before this I completed a PhD at the <a href="http://www.manchester.ac.uk/">University of
 Manchester</a> under the supervision of Doctor Mikel Luján, where I researched programming languages and irregular
@@ -375,28 +353,3 @@ in the UK regulated and CE marked as a medical device.</p>
 </ul>
 
 </section>
-
-<hr>
-
-<footer>
-<p>Copyright © Chris Seaton 2015</p>
-</footer>
-
-</article>
-
-<script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-37318201-1']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-</body>
-</html>

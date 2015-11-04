@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<title>{{ page.title }}</title>
+
+<!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+<meta name="viewport" content="initial-scale=1.0">
+
+<link rel="stylesheet" href="http://cdn.jsdelivr.net/normalize/2.1.0/normalize.css">
+
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Inconsolata">
+<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css">
+
+<link rel="stylesheet" href="/syntax.css">
+<link rel="stylesheet" href="/common.css">
+<link rel="stylesheet" href="/section.css">
+
+</head>
+
+<body>
+
+<article>
+
+<header>
+<h1 >{{ page.title }}</h1>
+</header>
+
+{{ content }}
+
+<hr>
+
+<footer>
+<p>{{ page.copyright }}</p>
+<p>Opinions are my own.</p>
+</footer>
+
+</article>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-37318201-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>

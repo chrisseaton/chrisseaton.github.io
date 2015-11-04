@@ -8,6 +8,14 @@ image_alt: CMYK
 copyright: Copyright © 2015 Chris Seaton
 ---
 
+# Informal Abstract
+
+People who write Ruby programs want to use metaprogramming. It's part of what makes the language what it is. But in existing implementations of Ruby, metaprogramming is slow. My work focused on making it fast, providing fast tooling for Ruby programmers, and fast support for legacy C extensions.
+
+The techniques had a very significant impact on synthetic benchmarks and real-world code, often achieving a full order of magnitude or more performance increase over existing state-of-the-art implementations of Ruby.
+
+As far as I am aware, this is the first and only doctoral thesis written focused on the Ruby programming language.
+
 # Formal Abstract
 
 The Ruby programming language is dynamically typed, uses dynamic and late bound dispatch for all operators, method calls and many control structures, and provides extensive metaprogramming and introspective tooling functionality.
@@ -40,14 +48,6 @@ C extensions are interpreted and dynamically optimised rather than being statica
 The techniques developed in this thesis have a significant impact on performance of both synthetic benchmarks and kernels from real-world Ruby programs.
 The implementation of Ruby which has been developed achieves an order of magnitude or better increase in performance compared to the next-best implementation.
 In many cases the techniques are 'zero-overhead', in that the generated machine code is exactly the same for when the most dynamic features of Ruby are used, as when only static features are used.
-
-# Informal Abstract
-
-People who write Ruby programs want to use metaprogramming. It's part of what makes the language what it is. But in existing implementations of Ruby, metaprogramming is slow. My work focused on making it fast, providing fast tooling for Ruby programmers, and fast support for legacy C extensions.
-
-The techniques had a very significant impact on synthetic benchmarks and real-world code, often achieving a full order of magnitude or more performance increase over existing state-of-the-art implementations of Ruby.
-
-As far as I am aware, this is the first and only doctoral thesis written focused on the Ruby programming language.
 
 # Thesis Text
 

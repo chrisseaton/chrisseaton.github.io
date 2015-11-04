@@ -1,4 +1,12 @@
-# CSPassword
+---
+layout: article
+title: CSPassword
+author: Chris Seaton
+date: 2012
+image: screenshot.png
+image_alt: CSPassword
+copyright: Copyright © 2012 Chris Seaton
+---
 
 CSPassword, originally known as Password Safe, was a password manager that I
 wrote as a young teenager over a decade ago. It was not written with any
@@ -28,5 +36,3 @@ properly engineered alternatives include
 
 As I have said, you should only use these downloads to migrate to a different
 password manager.
-
-Copyright © Chris Seaton 2012

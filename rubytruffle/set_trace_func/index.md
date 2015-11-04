@@ -1,6 +1,12 @@
-# Tracing With Zero Overhead in JRuby+Truffle
-
-15 June 2014
+---
+layout: article
+title: Tracing With Zero Overhead in JRuby+Truffle
+author: Chris Seaton
+date: 15 June 2014
+image: trace.png
+image_alt: Tracing
+copyright: Copyright © Chris Seaton 2014
+---
 
 ## `set_trace_func`
 
@@ -8,11 +14,11 @@ The new [Truffle backend in JRuby](https://github.com/jruby/jruby/wiki/Truffle) 
 
 Ruby's core library has a method [`Kernel#set_trace_func`](http://ruby-doc.org/core-2.1.2/Kernel.html#method-i-set_trace_func) that allows you to install a method to be called as the interpreter traces through your program. It's called on every source code line, every time you call or return from a method, and on some other events. The method is passed some information about the program state, including a [`Binding`](http://ruby-doc.org/core-2.1.2/Binding.html) object - an object like a hash that holds all the local variables in scope at the point the method was called.
 
-```ruby
+{% highlight ruby %}
 set_trace_func proc { |event, file, line, id, binding, classname|
   puts binding.local_variable_get[:x]
 }
-```
+{% endhighlight %}
 
 It's not hard to understand why this is often a very expensive feature to implement. Every single source code line gains an extra method call, and we have to construct an object with a copy of all the local variables in scope, both locally and lexically, on each line to pass to the call. Charles Nutter identified `set_trace_func` as one of the [features in Ruby you should implement before making any claims about how fast your Ruby is](http://blog.headius.com/2012/10/so-you-want-to-optimize-ruby.html), so we made sure we tackled it in the first few months of development of the Truffle backend.
 
@@ -38,26 +44,25 @@ By this stage you may have realised that what we really have is a general mechan
 
 When `set_trace_func` is used, a method is installed on every line of the source program. If we modify it so that you can specify which line to install it on, we can build a line breakpoint. It could look something like this:
 
-```ruby
+{% highlight ruby %}
 set_trace_func_on_file_line file, line, proc { |event, file, line, id, binding, classname|
   Debug.break
 }
-```
+{% endhighlight %}
 
 We can then make that into a conditional breakpoint, such as one that breaks if `x > 14`:
 
-```ruby
+{% highlight ruby %}
 set_trace_func_on_file_line file, line, proc { |event, file, line, id, binding, classname|
   Debug.break if binding.local_variable_get(:x) > 14
 }
-```
+{% endhighlight %}
 
 The body of the breakpoint will be inlined in the same way as a normal `set_trace_func` method is, so although it looks like we're doing a really expensive allocation of a `Binding`, it's actually all in the same compilation unit, and through partial evaluation it becomes just a normal access to the local variable. It's the same as if you were to manually write the breakpoint in the source code. However you can install these breakpoints in optimised code that is already running, and they will run as fast as before.
 
 ## How Fast Is It?
 
 We compared the performance of `set_trace_func` across different implementations of Ruby. We looked at the overhead of enabling `set_trace_func`, and of actually using it, by looking at how many times slower a simple benchmark ran under these conditions. This data is just a simple summary - we'll show you where to find all the detail such as our methodology and statistical error later. For MRI and Topaz we had to manually disable `set_trace_func` by modifying the source code, as there isn't a flag for it.
-
 
 |                                    | MRI      | JRuby    | Topaz  | JRuby+Truffle |
 |------------------------------------|----------|----------|--------|---------------|
@@ -88,7 +93,3 @@ Keep in mind this is all on top of the significant performance lead JRuby+Truffl
 A more formal description of how we implemented and evaluated `set_trace_func` and our prototype debugger was the subject of the paper [Debugging at Full Speed](http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf) by [Chris Seaton](http://www.chrisseaton.com/), [Michael Van de Vanter](http://vandevanter.net/mlvdv/) and [Michael Haupt](https://labs.oracle.com/pls/apex/f?p=labs:bio:0:44), all of Oracle Labs, presented at the 2014 Workshop on Dynamic Languages and Applications in Edinburgh. The paper includes a full evaluation and a link to the experimental harness we built so you can reproduce the results.
 
 If you'd like to know any more, please get in touch!
-
-Copyright © Chris Seaton 2014
-
-Opinions are my own.

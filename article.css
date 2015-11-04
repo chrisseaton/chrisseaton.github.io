@@ -38,15 +38,10 @@ code {
     font-family: Inconsolata, monospace;
 }
 
-pre {
-    border-radius: 5px;
-
+.highlight {
     margin: 3em;
-    padding: 2em;
 
-    background-color: #022029;
-    color: #ffffff;
-    font-size: 95%;
+    background-color: #f7f6f4;
 }
 
 /* Table */
@@ -67,6 +62,10 @@ table {
 table caption {
     padding-bottom: 1em;
     font-style: italic;
+}
+
+th, td {
+    padding: 1em;
 }
 
 /* Image */

@@ -1,10 +1,12 @@
-# Deoptimizing Ruby
-
-Chris Seaton
-
-17 November 2014
-
-![DRINK ME](bottle.png)
+---
+layout: article
+title: Deoptimizing Ruby
+author: Chris Seaton
+date: 17 November 2014
+image: bottle.png
+image_alt: DRINK ME
+copyright: Copyright © 2014 Chris Seaton
+---
 
 ## Introduction
 
@@ -78,15 +80,15 @@ That's a lot of big problems making the implementation of Ruby hard, discussed f
 
 In Lewis Carroll's Alice in Wonderland, Alice finds herself chasing a white rabbit down a rabbit hole and into a room where he has disappeared through a tiny door. Alice peers through the door and can see a beautiful garden on the other side with bright flowers and cool fountains, but she's far too large to fit through.
 
-![The little door](door.png)
+![The little door](door.png){: .center-image }
 
 By chance Alice finds that on a table in the room is a bottle labelled *DRINK ME*. She is drinks the medicine and she shuts up like a telescope and is now the right size to fit through the door.
 
-![DRINK ME](bottle.png)
+![DRINK ME](bottle.png){: .center-image }
 
 But she finds there's a problem! The door needs a key and she's left it on the table where the found the bottle, now several storeys above her. Again with luck she finds a tiny little cake beside her labelled *EAT ME*. She braves trying the cake and grows huge enough to reach the key again so she can unlock the door.
 
-![EAT ME](big.png)
+![EAT ME](big.png){: .center-image }
 
 We can use this as an analogy for what we're trying to achieve with deoptimization. Ruby is Alice and she can see through the door to the beautiful garden of high performance language implementations, but she's far too large - and Ruby is far too complicated - to fit through the door.
 
@@ -114,7 +116,7 @@ The problem we can address with deoptimization is what to do when the check, how
 
 Consider this pseudo-code version of some generated machine code for the simple operation `a + b + c`. We'll say that the compiler has already determined that all the variables are `Fixnum` going into this code, but it can't work out if the operations will overflow or not.
 
-```ruby
+{% highlight ruby %}
 t1 = Fixnum(a) + Fixnum(b)
 if t1.overflowed?
   t1 = Bignum(a) + Bignum(b)
@@ -125,24 +127,24 @@ else
     t2 = Bignum(t1) + Bignum(c)
   end
 end
-```
+{% endhighlight %}
 
 The code to handle the overflows quickly mounts up, and we either have to make the subsequent code generic to handle either `Fixnum` of `Bignum`, even if we knew that `a` and `b` are always `Fixnum`, or we have to copy the code for the different types on each code path, as we've done here. It gets worse from there - all the code in the method now has to be ready to handle `t1` and `t2` that may be either `Fixnum` or `Bignum`, even if this has never actually happened yet.
 
 Using deoptimization we can *cut off* the code paths that we think are unlikely to be used. Instead of jumping on overflow to code that handles the overflow case, we deoptimize, and we don't emit any more code on that path from that point on. The code then looks like this:
 
-```ruby
+{% highlight ruby %}
 t1 = Fixnum(a) + Fixnum(b)
 deoptimize! if t1.overflowed?
 t2 = Fixnum(t1) + Fixnum(c)
 deoptimize! if t2.overflowed?
-```
+{% endhighlight %}
 
 Now the code is significantly simpler and more compact, with fewer branches, and we haven't had to refer to `Bignum` at all. If we deoptimize we continue in code that looks similar to the first example.
 
 What about an operation that always overflows? If that's a normal part of your application you don't want the cost of deoptimization every time. In that case we deoptimize the first time it happens, and then the next time we recompile we explicitly handle the one particular operation that overflowed - but only that one. If the first `+` overflowed the code would then look like this:
 
-```ruby
+{% highlight ruby %}
 t1 = Fixnum(a) + Fixnum(b)
 if t1.overflowed?
   t1 = Bignum(a) + Bignum(b)
@@ -151,7 +153,7 @@ else
   t2 = Fixnum(t1) + Fixnum(c)
   deoptimize! if t2.overflowed?
 end
-```
+{% endhighlight %}
 
 That now handles overflow on the first operation, but still deoptimizes on the second, and so is still more compact than the general case. JRuby+Truffle handles this through a form of [AST specialization](http://lafo.ssw.uni-linz.ac.at/papers/2012_DLS_SelfOptimizingASTInterpreters.pdf) in the interpreter.
 

@@ -5,7 +5,7 @@ author: Chris Seaton
 date: 15 June 2014
 image: trace.png
 image_alt: Tracing
-copyright: Copyright © Chris Seaton 2014
+copyright: Copyright © 2014 Chris Seaton
 ---
 
 ## `set_trace_func`

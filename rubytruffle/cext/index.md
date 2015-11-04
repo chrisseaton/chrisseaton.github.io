@@ -1,10 +1,12 @@
-# Very High Performance C Extensions For JRuby+Truffle
-
-![Truffle and C](tree.png)
-
-Matthias Grimmer and Chris Seaton
-
-25 September 2014
+---
+layout: article
+title: Very High Performance C Extensions For JRuby+Truffle
+author: Matthias Grimmer and Chris Seaton
+date: 25 September 2014
+image: tree.png
+image_alt: Truffle and C
+copyright: Copyright © 2014 Matthias Grimmer and Chris Seaton
+---
 
 C extensions are a big part of the Ruby ecosystem.
 They allow people to write Ruby programs to include C code for a variety of purposes.

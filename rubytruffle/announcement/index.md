@@ -1,6 +1,12 @@
-# A Truffle/Graal High Performance Backend for JRuby
-
-6 January 2014
+---
+layout: article
+title: A Truffle/Graal High Performance Backend for JRuby
+author: Chris Seaton
+date: 6 January 2014
+image: ../jruby.png
+image_alt: The JRuby logo is copyright (c) Tony Price 2011, licensed under the terms of Creative Commons Attribution-NoDerivs 3.0 Unported (CC BY-ND 3.0)
+copyright: Copyright © 2014 Chris Seaton
+---
 
 For the past year [Oracle Labs](https://labs.oracle.com) have been working on an implementation of Ruby built upon two new JVM technologies - [the Truffle AST interpreter framework and the Graal JVM compiler](http://openjdk.java.net/projects/graal/). We believe that the new approach will lead to a faster and simpler Ruby implementation.
 
@@ -31,7 +37,3 @@ We believe that in the further future the Truffle backend could be good enough t
 ## What are we going to do next?
 
 We are going to continue to integrate Truffle into JRuby at the same time as continuing to implement more of the Ruby language. We already have very encouraging results with our initial implementation and with the excellent work already done by the JRuby community we think we can fill in the gaps to be a complete implementation.
-
-Copyright © Chris Seaton 2014
-
-Opinions are my own.

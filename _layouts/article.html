@@ -31,7 +31,10 @@
 <header>
 <h1 class="article-smaller">{{ page.title }}</h1>
 <h2><a href="/">{{ page.author }}</a>, {{ page.date }}</h2>
+
+{% if page.image != null %}
 <img src="{{ page.image }}" style="max-width: 50%;" alt="{{ page.image_alt }}">
+{% endif %}
 </header>
 
 {{ content }}
@@ -43,6 +46,7 @@
   <li><a href="../cext/">Very High Performance C Extensions For JRuby+Truffle</a></li>
   <li><a href="../small-data-structures/">Optimising Small Data Structures in JRuby+Truffle</a></li>
   <li><a href="../pushing-pixels/">Pushing Pixels with JRuby+Truffle</a></li>
+  <li><a href="../set_trace_func/">Tracing With Zero Overhead in JRuby+Truffle</a></li>
   <li><a href="../how-method-dispatch-works-in-jruby-truffle/">How Method Dispatch Works in JRuby+Truffle</a></li>
   <li><a href="../announcement/">A Truffle/Graal High Performance Backend for JRuby</a></li>
   <li><a href="../..">Chris Seaton's website</a></li>

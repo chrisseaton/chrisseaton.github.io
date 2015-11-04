@@ -1,24 +1,30 @@
-# How Method Dispatch Works in JRuby+Truffle
-
-11 March 2014
+---
+layout: article
+title: How Method Dispatch Works in JRuby+Truffle
+author: Chris Seaton
+date: 11 March 2014
+copyright: Copyright © 2014 Chris Seaton
+image: tree.png
+image_alt: AST
+---
 
 ## Method Calls in Ruby
 
 Method calls are a very important part of any implementation of the Ruby programming language. Unlike a language like Java, Python or JavaScript, all properties, operators and many control structures in Ruby are actually method calls. When you write `x + y`, Ruby interprets that as `x.+(y)`, that is, a call to a method named `+`. When you write `x.y = z`, Ruby interprets that as `x.y=(z)`, that is, a call to a method named `y=`. Also, when you write:
 
-```ruby
+{% highlight ruby %}
 for x in y
   puts x
 end
-```
+{% endhighlight %}
 
 Ruby will interpret this as:
 
-```ruby
+{% highlight ruby %}
 y.each do |x|
   puts x
 end
-```
+{% endhighlight %}
 
 That is, a call to a method named `each`.
 
@@ -30,8 +36,10 @@ You won't need any deep technical understanding of JRuby, Java, the JVM or Truff
 
 If you want to try out the practical examples, you'll need to install a development version of JRuby 9000 and the Graal VM. If you are on Linux or Mac and use rbenv with the latest ruby-build this is easy:
 
-    rbenv install jruby-9000+graal-dev
-    rbenv shell jruby-9000+graal-dev
+{% highlight bash %}
+rbenv install jruby-9000+graal-dev
+rbenv shell jruby-9000+graal-dev
+{% endhighlight %}
 
 If you aren't using those tools, follow the instructions on the [JRuby Truffle wiki page](https://github.com/jruby/jruby/wiki/Truffle) to get started.
 
@@ -59,23 +67,23 @@ Ruby is a very dynamic language - methods can be added, removed or redefined at 
 
 MRI does this by storing a version number for each class. When the cache is set we store the version number. To invalidate the cache we increase the version number. Each time MRI reads the cache it checks the version is unchanged. This is the cache check ([source on GitHub](https://github.com/ruby/ruby/blob/e9328e699f/vm_insnhelper.c#L828)):
 
-```c
+{% highlight c %}
   if (LIKELY(GET_GLOBAL_METHOD_STATE() == ci->method_state && RCLASS_SERIAL(klass) == ci->class_serial)) {
 /* cache hit! */
 return;
   }
-```
+{% endhighlight %}
 
 And the invalidation ([source on GitHub](https://github.com/ruby/ruby/blob/e9328e699f/vm_method.c#L59)), which just sets a new version number:
 
-```c
+{% highlight c %}
 static void
 rb_class_clear_method_cache(VALUE klass)
 {
     RCLASS_SERIAL(klass) = rb_next_class_serial();
     rb_class_foreach_subclass(klass, rb_class_clear_method_cache);
 }
-```
+{% endhighlight %}
 
 ## Method Dispatch in JRuby+Truffle
 
@@ -87,7 +95,7 @@ When your Ruby is read by JRuby+Truffle we create a `RubyCallNode` for each call
 
 This is code for a single `CachedDispatchNode` ([GitHub source](https://github.com/jruby/jruby/blob/07d4fa828b92c511ae45f1705929955cd2b15dfe/core/src/main/java/org/jruby/truffle/nodes/call/CachedBoxedDispatchNode.java)):
 
-```java
+{% highlight java %}
 public Object dispatch(VirtualFrame frame,
         RubyBasicObject receiverObject,
         RubyProc blockObject,
@@ -114,7 +122,7 @@ public Object dispatch(VirtualFrame frame,
     return method.call(frame.pack(), receiverObject,
       blockObject, argumentsObjects);
 }
-```
+{% endhighlight %}
 
 We've already executed the receiver, the block and the arguments. This `CachedDispatchNode` then just checks that this is the class we were expecting (we talk about `LookupNode` rather than class to support the complex Ruby object model). If it wasn't what we expected it tries the next entry in the cache - the next `DispatchNode` in the chain.
 
@@ -128,51 +136,57 @@ There's a special `DispatchNode` called `UninitializedDispatchNode` that is alwa
 
 Take some simple code like adding two `Fixnum` objects together: `a + b`. That's syntactic sugar for a method call: `a.+(b)`. When it leaves the parser the `RubyCallNode` in that code will look like this:
 
-    RubyCallNode
-        name: "+"
-        receiver: local variable a
-        arguments: [ local variable b ]
-        block: nil
-        dispatch:
-            UninitializedDispatchNode
+{% highlight text %}
+RubyCallNode
+    name: "+"
+    receiver: local variable a
+    arguments: [ local variable b ]
+    block: nil
+    dispatch:
+        UninitializedDispatchNode
+{% endhighlight %}
 
 The first time this code runs we'll go straight to the `UninitializedDispatchNode`. That will do full method lookup. We'll find that the method we want is `Fixnum#+`. The uninitialized node will replace itself with a new dispatch node that remembers that when the receiver is a `Fixnum`, the method we want to call is `Fixnum#+`. The `UninitializedDispatchNode` will follow that new node in the chain, ready to handle different classes.
 
 The code will now look like this:
 
-    RubyCallNode
-        name: "+"
-        receiver: local variable a
-        arguments: [ local variable b ]
-        block: nil
-        dispatch:
-            CachedDispatchNode
-                class: Fixnum
-                method: Fixnum#+
-                next:
-                  UninitializedDispatchNode
+{% highlight text %}
+RubyCallNode
+    name: "+"
+    receiver: local variable a
+    arguments: [ local variable b ]
+    block: nil
+    dispatch:
+        CachedDispatchNode
+            class: Fixnum
+            method: Fixnum#+
+            next:
+              UninitializedDispatchNode
+{% endhighlight %}
 
 If we called the same code with two `Float` objects, we'd add a new node to the chain, and then we'd have two cache entries able to handle both cases:
 
-    RubyCallNode
-        name: "+"
-        receiver: local variable a
-        arguments: [ local variable b ]
-        block: nil
-        dispatch:
-            CachedDispatchNode
-                class: Fixnum
-                method: Fixnum#+
-                next:
-                    CachedDispatchNode
-                        class: Float
-                        method: Float#+
-                        next:
-                          UninitializedDispatchNode  
+{% highlight text %}
+RubyCallNode
+    name: "+"
+    receiver: local variable a
+    arguments: [ local variable b ]
+    block: nil
+    dispatch:
+        CachedDispatchNode
+            class: Fixnum
+            method: Fixnum#+
+            next:
+                CachedDispatchNode
+                    class: Float
+                    method: Float#+
+                    next:
+                      UninitializedDispatchNode  
+{% endhighlight %}
 
 There are some other details to handle corner cases. If the dispatch chain gets too long because it's seen too many classes we replace the whole thing with a node that does lookup every time it's called. We also handle primitive Java classes such as `Integer` and `Double` slightly differently than we do full Ruby objects like `Hash`. Finally we have code to handle `#method_missing`. I've ignored these fine details for simplicity. I've also slightly simplified these code trees from the real structures we use. To get the reality you can use this program:
 
-```ruby
+{% highlight ruby %}
 def add(a, b)
   a + b
 end
@@ -181,11 +195,13 @@ loop do
   add(14, 2)
   add(14.5, 2.25)
 end
-```
+{% endhighlight %}
 
 And run it with these options:
 
-    ruby -X+T -J-G:+TraceTruffleExpansion test.rb
+{% highlight bash %}
+ruby -X+T -J-G:+TraceTruffleExpansion test.rb
+{% endhighlight %}
 
 `TraceTruffleExpansion` means to list all the Java methods involved in interpreting the Ruby method.
 
@@ -205,7 +221,7 @@ The first thing to know about Truffle is that it generates a single machine code
 
 Lets take a look at the assembly generated for a real Ruby method.
 
-```ruby
+{% highlight ruby %}
 def add_and_subtract(a, b, c)
     a + b - c
 end
@@ -213,17 +229,19 @@ end
 loop do
     add_and_subtract(14, 12, 2)
 end
-```
+{% endhighlight %}
 
 We run the method in a loop so that the JIT will be run. We're not doing anything with the result, but like all Ruby interpreters, we're not quite strong enough yet to completely elide the computation - Ruby has complicated side effect semantics, so this is non-trivial.
 
 We'll run this using the Truffle backend, and we'll ask the JVM to print out machine code as it's generated. `UnlockDiagnosticVMOptions` turns on some special JVM options that are normally hidden to avoid confusion. `CompileCommand=print` turns on printing machine code, and `executeHelper` refers to an internal method in Graal that is always the starting point of compilation.
 
-    ruby -X+T -J-XX:+UnlockDiagnosticVMOptions -J-XX:CompileCommand=print,*::executeHelper test.rb
+{% highlight bash %}
+ruby -X+T -J-XX:+UnlockDiagnosticVMOptions -J-XX:CompileCommand=print,*::executeHelper test.rb
+{% endhighlight %}
 
 The output from this command is complicated, as it also involves boxing at the start and unboxing at the end, but I'll just point out what's happened to the `a + b - c`. If you dig through the machine code you'll see something like this somewhere in the middle (the addresses will be different of course):
 
-```gnuassembler
+{% highlight gas %}
 0x000000010f620102: add    %esi,%eax
 0x000000010f620104: jo     0x000000010f620208
 0x000000010f62010a: mov    0xc(%rbx),%esi
@@ -233,7 +251,7 @@ The output from this command is complicated, as it also involves boxing at the s
 0x000000010f620118: jl     0x000000010f62015b
 0x000000010f62011e: cmp    $0x7f,%eax
 0x000000010f620121: jg     0x000000010f62015b
-```
+{% endhighlight %}
 
 If you don't know x86_64 machine code, just look at the instruction names. There's an `add` and a `sub` instruction, which directly correspond to the `+` and `-` operations that we wrote. These instructions were in the methods `Fixnum#+` and `Fixnum#-`, but because they're so simple we've decided to inline them at the point where they're called. `add` and `sub` instructions work on 32 bit integers, so we've also detected that we've only called this method with `Fixnum` types and specialised for just that case. After each of the instructions there's a `jo` instruction. That stands for *jump if overflowed* (jump is like `goto`). This is because if a result can't fit in a `Fixnum`, Ruby will automatically convert to a `Bignum` for you. The code that actually handles that is somewhere else that we jump to, because it rarely happens. Following the `add` and `sub` we have `cmp` (compare) and `jl` and `jg` (jump if less, and jump if greater). This checks if the value fits into a `Fixnum`, which is actually slightly smaller than a 32 bit integer, so we need to do a check as well as handling the overflow.
 
@@ -243,14 +261,18 @@ The result is that we've produced machine code that looks like code that I would
 
 If you're interested, you also can compare the code we generate against the JRuby `invokedynamic` backend, using the command:
 
-    ruby -J-XX:+UnlockDiagnosticVMOptions -J-XX:+PrintAssembly test.rb
+{% highlight bash %}
+ruby -J-XX:+UnlockDiagnosticVMOptions -J-XX:+PrintAssembly test.rb
+{% endhighlight %}
 
 Look for the method `test.method__0$RUBY$add_and_subtract`. You can find the `add` and `sub` instructions, but you'll find they're about 40 instructions apart. The instructions between deal with boxing and bookkeeping of the `invokedynamic` system.
 
 We can also look at what Rubinius produces, using the command:
 
-    rbenv shell rbx-2.2.2
-    ruby -Xjit.dump_code=4 test.rb
+{% highlight bash %}
+rbenv shell rbx-2.2.2
+ruby -Xjit.dump_code=4 test.rb
+{% endhighlight %}
 
 Look for the method `_X_Object#add_and_subtract`. Again we'll find `add` and `sub`, and in this case they're a lot closer together. Around them is code for handling tagging - that is, packing a `Fixnum` value into a pointer.
 
@@ -266,7 +288,7 @@ So instead of actively checking that a cache is still valid, we stop machine cod
 
 Deoptimization is an incredibly complicated technique, so I won't try to explain it in depth here, but Truffle simplifies using it down to a method `Assumption.invalidate`. You can see the invalidation being triggered being used here ([source on GitHub](https://github.com/jruby/jruby/blob/07d4fa8/core/src/main/java/org/jruby/truffle/runtime/core/RubyModule.java#L318)):
 
-```java
+{% highlight java %}
 public void newVersion() {
     unmodifiedAssumption.invalidate();
 
@@ -276,7 +298,7 @@ public void newVersion() {
         dependent.newVersion();
     }
 }
-```
+{% endhighlight %}
 
 Going back to the machine code we showed, those `jo` instructions which deal with uncommon cases like overflow also cause deoptimization. In general our approach to things which rarely happen is to not compile them, and to deoptimize if we actually encounter them.
 
@@ -287,7 +309,3 @@ Looking at the simple example of `add_and_subtract` and following it all the way
 There's a lot of work going on behind the scenes in Truffle, Graal and the JVM to enable the techniques we've discussed, but the interfaces that Truffle provides makes using them easy. For example, the `Assumption` object has only two methods that you need to understand - `check` and `invalidate`, and that provides access to one of the most powerful techniques in the JVM, deoptimization.
 
 If you want to get involved in Truffle development in JRuby, or want to know more about what we've talked about, feel free to get in touch with me.
-
-Copyright © Chris Seaton 2014
-
-Opinions are my own.

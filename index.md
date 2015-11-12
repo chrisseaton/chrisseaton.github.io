@@ -352,7 +352,7 @@ in the UK regulated and CE marked as a medical device.</p>
         Maintainer of <a href="http://rubybib.org/">The Ruby Bibliography</a>
     </li>
     <li>
-        Dynamic Languages Symposium (DLS) program committee member, 2014
+        Dynamic Languages Symposium (DLS) program committee member, 2016, 2014
     </li>
 </ul>
 

@@ -196,7 +196,7 @@ in the UK regulated and CE marked as a medical device.</p>
     </li>
 
     <li>
-        M. Grimmer, R. Schatz, C. Seaton, T. Würthinger, H. Mössenböck. <strong><a href="plas15/safec.pdf">Memory-safe Execution of C on a Java VM</a></strong>. In Proceedings of the 10th Workshop on Programming Languages and Analysis for Security (PLAS).<br>
+        M. Grimmer, R. Schatz, C. Seaton, T. Würthinger, H. Mössenböck. <strong><a href="plas15/safec.pdf">Memory-safe Execution of C on a Java VM</a></strong>. In Proceedings of the 10th Workshop on Programming Languages and Analysis for Security (PLAS), 2015.<br>
         <span class="smaller">
             <a href="plas15/safec.pdf">PDF</a>
         </span>

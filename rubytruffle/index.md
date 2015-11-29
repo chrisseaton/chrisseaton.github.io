@@ -46,15 +46,15 @@ views expressed are my own and not those of Oracle.
 
 # Research Papers and Thesis
 
-*    C. Seaton. <strong><a href="phd">Specialising Dynamic Techniques for Implementing the Ruby Programming Langauge</a></strong>. PhD thesis, University of Manchester, 2015.<br>
+*    C. Seaton. [Specialising Dynamic Techniques for Implementing the Ruby Programming Langauge](phd). PhD thesis, University of Manchester, 2015.<br>
         <span class="smaller">
             <a href="../phd">Abstract</a>,
             <a href="../phd/specialising-ruby.pdf">PDF</a>
         </span>
 
-*    M. Grimmer, C. Seaton, R. Schatz, T. Würthinger, H. Mössenböck. **High-Performance Cross-Language Interoperability in a Multi-Language Runtime**. In Proceedings of 11th Dynamic Languages Symposium (DLS).<br>
+*    M. Grimmer, C. Seaton, R. Schatz, T. Würthinger, H. Mössenböck. [High-Performance Cross-Language Interoperability in a Multi-Language Runtime](dls15-interop/dls15-interop.pdf). In Proceedings of 11th Dynamic Languages Symposium (DLS).<br>
         <span class="smaller">
-            (to appear - ask me for a pre-print)
+            <a href=".dls15-interop/dls15-interop.pdf">PDF</a>
         </span>
 
 *    F. Niephaus, M. Springer, T. Felgentreff, T. Pape, R. Hirschfeld. [Call-target-specific Method Arguments](https://github.com/HPI-SWA-Lab/TargetSpecific-ICOOOLPS/raw/gh-pages/call_target_specific_method_arguments.pdf). In Proceedings of the 10th Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS), 2015.<br>
@@ -91,6 +91,10 @@ views expressed are my own and not those of Oracle.
 ----
 
 # Videos of Talks and Slide Decks
+
+*   Chris Seaton. [Guilt Free Ruby on the JVM](javaone15/guilt-free-ruby-on-the-jvm.pdf). At JavaOne 2015. [Slides](javaone15/guilt-free-ruby-on-the-jvm.pdf).
+
+*   Chris Seaton and Benoit Daloze. [A Tour Through a New Ruby Implementation](fosdem15/truffle-tour.pdf). At FOSDEM 2015. [Slides](fosdem15/truffle-tour.pdf).
 
 *   Chris Seaton. [Deoptimizing Ruby](). At RubyConf 2014. [Video](http://confreaks.tv/videos/rubyconf2014-deoptimizing-ruby), [slides](deoptimizing/deoptimizing-ruby.pdf) and [blogpost](deoptimizing/).
 

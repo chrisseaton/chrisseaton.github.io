@@ -182,9 +182,9 @@ in the UK regulated and CE marked as a medical device.</p>
 
 <ul class="publications">
     <li>
-        M. Grimmer, C. Seaton, R. Schatz, T. Würthinger, H. Mössenböck. <strong>High-Performance Cross-Language Interoperability in a Multi-Language Runtime</strong>. In Proceedings of 11th Dynamic Languages Symposium (DLS).<br>
+        M. Grimmer, C. Seaton, R. Schatz, T. Würthinger, H. Mössenböck. <strong><a href="rubytruffle/dls15-interop/dls15-interop.pdf">High-Performance Cross-Language Interoperability in a Multi-Language Runtime</a></strong>. In Proceedings of 11th Dynamic Languages Symposium (DLS).<br>
         <span class="smaller">
-            (to appear - ask me for a pre-print)
+            <a href="rubytruffle/dls15-interop/dls15-interop.pdf">PDF</a>
         </span>
     </li>
 
@@ -293,6 +293,19 @@ in the UK regulated and CE marked as a medical device.</p>
 <h3>Presentations</h3>
 
 <ul class="publications">
+    <li>
+        Chris Seaton. <strong><a href="rubytruffle/javaone15/guilt-free-ruby-on-the-jvm.pdf">Guilt Free Ruby on the JVM</a></strong>. At JavaOne. 2015.<br>
+        <span class="smaller">
+            <a href="rubytruffle/javaone15/guilt-free-ruby-on-the-jvm.pdf">Slides</a>
+        </span>
+    </li>
+    <li>
+        Chris Seaton. <strong><a href="rubytruffle/fosdem15/truffle-tour.pdf">A Tour Through a New Ruby Implementation</a></strong>. At FOSDEM. 2015.<br>
+        <span class="smaller">
+            <a href="rubytruffle/fosdem15/truffle-tour.pdf">Slides</a>
+        </span>
+    </li>
+
     <li>
         Chris Seaton. <strong><a href="rubytruffle/deoptimizing">Deoptimizing Ruby</a></strong>. At RubyConf. 2014.<br>
         <span class="smaller">

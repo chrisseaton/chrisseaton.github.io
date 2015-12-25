@@ -14,8 +14,6 @@ People who write Ruby programs want to use metaprogramming. It's part of what ma
 
 The techniques had a very significant impact on synthetic benchmarks and real-world code, often achieving a full order of magnitude or more performance increase over existing state-of-the-art implementations of Ruby.
 
-As far as I am aware, this is the first and only doctoral thesis written focused on the Ruby programming language.
-
 # Formal Abstract
 
 The Ruby programming language is dynamically typed, uses dynamic and late bound dispatch for all operators, method calls and many control structures, and provides extensive metaprogramming and introspective tooling functionality.

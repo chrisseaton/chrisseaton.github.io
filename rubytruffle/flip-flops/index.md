@@ -254,3 +254,5 @@ Using a flip-flop is 24% slower in MRI than using local variables directly, whic
 I tried to benchmark `topaz` but I was unable to get it to run `benchmark-ips`, even with a few fixes.
 
 Kevin Menard reviewed a draft and suggested I look at uses of `unless` flip-flops. The [flip-flop schematic](https://commons.wikimedia.org/wiki/File:RS_Flip-flop_(NOR).svg) is by [inductiveload](https://commons.wikimedia.org/wiki/User:Inductiveload) and is in the public domain.
+
+{% include jrubytrufflelinks.html %}

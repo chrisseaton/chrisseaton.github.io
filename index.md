@@ -272,7 +272,13 @@ in the UK regulated and CE marked as a medical device.</p>
 
 <ul class="publications">
     <li>
-        Chris Seaton. <strong>Implementing Ruby Using Truffle and Graal</strong>. At the European Conference on Object Oriented Programming (ECOOP) Summer School. 2014.<br>
+        Chris Seaton. <strong><a href="rubytruffle/vmss16/vmss16-ruby.pdf">JRuby+Truffle: Why it's important to optimise the tricky parts</a></strong>. At the Virtual Machines Summer School (VMSS). 2016.<br>
+        <span class="smaller">
+            <a href="rubytruffle/vmss16/vmss16-ruby.pdf">Slides</a>
+        </span>
+    </li>
+    <li>
+        Chris Seaton. <strong><a href="rubytruffle/ecoop14/ecoop14-ruby-truffle.pdf">Implementing Ruby Using Truffle and Graal</a></strong>. At the European Conference on Object Oriented Programming (ECOOP) Summer School. 2014.<br>
         <span class="smaller">
             <a href="rubytruffle/ecoop14/ecoop14-ruby-truffle.pdf">Slides</a>
         </span>
@@ -290,7 +296,7 @@ in the UK regulated and CE marked as a medical device.</p>
     </li>
 </ul>
 
-<h3>Presentations</h3>
+<h3>Other Presentations</h3>
 
 <ul class="publications">
     <li>

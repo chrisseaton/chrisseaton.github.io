@@ -1,7 +1,7 @@
 ---
 layout: section
 title: JRuby+Truffle
-copyright: Copyright © 2015 Chris Seaton
+copyright: Copyright © 2016 Chris Seaton
 ---
 
 <p style="text-align: center">
@@ -118,6 +118,6 @@ The RubyTruffle source code is available as an optional backend in the JRuby
 repository. Initially it was available in the OpenJDK Graal Repository, but it's
 since been removed to focus on JRuby.
 
-*   [JRuby+Truffle code](https://github.com/jruby/jruby/tree/master/truffle/src/main/java/org/jruby/truffle)
+*   [JRuby+sTruffle code](https://github.com/jruby/jruby/tree/master/truffle/src/main/java/org/jruby/truffle)
 
 *   [Graal and Truffle code](https://github.com/graalvm)

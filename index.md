@@ -274,7 +274,8 @@ in the UK regulated and CE marked as a medical device.</p>
     <li>
         Chris Seaton. <strong><a href="rubytruffle/vmss16/vmss16-ruby.pdf">JRuby+Truffle: Why it's important to optimise the tricky parts</a></strong>. At the Virtual Machines Summer School (VMSS). 2016.<br>
         <span class="smaller">
-            <a href="rubytruffle/vmss16/vmss16-ruby.pdf">Slides</a>
+            <a href="rubytruffle/vmss16/vmss16-ruby.pdf">Slides</a> and
+            <a href="https://www.youtube.com/watch?v=b1NTaVQPt1E">video</a>
         </span>
     </li>
     <li>

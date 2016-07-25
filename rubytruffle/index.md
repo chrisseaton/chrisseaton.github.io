@@ -94,7 +94,7 @@ views expressed are my own and not those of Oracle.
 
 # Videos of Talks and Slide Decks
 
-*   Chris Seaton. [JRuby+Truffle: Why it's important to optimise the tricky parts](javaone15/guilt-free-ruby-on-the-jvm.pdf). Virtual Machines Summer School (VMSS) 2016. [Slides](vmss16/vmss16-ruby.pdf).
+*   Chris Seaton. [JRuby+Truffle: Why it's important to optimise the tricky parts](javaone15/guilt-free-ruby-on-the-jvm.pdf). Virtual Machines Summer School (VMSS) 2016. [Slides](vmss16/vmss16-ruby.pdf) and [video](https://www.youtube.com/watch?v=b1NTaVQPt1E).
 
 *   Chris Seaton. [Guilt Free Ruby on the JVM](javaone15/guilt-free-ruby-on-the-jvm.pdf). At JavaOne 2015. [Slides](javaone15/guilt-free-ruby-on-the-jvm.pdf).
 

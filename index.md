@@ -272,6 +272,12 @@ in the UK regulated and CE marked as a medical device.</p>
 
 <ul class="publications">
     <li>
+        Chris Seaton. <strong><a href="rubytruffle/metass16/metass.pdf">Self-Specialising Interpreters and Partial Evaluation</a></strong>. At the Metaprogramming Summer School. 2016.<br>
+        <span class="smaller">
+            <a href="rubytruffle/metass16/metass.pdf">Slides</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="rubytruffle/vmss16/vmss16-ruby.pdf">JRuby+Truffle: Why it's important to optimise the tricky parts</a></strong>. At the Virtual Machines Summer School (VMSS). 2016.<br>
         <span class="smaller">
             <a href="rubytruffle/vmss16/vmss16-ruby.pdf">Slides</a>,

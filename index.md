@@ -307,6 +307,13 @@ in the UK regulated and CE marked as a medical device.</p>
 
 <ul class="publications">
     <li>
+        Chris Seaton. <strong><a href="rubytruffle/llvm-cauldron-16/llvm-cauldron-sulong.pdf">Using LLVM and Sulong for Language C Extensions</a></strong>. At the LLVM Cauldron. 2016.<br>
+        <span class="smaller">
+            <a href="https://www.youtube.com/watch?v=bJzMfYX6n9A">Video</a>,
+            <a href="rubytruffle/llvm-cauldron-16/llvm-cauldron-sulong.pdf">Slides</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="rubytruffle/javaone15/guilt-free-ruby-on-the-jvm.pdf">Guilt Free Ruby on the JVM</a></strong>. At JavaOne. 2015.<br>
         <span class="smaller">
             <a href="rubytruffle/javaone15/guilt-free-ruby-on-the-jvm.pdf">Slides</a>

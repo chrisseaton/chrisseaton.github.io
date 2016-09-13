@@ -181,8 +181,16 @@ in the UK regulated and CE marked as a medical device.</p>
 <h3>Research Papers</h3>
 
 <ul class="publications">
+
     <li>
-        M. Grimmer, C. Seaton, R. Schatz, T. Würthinger, H. Mössenböck. <strong><a href="rubytruffle/dls15-interop/dls15-interop.pdf">High-Performance Cross-Language Interoperability in a Multi-Language Runtime</a></strong>. In Proceedings of 11th Dynamic Languages Symposium (DLS).<br>
+        C. Seaton. <strong>AST Specialisation and Partial Evaluation for Easy High-Performance Metaprogramming</strong>. In Proceedings of the 1st Workshop on Meta-Programming Techniques and Reflection (META), 2016.<br>
+        <span class="smaller">
+            Ask me for a pre-print
+        </span>
+    </li>
+
+    <li>
+        M. Grimmer, C. Seaton, R. Schatz, T. Würthinger, H. Mössenböck. <strong><a href="rubytruffle/dls15-interop/dls15-interop.pdf">High-Performance Cross-Language Interoperability in a Multi-Language Runtime</a></strong>. In Proceedings of 11th Dynamic Languages Symposium (DLS), 2015.<br>
         <span class="smaller">
             <a href="rubytruffle/dls15-interop/dls15-interop.pdf">PDF</a>
         </span>

@@ -54,9 +54,14 @@ views expressed are my own and not those of Oracle.
             <a href="../phd/specialising-ruby.pdf">PDF</a>
         </span>
 
-*    M. Grimmer, C. Seaton, R. Schatz, T. Würthinger, H. Mössenböck. [High-Performance Cross-Language Interoperability in a Multi-Language Runtime](dls15-interop/dls15-interop.pdf). In Proceedings of 11th Dynamic Languages Symposium (DLS).<br>
+*    C. Seaton. **AST Specialisation and Partial Evaluation for Easy High-Performance Metaprogramming**. In Proceedings of the 1st Workshop on Meta-Programming Techniques and Reflection (META), 2016.<br>
         <span class="smaller">
-            <a href=".dls15-interop/dls15-interop.pdf">PDF</a>
+            Ask me for a pre-print
+        </span>
+
+*    M. Grimmer, C. Seaton, R. Schatz, T. Würthinger, H. Mössenböck. [High-Performance Cross-Language Interoperability in a Multi-Language Runtime](dls15-interop/dls15-interop.pdf). In Proceedings of 11th Dynamic Languages Symposium (DLS), 2015.<br>
+        <span class="smaller">
+            <a href="dls15-interop/dls15-interop.pdf">PDF</a>
         </span>
 
 *    F. Niephaus, M. Springer, T. Felgentreff, T. Pape, R. Hirschfeld. [Call-target-specific Method Arguments](https://github.com/HPI-SWA-Lab/TargetSpecific-ICOOOLPS/raw/gh-pages/call_target_specific_method_arguments.pdf). In Proceedings of the 10th Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS), 2015.<br>

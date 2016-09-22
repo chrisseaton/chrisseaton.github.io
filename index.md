@@ -183,9 +183,9 @@ in the UK regulated and CE marked as a medical device.</p>
 <ul class="publications">
 
     <li>
-        C. Seaton. <strong>AST Specialisation and Partial Evaluation for Easy High-Performance Metaprogramming</strong>. In Proceedings of the 1st Workshop on Meta-Programming Techniques and Reflection (META), 2016.<br>
+        C. Seaton. <strong><a href="rubytruffle/meta16/meta16-ruby.pdf">AST Specialisation and Partial Evaluation for Easy High-Performance Metaprogramming</a></strong>. In Proceedings of the 1st Workshop on Meta-Programming Techniques and Reflection (META), 2016.<br>
         <span class="smaller">
-            Ask me for a pre-print
+            <a href="rubytruffle/meta16/meta16-ruby.pdf">PDF</a>
         </span>
     </li>
 

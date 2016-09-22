@@ -73,3 +73,7 @@ th, td {
 img {
     max-width: 100%;
 }
+
+p.center-image {
+  text-align: center;
+}

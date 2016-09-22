@@ -82,15 +82,18 @@ That's a lot of big problems making the implementation of Ruby hard, discussed f
 
 In Lewis Carroll's Alice in Wonderland, Alice finds herself chasing a white rabbit down a rabbit hole and into a room where he has disappeared through a tiny door. Alice peers through the door and can see a beautiful garden on the other side with bright flowers and cool fountains, but she's far too large to fit through.
 
-![The little door](door.png){: .center-image }
+{:.center-image}
+![The little door](door.png)
 
 By chance Alice finds that on a table in the room is a bottle labelled *DRINK ME*. She is drinks the medicine and she shuts up like a telescope and is now the right size to fit through the door.
 
-![DRINK ME](bottle.png){: .center-image }
+{:.center-image}
+![DRINK ME](bottle.png)
 
 But she finds there's a problem! The door needs a key and she's left it on the table where the found the bottle, now several storeys above her. Again with luck she finds a tiny little cake beside her labelled *EAT ME*. She braves trying the cake and grows huge enough to reach the key again so she can unlock the door.
 
-![EAT ME](big.png){: .center-image }
+{:.center-image}
+![EAT ME](big.png)
 
 We can use this as an analogy for what we're trying to achieve with deoptimization. Ruby is Alice and she can see through the door to the beautiful garden of high performance language implementations, but she's far too large - and Ruby is far too complicated - to fit through the door.
 

@@ -48,6 +48,11 @@ views expressed are my own and not those of Oracle.
 
 # Research Papers and Thesis
 
+*    B. Daloze, S. Marr, D. Bonetta, H. Mössenböck. [Efficient and Thread-Safe Objects for Dynamically-Typed Languages](http://ssw.jku.at/General/Staff/Daloze/thread-safe-objects.pdf). In Proceedings of the ACM International Conference on Object Oriented Programming Systems Languages and Applications (OOPSLA), 2016.<br>
+      <span class="smaller">
+        <a href="http://ssw.jku.at/General/Staff/Daloze/thread-safe-objects.pdf">PDF</a>
+      </span>
+
 *    C. Seaton. [AST Specialisation and Partial Evaluation for Easy High-Performance Metaprogramming](meta16/meta16-ruby.pdf). In Proceedings of the 1st Workshop on Meta-Programming Techniques and Reflection (META), 2016.<br>
       <span class="smaller">
         <a href="meta16/meta16-ruby.pdf">PDF</a>

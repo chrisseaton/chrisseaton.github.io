@@ -104,7 +104,9 @@ views expressed are my own and not those of Oracle.
 
 # Videos of Talks and Slide Decks
 
-*   Chris Seaton. [Using LLVM and Sulong for Language C Extensions](llvm-cauldron-16/llvm-cauldron-sulong.pdf). LLVM Cauldron 2016. [Slides](llvm-cauldron-16/llvm-cauldron-sulong.pdf) and [video](https://www.youtube.com/watch?v=bJzMfYX6n9A).
+*   Chris Seaton. [Faster Ruby and JavaScript with GraalVM](javaone16/faster-ruby-javascript-graalvm.pdf). At JavaOne. 2016. [Slides](javaone16/faster-ruby-javascript-graalvm.pdf).
+
+*   Chris Seaton. [Using LLVM and Sulong for Language C Extensions](llvm-cauldron-16/llvm-cauldron-sulong.pdf). At the LLVM Cauldron 2016. [Slides](llvm-cauldron-16/llvm-cauldron-sulong.pdf) and [video](https://www.youtube.com/watch?v=bJzMfYX6n9A).
 
 *   Chris Seaton. [JRuby+Truffle: Why it's important to optimise the tricky parts](javaone15/guilt-free-ruby-on-the-jvm.pdf). Virtual Machines Summer School (VMSS) 2016. [Slides](vmss16/vmss16-ruby.pdf) and [video](https://www.youtube.com/watch?v=b1NTaVQPt1E).
 

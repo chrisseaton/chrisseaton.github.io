@@ -70,6 +70,10 @@ under the terms of Creative Commons Attribution-NoDerivs 3.0 Unported (CC BY-ND 
 
 <p><a href="rubytruffle/">JRuby+Truffle</a> started as my internship project at Oracle Labs in early 2013. It is an implementation of the Ruby programming language on the JVM, using the Graal JIT compiler and the Truffle AST interpreter framework. RubyTruffle can achieve peak performance well beyond that possible in JRuby at the same time as being a significantly simpler system. In early 2014 it was open sourced and integrated into JRuby.</p>
 
+<ul class="awards">
+<li><i class="icon-trophy"></i>Nominee, Ruby Prize, 2016</li>
+</ul>
+
 <div class="buttons" style="text-align: right;">
 <a href="rubytruffle/" class="less-significant">Learn more <i class="icon-arrow-right"></i></a>
 </div>

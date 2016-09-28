@@ -11,7 +11,7 @@ under the terms of Creative Commons Attribution-ShareAlike 2.5.)" src="ruby.png"
 under the terms of Creative Commons Attribution-NoDerivs 3.0 Unported (CC BY-ND 3.0))." src="jruby.png" width="96" height="96">
 </p>
 
-JRuby+Truffle started as my internship project at [Oracle
+JRuby+Truffle started as [my](..) internship project at [Oracle
 Labs](http://labs.oracle.com/) in early 2013. It is an implementation of the
 [Ruby](https://www.ruby-lang.org/) programming language on the JVM, using the
 [Graal dynamic compiler and the Truffle AST interpreter

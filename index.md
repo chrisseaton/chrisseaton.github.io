@@ -164,7 +164,8 @@ in the UK regulated and CE marked as a medical device.</p>
         <span class="smaller">
             <a href="phd">Abstract</a>,
             <a href="phd/specialising-ruby.pdf">PDF</a>
-        </span>
+        </span><br>
+        <i class="icon-trophy"></i> Nominee, Ruby Prize
     </li>
 
     <li>

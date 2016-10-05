@@ -100,6 +100,10 @@ different parts of the same program, the same function, or even the same line.
 My research built on contemporary work on parsing expression grammars and
 packrat parsing.</p>
 
+<ul class="awards">
+<li><i class="icon-trophy"></i>Winner, Hele Shaw Prize, 2007</li>
+</ul>
+
 <div class="buttons" style="text-align: right;">
 <a href="katahdin/" class="less-significant">Learn more <i class="icon-arrow-right"></i></a>
 </div>

@@ -401,6 +401,17 @@ in the UK regulated and CE marked as a medical device.</p>
     </li>
 </ul>
 
+<h3>Education</h3>
+
+<ul class="publications">
+    <li>
+        MEng (Bristol 2007), PhD (Manchester 2015) in computer science
+    </li>
+    <li>
+       Stanford Online Machine Learning course (completed with certificate 2016)
+    </li>
+</ul>
+
 <h3>Community</h3>
 
 <ul class="publications">

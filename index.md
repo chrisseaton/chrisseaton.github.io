@@ -71,7 +71,7 @@ under the terms of Creative Commons Attribution-NoDerivs 3.0 Unported (CC BY-ND 
 <p><a href="rubytruffle/">JRuby+Truffle</a> started as my internship project at Oracle Labs in early 2013. It is an implementation of the Ruby programming language on the JVM, using the Graal JIT compiler and the Truffle AST interpreter framework. RubyTruffle can achieve peak performance well beyond that possible in JRuby at the same time as being a significantly simpler system. In early 2014 it was open sourced and integrated into JRuby.</p>
 
 <ul class="awards">
-<li><i class="icon-trophy"></i>Nominee, Ruby Prize, 2016</li>
+<li><i class="icon-trophy"></i>Finalist, Ruby Prize, 2016</li>
 </ul>
 
 <div class="buttons" style="text-align: right;">
@@ -173,7 +173,7 @@ in the UK regulated and CE marked as a medical device.</p>
             <a href="phd">Abstract</a>,
             <a href="phd/specialising-ruby.pdf">PDF</a>
         </span><br>
-        <i class="icon-trophy"></i> Nominee, Ruby Prize
+        <i class="icon-trophy"></i> Finalist, Ruby Prize
     </li>
 
     <li>

@@ -14,7 +14,7 @@ People who write Ruby programs want to use metaprogramming. It's part of what ma
 
 The techniques had a very significant impact on synthetic benchmarks and real-world code, often achieving a full order of magnitude or more performance increase over existing state-of-the-art implementations of Ruby.
 
-<i class="icon-trophy"></i> Nominee, Ruby Prize, 2016
+<i class="icon-trophy"></i> Finalist, Ruby Prize, 2016
 
 # Formal Abstract
 

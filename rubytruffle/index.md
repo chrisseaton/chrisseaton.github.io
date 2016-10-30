@@ -57,7 +57,8 @@ views expressed are my own and not those of Oracle.
 
 *    C. Seaton. [AST Specialisation and Partial Evaluation for Easy High-Performance Metaprogramming](meta16/meta16-ruby.pdf). In Proceedings of the 1st Workshop on Meta-Programming Techniques and Reflection (META), 2016.<br>
       <span class="smaller">
-        <a href="meta16/meta16-ruby.pdf">PDF</a>
+        <a href="meta16/meta16-ruby.pdf">PDF</a>,
+        <a href="meta16/meta16-ruby-slides.pdf">Slides</a>
       </span>
 
 *    C. Seaton. [Specialising Dynamic Techniques for Implementing the Ruby Programming Langauge](../phd). PhD thesis, University of Manchester, 2015.<br>

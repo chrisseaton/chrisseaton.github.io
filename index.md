@@ -425,6 +425,9 @@ in the UK regulated and CE marked as a medical device.</p>
     <li>
         Dynamic Languages Symposium (DLS) program committee member, 2016, 2014
     </li>
+    <li>
+        Technical reviewer, <a href="http://aosabook.org/en/index.html">500 Lines or Less</a>
+    </li>
 </ul>
 
 </section>

@@ -325,7 +325,13 @@ in the UK regulated and CE marked as a medical device.</p>
 
 <ul class="publications">
     <li>
-        Chris Seaton. <strong><a href="rubytruffle/javaone16/faster-ruby-javascript-graalvm.pdf">Faster Ruby and JavaScript with GraalVM</a></strong>. At JavaOne. 2016.<br>
+        Chris Seaton. <strong><a href="rubytruffle/rubyconf16/rubyconf16-cexts.pdf">Ruby's C Extension Problem and How We're Fixing It</a></strong>. At RubyConf 2016.<br>
+        <span class="smaller">
+            <a href="rubytruffle/rubyconf16/rubyconf16-cexts.pdf">Slides</a>
+        </span>
+    </li>
+    <li>
+        Chris Seaton. <strong><a href="rubytruffle/javaone16/faster-ruby-javascript-graalvm.pdf">Faster Ruby and JavaScript with GraalVM</a></strong>. At JavaOne 2016.<br>
         <span class="smaller">
             <a href="rubytruffle/javaone16/faster-ruby-javascript-graalvm.pdf">Slides</a>
         </span>

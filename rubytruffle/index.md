@@ -107,7 +107,7 @@ views expressed are my own and not those of Oracle.
 
 # Videos of Talks and Slide Decks
 
-*   Chris Seaton. [Ruby's C Extension Problem and How We're Fixing It](rubyconf16/rubyconf16-cexts.pdf). At RubyConf 2016. [Slides](rubyconf16/rubyconf16-cexts.pdf).
+*   Chris Seaton. [Ruby's C Extension Problem and How We're Fixing It](rubyconf16/rubyconf16-cexts.pdf). At RubyConf 2016. [Slides](rubyconf16/rubyconf16-cexts.pdf) and [video](https://www.youtube.com/watch?v=YLtjkP9bD_U).
 
 *   Chris Seaton. [Faster Ruby and JavaScript with GraalVM](javaone16/faster-ruby-javascript-graalvm.pdf). At JavaOne 2016. [Slides](javaone16/faster-ruby-javascript-graalvm.pdf).
 

@@ -327,6 +327,7 @@ in the UK regulated and CE marked as a medical device.</p>
     <li>
         Chris Seaton. <strong><a href="rubytruffle/rubyconf16/rubyconf16-cexts.pdf">Ruby's C Extension Problem and How We're Fixing It</a></strong>. At RubyConf 2016.<br>
         <span class="smaller">
+            <a href="https://www.youtube.com/watch?v=YLtjkP9bD_U">Video</a>,
             <a href="rubytruffle/rubyconf16/rubyconf16-cexts.pdf">Slides</a>
         </span>
     </li>

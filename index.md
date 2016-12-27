@@ -35,7 +35,7 @@ led both on operations and in training units in the UK and around the world.</p>
 <section>
 
 <div class="buttons">
-<a href="chris-seaton-cv.pdf"><i class="icon-file-alt"></i> My CV</a>
+<a href="chris-seaton-cv.pdf"><i class="icon-file-alt"></i> My CV / Resumé</a>
 <a href="http://github.com/chrisseaton/"><i class="icon-github-alt"></i> My code on GitHub</a>
 <a href="mailto:chris@chrisseaton.com"><i class="icon-envelope-alt"></i> Email me</a>
 <a href="https://twitter.com/ChrisGSeaton"><i class="icon-twitter"></i> Follow me</a>

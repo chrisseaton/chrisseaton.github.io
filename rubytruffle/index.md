@@ -1,6 +1,6 @@
 ---
 layout: section
-title: JRuby+Truffle
+title: TruffleRuby
 copyright: Copyright © 2016 Chris Seaton
 ---
 
@@ -11,14 +11,15 @@ under the terms of Creative Commons Attribution-ShareAlike 2.5.)" src="ruby.png"
 under the terms of Creative Commons Attribution-NoDerivs 3.0 Unported (CC BY-ND 3.0))." src="jruby.png" width="96" height="96">
 </p>
 
-JRuby+Truffle started as [my](..) internship project at [Oracle
+TruffleRuby started as [my](..) internship project at [Oracle
 Labs](http://labs.oracle.com/) in early 2013. It is an implementation of the
 [Ruby](https://www.ruby-lang.org/) programming language on the JVM, using the
 [Graal dynamic compiler and the Truffle AST interpreter
-framework](http://openjdk.java.net/projects/graal/). JRuby+Truffle can achieve
+framework](http://openjdk.java.net/projects/graal/). TruffleRuby can achieve
 peak performance well beyond that possible in JRuby at the same time as being a
 significantly simpler system. In early 2014 it was open sourced and integrated
-into [JRuby](http://jruby.org/).
+into [JRuby](http://jruby.org/) for incubation, and then in 2017 it became its
+own project.
 
 This page links to the literature and code related to the project. Note that any
 views expressed are my own and not those of Oracle.
@@ -137,6 +138,6 @@ The RubyTruffle source code is available as an optional backend in the JRuby
 repository. Initially it was available in the OpenJDK Graal Repository, but it's
 since been removed to focus on JRuby.
 
-*   [JRuby+Truffle code](https://github.com/jruby/jruby/tree/truffle-head/truffle/src/main/java/org/jruby/truffle)
+*   [TruffleRuby code](https://github.com/graalvm/truffleruby)
 
 *   [Graal and Truffle code](https://github.com/graalvm)

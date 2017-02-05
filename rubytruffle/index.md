@@ -1,7 +1,7 @@
 ---
 layout: section
 title: TruffleRuby
-copyright: Copyright © 2016 Chris Seaton
+copyright: Copyright © 2017 Chris Seaton
 ---
 
 <p style="text-align: center">

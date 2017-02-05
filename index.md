@@ -2,7 +2,7 @@
 layout: home
 title: Chris Seaton
 author: Chris Seaton
-copyright: Copyright © 2016 Chris Seaton
+copyright: Copyright © 2017 Chris Seaton
 ---
 
 <header>

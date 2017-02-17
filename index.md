@@ -424,13 +424,19 @@ in the UK regulated and CE marked as a medical device.</p>
 
 <ul class="publications">
     <li>
+        Governor of <a href="http://www.deepointprimary.cheshire.sch.uk">Dee Point Primary School</a>
+    </li>
+    <li>
         Maintainer of <a href="http://rubybib.org/">The Ruby Bibliography</a>
     </li>
     <li>
        JavaOne emerging languages program committee member, 2016
     </li>
     <li>
-        Dynamic Languages Symposium (DLS) program committee member, 2016, 2014
+        Dynamic Languages Symposium (DLS) program committee member, 2017, 2016, 2014
+    </li>
+    <li>
+        Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS) program committee member, 2017
     </li>
     <li>
         Technical reviewer, <a href="http://aosabook.org/en/index.html">500 Lines or Less</a>

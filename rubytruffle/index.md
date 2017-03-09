@@ -134,10 +134,6 @@ views expressed are my own and not those of Oracle.
 
 # Source Code
 
-The RubyTruffle source code is available as an optional backend in the JRuby
-repository. Initially it was available in the OpenJDK Graal Repository, but it's
-since been removed to focus on JRuby.
-
 *   [TruffleRuby code](https://github.com/graalvm/truffleruby)
 
 *   [Graal and Truffle code](https://github.com/graalvm)

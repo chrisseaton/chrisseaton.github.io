@@ -7,7 +7,7 @@ copyright: Copyright © 2017 Chris Seaton
 
 <header>
 <h1>Doctor Chris Seaton</h1>
-<img src="chrisseaton.jpeg" width="250" height="250" alt="Chris Seaton">
+<a href="bio.jpeg"><img src="chrisseaton.jpeg" width="250" height="250" alt="Chris Seaton"></a>
 </header>
 
 <section id="intro">

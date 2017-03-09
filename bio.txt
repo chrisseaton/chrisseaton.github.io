@@ -1,0 +1,13 @@
+Chris Seaton is Research Manager at the Virtual Machine Group in Oracle Labs,
+where he leads the work to implement Ruby using the next generation of Java
+Virtual Machine technology, and other projects.
+
+Before this he completed a PhD at the University of Manchester where he
+researched programming languages and irregular parallelism. Before that, he
+completed an MEng at the University of Bristol on languages with mutable syntax
+and semantics.
+
+In his spare time he used to develop an award winning medical app that is the
+first app regulated as a medical device in the UK, and ran a consultancy to help
+clients such as the UK National Health Service to develop revolutionary medical
+software.

@@ -51,6 +51,11 @@ views expressed are my own and not those of Oracle.
 
 # Research Papers and Thesis
 
+*    T. Würthinger, C. Wimmer, C. Humer, A. Wöss, L. Stadler, C. Seaton, G. Duboscq, D. Simon, M. Grimmer. [Practical Partial Evaluation for High-Performance Dynamic Language Runtimes](http://pldi17.sigplan.org/event/pldi-2017-papers-practical-partial-evaluation-for-high-performance-dynamic-language-runtimes). In Proceedings of the Conference on Programming Language Design and Implementation (PLDI), 2017. (Tentatively accepted.)<br>
+    <span class="smaller">
+        <a href="http://pldi17.sigplan.org/event/pldi-2017-papers-practical-partial-evaluation-for-high-performance-dynamic-language-runtimes">Details</a>
+    </span>
+
 *    B. Daloze, S. Marr, D. Bonetta, H. Mössenböck. [Efficient and Thread-Safe Objects for Dynamically-Typed Languages](http://ssw.jku.at/General/Staff/Daloze/thread-safe-objects.pdf). In Proceedings of the ACM International Conference on Object Oriented Programming Systems Languages and Applications (OOPSLA), 2016.<br>
       <span class="smaller">
         <a href="http://ssw.jku.at/General/Staff/Daloze/thread-safe-objects.pdf">PDF</a>

@@ -192,6 +192,13 @@ in the UK regulated and CE marked as a medical device.</p>
 <ul class="publications">
 
     <li>
+        T. Würthinger, C. Wimmer, C. Humer, A. Wöss, L. Stadler, C. Seaton, G. Duboscq, D. Simon, M. Grimmer. <strong><a href="http://pldi17.sigplan.org/event/pldi-2017-papers-practical-partial-evaluation-for-high-performance-dynamic-language-runtimes">Practical Partial Evaluation for High-Performance Dynamic Language Runtimes</a></strong>. In Proceedings of the Conference on Programming Language Design and Implementation (PLDI), 2017. (Tentatively accepted.)<br>
+        <span class="smaller">
+            <a href="http://pldi17.sigplan.org/event/pldi-2017-papers-practical-partial-evaluation-for-high-performance-dynamic-language-runtimes">Details</a>
+        </span>
+    </li>
+
+    <li>
         C. Seaton. <strong><a href="rubytruffle/meta16/meta16-ruby.pdf">AST Specialisation and Partial Evaluation for Easy High-Performance Metaprogramming</a></strong>. In Proceedings of the 1st Workshop on Meta-Programming Techniques and Reflection (META), 2016.<br>
         <span class="smaller">
             <a href="rubytruffle/meta16/meta16-ruby.pdf">PDF</a>,

@@ -3,6 +3,7 @@ layout: home
 title: Chris Seaton
 author: Chris Seaton
 copyright: Copyright © 2017 Chris Seaton
+footer: <p>TruffleRuby logo Copyright © 2017 Talkdesk, Inc. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
 ---
 
 <header>
@@ -53,13 +54,7 @@ led both on operations and in training units in the UK and around the world.</p>
 <div class="project-logo">
 
 <p>
-<a href="rubytruffle/"><img alt="Ruby Logo (Copyright (c) 2006, Yukihiro Matsumoto. Licensed
-under the terms of Creative Commons Attribution-ShareAlike 2.5.)" src="rubytruffle/ruby.png" width="96" height="96"></a>
-</p>
-
-<p>
-<a href="rubytruffle/"><img alt="JRuby Logo (Copyright (c) 2011, Tony Price. Licensed
-under the terms of Creative Commons Attribution-NoDerivs 3.0 Unported (CC BY-ND 3.0))." src="rubytruffle/jruby.png" width="96" height="96"></a>
+<a href="rubytruffle/"><img alt="TruffleRuby" src="rubytruffle/truffleruby.png" width="96" height="96"></a>
 </p>
 
 </div>

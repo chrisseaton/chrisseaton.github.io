@@ -2,13 +2,11 @@
 layout: section
 title: TruffleRuby
 copyright: Copyright © 2017 Chris Seaton
+footer: <p>TruffleRuby logo Copyright © 2017 Talkdesk, Inc. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
 ---
 
 <p style="text-align: center">
-<img alt="Ruby Logo (Copyright (c) 2006, Yukihiro Matsumoto. Licensed
-under the terms of Creative Commons Attribution-ShareAlike 2.5.)" src="ruby.png" width="96" height="96">
-<img alt="JRuby Logo (Copyright (c) 2011, Tony Price. Licensed
-under the terms of Creative Commons Attribution-NoDerivs 3.0 Unported (CC BY-ND 3.0))." src="jruby.png" width="96" height="96">
+<img alt="TruffleRuby" src="truffleruby.png" width="400" height="400">
 </p>
 
 TruffleRuby started as [my](..) internship project at [Oracle

@@ -327,6 +327,12 @@ in the UK regulated and CE marked as a medical device.</p>
 
 <ul class="publications">
     <li>
+        Chris Seaton. <strong><a href="rubytruffle/oraclecode17/oraclecode17.pdf">Turning the JVM into a Polyglot VM with Graal</a></strong>. At Oracle Code London 2017.<br>
+        <span class="smaller">
+            <a href="rubytruffle/oraclecode17/oraclecode17.pdf">Slides</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="rubytruffle/rubyconf16/rubyconf16-cexts.pdf">Ruby's C Extension Problem and How We're Fixing It</a></strong>. At RubyConf 2016.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=YLtjkP9bD_U">Video</a>,

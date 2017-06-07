@@ -439,7 +439,7 @@ in the UK regulated and CE marked as a medical device.</p>
         Maintainer of <a href="http://rubybib.org/">The Ruby Bibliography</a>
     </li>
     <li>
-       JavaOne emerging languages program committee member, 2016
+       JavaOne emerging languages program committee member, 2017, 2016
     </li>
     <li>
         Dynamic Languages Symposium (DLS) program committee member, 2017, 2016, 2014

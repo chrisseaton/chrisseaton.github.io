@@ -187,9 +187,9 @@ in the UK regulated and CE marked as a medical device.</p>
 <ul class="publications">
 
     <li>
-        T. Würthinger, C. Wimmer, C. Humer, A. Wöss, L. Stadler, C. Seaton, G. Duboscq, D. Simon, M. Grimmer. <strong><a href="http://pldi17.sigplan.org/event/pldi-2017-papers-practical-partial-evaluation-for-high-performance-dynamic-language-runtimes">Practical Partial Evaluation for High-Performance Dynamic Language Runtimes</a></strong>. In Proceedings of the Conference on Programming Language Design and Implementation (PLDI), 2017. (Tentatively accepted.)<br>
+        T. Würthinger, C. Wimmer, C. Humer, A. Wöss, L. Stadler, C. Seaton, G. Duboscq, D. Simon, M. Grimmer. <strong><a href="rubytruffle/pldi17-truffle/pldi17-truffle.pdf">Practical Partial Evaluation for High-Performance Dynamic Language Runtimes</a></strong>. In Proceedings of the Conference on Programming Language Design and Implementation (PLDI), 2017.<br>
         <span class="smaller">
-            <a href="http://pldi17.sigplan.org/event/pldi-2017-papers-practical-partial-evaluation-for-high-performance-dynamic-language-runtimes">Details</a>
+            <a href="rubytruffle/pldi17-truffle/pldi17-truffle.pdf">PDF</a>
         </span>
     </li>
 

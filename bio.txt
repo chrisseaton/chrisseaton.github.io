@@ -1,6 +1,7 @@
 Chris Seaton is Research Manager at the Virtual Machine Group in Oracle Labs,
 where he leads the work to implement Ruby using the next generation of Java
-Virtual Machine technology, and other projects.
+Virtual Machine technology and other projects, and a Visitor at the University
+of Manchester.
 
 Before this he completed a PhD at the University of Manchester where he
 researched programming languages and irregular parallelism. Before that, he

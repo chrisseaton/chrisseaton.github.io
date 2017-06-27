@@ -16,10 +16,11 @@ footer: <p>TruffleRuby logo Copyright © 2017 Talkdesk, Inc. Licensed under <a h
 <p>I'm a Research Manager at the Virtual Machine Group in <a
 href="http://labs.oracle.com">Oracle Labs</a>, where I lead the work to implement Ruby using the <a
 href="http://openjdk.java.net/projects/graal/">next generation of Java Virtual
-Machine technology</a>, and other projects.</p>
+Machine technology</a> and other projects, and a Visitor at the <a href="http://www.manchester.ac.uk/">University of
+Manchester</a>.</p>
 
-<p>Before this I completed a PhD at the <a href="http://www.manchester.ac.uk/">University of
-Manchester</a> under the supervision of Doctor Mikel Luján, where I researched programming languages and irregular
+<p>Before this I completed a PhD at the University of
+Manchester under the supervision of Doctor Mikel Luján, where I researched programming languages and irregular
 parallelism. Before that, I completed an MEng at the <a href="http://www.bristol.ac.uk/">University of Bristol</a> on languages with mutable syntax and semantics.</p>
 
 <p>In my spare time I used to develop an <a href="http://www.merseyburns.com/">award
@@ -434,6 +435,10 @@ in the UK regulated and CE marked as a medical device.</p>
 <ul class="publications">
     <li>
         Governor of <a href="http://www.deepointprimary.cheshire.sch.uk">Dee Point Primary School</a>
+    </li>
+    <li>
+        Academic Visitor at the <a href="http://www.manchester.ac.uk/">University of
+        Manchester</a>
     </li>
     <li>
         Maintainer of <a href="http://rubybib.org/">The Ruby Bibliography</a>

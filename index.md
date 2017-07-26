@@ -3,7 +3,7 @@ layout: home
 title: Chris Seaton
 author: Chris Seaton
 copyright: Copyright © 2017 Chris Seaton
-footer: <p>TruffleRuby logo Copyright © 2017 Talkdesk, Inc. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
+footer: <p>TruffleRuby logo Copyright © 2017 Talkdesk, Inc. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
 ---
 
 <header>
@@ -23,14 +23,12 @@ Manchester</a>.</p>
 Manchester under the supervision of Doctor Mikel Luján, where I researched programming languages and irregular
 parallelism. Before that, I completed an MEng at the <a href="http://www.bristol.ac.uk/">University of Bristol</a> on languages with mutable syntax and semantics.</p>
 
-<p>In my spare time I used to develop an <a href="http://www.merseyburns.com/">award
+<p>Between my undergraduate degree and starting my PhD I commissioned into the <a href="https://en.wikipedia.org/wiki/British_Army">British Army</a>, serving in training and operations in the UK and around the world. In my spare time I'm now a captain in the <a href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a> squadron of the <a href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own Yeomanry</a>, Cheshire's historic reserve <a href="https://en.wikipedia.org/wiki/Light_cavalry">light cavalry</a> squadron.</p>
+
+<p>I used to develop an <a href="http://www.merseyburns.com/">award
 winning medical app</a> that is the first app regulated as a medical device in
 the UK, and ran a consultancy to help clients such as the NHS to develop
 revolutionary medical software.</p>
-
-<p>Between my undergraduate degree and starting my PhD I commissioned as an
-officer in the British Army, first in the regulars and then in the reserves with a period as Second in Command of Manchester and Salford Universities Officer Training Corps. I've
-led both on operations and in training units in the UK and around the world.</p>
 
 </section>
 
@@ -433,6 +431,9 @@ in the UK regulated and CE marked as a medical device.</p>
 <h3>Community</h3>
 
 <ul class="publications">
+    <li>
+        Training Captain, C (<a href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a>) Squadron, the <a href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own Yeomanry</a>, reserve military service in a light cavalry squadron
+    </li>
     <li>
         Governor of <a href="http://www.deepointprimary.cheshire.sch.uk">Dee Point Primary School</a>
     </li>

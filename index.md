@@ -38,7 +38,7 @@ revolutionary medical software.</p>
 <a href="chris-seaton-cv.pdf"><i class="icon-file-alt"></i> My CV / Resumé</a>
 <a href="http://github.com/chrisseaton/"><i class="icon-github-alt"></i> My code on GitHub</a>
 <a href="mailto:chris@chrisseaton.com"><i class="icon-envelope-alt"></i> Email me</a>
-<a href="https://twitter.com/ChrisGSeaton"><i class="icon-twitter"></i> Follow me</a>
+<a href="https://twitter.com/ChrisGSeaton"><i class="icon-twitter-sign"></i> Follow me</a>
 <a href="http://www.linkedin.com/in/chrisgseaton"><i class="icon-linkedin-sign"></i> Connect with me</a>
 </div>
 

@@ -109,7 +109,7 @@ views expressed are my own and not those of Oracle.
 
 # Videos of Talks and Slide Decks
 
-*   Chris Seaton. [Polyglot From the Very Old to the Very New](polyconf17/polyglot-old-to-new-seaton.pdf) (keynote). At PolyConf 2017. [Slides](polyconf17/polyglot-old-to-new-seaton.pdf).
+*   Chris Seaton. [Polyglot From the Very Old to the Very New](polyconf17/polyglot-old-to-new-seaton.pdf) (keynote). At PolyConf 2017. [Slides](polyconf17/polyglot-old-to-new-seaton.pdf) and [video](https://www.youtube.com/watch?v=FPN4IScbE60).
 
 *   Chris Seaton. [Turning the JVM into a Polyglot VM with Graal](oraclecode17/oraclecode17.pdf). At Oracle Code London 2017. [Slides](oraclecode17/oraclecode17.pdf) and [video](https://www.youtube.com/watch?v=oWX2tpIO4Yc).
 

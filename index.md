@@ -328,6 +328,7 @@ in the UK regulated and CE marked as a medical device.</p>
     <li>
         Chris Seaton. <strong><a href="rubytruffle/polyconf17/polyglot-old-to-new-seaton.pdf">Polyglot From the Very Old to the Very New</a></strong> (keynote). At PolyConf 2017.<br>
         <span class="smaller">
+            <a href="https://www.youtube.com/watch?v=FPN4IScbE60">Video</a>,
             <a href="rubytruffle/polyconf17/polyglot-old-to-new-seaton.pdf">Slides</a>
         </span>
     </li>

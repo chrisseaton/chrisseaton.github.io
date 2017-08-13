@@ -311,17 +311,6 @@ in the UK regulated and CE marked as a medical device.</p>
     </li>
 </ul>
 
-<h3>Invited Talk</h3>
-
-<ul class="publications">
-    <li>
-        Chris Seaton, Medicapps Ltd. <strong><a href="mobilehealthcare2012/mobilehealthcare-merseyburns-chris-seaton-25-sep-12.pdf">Developing an app from idea to market and awards success with no funding</a></strong>. At the Mobile Healthcare Industry Summit. 2012.<br>
-        <span class="smaller">
-            <a href="mobilehealthcare2012/mobilehealthcare-merseyburns-chris-seaton-25-sep-12.pdf">Slides</a>
-        </span>
-    </li>
-</ul>
-
 <h3>Other Presentations</h3>
 
 <ul class="publications">
@@ -394,6 +383,13 @@ in the UK regulated and CE marked as a medical device.</p>
         <span class="smaller">
             <a href="http://www.youtube.com/watch?v=B1hh2kpGNQ4">Video</a>,
             <a href="research-showcase-2012/seaton-irregular-parallelism-slides.pdf">Slides</a>
+        </span>
+    </li>
+
+    <li>
+        Chris Seaton, Medicapps Ltd. <strong><a href="mobilehealthcare2012/mobilehealthcare-merseyburns-chris-seaton-25-sep-12.pdf">Developing an app from idea to market and awards success with no funding</a></strong>. At the Mobile Healthcare Industry Summit. 2012.<br>
+        <span class="smaller">
+            <a href="mobilehealthcare2012/mobilehealthcare-merseyburns-chris-seaton-25-sep-12.pdf">Slides</a>
         </span>
     </li>
 

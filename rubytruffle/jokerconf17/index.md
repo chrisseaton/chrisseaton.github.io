@@ -18,7 +18,7 @@ things I wanted to do was to implement my own language.
 
 What I'm going to do today in this talk is show you something about how the
 programming language you all use, Java, works. What's different is that I'm
-going to use project called Graal that implements Java in Java, so that I can
+going to use a project called Graal that implements Java in Java, so that I can
 show you how Java works, using Java.
 
 Graal is just one part of how Java works though - it's a just-in-time compiler.
@@ -117,7 +117,7 @@ able to use debuggers, profilers, and tools like VisualVM - good IDE support,
 and more.
 
 You may think *but how is it possible to write something like a JIT-compiler in
-C++?* You may think that this could only be possible in a low level systems
+Java?* You may think that this could only be possible in a low level systems
 language like C++, but I hope to convince you in this talk that this isn't true
 at all! In fact a JIT-compiler just needs to be able to accept JVM bytecode and
 produce machine code - you give it a `byte[]` in and you want a `byte[]` back.

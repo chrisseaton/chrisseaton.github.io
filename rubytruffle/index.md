@@ -28,6 +28,8 @@ views expressed are my own and not those of Oracle.
 
 # Blog Posts and Articles
 
+*   [Understanding How Graal Works](jokerconf17/). A Java JIT Compiler Written in Java.
+
 *   [Flip-Flops &mdash; the 1-in-10-million operator](flip-flops/). Do people actually use flip-flops?
 
 *   [Deoptimizing Ruby](deoptimizing/). What deoptimization means for Ruby and how JRuby+Truffle implements and applies it.

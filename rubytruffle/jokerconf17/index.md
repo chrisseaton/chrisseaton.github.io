@@ -69,7 +69,7 @@ running complex optimisations to produce high quality machine code.
 
 The OpenJDK implementation of the JVM contains two conventional JIT-compilers
 today. The *client* compiler, also called *C1*, is designed to run more quickly
-and produce less optimised code. The *server* compiler, called called *opto*, or
+and produce less optimised code. The *server* compiler, also called *opto*, or
 *C2*, is designed to take a little more time to run but to produce better
 optimised code.
 
@@ -229,7 +229,7 @@ We then use `-XX:+EnableJVMCI` to say that we want to use JVMCI, and
 new JIT compiler.
 
 We use `-XX:-TieredCompilation` to disable tiered compilation to keep things
-simpler and to just have the one JVMCI compiler, rather than using C2 and then
+simpler and to just have the one JVMCI compiler, rather than using C1 and then
 the JVMCI compiler in tiered compilation.
 
 And we still use `-XX:+PrintCompilation` and `-XX:CompileOnly=Demo::workload` as

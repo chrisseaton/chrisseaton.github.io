@@ -214,7 +214,7 @@ I won't explain that beyond saying that is the log entry which shows that the
 `workload` method is being compiled.
 
 Now we're going to use the Graal that we just built as our JIT-compiler in our
-Java 9 JVM. We need some add some more complicated flags here.
+Java 9 JVM. We need to add some more complicated flags here.
 
 `--module-path=...` and `--upgrade-module-path=...` add Graal to the module
 path. Remember that the module path is new in Java 9 as part of the Jigsaw

@@ -582,8 +582,8 @@ details of how that works.
 
 Now, the details of `emitAdd` are a bit complicated and abstracted because
 arithmetic operators have a lot of different combinations of operands to encode
-and the different operators can share most of their code, so I will change the
-our program to do something a little simpler.
+and the different operators can share most of their code, so I will change
+our program to do something a little more simple.
 
 {% highlight java %}
 int workload(int a) {
@@ -853,7 +853,7 @@ and if so will remove them both, leaving the outer enter and exit nodes.
 
 {% highlight java %}
 void run(StructuredGraph graph) {
-  for (monitorExitNode monitorExitNode : graph.getNodes(monitorExitNode.class)) {
+  for (monitorExitNode monitorExitNode : graph.getNodes(MonitorExitNode.class)) {
     FixedNode next = monitorExitNode.next();
     if (next instanceof monitorEnterNode) {
       AccessmonitorNode monitorEnterNode = (AccessmonitorNode) next;

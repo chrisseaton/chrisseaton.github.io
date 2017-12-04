@@ -5,7 +5,7 @@ author: Chris Seaton
 date: 2012
 image: screenshot.png
 image_alt: CSPassword
-copyright: Copyright © 2012 Chris Seaton
+copyright: Copyright © 2012 Chris Seaton.
 ---
 
 CSPassword, originally known as Password Safe, was a password manager that I

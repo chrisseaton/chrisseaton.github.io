@@ -3,7 +3,7 @@ layout: article
 title: A Truffle/Graal High Performance Backend for JRuby
 author: Chris Seaton
 date: 6 January 2014
-copyright: Copyright © 2014 Chris Seaton
+copyright: Copyright © 2014 Chris Seaton.
 ---
 
 <p style="text-align: center">

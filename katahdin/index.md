@@ -5,7 +5,7 @@ author: Chris Seaton
 date: 2007
 image: katahdin.png
 image_alt: Katahdin
-copyright: Copyright © 2007-2012 Chris Seaton
+copyright: Copyright © 2007-2012 Chris Seaton.
 ---
 
 Katahdin is a programming language where the syntax and semantics are mutable at

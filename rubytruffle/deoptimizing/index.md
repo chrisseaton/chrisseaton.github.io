@@ -5,7 +5,7 @@ author: Chris Seaton
 date: 17 November 2014
 image: bottle.png
 image_alt: DRINK ME
-copyright: Copyright © 2014 Chris Seaton
+copyright: Copyright © 2014 Chris Seaton.
 ---
 
 ## Introduction

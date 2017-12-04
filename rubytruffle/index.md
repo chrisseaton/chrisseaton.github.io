@@ -1,8 +1,8 @@
 ---
 layout: section
 title: TruffleRuby
-copyright: Copyright © 2017 Chris Seaton
-footer: <p>TruffleRuby logo Copyright © 2017 Talkdesk, Inc. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></p>
+copyright: Copyright © 2017 Chris Seaton.
+footer: <p>TruffleRuby logo Copyright © 2017 Talkdesk, Inc. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
 ---
 
 <p style="text-align: center">

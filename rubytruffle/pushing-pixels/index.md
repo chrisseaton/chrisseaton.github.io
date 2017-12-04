@@ -5,7 +5,7 @@ author: Chris Seaton
 date: 10 July 2014
 image: cmyk.png
 image_alt: CMYK
-copyright: Copyright © 2014 Chris Seaton
+copyright: Copyright © 2014 Chris Seaton.
 ---
 
 We've been talking about the new [high-performance Truffle backend in JRuby](https://github.com/jruby/jruby/wiki/Truffle) for a while now, but so far the only benchmarks we've been running are the classic synthetic benchmarks from the Computer Language Benchmarks Game. These benchmarks are useful to study and we should be able to optimise them well as they're generally simple and easy to understand, but some people make the reasonable point that they may be unrepresentative of real Ruby programs written by real Ruby users. The risk is that our implementation is not as fast when running these real programs.

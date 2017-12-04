@@ -5,7 +5,7 @@ author: Matthias Grimmer and Chris Seaton
 date: 25 September 2014
 image: tree.png
 image_alt: Truffle and C
-copyright: Copyright © 2014 Matthias Grimmer and Chris Seaton
+copyright: Copyright © 2014 Matthias Grimmer and Chris Seaton.
 ---
 
 C extensions are a big part of the Ruby ecosystem.

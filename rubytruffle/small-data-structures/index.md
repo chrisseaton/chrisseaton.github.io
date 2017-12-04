@@ -3,7 +3,7 @@ layout: article
 title: Optimising Small Data Structures in JRuby+Truffle
 author: Chris Seaton
 date: 10 August 2014
-copyright: Copyright © 2014 Chris Seaton
+copyright: Copyright © 2014 Chris Seaton.
 ---
 
 Small data structures such as arrays and hashes with just a few elements or key-value pairs are very common in Ruby programs. They're typically used to implement many patterns in idiomatic Ruby code. For example an array with just two or three elements is often used to implement a kind of multiple return, and a hash with just a couple of key-value pairs is often used to implement keyword arguments.

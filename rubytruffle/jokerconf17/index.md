@@ -3,7 +3,7 @@ layout: article
 title: Understanding How Graal Works - a Java JIT Compiler Written in Java
 author: Chris Seaton
 date: 3 November 2017
-copyright: Copyright © 2017 Chris Seaton
+copyright: Copyright © 2017 Chris Seaton.
 ---
 
 *These are the notes for a talk I gave at JokerConf 2017, which is why they're

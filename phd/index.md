@@ -3,7 +3,7 @@ layout: article
 title: Specialising Dynamic Techniques for Implementing The Ruby Programming Language
 author: Chris Seaton
 date: 2015
-copyright: Copyright © 2015 Chris Seaton
+copyright: Copyright © 2015 Chris Seaton.
 ---
 
 <img src="thesis.jpeg" alt="Thesis">

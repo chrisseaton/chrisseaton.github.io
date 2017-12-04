@@ -3,7 +3,7 @@ layout: article
 title: How Method Dispatch Works in JRuby+Truffle
 author: Chris Seaton
 date: 11 March 2014
-copyright: Copyright © 2014 Chris Seaton
+copyright: Copyright © 2014 Chris Seaton.
 image: tree.png
 image_alt: AST
 ---

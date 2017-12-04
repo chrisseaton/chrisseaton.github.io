@@ -5,7 +5,7 @@ author: Chris Seaton
 date: 25 February 2015
 image: schematic.png
 image_alt: Flip-Flops
-copyright: Copyright © 2016 Chris Seaton
+copyright: Copyright © 2016 Chris Seaton.
 ---
 
 The Ruby [flip-flop operator](https://blog.newrelic.com/2015/02/24/weird-ruby-part-3-fun-flip-flop-phenom/) is an example of a very obscure part of Ruby. Probably few people have heard of it. It’s not covered in any book I’ve read and it doesn’t even appear to be mentioned in the old ISO standard.

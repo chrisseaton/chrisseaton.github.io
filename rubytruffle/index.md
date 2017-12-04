@@ -46,7 +46,6 @@ views expressed are my own and not those of Oracle.
 
 *   [A Truffle/Graal High Performance Backend for JRuby](announcement/). Blog post announcing the open sourcing.
 
-
 ----
 
 # Research Papers and Thesis
@@ -110,6 +109,8 @@ views expressed are my own and not those of Oracle.
         </span>
 
 # Videos of Talks and Slide Decks
+
+*   Chris Seaton. [Understanding How Graal Works - a Java JIT Compiler Written in Java](jokerconf17). At JokerConf 2017. [Slides](jokerconf17/understanding-how-graal-works.pdf), [video](https://www.youtube.com/watch?v=D2IbrPCiupA) and [blogpost](jokerconf17/).
 
 *   Chris Seaton. [Polyglot From the Very Old to the Very New](polyconf17/polyglot-old-to-new-seaton.pdf) (keynote). At PolyConf 2017. [Slides](polyconf17/polyglot-old-to-new-seaton.pdf) and [video](https://www.youtube.com/watch?v=FPN4IScbE60).
 

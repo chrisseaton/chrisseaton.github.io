@@ -315,6 +315,14 @@ in the UK regulated and CE marked as a medical device.</p>
 
 <ul class="publications">
     <li>
+        Chris Seaton. <strong><a href="rubytruffle/jokerconf17/understanding-how-graal-works.pdf">Understanding How Graal Works - a Java JIT Compiler Written in Java</a></strong>. At JokerConf 2017.<br>
+        <span class="smaller">
+            <a href="https://www.youtube.com/watch?v=D2IbrPCiupA">Video</a>,
+            <a href="rubytruffle/jokerconf17/understanding-how-graal-works.pdf">Slides</a>,
+            <a href="rubytruffle/jokerconf17/">Blog post</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="rubytruffle/polyconf17/polyglot-old-to-new-seaton.pdf">Polyglot From the Very Old to the Very New</a></strong> (keynote). At PolyConf 2017.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=FPN4IScbE60">Video</a>,

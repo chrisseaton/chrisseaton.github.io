@@ -9,7 +9,7 @@ copyright: Copyright © 2017 Chris Seaton.
 *These are the notes for a talk I gave at JokerConf 2017, which is why they're
 written as if we were talking and going through some slides together.*
 
-<iframe width="720" height="433" src="//www.youtube.com/embed/D2IbrPCiupA" frameborder="0" allowfullscreen></iframe>
+<iframe width="720" height="433" src="//www.youtube.com/embed/sFf15TvSXZ0" frameborder="0" allowfullscreen></iframe>
 
 One of the reasons that I'm a programming language researcher is that almost
 everyone I meet in the the wider computer technology community uses programming

@@ -2,7 +2,7 @@
 layout: home
 title: Chris Seaton
 author: Chris Seaton
-copyright: Copyright © 2017 Chris Seaton.
+copyright: Copyright © 2018 Chris Seaton.
 footer: <p>TruffleRuby logo Copyright © 2017 Talkdesk, Inc. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
 ---
 
@@ -446,7 +446,7 @@ in the UK regulated and CE marked as a medical device.</p>
         Training Captain, C (<a href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a>) Squadron, the <a href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own Yeomanry</a>, reserve military service in a light cavalry squadron
     </li>
     <li>
-        Governor of <a href="http://www.deepointprimary.cheshire.sch.uk">Dee Point Primary School</a>
+        Chair of the Board of Governors of <a href="http://www.deepointprimary.cheshire.sch.uk">Dee Point Primary School</a>
     </li>
     <li>
         Academic Visitor at the <a href="http://www.manchester.ac.uk/">University of

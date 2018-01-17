@@ -1,0 +1,7 @@
+Chris Seaton is a Research Manager at the Virtual Machine Group in Oracle Labs, where he leads the work to implement Ruby using the next generation of Java Virtual Machine technology and other projects, and a Visitor at the University of Manchester.
+
+Before this he completed a PhD at the University of Manchester under the supervision of Doctor Mikel Luján, where he researched programming languages and irregular parallelism. Before that, he completed an MEng at the University of Bristol on languages with mutable syntax and semantics.
+
+Between his undergraduate degree and starting his PhD he commissioned into the British Army, serving in training and operations in the UK and around the world. In his spare time he's now a captain in the Cheshire Yeomanry squadron of the Queen's Own Yeomanry, Cheshire's historic reserve light cavalry squadron.
+
+He used to develop an award winning medical app that is the first app regulated as a medical device in the UK, and ran a consultancy to help clients such as the NHS to develop revolutionary medical software.

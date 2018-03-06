@@ -28,6 +28,8 @@ views expressed are my own and not those of Oracle.
 
 # Blog Posts and Articles
 
+*   [Ruby Objects as C Structs and Vice Versa](structs/). How you can use Ruby objects as if they were C structs and C structs as if they were Ruby objects.
+
 *   [Understanding How Graal Works](jokerconf17/). A Java JIT Compiler Written in Java.
 
 *   [Flip-Flops &mdash; the 1-in-10-million operator](flip-flops/). Do people actually use flip-flops?
@@ -138,7 +140,7 @@ views expressed are my own and not those of Oracle.
 
 *    Thomas Würthinger. [Graal and Truffle: One VM To Rule Them All](http://www.slideshare.net/ThomasWuerthinger/graal-truffle-ethdec2013) recent project overview.
 
-----
+----t
 
 # Source Code
 

@@ -144,9 +144,9 @@ When you cast a Ruby object in TruffleRuby to `RData *` and read the `data`
 field it actually redirects that to read an instance variable that holds your
 user data.
 
-We think is better than other alternative technique that JRuby had to use which
-is to allocate a separate native structure which then has to use a handle to
-refer back to the managed object. And it also enables the cool demo shown in
+We think this is better than the alternative technique that JRuby had to use
+which is to allocate a separate native structure which then has to use a handle
+to refer back to the managed object. And it also enables the cool demo shown in
 this blog post.
 
 ```c

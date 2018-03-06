@@ -6,8 +6,8 @@ date: 6 March 2018
 copyright: Copyright © 2018 Chris Seaton.
 ---
 
-In TruffleRuby we run Ruby C extensions using an interpreter with a JIT that is
-built very much like our interpreter and JIT for Ruby.
+In [TruffleRuby](..) we run Ruby C extensions using an interpreter with a JIT
+that is built very much like our interpreter and JIT for Ruby.
 
 We do this for three key reasons - it allows us to pass Ruby objects into C
 without converting them to a native representation, it allows us to add inline

@@ -9,13 +9,18 @@ copyright: Copyright © 2018 Chris Seaton.
 In [TruffleRuby](..) we run Ruby C extensions using an interpreter with a JIT
 that is built very much like our interpreter and JIT for Ruby.
 
-We do this for three key reasons - it allows us to pass Ruby objects into C
-without converting them to a native representation, it allows us to add inline
-caches for Ruby C API calls, and it allows us to intercept C operations and
-redirect them to work with our internal representations of Ruby objects.
+We do this for three key reasons:
+
+- it allows us to pass Ruby objects into C without converting them to a native
+  representation
+
+- it allows us to add inline caches for Ruby C API calls
+
+- and it allows us to intercept C operations and redirect them to work with our
+  internal representations of Ruby objects.
 
 We've done this in order to implement the Ruby C API with better performance
-than existing efforts like JRuby and Rubinius, but we've also found that it's
+than existing efforts like JRuby and Rubinius, but we've also found that it has
 allowed us to do some fun new things that we didn't expect.
 
 This blog post shows one of those fun new things - using Ruby objects as if they
@@ -24,9 +29,8 @@ were a C `struct`, just by casting, and the other way around - using a C
 
 Consider a C extension function that calculates the magnitude of a Ruby vector
 object. It's cumbersome to access a Ruby object from C - you need to use
-functions to call the accessor methods, and you need to convert the types from
-Ruby to C. This is the only way to access the object in other implementations of
-Ruby.
+functions to call the accessor methods, and to convert the types from Ruby to C.
+This is the only way to access the object in other implementations of Ruby.
 
 ```ruby
 class Vector
@@ -69,7 +73,7 @@ VALUE magnitude(VALUE self, VALUE vector) {
 }
 ```
 
-You can also do this the other way around. Consider a C extension function that
+We can also do this the other way around. Consider a C extension function that
 returns the date. It creates an `OpenStruct` and sets `year`, `month` and `day`
 fields. Again this is pretty cumbersome - you need to manually convert the types
 and you need to call Ruby methods using the C API.
@@ -95,7 +99,7 @@ VALUE date(VALUE self) {
 }
 ```
 
-In TruffleRuby you can define a C `struct`, allocate an instance of it, and then
+In TruffleRuby we can define a C `struct`, allocate an instance of it, and then
 just pass it back into Ruby with no extra work where it will appear as a Ruby
 object.
 
@@ -158,8 +162,8 @@ We only plan to use this technique internally for the cases like `RData` - we'd
 recommend people normally keep writing C extensions in a way that's compatible
 with MRI.
 
-This is all possible because in our C interpreter instead of the `struct` field
-reads just being a load from an address in memory we can instead insert any
+This is all possible because in our C interpreter rather than the `struct` field
+reads just being a load from an address in memory, we can instead insert any
 logic we want. There's even an inline cache here so the call to the Ruby method
 is fast and can be inlined.
 

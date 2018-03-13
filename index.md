@@ -446,9 +446,6 @@ in the UK regulated and CE marked as a medical device.</p>
         Training Captain, C (<a href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a>) Squadron, the <a href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own Yeomanry</a>, reserve military service in a light cavalry squadron
     </li>
     <li>
-        Chair of the Board of Governors of <a href="http://www.deepointprimary.cheshire.sch.uk">Dee Point Primary School</a>
-    </li>
-    <li>
         Academic Visitor at the <a href="http://www.manchester.ac.uk/">University of
         Manchester</a>
     </li>

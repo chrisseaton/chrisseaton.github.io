@@ -41,28 +41,28 @@ For these objects, we always allocate enough space for them to contain three ele
 
 Consider the case of a `Array#each`. For an array of arbitrary size, this is implemented something like this:
 
-{% highlight java %}
+```java
 for (int n = 0; n < array.length; n++) {
   block.call(array[n]);
 }
-{% endhighlight %}
+```
 
 If the array is using the small strategy, we can make the loop iteration count constant at our maximum size, and include a test for the actual size of the array inside the loop.
 
-{% highlight java %}
+```java
 for (int n = 0; n < 3; n++) {
   if (n < array.size)
     block.call(array[n]);
 }
-{% endhighlight %}
+```
 
 The key difference here is that as this array is of a constant size, it can be easily unrolled by the compiler. In Truffle we call this loop explosion, and it can be forced through an annotation to ensure that it's performed. This means the compiler can automatically turn the loop into a series of loop bodies without any branches or loop variables.
 
-{% highlight java %}
+```java
 if (0 < array.size) block.call(array[0]);
 if (1 < array.size) block.call(array[1]);
 if (2 < array.size) block.call(array[2]);
-{% endhighlight %}
+```
 
 Unlike with an array of variable number of iterations, these three statements are now clearly independent and can be pipelined much more effectively by a processor than a loop with branches.
 
@@ -72,7 +72,7 @@ Another example is `Array#sort`. Java has a high performance implementation of a
 
 The same approach works for hashes as well. The `Hash#merge` method returns a new hash that includes the contents of two hashes, with priority given to the first. Here there are two data structures involved, and they may have different strategies. We have written specialised versions of `Hash#merge` for some specific combinations of two strategies that have obvious optimisations. For example merging a `null` hash with one that uses an array specialisation can be implemented as a very simple array copy of the second hash's array.
 
-{% highlight ruby %}
+```ruby
 public RubyHash mergeObjectArrayNull(RubyHash hash, RubyHash other) {
     final Object[] store = (Object[]) hash.getStore();
     final Object[] copy = Arrays.copyOf(
@@ -80,15 +80,15 @@ public RubyHash mergeObjectArrayNull(RubyHash hash, RubyHash other) {
     return new RubyHash(getContext().getCoreLibrary().getHashClass(),
       hash.getDefaultBlock(), copy, hash.getStoreSize());
 }
-{% endhighlight %}
+```
 
 That's an awful lot simpler than enumerating one Java `HashMap` and looking up in another. In fact, it doesn't even contain any loops, just a memory copy which can be vectorised.
 
 The Truffle framework includes excellent support for declaratively adding new specialisations for particular situations. The annotation for that merge specialisation is:
 
-{% highlight ruby %}
+```ruby
 @Specialization(guards = {"isObjectArray", "isOtherNull"}, order = 1)
-{% endhighlight %}
+```
 
 This says that this specialisation applies if the first hash is an object array, and the second is `null`. The ordering argument is about controlling the latice that these specialisations form - we want any switch to other specialisations to be monotonic. Also take a look at the specialisations for [`Array#each`](https://github.com/jruby/jruby/blob/bd12275b137b1daafc28a058b16ea91a361dfd15/core/src/main/java/org/jruby/truffle/nodes/core/ArrayNodes.java#L1323-L1491) and [`Array#sort`](https://github.com/jruby/jruby/blob/bd12275b137b1daafc28a058b16ea91a361dfd15/core/src/main/java/org/jruby/truffle/nodes/core/ArrayNodes.java#L3036-L3162).
 

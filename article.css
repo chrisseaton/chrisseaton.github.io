@@ -39,9 +39,10 @@ code {
 }
 
 .highlight {
-    margin: 3em;
+    margin: 1em;
+    padding: 0.25em;
 
-    background-color: #f7f6f4;
+    background-color: #f2f0ed;
 }
 
 /* Table */

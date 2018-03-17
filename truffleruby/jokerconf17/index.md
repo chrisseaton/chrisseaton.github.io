@@ -182,7 +182,7 @@ itself with Java 9.
 Ok now that we have everything ready, let's show this working. We'll use this
 very simple code.
 
-{% highlight java %}
+```java
 class Demo {
   public static void main(String[] args) {
     while (true) {
@@ -194,7 +194,7 @@ class Demo {
     return a + b;
   }
 }
-{% endhighlight %}
+```
 
 We'll compile that with `javac`, and then we'll run the JVM. First of all I'll
 show you the conventional C2 JIT-compiler working. To do this I'll turn on a
@@ -297,11 +297,11 @@ from the method. Machine code is also just an array of bytes.
 So the interface that you need to implement when you write a new JIT-compiler
 and plug it into the JVM will look something like this.
 
-{% highlight java %}
+```java
 interface JVMCICompiler {
     byte[] compileMethod(byte[] bytecode);
 }
-{% endhighlight %}
+```
 
 So if you were thinking how can Java do something as low level as JIT-compile to
 machine code, it's not as low level as you thought is it? It's a pure function
@@ -315,7 +315,7 @@ say instead that the input is a `CompilationRequest`, which tells us which
 `JavaMethod` we want to compile, and say that this can give us all the
 information we need.
 
-{% highlight java %}
+```java
 interface JVMCICompiler {
   void compileMethod(CompilationRequest request);
 }
@@ -331,26 +331,26 @@ interface JavaMethod {
     ProfilingInfo getProfilingInfo();
     ...
 }
-{% endhighlight %}
+```
 
 Also, the interface doesn't have you return the compiled machine code - instead
 you call another API to tell the JVM that you want to install some machine code.
 
-{% highlight java %}
+```java
 HotSpot.installCode(targetCode);
-{% endhighlight %}
+```
 
 Now to write a new JIT-compiler for the JVM we just need to implement this
 interface. We get the information about the method that we want to compile, and
 it's then over to us to compile it to machine code and call `installCode`.
 
-{% highlight java %}
+```java
 class GraalCompiler implements JVMCICompiler {
   void compileMethod(CompilationRequest request) {
     HotSpot.installCode(...);
   }
 }
-{% endhighlight %}
+```
 
 Let's switch to the Eclipse IDE with Graal in it to see what some of these
 interfaces and classes look like in practice. As I've said, they'll be a little
@@ -366,14 +366,14 @@ What I want to do now is to show you that we can modify Graal and immediately
 use it in Java 9. I'll add my own logging message that just says when Graal is
 compiling a method, and I'll add this to the interface method that JVMCI calls.
 
-{% highlight java %}
+```java
 class HotSpotGraalCompiler implements JVMCICompiler {
   CompilationRequestResult compileMethod(CompilationRequest request) {
     System.err.println("Going to compile " + request.getMethod().getName());
     ...
   }
 }
-{% endhighlight %}
+```
 
 ![Going to compile](hotspot-graal-compiler-3.png)
 
@@ -443,11 +443,11 @@ Then run the JVM with `-Dgraal.Dump`.
 
 We can see very simple dataflow only by writing a simple expression.
 
-{% highlight java %}
+```java
 int average(int a, int b) {
   return (a + b) / 2;
 }
-{% endhighlight %}
+```
 
 ![IGV for the average method](average.png)
 
@@ -457,7 +457,7 @@ constant value `2` (written as `C(2)`). This value is then returned.
 
 We can see more complex data and control flow together if we introduce a loop.
 
-{% highlight java %}
+```java
 int average(int[] values) {
   int sum = 0;
   for (int n = 0; n < values.length; n++) {
@@ -465,7 +465,7 @@ int average(int[] values) {
   }
   return sum / values.length;
 }
-{% endhighlight %}
+```
 
 ![IGV for the average loop method](average-loop.png)
 
@@ -498,16 +498,16 @@ way through the compilation pipeline.
 Compilation starts with the bytecode. We'll go back to our tiny addition
 example.
 
-{% highlight java %}
+```java
 int workload(int a, int b) {
   return a + b;
 }
-{% endhighlight %}
+```
 
 We'll show the bytecode that we get in by printing it out as the compiler
 starts.
 
-{% highlight java %}
+```java
 class HotSpotGraalCompiler implements JVMCICompiler {
   CompilationRequestResult compileMethod(CompilationRequest request) {
     System.err.println(request.getMethod().getName() + " bytecode: "
@@ -515,7 +515,7 @@ class HotSpotGraalCompiler implements JVMCICompiler {
     ...
   }
 }
-{% endhighlight %}
+```
 
     workload bytecode: [26, 27, 96, -84]
 
@@ -542,7 +542,7 @@ We can see the bytecode parser creating them, and that leads us to the code
 where the `IADD` bytecode is parsed. (By the way, `IADD` is bytecode 96, which
 we saw in the input bytecode we printed.)
 
-{% highlight java %}
+```java
 private void genArithmeticOp(JavaKind kind, int opcode) {
     ValueNode y = frameState.pop(kind);
     ValueNode x = frameState.pop(kind);
@@ -556,7 +556,7 @@ private void genArithmeticOp(JavaKind kind, int opcode) {
     }
     frameState.push(kind, append(v));
 }
-{% endhighlight %}
+```
 
 I say that this is abstraction interpretation because this looks a lot like a
 bytecode interpreter. If this was an actual JVM interpreter, it would be popping
@@ -573,11 +573,11 @@ When we want to turn the Graal graph into machine code, we need to generate
 machine code bytes for each node in the graph. This is done by asking each node
 to generate the machine code itself, in a `generate` method.
 
-{% highlight java %}
+```java
 void generate(Generator gen) {
     gen.emitAdd(a, b);
 }
-{% endhighlight %}
+```
 
 Again, we're working at quite a high level of abstraction here. We have a class
 that lets us emit the machine code instruction without having to know here the
@@ -588,16 +588,16 @@ arithmetic operators have a lot of different combinations of operands to encode
 and the different operators can share most of their code, so I will change
 our program to do something a little more simple.
 
-{% highlight java %}
+```java
 int workload(int a) {
   return a + 1;
 }
-{% endhighlight %}
+```
 
 I'll tell you that this will use an increment instruction, and I'll show you
 what that looks like in the assembler.
 
-{% highlight java %}
+```java
 void incl(Register dst) {
     int encode = prefixAndEncode(dst.encoding);
     emitByte(0xFF);
@@ -607,7 +607,7 @@ void incl(Register dst) {
 void emitByte(int b) {
     data.put((byte) (b & 0xFF));
 }
-{% endhighlight %}
+```
 
 ![The incl instruction in the assembler](incl.png)
 
@@ -622,7 +622,7 @@ In the same way as we reviewed the bytecode going in, let's view the machine
 code coming out. We'll modify where the machine code is installed to print the
 bytes.
 
-{% highlight java %}
+```java
 class HotSpotGraalCompiler implements JVMCICompiler {
   CompilationResult compileHelper(...) {
     ...
@@ -631,7 +631,7 @@ class HotSpotGraalCompiler implements JVMCICompiler {
     ...
   }
 }
-{% endhighlight %}
+```
 
 ![Printing machine code](machine-code.png)
 
@@ -683,13 +683,13 @@ implementation of addition to make it actually subtraction instead. I'm going to
 edit the `generate` method of the addition node to emit a subtraction
 instruction instead of an addition instruction.
 
-{% highlight java %}
+```java
 class AddNode {
   void generate(...) {
     ... gen.emitSub(op1, op2, false) ...  // changed from emitAdd
   }
 }
-{% endhighlight %}
+```
 
 ![Emitting the AddNode instructions](emit-add.png)
 
@@ -725,11 +725,11 @@ more efficient.
 An optimisation phase is just a method that has the opportunity to modify the
 graph. You write phases by implementing an interface.
 
-{% highlight java %}
+```java
 interface Phase {
   void run(Graph graph);
 }
-{% endhighlight %}
+```
 
 ### Canonicalisation
 
@@ -740,18 +740,18 @@ that it really means constant folding and simplifying the nodes.
 Nodes are responsible for simplifying themselves - they have a method
 `canonical`.
 
-{% highlight java %}
+```java
 interface Node {
   Node canonical();
 }
-{% endhighlight %}
+```
 
 Let's look at something like the negate node, which is the unary subtraction
 operator. The negate node will remove itself and its child if it's being applied
 to another negate node, leaving just the value behind. It simplifies `--x` to
 just `x`.
 
-{% highlight java %}
+```java
 class NegateNode implements Node {
   Node canonical() {
     if (value instanceof NegateNode) {
@@ -761,7 +761,7 @@ class NegateNode implements Node {
     }
   }
 }
-{% endhighlight %}
+```
 
 ![findSynonym in the NegateNode](negate-node.png)
 
@@ -777,11 +777,11 @@ Global value numbering is a technique to remove code that is redundant because
 it appears more than once. In this example, `a + b` could be calculated just
 once and the value then used twice.
 
-{% highlight java %}
+```java
 int workload(int a, int b) {
   return (a + b) * (a + b);
 }
-{% endhighlight %}
+```
 
 Graal can compare nodes to see if they're equal. It's simple - they're equal if
 they have the same inputs. Graal's global value numbering phase looks to see if
@@ -798,11 +798,11 @@ possibly have a side effect so has to happen at a certain point of time. If we
 use a method call instead then the terms become fixed and not redundant so they
 aren't merged into one.
 
-{% highlight java %}
+```java
 int workload() {
   return (getA() + getB()) * (getA() + getB());
 }
-{% endhighlight %}
+```
 
 ![A graph which cannot be global value numbered](gvn-igv-2.png)
 
@@ -813,7 +813,7 @@ synchronises on the same monitor twice immediately after each other. They may
 not literally write this, but it may result from other optimisations such as
 inlining.
 
-{% highlight java %}
+```java
 void workload() {
   synchronized (monitor) {
     counter++;
@@ -822,11 +822,11 @@ void workload() {
     counter++;
   }
 }
-{% endhighlight %}
+```
 
 We'll de-sugar that and say that it's effectively doing this.
 
-{% highlight java %}
+```java
 void workload() {
   monitor.enter();
   counter++;
@@ -835,26 +835,26 @@ void workload() {
   counter++;
   monitor.exit();
 }
-{% endhighlight %}
+```
 
 We could optimise this code to enter the monitor just once, instead of leaving
 it just to enter it again. This is lock coarsening.
 
-{% highlight java %}
+```java
 void workload() {
   monitor.enter();
   counter++;
   counter++;
   monitor.exit();
 }
-{% endhighlight %}
+```
 
 In Graal this is implemented in a phase called `LockEliminationPhase`. Its `run`
 method looks for all monitor exit nodes and sees if they are immediately
 followed by another enter node. It then confirms that they use the same monitor,
 and if so will remove them both, leaving the outer enter and exit nodes.
 
-{% highlight java %}
+```java
 void run(StructuredGraph graph) {
   for (monitorExitNode monitorExitNode : graph.getNodes(MonitorExitNode.class)) {
     FixedNode next = monitorExitNode.next();
@@ -867,7 +867,7 @@ void run(StructuredGraph graph) {
     }
   }
 }
-{% endhighlight %}
+```
 
 ![Lock elimination](lock-elimination.png)
 
@@ -875,13 +875,13 @@ The reason that this is worth doing is that it means less code for the extra
 exit and enter, but it also allows us to apply more optimisations such as
 combining the two increments into a single add of `2`.
 
-{% highlight java %}
+```java
 void workload() {
   monitor.enter();
   counter += 2;
   monitor.exit();
 }
-{% endhighlight %}
+```
 
 Let's see this working with IGV. We can see the graph go from having the two
 pairs of monitor enters and exits, to just one pair, after the optimisation

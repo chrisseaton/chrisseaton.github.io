@@ -37,11 +37,11 @@ Both `chunky_png` and `psd.rb` include some patterns of Ruby code that are extre
 
 Both of the gems are fairly well factored into small methods. For example [this method](https://github.com/wvanbergen/chunky_png/blob/efd61c8d0ddcabdcf09fb44f8e8c1ba709995940/lib/chunky_png/color.rb#L187-L189) for extracting the red component of colour packed into a `Fixnum`:
 
-{% highlight ruby %}
+```ruby
 def r(value)
   (value & 0xff000000) >> 24
 end
-{% endhighlight %}
+```
 
 Again this is a good design decision, but it does make optimisation more difficult for traditional implementations of Ruby. A conventional JVM used by JRuby will only inline so far, and in many of these benchmarks we're going to have spent that inlining budget before we get to the interesting bit. If you don't inline far enough it has a knock-on effect where more values escape and constants cannot be propogated. Rubinius and its LLVM-based JIT also stops inlining far too early for many of these benchmarks.
 
@@ -49,19 +49,19 @@ Again this is a good design decision, but it does make optimisation more difficu
 
 You may think of meta-programming methods like `#method_missing`, `#respond_to?` and `#send` as something that should be used perhaps just to facilitate rare cases like mocking objects for testing, if at all, but the reality is that code is being written such as these gems that use these methods in the inner loop. For example `psd.rb` uses `#method_missing`, `#respond_to?` and `#send` to implement a kind of module import. In [this line](https://github.com/layervault/psd.rb/blob/e14d652ddc705e865d8b2b897d618b25d78bcc7c/lib/psd/renderer/compose.rb#L23) they call the method `#r`.
 
-{% highlight ruby %}
+```ruby
 new_r = blend_channel(r(bg), r(fg), mix_alpha)
-{% endhighlight %}
+```
 
 That method isn't defined in this scope, so we run `#method_missing` [here](https://github.com/layervault/psd.rb/blob/e14d652ddc705e865d8b2b897d618b25d78bcc7c/lib/psd/renderer/compose.rb#L327-L330). That calls `#respond_to?` and then `#send` to call the correct method from another module.
 
-{% highlight ruby %}
+```ruby
 def method_missing(method, *args, &block)
   return ChunkyPNG::Color.send(method, *args) ↩
     if ChunkyPNG::Color.respond_to?(method)
   normal(*args)
 end
-{% endhighlight %}
+```
 
 They could have imported the module (they've actually changed this one example in a newer release since we started work to do that) but they chose not to. That's their decision and it's the compiler's job to deal with that and deliver the same performance anyway.
 
@@ -71,7 +71,7 @@ In one extreme case the inner loop of a compose operation on an image [calls `#s
 
 Both gems also make very heavy use of temporary arrays and hashes. In the most extreme example, `psd.rb` represents pixel values as a hash of `{r:,g:,b:}` values, [in the inner loop of an image processing routine](https://github.com/layervault/psd.rb/blob/e14d652ddc705e865d8b2b897d618b25d78bcc7c/lib/psd/color.rb#L117-L122). One hash is created, then mapped to an array, then another hash is created with the result. The hashes and arrays don't escape the method so we should be able to just use the values that we take out of them directly without actually creating the objects.
 
-{% highlight ruby %}
+```ruby
 def cmyk_to_rgb(c, m, y, k)
   Hash[{
     r: (65535 - (c * (255 - k) + (k << 8))) >> 8,
@@ -79,15 +79,15 @@ def cmyk_to_rgb(c, m, y, k)
     b: (65535 - (y * (255 - k) + (k << 8))) >> 8
   }.map { |k, v| [k, Util.clamp(v, 0, 255)] }]
 end
-{% endhighlight %}
+```
 
 Another example is the inner loop utility method [`clamp`](https://github.com/layervault/psd.rb/blob/e14d652ddc705e865d8b2b897d618b25d78bcc7c/lib/psd/util.rb#L14-L16) in `psd.rb`, which returns a value between two bounds. This has been implemented by putting the values into an array, sorting it, and taking the middle value. Again this is a fine way to write Ruby code - nice and expressive - but if the implementation actually allocates an array and then calls another method to sort it you are not going to achieve much performance.
 
-{% highlight ruby %}
+```ruby
 def clamp(num, min, max)
   [min, num, max].sort[1]
 end
-{% endhighlight %}
+```
 
 ## The Acid Test
 
@@ -95,7 +95,7 @@ We can put several of these difficult to optimise patterns together in a single 
 
 This code is built up from patterns that are found on the critical path in the gems we're using, so it's not a contrived example. This is the Ruby code that people want to run, so we want to run it as fast as possible.
 
-{% highlight ruby %}
+```ruby
 module Foo
   extend self
 
@@ -133,7 +133,7 @@ loop do
 
   puts Time.now - start
 end
-{% endhighlight %}
+```
 
 A sufficiently smart implementation of Ruby should be able to inline and constant fold through all of that code to compile the `#times` block at the bottom into a single constant value of `22`, probably plus some guards of some kind. The `#method_missing`, `#respond_to?` and `#send` can all be handled by inline polymoprhic caches and inlined into the caller. The values put into the hash and arrays can be taken out again as we can determine that they don't escape the method. The `#map` operation can be evaluated at compile time as the receiver and arguments are all constant, as can the `#sort` and the `#+`. Of course we have to speculate that the methods will not be redefined by some other thread as the code is running, but if they are we can use dynamic deoptimisation to transfer back to the interpreter and handle that case.
 

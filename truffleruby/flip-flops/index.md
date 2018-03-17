@@ -13,7 +13,7 @@ The Ruby [flip-flop operator](https://blog.newrelic.com/2015/02/24/weird-ruby-pa
 
 Briefly, it’s a form of `if` with two conditions, using syntax that looks like a range literal. It’s usually run in some kind of loop. The body is not executed until the first condition becomes true, and then it is executed again until the second condition becomes true, at which point it the body is not executed again. You can use it to count the number of days between Tuesday and Thursday, for example.
 
-{% highlight ruby %}
+```ruby
 DAYS = [:mon, :tue, :wed, :thur, :fri, :sat, :sun]
 
 count = 0
@@ -23,7 +23,7 @@ DAYS.each do |day|
     count += 1
   end
 end
-{% endhighlight %}
+```
 
 The name 'flip-flop' comes from the [electrical component](https://en.wikipedia.org/wiki/Flip-flop_(electronics)) that has a similar function, and the functionality in Ruby comes from Perl, as do many of Ruby’s more obscure features.
 
@@ -33,38 +33,38 @@ I found the flip-flop operator actually being used in just 8 gems, on a total of
 
 The gems are `tailor`, a static analysis tool that helps you follow style guides. It uses flip-flops in 3 places which are all pretty sensible applications of the operator where it wants to make a predicate on code that is between two tokens [[1]](https://github.com/turboladen/tailor/blob/5fea7a7093c2ce2657d504e601942786eea3a3e5/lib/tailor/rulers/allow_conditional_parentheses.rb#L47), [[2]](https://github.com/turboladen/tailor/blob/5fea7a7093c2ce2657d504e601942786eea3a3e5/lib/tailor/rulers/allow_unnecessary_double_quotes_ruler.rb#L44), [[3]](https://github.com/turboladen/tailor/blob/develop/lib/tailor/rulers/allow_unnecessary_interpolation_ruler.rb#L59).
 
-{% highlight ruby %}
+```ruby
 tokens.select do |t|
   true if (conditional?(t))..(lparen?(t))
 end.tap { |t| t.shift; t.pop }
-{% endhighlight %}
+```
 
-{% highlight ruby %}
+```ruby
 tokens.select do |t|
   true if (double_quote_start?(t))..(double_quote_end?(t))
 end.slice_before { |t| double_quote_start?(t) }.reject { |q| q.empty? }
-{% endhighlight %}
+```
 
-{% highlight ruby %}
+```ruby
 tokens.select do |t|
   true if (t[1] == :on_tstring_beg)..(t[1] == :on_tstring_end)
 end.slice_before { |t| t[1] == :on_tstring_beg }
-{% endhighlight %}
+```
 
 Secondly, `antlr3`, a Ruby parser written in the Antlr parser generator. Again this is idiomatic and clear use of the flip-flop and it’s being used in a similar way as in `tailor` [[4]](https://github.com/ohboyohboyohboy/antlr3/blob/17015ed8213ff1dd4152f5b7761962b2e5d31710/lib/antlr3/tree.rb#L1172).
 
-{% highlight ruby %}
+```ruby
 for node in @nodes
   if node == start ... node == stop
       # <-- hey look, it's the flip flop operator
     buffer << @adaptor.text_of( node )
   end
 end
-{% endhighlight %}
+```
 
 Thirdly, the `xmigra` gem, a tool for managing evolution of your database schema [[5]](https://github.com/rtweeks/xmigra/blob/20c41ec29055879b2798b92a3dce69504d189867/lib/xmigra/program.rb#L74).
 
-{% highlight ruby %}
+```ruby
 description.lines.each_with_index do |line, i|
   indent = if (i > 0)..(i == description.lines.count - 1)
     cmd_width + 3
@@ -73,11 +73,11 @@ description.lines.each_with_index do |line, i|
   end
   puts(" " * indent + line.chomp)
 end
-{% endhighlight %}
+```
 
 There is also an `unless` flip-flop, which isn’t covered in the Ruby spec suite or the MRI tests, so I’m not even sure anyone knows that one exists, except for the author of `blue-shell` [[6]](https://github.com/pivotal/blue-shell/blob/c1d0c1fbfb1343d68bc10eb432e98ceb49ca6c12/lib/blue-shell/buffered_reader_expector.rb#L54). The same line appears in the `cf`, `static` and `vmc` gems.
 
-{% highlight ruby %}
+```ruby
 unless (c == "\e") .. (c == "m")
   if c == "\b"
     ...
@@ -85,15 +85,15 @@ unless (c == "\e") .. (c == "m")
     ...
   end
 end
-{% endhighlight %}
+```
 
 And finally `lazy-enumerator`, which is obsolete as it was a back-port of some Ruby 2.0 functionality. It's also an interesting case as the upper bound is just `true` [[7]](https://github.com/headius/lazy_enumerator/blob/5a5a79c18e195d6980954637ce7e88fca2f19f78/lib/lazy_enumerator.rb#L66).
 
-{% highlight ruby %}
+```ruby
 each do |element|
   output.yield(element) unless yield(element)..true
 end
-{% endhighlight %}
+```
 
 The 1.6 billion lines I searched included all versions of all gems, and the operators I found appeared in several versions of these gems for a total count of 69 instances, or about 1 in every 23 million lines of Ruby code, or 1-in-10 million to round to an order of magnitude.
 
@@ -103,7 +103,7 @@ This isn’t an argument to remove the flip-flop operator. I often say that as a
 
 I benchmark a lot of things in Ruby, so I also decided to benchmark how fast flip-flops are. Of course the performance of flip-flops doesn't really matter since they’re so little used, but it may at least be academically interesting to see what the different implementations do with them. I tested MRI 2.3.0, Rubinius 3.14, and JRuby+Truffle at 05a8efa with GraalVM 0.10. When JRuby re-did their compiler for the new version 9.0 they didn't reimplement the operator and they haven't received any complaints yet, so I benchmarked JRuby 1.7.24 with `invokedynamic`, which is the last version where it worked. I used benchmark-ips 2.5.0 to run this benchmark which counts the number of days between Tuesday and Thursday, implemented using a flip-flop, and an equivalent version implemented using local variables directly.
 
-{% highlight ruby %}
+```ruby
 require 'benchmark/ips'
 
 DAYS = [:mon, :tue, :wed, :thur, :fri, :sat, :sun]
@@ -146,7 +146,7 @@ Benchmark.ips do |x|
   x.compare!
 
 end
-{% endhighlight %}
+```
 
 I’m using the new `iterations` option of `benchmark-ips` here because optimising implementations of Ruby like JRuby+Truffle interact badly with the transition from warmup to timing phases.
 

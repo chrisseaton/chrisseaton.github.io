@@ -122,7 +122,7 @@ The problem we can address with deoptimization is what to do when the check, how
 
 Consider this pseudo-code version of some generated machine code for the simple operation `a + b + c`. We'll say that the compiler has already determined that all the variables are `Fixnum` going into this code, but it can't work out if the operations will overflow or not.
 
-{% highlight ruby %}
+```ruby
 t1 = Fixnum(a) + Fixnum(b)
 if t1.overflowed?
   t1 = Bignum(a) + Bignum(b)
@@ -133,24 +133,24 @@ else
     t2 = Bignum(t1) + Bignum(c)
   end
 end
-{% endhighlight %}
+```
 
 The code to handle the overflows quickly mounts up, and we either have to make the subsequent code generic to handle either `Fixnum` of `Bignum`, even if we knew that `a` and `b` are always `Fixnum`, or we have to copy the code for the different types on each code path, as we've done here. It gets worse from there - all the code in the method now has to be ready to handle `t1` and `t2` that may be either `Fixnum` or `Bignum`, even if this has never actually happened yet.
 
 Using deoptimization we can *cut off* the code paths that we think are unlikely to be used. Instead of jumping on overflow to code that handles the overflow case, we deoptimize, and we don't emit any more code on that path from that point on. The code then looks like this:
 
-{% highlight ruby %}
+```ruby
 t1 = Fixnum(a) + Fixnum(b)
 deoptimize! if t1.overflowed?
 t2 = Fixnum(t1) + Fixnum(c)
 deoptimize! if t2.overflowed?
-{% endhighlight %}
+```
 
 Now the code is significantly simpler and more compact, with fewer branches, and we haven't had to refer to `Bignum` at all. If we deoptimize we continue in code that looks similar to the first example.
 
 What about an operation that always overflows? If that's a normal part of your application you don't want the cost of deoptimization every time. In that case we deoptimize the first time it happens, and then the next time we recompile we explicitly handle the one particular operation that overflowed - but only that one. If the first `+` overflowed the code would then look like this:
 
-{% highlight ruby %}
+```ruby
 t1 = Fixnum(a) + Fixnum(b)
 if t1.overflowed?
   t1 = Bignum(a) + Bignum(b)
@@ -159,7 +159,7 @@ else
   t2 = Fixnum(t1) + Fixnum(c)
   deoptimize! if t2.overflowed?
 end
-{% endhighlight %}
+```
 
 That now handles overflow on the first operation, but still deoptimizes on the second, and so is still more compact than the general case. JRuby+Truffle handles this through a form of [AST specialization](http://lafo.ssw.uni-linz.ac.at/papers/2012_DLS_SelfOptimizingASTInterpreters.pdf) in the interpreter.
 

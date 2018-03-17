@@ -53,7 +53,7 @@ revolutionary medical software.</p>
 <div class="project-logo">
 
 <p>
-<a href="rubytruffle/"><img alt="TruffleRuby" src="rubytruffle/truffleruby.png" width="96" height="96"></a>
+<a href="truffleruby/"><img alt="TruffleRuby" src="truffleruby/truffleruby.png" width="96" height="96"></a>
 </p>
 
 </div>
@@ -62,14 +62,14 @@ revolutionary medical software.</p>
 
 <h3>TruffleRuby</h3>
 
-<p><a href="rubytruffle/">TruffleRuby</a> started as my internship project at Oracle Labs in early 2013. It is an implementation of the Ruby programming language on the JVM, using the Graal JIT compiler and the Truffle AST interpreter framework. RubyTruffle can achieve peak performance well beyond that possible in JRuby at the same time as being a significantly simpler system. In early 2014 it was open sourced and integrated into JRuby, and then in 2017 it became its own project.</p>
+<p><a href="truffleruby/">TruffleRuby</a> started as my internship project at Oracle Labs in early 2013. It is an implementation of the Ruby programming language on the JVM, using the Graal JIT compiler and the Truffle AST interpreter framework. RubyTruffle can achieve peak performance well beyond that possible in JRuby at the same time as being a significantly simpler system. In early 2014 it was open sourced and integrated into JRuby, and then in 2017 it became its own project.</p>
 
 <ul class="awards">
 <li><i class="icon-trophy"></i>Finalist, Ruby Prize, 2016</li>
 </ul>
 
 <div class="buttons" style="text-align: right;">
-<a href="rubytruffle/" class="less-significant">Learn more <i class="icon-arrow-right"></i></a>
+<a href="truffleruby/" class="less-significant">Learn more <i class="icon-arrow-right"></i></a>
 </div>
 
 </div>
@@ -186,31 +186,31 @@ in the UK regulated and CE marked as a medical device.</p>
 <ul class="publications">
 
     <li>
-        T. Würthinger, C. Wimmer, C. Humer, A. Wöss, L. Stadler, C. Seaton, G. Duboscq, D. Simon, M. Grimmer. <strong><a href="rubytruffle/pldi17-truffle/pldi17-truffle.pdf">Practical Partial Evaluation for High-Performance Dynamic Language Runtimes</a></strong>. In Proceedings of the Conference on Programming Language Design and Implementation (PLDI), 2017.<br>
+        T. Würthinger, C. Wimmer, C. Humer, A. Wöss, L. Stadler, C. Seaton, G. Duboscq, D. Simon, M. Grimmer. <strong><a href="truffleruby/pldi17-truffle/pldi17-truffle.pdf">Practical Partial Evaluation for High-Performance Dynamic Language Runtimes</a></strong>. In Proceedings of the Conference on Programming Language Design and Implementation (PLDI), 2017.<br>
         <span class="smaller">
-            <a href="rubytruffle/pldi17-truffle/pldi17-truffle.pdf">PDF</a>
+            <a href="truffleruby/pldi17-truffle/pldi17-truffle.pdf">PDF</a>
         </span>
     </li>
 
     <li>
-        C. Seaton. <strong><a href="rubytruffle/meta16/meta16-ruby.pdf">AST Specialisation and Partial Evaluation for Easy High-Performance Metaprogramming</a></strong>. In Proceedings of the 1st Workshop on Meta-Programming Techniques and Reflection (META), 2016.<br>
+        C. Seaton. <strong><a href="truffleruby/meta16/meta16-ruby.pdf">AST Specialisation and Partial Evaluation for Easy High-Performance Metaprogramming</a></strong>. In Proceedings of the 1st Workshop on Meta-Programming Techniques and Reflection (META), 2016.<br>
         <span class="smaller">
-            <a href="rubytruffle/meta16/meta16-ruby.pdf">PDF</a>,
-            <a href="rubytruffle/meta16/meta16-ruby-slides.pdf">Slides</a>
+            <a href="truffleruby/meta16/meta16-ruby.pdf">PDF</a>,
+            <a href="truffleruby/meta16/meta16-ruby-slides.pdf">Slides</a>
         </span>
     </li>
 
     <li>
-        M. Grimmer, C. Seaton, R. Schatz, T. Würthinger, H. Mössenböck. <strong><a href="rubytruffle/dls15-interop/dls15-interop.pdf">High-Performance Cross-Language Interoperability in a Multi-Language Runtime</a></strong>. In Proceedings of 11th Dynamic Languages Symposium (DLS), 2015.<br>
+        M. Grimmer, C. Seaton, R. Schatz, T. Würthinger, H. Mössenböck. <strong><a href="truffleruby/dls15-interop/dls15-interop.pdf">High-Performance Cross-Language Interoperability in a Multi-Language Runtime</a></strong>. In Proceedings of 11th Dynamic Languages Symposium (DLS), 2015.<br>
         <span class="smaller">
-            <a href="rubytruffle/dls15-interop/dls15-interop.pdf">PDF</a>
+            <a href="truffleruby/dls15-interop/dls15-interop.pdf">PDF</a>
         </span>
     </li>
 
     <li>
-        B. Daloze, C. Seaton, D. Bonetta, H. Mössenböck. <strong><a href="rubytruffle/icooolps15-safepoints/safepoints.pdf">Techniques and Applications for Guest-Language Safepoints</a></strong>. In Proceedings of the 10th Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS), 2015.<br>
+        B. Daloze, C. Seaton, D. Bonetta, H. Mössenböck. <strong><a href="truffleruby/icooolps15-safepoints/safepoints.pdf">Techniques and Applications for Guest-Language Safepoints</a></strong>. In Proceedings of the 10th Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS), 2015.<br>
         <span class="smaller">
-            <a href="rubytruffle/icooolps15-safepoints/safepoints.pdf">PDF</a>
+            <a href="truffleruby/icooolps15-safepoints/safepoints.pdf">PDF</a>
         </span>
     </li>
 
@@ -222,23 +222,23 @@ in the UK regulated and CE marked as a medical device.</p>
     </li>
 
     <li>
-        S. Marr, C. Seaton, S. Ducasse. <strong><a href="rubytruffle/pldi15-metaprogramming/pldi15-marr-et-al-zero-overhead-metaprogramming.pdf">Zero-Overhead Metaprogramming: Reflection and Metaobject Protocols Fast and without Compromises</a></strong>. In Proceedings of the 36th Conference on Programming Language Design and Implementation (PLDI), 2015.<br>
+        S. Marr, C. Seaton, S. Ducasse. <strong><a href="truffleruby/pldi15-metaprogramming/pldi15-marr-et-al-zero-overhead-metaprogramming.pdf">Zero-Overhead Metaprogramming: Reflection and Metaobject Protocols Fast and without Compromises</a></strong>. In Proceedings of the 36th Conference on Programming Language Design and Implementation (PLDI), 2015.<br>
         <span class="smaller">
-            <a href="rubytruffle/pldi15-metaprogramming/pldi15-marr-et-al-zero-overhead-metaprogramming.pdf">PDF</a>
+            <a href="truffleruby/pldi15-metaprogramming/pldi15-marr-et-al-zero-overhead-metaprogramming.pdf">PDF</a>
         </span>
     </li>
 
     <li>
-        M. Grimmer, C. Seaton, T. Würthinger, H. Mössenböck. <strong><a href="rubytruffle/modularity15/rubyextensions.pdf">Dynamically Composing Languages in a Modular Way: Supporting C Extensions for Dynamic Languages</a></strong>. In Proceedings of the 14th International Conference on Modularity, 2015.<br>
+        M. Grimmer, C. Seaton, T. Würthinger, H. Mössenböck. <strong><a href="truffleruby/modularity15/rubyextensions.pdf">Dynamically Composing Languages in a Modular Way: Supporting C Extensions for Dynamic Languages</a></strong>. In Proceedings of the 14th International Conference on Modularity, 2015.<br>
         <span class="smaller">
-            <a href="rubytruffle/modularity15/rubyextensions.pdf">PDF</a>
+            <a href="truffleruby/modularity15/rubyextensions.pdf">PDF</a>
         </span>
     </li>
 
     <li>
-        A. Wöß, C. Wirth, D. Bonetta, C. Seaton, C. Humer, and H. Mössenböck. <strong><a href="rubytruffle/pppj14-om/pppj14-om.pdf">An object storage model for the Truffle language implementation framework</a></strong>. In Proceedings of the International Conference on Principles and Practices of Programming on the Java Platform (PPPJ), 2014.<br>
+        A. Wöß, C. Wirth, D. Bonetta, C. Seaton, C. Humer, and H. Mössenböck. <strong><a href="truffleruby/pppj14-om/pppj14-om.pdf">An object storage model for the Truffle language implementation framework</a></strong>. In Proceedings of the International Conference on Principles and Practices of Programming on the Java Platform (PPPJ), 2014.<br>
         <span class="smaller">
-            <a href="rubytruffle/pppj14-om/pppj14-om.pdf">PDF</a>
+            <a href="truffleruby/pppj14-om/pppj14-om.pdf">PDF</a>
         </span>
     </li>
 
@@ -291,22 +291,22 @@ in the UK regulated and CE marked as a medical device.</p>
 
 <ul class="publications">
     <li>
-        Chris Seaton. <strong><a href="rubytruffle/metass16/metass.pdf">Self-Specialising Interpreters and Partial Evaluation</a></strong>. At the Metaprogramming Summer School. 2016.<br>
+        Chris Seaton. <strong><a href="truffleruby/metass16/metass.pdf">Self-Specialising Interpreters and Partial Evaluation</a></strong>. At the Metaprogramming Summer School. 2016.<br>
         <span class="smaller">
-            <a href="rubytruffle/metass16/metass.pdf">Slides</a>
+            <a href="truffleruby/metass16/metass.pdf">Slides</a>
         </span>
     </li>
     <li>
-        Chris Seaton. <strong><a href="rubytruffle/vmss16/vmss16-ruby.pdf">JRuby+Truffle: Why it's important to optimise the tricky parts</a></strong>. At the Virtual Machines Summer School (VMSS). 2016.<br>
+        Chris Seaton. <strong><a href="truffleruby/vmss16/vmss16-ruby.pdf">JRuby+Truffle: Why it's important to optimise the tricky parts</a></strong>. At the Virtual Machines Summer School (VMSS). 2016.<br>
         <span class="smaller">
-            <a href="rubytruffle/vmss16/vmss16-ruby.pdf">Slides</a>,
+            <a href="truffleruby/vmss16/vmss16-ruby.pdf">Slides</a>,
             <a href="https://www.youtube.com/watch?v=b1NTaVQPt1E">Video</a>
         </span>
     </li>
     <li>
-        Chris Seaton. <strong><a href="rubytruffle/ecoop14/ecoop14-ruby-truffle.pdf">Implementing Ruby Using Truffle and Graal</a></strong>. At the European Conference on Object Oriented Programming (ECOOP) Summer School. 2014.<br>
+        Chris Seaton. <strong><a href="truffleruby/ecoop14/ecoop14-ruby-truffle.pdf">Implementing Ruby Using Truffle and Graal</a></strong>. At the European Conference on Object Oriented Programming (ECOOP) Summer School. 2014.<br>
         <span class="smaller">
-            <a href="rubytruffle/ecoop14/ecoop14-ruby-truffle.pdf">Slides</a>
+            <a href="truffleruby/ecoop14/ecoop14-ruby-truffle.pdf">Slides</a>
         </span>
     </li>
 </ul>
@@ -315,66 +315,66 @@ in the UK regulated and CE marked as a medical device.</p>
 
 <ul class="publications">
     <li>
-        Chris Seaton. <strong><a href="rubytruffle/jokerconf17/understanding-how-graal-works.pdf">Understanding How Graal Works - a Java JIT Compiler Written in Java</a></strong>. At JokerConf 2017.<br>
+        Chris Seaton. <strong><a href="truffleruby/jokerconf17/understanding-how-graal-works.pdf">Understanding How Graal Works - a Java JIT Compiler Written in Java</a></strong>. At JokerConf 2017.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=D2IbrPCiupA">Video</a>,
-            <a href="rubytruffle/jokerconf17/understanding-how-graal-works.pdf">Slides</a>,
-            <a href="rubytruffle/jokerconf17/">Blog post</a>
+            <a href="truffleruby/jokerconf17/understanding-how-graal-works.pdf">Slides</a>,
+            <a href="truffleruby/jokerconf17/">Blog post</a>
         </span>
     </li>
     <li>
-        Chris Seaton. <strong><a href="rubytruffle/polyconf17/polyglot-old-to-new-seaton.pdf">Polyglot From the Very Old to the Very New</a></strong> (keynote). At PolyConf 2017.<br>
+        Chris Seaton. <strong><a href="truffleruby/polyconf17/polyglot-old-to-new-seaton.pdf">Polyglot From the Very Old to the Very New</a></strong> (keynote). At PolyConf 2017.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=FPN4IScbE60">Video</a>,
-            <a href="rubytruffle/polyconf17/polyglot-old-to-new-seaton.pdf">Slides</a>
+            <a href="truffleruby/polyconf17/polyglot-old-to-new-seaton.pdf">Slides</a>
         </span>
     </li>
     <li>
-        Chris Seaton. <strong><a href="rubytruffle/oraclecode17/oraclecode17.pdf">Turning the JVM into a Polyglot VM with Graal</a></strong>. At Oracle Code London 2017.<br>
+        Chris Seaton. <strong><a href="truffleruby/oraclecode17/oraclecode17.pdf">Turning the JVM into a Polyglot VM with Graal</a></strong>. At Oracle Code London 2017.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=oWX2tpIO4Yc">Video</a>,
-            <a href="rubytruffle/oraclecode17/oraclecode17.pdf">Slides</a>
+            <a href="truffleruby/oraclecode17/oraclecode17.pdf">Slides</a>
         </span>
     </li>
     <li>
-        Chris Seaton. <strong><a href="rubytruffle/rubyconf16/rubyconf16-cexts.pdf">Ruby's C Extension Problem and How We're Fixing It</a></strong>. At RubyConf 2016.<br>
+        Chris Seaton. <strong><a href="truffleruby/rubyconf16/rubyconf16-cexts.pdf">Ruby's C Extension Problem and How We're Fixing It</a></strong>. At RubyConf 2016.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=YLtjkP9bD_U">Video</a>,
-            <a href="rubytruffle/rubyconf16/rubyconf16-cexts.pdf">Slides</a>
+            <a href="truffleruby/rubyconf16/rubyconf16-cexts.pdf">Slides</a>
         </span>
     </li>
     <li>
-        Chris Seaton. <strong><a href="rubytruffle/javaone16/faster-ruby-javascript-graalvm.pdf">Faster Ruby and JavaScript with GraalVM</a></strong>. At JavaOne 2016.<br>
+        Chris Seaton. <strong><a href="truffleruby/javaone16/faster-ruby-javascript-graalvm.pdf">Faster Ruby and JavaScript with GraalVM</a></strong>. At JavaOne 2016.<br>
         <span class="smaller">
-            <a href="rubytruffle/javaone16/faster-ruby-javascript-graalvm.pdf">Slides</a>
+            <a href="truffleruby/javaone16/faster-ruby-javascript-graalvm.pdf">Slides</a>
         </span>
     </li>
     <li>
-        Chris Seaton. <strong><a href="rubytruffle/llvm-cauldron-16/llvm-cauldron-sulong.pdf">Using LLVM and Sulong for Language C Extensions</a></strong>. At the LLVM Cauldron. 2016.<br>
+        Chris Seaton. <strong><a href="truffleruby/llvm-cauldron-16/llvm-cauldron-sulong.pdf">Using LLVM and Sulong for Language C Extensions</a></strong>. At the LLVM Cauldron. 2016.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=bJzMfYX6n9A">Video</a>,
-            <a href="rubytruffle/llvm-cauldron-16/llvm-cauldron-sulong.pdf">Slides</a>
+            <a href="truffleruby/llvm-cauldron-16/llvm-cauldron-sulong.pdf">Slides</a>
         </span>
     </li>
     <li>
-        Chris Seaton. <strong><a href="rubytruffle/javaone15/guilt-free-ruby-on-the-jvm.pdf">Guilt Free Ruby on the JVM</a></strong>. At JavaOne. 2015.<br>
+        Chris Seaton. <strong><a href="truffleruby/javaone15/guilt-free-ruby-on-the-jvm.pdf">Guilt Free Ruby on the JVM</a></strong>. At JavaOne. 2015.<br>
         <span class="smaller">
-            <a href="rubytruffle/javaone15/guilt-free-ruby-on-the-jvm.pdf">Slides</a>
+            <a href="truffleruby/javaone15/guilt-free-ruby-on-the-jvm.pdf">Slides</a>
         </span>
     </li>
     <li>
-        Chris Seaton. <strong><a href="rubytruffle/fosdem15/truffle-tour.pdf">A Tour Through a New Ruby Implementation</a></strong>. At FOSDEM. 2015.<br>
+        Chris Seaton. <strong><a href="truffleruby/fosdem15/truffle-tour.pdf">A Tour Through a New Ruby Implementation</a></strong>. At FOSDEM. 2015.<br>
         <span class="smaller">
-            <a href="rubytruffle/fosdem15/truffle-tour.pdf">Slides</a>
+            <a href="truffleruby/fosdem15/truffle-tour.pdf">Slides</a>
         </span>
     </li>
 
     <li>
-        Chris Seaton. <strong><a href="rubytruffle/deoptimizing">Deoptimizing Ruby</a></strong>. At RubyConf. 2014.<br>
+        Chris Seaton. <strong><a href="truffleruby/deoptimizing">Deoptimizing Ruby</a></strong>. At RubyConf. 2014.<br>
         <span class="smaller">
             <a href="http://confreaks.tv/videos/rubyconf2014-deoptimizing-ruby">Video</a>,
-            <a href="rubytruffle/deoptimizing/deoptimizing-ruby.pdf">Slides</a>,
-            <a href="rubytruffle/deoptimizing/">Blog post</a>
+            <a href="truffleruby/deoptimizing/deoptimizing-ruby.pdf">Slides</a>,
+            <a href="truffleruby/deoptimizing/">Blog post</a>
         </span>
     </li>
 

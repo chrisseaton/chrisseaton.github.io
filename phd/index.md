@@ -55,4 +55,4 @@ In many cases the techniques are 'zero-overhead', in that the generated machine 
 
 # More Information
 
-The work in my thesis was implemented as [TruffleRuby](../rubytruffle). Research papers, blog posts, videos, slides etc are listed on that project page.
+The work in my thesis was implemented as [TruffleRuby](../truffleruby). Research papers, blog posts, videos, slides etc are listed on that project page.

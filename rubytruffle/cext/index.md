@@ -172,4 +172,4 @@ Tim Felgentreff helped us understand C extension support in JRuby.
 Benoit Daloze and Johan Lundahl reviewed drafts for us.
 JRuby+Truffle is built on code from the JRuby and Rubinius projects, and the huge engineering effort that has gone into the JVM, Truffle and Graal.
 
-{% include jrubytrufflelinks.html %}
+{% include trufflerubylinks.html %}

@@ -94,4 +94,4 @@ A more formal description of how we implemented and evaluated `set_trace_func` a
 
 If you'd like to know any more, please get in touch!
 
-{% include jrubytrufflelinks.html %}
+{% include trufflerubylinks.html %}

@@ -1123,4 +1123,4 @@ Graal is a large project with a lot of people working on it. As I said I don't
 really work on Graal myself, I'm not much more than a user of it, as you could
 be!
 
-{% include jrubytrufflelinks.html %}
+{% include trufflerubylinks.html %}

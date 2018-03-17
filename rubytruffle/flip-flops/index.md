@@ -255,4 +255,4 @@ I tried to benchmark `topaz` but I was unable to get it to run `benchmark-ips`, 
 
 Kevin Menard reviewed a draft and suggested I look at uses of `unless` flip-flops. The [flip-flop schematic](https://commons.wikimedia.org/wiki/File:RS_Flip-flop_(NOR).svg) is by [inductiveload](https://commons.wikimedia.org/wiki/User:Inductiveload) and is in the public domain.
 
-{% include jrubytrufflelinks.html %}
+{% include trufflerubylinks.html %}

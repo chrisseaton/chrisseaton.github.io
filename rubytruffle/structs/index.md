@@ -170,4 +170,4 @@ is fast and can be inlined.
 You can try this demo yourself - see the
 [GitHub repository](https://github.com/chrisseaton/struct-blog-post).
 
-{% include jrubytrufflelinks.html %}
+{% include trufflerubylinks.html %}

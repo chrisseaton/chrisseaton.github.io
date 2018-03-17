@@ -43,4 +43,4 @@ We believe that in the further future the Truffle backend could be good enough t
 
 We are going to continue to integrate Truffle into JRuby at the same time as continuing to implement more of the Ruby language. We already have very encouraging results with our initial implementation and with the excellent work already done by the JRuby community we think we can fill in the gaps to be a complete implementation.
 
-{% include jrubytrufflelinks.html %}
+{% include trufflerubylinks.html %}

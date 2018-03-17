@@ -310,4 +310,4 @@ There's a lot of work going on behind the scenes in Truffle, Graal and the JVM t
 
 If you want to get involved in Truffle development in JRuby, or want to know more about what we've talked about, feel free to get in touch with me.
 
-{% include jrubytrufflelinks.html %}
+{% include trufflerubylinks.html %}

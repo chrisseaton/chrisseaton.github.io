@@ -176,4 +176,4 @@ We'll take the opportunity to say that without JRuby to build on, we wouldn't be
 
 We're grateful for the open source gems we used written by [Willem van Bergen](https://github.com/wvanbergen), [Ryan LeFevre](https://github.com/meltingice), [Kelly Sutton](https://github.com/kellysutton), and others.
 
-{% include jrubytrufflelinks.html %}
+{% include trufflerubylinks.html %}

@@ -286,4 +286,4 @@ The OpenJDK JVM, HotSpot, uses deoptimization extensively [2, 3] and the new Gra
 
 6. C. Seaton, M. L. Van De Vanter, and M. Haupt, "[Debugging at Full Speed](http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf)," presented at the Proceedings of the 8th Workshop on Dynamic Languages and Applications (DYLA), 2014.
 
-{% include jrubytrufflelinks.html %}
+{% include trufflerubylinks.html %}

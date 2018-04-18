@@ -62,7 +62,7 @@ revolutionary medical software.</p>
 
 <h3>TruffleRuby</h3>
 
-<p><a href="truffleruby/">TruffleRuby</a> started as my internship project at Oracle Labs in early 2013. It is an implementation of the Ruby programming language on the JVM, using the Graal JIT compiler and the Truffle AST interpreter framework. RubyTruffle can achieve peak performance well beyond that possible in JRuby at the same time as being a significantly simpler system. In early 2014 it was open sourced and integrated into JRuby, and then in 2017 it became its own project.</p>
+<p><a href="truffleruby/">TruffleRuby</a> started as my internship project at Oracle Labs in early 2013. It is an implementation of the Ruby programming language on the JVM, using the Graal JIT compiler and the Truffle AST interpreter framework. RubyTruffle can achieve peak performance well beyond that possible in JRuby at the same time as being a significantly simpler system. In early 2014 it was open sourced and integrated into JRuby, then in 2017 it became its own project, and now it is part of <a href="http://graalvm.org/">GraalVM</a>.</p>
 
 <ul class="awards">
 <li><i class="icon-trophy"></i>Finalist, Ruby Prize, 2016</li>

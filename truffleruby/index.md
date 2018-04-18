@@ -17,8 +17,8 @@ Labs](http://labs.oracle.com/) in early 2013. It is an implementation of the
 framework](http://openjdk.java.net/projects/graal/). TruffleRuby can achieve
 peak performance well beyond that possible in JRuby at the same time as being a
 significantly simpler system. In early 2014 it was open sourced and integrated
-into [JRuby](http://jruby.org/) for incubation, and then in 2017 it became its
-own project.
+into [JRuby](http://jruby.org/) for incubation, then in 2017 it became its
+own project, and now it is part of [GraalVM](http://graalvm.org).
 
 This page links to the literature and code related to the project. Note that any
 views expressed are my own and not those of Oracle.

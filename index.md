@@ -428,6 +428,14 @@ in the UK regulated and CE marked as a medical device.</p>
     </li>
 </ul>
 
+<h3>Patents</h3>
+
+<ul class="publications">
+    <li>
+        <a href="https://patents.google.com/patent/US9880931B2/en?oq=9880931">9880931</a> and <a href="https://patents.google.com/patent/US9740463B2/en?oq=9740463">9740463</a>.
+    </li>
+</ul>
+
 <h3>Education</h3>
 
 <ul class="publications">

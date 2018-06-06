@@ -186,6 +186,13 @@ in the UK regulated and CE marked as a medical device.</p>
 <ul class="publications">
 
     <li>
+        M. Grimmer, R. Schatz, C. Seaton, T. Würthinger, M. Luján. <strong><a href="truffleruby/cross-language-interop.pdf">Cross-Language Interoperability in a Multi-Language Runtime</a></strong>. In ACM Transactions on Programming Languages and Systems (TOPLAS), Vol. 40, No. 2, 2018.<br>
+        <span class="smaller">
+            <a href="truffleruby/cross-language-interop.pd">PDF</a>
+        </span>
+    </li>
+
+    <li>
         T. Würthinger, C. Wimmer, C. Humer, A. Wöss, L. Stadler, C. Seaton, G. Duboscq, D. Simon, M. Grimmer. <strong><a href="truffleruby/pldi17-truffle/pldi17-truffle.pdf">Practical Partial Evaluation for High-Performance Dynamic Language Runtimes</a></strong>. In Proceedings of the Conference on Programming Language Design and Implementation (PLDI), 2017.<br>
         <span class="smaller">
             <a href="truffleruby/pldi17-truffle/pldi17-truffle.pdf">PDF</a>

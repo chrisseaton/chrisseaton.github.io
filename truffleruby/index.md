@@ -53,6 +53,11 @@ views expressed are my own and not those of Oracle.
 
 # Research Papers and Thesis
 
+*    M. Grimmer, R. Schatz, C. Seaton, T. Würthinger, M. Luján. [Cross-Language Interoperability in a Multi-Language Runtime](cross-language-interop.pdf). In ACM Transactions on Programming Languages and Systems (TOPLAS), Vol. 40, No. 2, 2018.<br>
+    <span class="smaller">
+        <a href="cross-language-interop.pdf">PDF</a>
+    </span>
+
 *    T. Würthinger, C. Wimmer, C. Humer, A. Wöss, L. Stadler, C. Seaton, G. Duboscq, D. Simon, M. Grimmer. [Practical Partial Evaluation for High-Performance Dynamic Language Runtimes](pldi17-truffle/pldi17-truffle.pdf). In Proceedings of the Conference on Programming Language Design and Implementation (PLDI), 2017.<br>
     <span class="smaller">
         <a href="pldi17-truffle/pldi17-truffle.pdf">PDF</a>

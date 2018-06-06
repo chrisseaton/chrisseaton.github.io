@@ -169,7 +169,6 @@ in the UK regulated and CE marked as a medical device.</p>
         </span><br>
         <i class="icon-trophy"></i> Finalist, Ruby Prize
     </li>
-
     <li>
         C. Seaton. <strong><a href="katahdin/katahdin.pdf">A programming language where the syntax and semantics are mutable at runtime</a></strong>. MEng thesis, University of Bristol, 2007.<br>
         <span class="smaller">
@@ -184,21 +183,18 @@ in the UK regulated and CE marked as a medical device.</p>
 <h3>Research Papers</h3>
 
 <ul class="publications">
-
     <li>
         M. Grimmer, R. Schatz, C. Seaton, T. Würthinger, M. Luján. <strong><a href="truffleruby/cross-language-interop.pdf">Cross-Language Interoperability in a Multi-Language Runtime</a></strong>. In ACM Transactions on Programming Languages and Systems (TOPLAS), Vol. 40, No. 2, 2018.<br>
         <span class="smaller">
             <a href="truffleruby/cross-language-interop.pd">PDF</a>
         </span>
     </li>
-
     <li>
         T. Würthinger, C. Wimmer, C. Humer, A. Wöss, L. Stadler, C. Seaton, G. Duboscq, D. Simon, M. Grimmer. <strong><a href="truffleruby/pldi17-truffle/pldi17-truffle.pdf">Practical Partial Evaluation for High-Performance Dynamic Language Runtimes</a></strong>. In Proceedings of the Conference on Programming Language Design and Implementation (PLDI), 2017.<br>
         <span class="smaller">
             <a href="truffleruby/pldi17-truffle/pldi17-truffle.pdf">PDF</a>
         </span>
     </li>
-
     <li>
         C. Seaton. <strong><a href="truffleruby/meta16/meta16-ruby.pdf">AST Specialisation and Partial Evaluation for Easy High-Performance Metaprogramming</a></strong>. In Proceedings of the 1st Workshop on Meta-Programming Techniques and Reflection (META), 2016.<br>
         <span class="smaller">
@@ -206,49 +202,42 @@ in the UK regulated and CE marked as a medical device.</p>
             <a href="truffleruby/meta16/meta16-ruby-slides.pdf">Slides</a>
         </span>
     </li>
-
     <li>
         M. Grimmer, C. Seaton, R. Schatz, T. Würthinger, H. Mössenböck. <strong><a href="truffleruby/dls15-interop/dls15-interop.pdf">High-Performance Cross-Language Interoperability in a Multi-Language Runtime</a></strong>. In Proceedings of 11th Dynamic Languages Symposium (DLS), 2015.<br>
         <span class="smaller">
             <a href="truffleruby/dls15-interop/dls15-interop.pdf">PDF</a>
         </span>
     </li>
-
     <li>
         B. Daloze, C. Seaton, D. Bonetta, H. Mössenböck. <strong><a href="truffleruby/icooolps15-safepoints/safepoints.pdf">Techniques and Applications for Guest-Language Safepoints</a></strong>. In Proceedings of the 10th Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS), 2015.<br>
         <span class="smaller">
             <a href="truffleruby/icooolps15-safepoints/safepoints.pdf">PDF</a>
         </span>
     </li>
-
     <li>
         M. Grimmer, R. Schatz, C. Seaton, T. Würthinger, H. Mössenböck. <strong><a href="plas15/safec.pdf">Memory-safe Execution of C on a Java VM</a></strong>. In Proceedings of the 10th Workshop on Programming Languages and Analysis for Security (PLAS), 2015.<br>
         <span class="smaller">
             <a href="plas15/safec.pdf">PDF</a>
         </span>
     </li>
-
     <li>
         S. Marr, C. Seaton, S. Ducasse. <strong><a href="truffleruby/pldi15-metaprogramming/pldi15-marr-et-al-zero-overhead-metaprogramming.pdf">Zero-Overhead Metaprogramming: Reflection and Metaobject Protocols Fast and without Compromises</a></strong>. In Proceedings of the 36th Conference on Programming Language Design and Implementation (PLDI), 2015.<br>
         <span class="smaller">
             <a href="truffleruby/pldi15-metaprogramming/pldi15-marr-et-al-zero-overhead-metaprogramming.pdf">PDF</a>
         </span>
     </li>
-
     <li>
         M. Grimmer, C. Seaton, T. Würthinger, H. Mössenböck. <strong><a href="truffleruby/modularity15/rubyextensions.pdf">Dynamically Composing Languages in a Modular Way: Supporting C Extensions for Dynamic Languages</a></strong>. In Proceedings of the 14th International Conference on Modularity, 2015.<br>
         <span class="smaller">
             <a href="truffleruby/modularity15/rubyextensions.pdf">PDF</a>
         </span>
     </li>
-
     <li>
         A. Wöß, C. Wirth, D. Bonetta, C. Seaton, C. Humer, and H. Mössenböck. <strong><a href="truffleruby/pppj14-om/pppj14-om.pdf">An object storage model for the Truffle language implementation framework</a></strong>. In Proceedings of the International Conference on Principles and Practices of Programming on the Java Platform (PPPJ), 2014.<br>
         <span class="smaller">
             <a href="truffleruby/pppj14-om/pppj14-om.pdf">PDF</a>
         </span>
     </li>
-
     <li>
         C. Seaton, M. L. Van De Vanter, and M. Haupt. <strong><a href="http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf">Debugging at full speed</a></strong>. In Proceedings of the 8th Workshop on Dynamic Languages and Applications (DYLA), 2014.<br>
         <span class="smaller">
@@ -256,7 +245,6 @@ in the UK regulated and CE marked as a medical device.</p>
             <a href="http://lafo.ssw.uni-linz.ac.at/truffle/debugging/dyla14-debugging-artifact-0557a4f756d4.tar.gz">Code</a>
         </span>
     </li>
-
     <li>
         D. Goodman, S. Khan, C. Seaton, Y. Guskov, B. Khan, M. Luj&aacute;n, and I. Watson. <strong><a href="dfm2012/dfscala.pdf">DFScala: High level dataflow support for Scala</a></strong>. In Proceedings of the 2nd International Workshop on Data-Flow Models For Extreme Scale Computing (DFM), 2012.<br>
         <span class="smaller">
@@ -265,7 +253,6 @@ in the UK regulated and CE marked as a medical device.</p>
             <a href="dfm2012/dfm12-dfscala.pdf">Slides</a>
         </span>
     </li>
-
     <li>
         C. Seaton, D. Goodman, M. Luj&aacute;n, and I. Watson. <strong><a href="multiprog2012/seaton-multiprog2012.pdf">Applying dataflow and transactions to Lee routing.</a></strong> In Proceedings of the 7th Workshop on Programmability Issues for Heterogeneous Multicores (MULTIPROG), 2012.<br>
         <span class="smaller">
@@ -285,7 +272,6 @@ in the UK regulated and CE marked as a medical device.</p>
             <a href="http://emj.bmj.com/content/early/2014/11/04/emermed-2013-203416.short">PDF (BMJ paywall)</a>
         </span>
     </li>
-
     <li>
         S. S. Sofos, R. Pritchard-Jones, C. Seaton, J. Dingley, P. McArthur, and K. Shokrollahi. <strong><a href="http://journals.lww.com/annalsplasticsurgery/Fulltext/2012/09000/Medical_Innovation_A_Starting_Point_for_Plastic.1.aspx">Medical innovation&mdash;a starting point for plastic surgeons</a></strong>. Annals of Plastic Surgery, 69(3):225–7, Sep 2012.<br>
         <span class="smaller">
@@ -393,7 +379,6 @@ in the UK regulated and CE marked as a medical device.</p>
             <a href="truffleruby/flip-flops/">Blog post</a>
         </span>
     </li>
-
     <li>
         Chris Seaton. <strong><a href="truffleruby/deoptimizing">Deoptimizing Ruby</a></strong>. At RubyConf. 2014.<br>
         <span class="smaller">
@@ -438,7 +423,6 @@ in the UK regulated and CE marked as a medical device.</p>
             <a href="truffleruby/announcement/">Blog post</a>
         </span>
     </li>
-
     <li>
         Christian Wimmer and Chris Seaton. <strong><a href="jvmls13-one-vm/jvmls13-one-vm.pdf">One VM to Rule Them All</a></strong>. At the JVM Language Summit. 2013.<br>
         <span class="smaller">
@@ -446,7 +430,6 @@ in the UK regulated and CE marked as a medical device.</p>
             <a href="jvmls13-one-vm/jvmls13-one-vm.pdf">Slides</a>
         </span>
     </li>
-
     <li>
         Chris Seaton. <strong><a href="http://www.youtube.com/watch?v=B1hh2kpGNQ4">The Challenges of Irregular Parallelism</a></strong>. At the University of Manchester Computer Science Research Showcase. 2012.<br>
         <span class="smaller">
@@ -454,14 +437,12 @@ in the UK regulated and CE marked as a medical device.</p>
             <a href="research-showcase-2012/seaton-irregular-parallelism-slides.pdf">Slides</a>
         </span>
     </li>
-
     <li>
         Chris Seaton, Medicapps Ltd. <strong><a href="mobilehealthcare2012/mobilehealthcare-merseyburns-chris-seaton-25-sep-12.pdf">Developing an app from idea to market and awards success with no funding</a></strong>. At the Mobile Healthcare Industry Summit. 2012.<br>
         <span class="smaller">
             <a href="mobilehealthcare2012/mobilehealthcare-merseyburns-chris-seaton-25-sep-12.pdf">Slides</a>
         </span>
     </li>
-
     <li>
         C. Seaton, D. Goodman, M. Luj&aacute;n, and I. Watson. <strong><a href="eurotmwtm2012/wtm12-dataflow-lee-slides.pdf">Applying dataflow and transactions to Lee routing</a></strong>. At the 1<sup>st</sup> EuroTM Workshop on Transactional Memory (EuroTM). 2012.<br>
         <span class="smaller">
@@ -480,7 +461,6 @@ in the UK regulated and CE marked as a medical device.</p>
         </span><br>
         <i class="icon-trophy"></i> Winner, Best Poster Award
     </li>
-
     <li>
         Mr R Pritchard Jones, Mr C Seaton, Mr N Hamnett, Mr I James, Professor P McArthur. <strong>Mersey Burns Tool — Improving Assessment and Resuscitation</strong>. British Association of Plastic and Reconstructive Surgeons Summer Meeting. 2011.<br>
         <span class="smaller">

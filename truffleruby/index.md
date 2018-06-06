@@ -29,6 +29,8 @@ views expressed are my own and not those of Oracle.
 
 # Blog Posts and Articles
 
+*   [Top 10 Things To Do With GraalVM](tenthings/). What does GraalVM actually do?
+
 *   [Ruby Objects as C Structs and Vice Versa](structs/). How you can use Ruby objects as if they were C structs and C structs as if they were Ruby objects.
 
 *   [Understanding How Graal Works](jokerconf17/). A Java JIT Compiler Written in Java.

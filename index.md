@@ -314,6 +314,12 @@ in the UK regulated and CE marked as a medical device.</p>
         </span>
     </li>
     <li>
+      Eric Sedlar and Chris Seaton. <strong><a href="https://www.youtube.com/watch?v=wBegU4d4GRc">Run Programs Faster with GraalVM</a></strong>. At Oracle Code Boston 2018.<br>
+      <span class="smaller">
+          <a href="https://www.youtube.com/watch?v=wBegU4d4GRc">Video</a>
+      </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="truffleruby/structs/">Ruby Objects as C Structs and Vice Versa</a></strong>. Blog post. 2018.<br>
         <span class="smaller">
             <a href="truffleruby/structs/">Blog post</a>

@@ -120,6 +120,8 @@ views expressed are my own and not those of Oracle.
 
 # Videos of Talks and Slide Decks
 
+*   Eric Sedlar and Chris Seaton. [Run Programs Faster with GraalVM](https://www.youtube.com/watch?v=wBegU4d4GRc). At Oracle Code Boston 2018. [Video](https://www.youtube.com/watch?v=wBegU4d4GRc).
+
 *   Chris Seaton. [Understanding How Graal Works - a Java JIT Compiler Written in Java](jokerconf17). At JokerConf 2017. [Slides](jokerconf17/understanding-how-graal-works.pdf), [video](https://www.youtube.com/watch?v=D2IbrPCiupA) and [blogpost](jokerconf17/).
 
 *   Chris Seaton. [Polyglot From the Very Old to the Very New](polyconf17/polyglot-old-to-new-seaton.pdf) (keynote). At PolyConf 2017. [Slides](polyconf17/polyglot-old-to-new-seaton.pdf) and [video](https://www.youtube.com/watch?v=FPN4IScbE60).

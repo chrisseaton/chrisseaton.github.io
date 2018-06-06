@@ -318,9 +318,21 @@ in the UK regulated and CE marked as a medical device.</p>
     </li>
 </ul>
 
-<h3>Other Presentations</h3>
+<h3>Other Presentations and Publications</h3>
 
 <ul class="publications">
+    <li>
+        Chris Seaton. <strong><a href="truffleruby/tenthings/">Top 10 Things To Do With GraalVM</a></strong>. Blog post. 2018.<br>
+        <span class="smaller">
+            <a href="truffleruby/tenthings/">Blog post</a>
+        </span>
+    </li>
+    <li>
+        Chris Seaton. <strong><a href="truffleruby/structs/">Ruby Objects as C Structs and Vice Versa</a></strong>. Blog post. 2018.<br>
+        <span class="smaller">
+            <a href="truffleruby/structs/">Blog post</a>
+        </span>
+    </li>
     <li>
         Chris Seaton. <strong><a href="truffleruby/jokerconf17/understanding-how-graal-works.pdf">Understanding How Graal Works - a Java JIT Compiler Written in Java</a></strong>. At JokerConf 2017.<br>
         <span class="smaller">
@@ -330,7 +342,7 @@ in the UK regulated and CE marked as a medical device.</p>
         </span>
     </li>
     <li>
-        Chris Seaton. <strong><a href="truffleruby/polyconf17/polyglot-old-to-new-seaton.pdf">Polyglot From the Very Old to the Very New</a></strong> (keynote). At PolyConf 2017.<br>
+        Chris Seaton. <strong><a href="truffleruby/polyconf17/polyglot-old-to-new-seaton.pdf">Polyglot From the Very Old to the Very New</a></strong>. At PolyConf 2017 (invited keynote).<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=FPN4IScbE60">Video</a>,
             <a href="truffleruby/polyconf17/polyglot-old-to-new-seaton.pdf">Slides</a>
@@ -375,6 +387,12 @@ in the UK regulated and CE marked as a medical device.</p>
             <a href="truffleruby/fosdem15/truffle-tour.pdf">Slides</a>
         </span>
     </li>
+    <li>
+        Chris Seaton. <strong><a href="truffleruby/flip-flops/">Flip-Flops &mdash; the 1-in-10-million operator</a></strong>. Blog post. 2015.<br>
+        <span class="smaller">
+            <a href="truffleruby/flip-flops/">Blog post</a>
+        </span>
+    </li>
 
     <li>
         Chris Seaton. <strong><a href="truffleruby/deoptimizing">Deoptimizing Ruby</a></strong>. At RubyConf. 2014.<br>
@@ -382,6 +400,42 @@ in the UK regulated and CE marked as a medical device.</p>
             <a href="http://confreaks.tv/videos/rubyconf2014-deoptimizing-ruby">Video</a>,
             <a href="truffleruby/deoptimizing/deoptimizing-ruby.pdf">Slides</a>,
             <a href="truffleruby/deoptimizing/">Blog post</a>
+        </span>
+    </li>
+    <li>
+        Chris Seaton. <strong><a href="truffleruby/cext/">Very High Performance C Extensions For JRuby+Truffle</a></strong>. Blog post. 2014.<br>
+        <span class="smaller">
+            <a href="truffleruby/cext/">Blog post</a>
+        </span>
+    </li>
+    <li>
+        Chris Seaton. <strong><a href="truffleruby/small-data-structures/">Optimising Small Data Structures in JRuby+Truffle</a></strong>. Blog post. 2014.<br>
+        <span class="smaller">
+            <a href="truffleruby/small-data-structures/">Blog post</a>
+        </span>
+    </li>
+    <li>
+        Chris Seaton. <strong><a href="truffleruby/pushing-pixels/">Pushing Pixels with JRuby+Truffle</a></strong>. Blog post. 2014.<br>
+        <span class="smaller">
+            <a href="truffleruby/pushing-pixels/">Blog post</a>
+        </span>
+    </li>
+    <li>
+        Chris Seaton. <strong><a href="truffleruby/set_trace_func/">Tracing With Zero Overhead in JRuby+Truffle</a></strong>. Blog post. 2014.<br>
+        <span class="smaller">
+            <a href="truffleruby/set_trace_func/">Blog post</a>
+        </span>
+    </li>
+    <li>
+        Chris Seaton. <strong><a href="truffleruby/how-method-dispatch-works-in-jruby-truffle/">How Method Dispatch Works in JRuby/Truffle</a></strong>. Blog post. 2014.<br>
+        <span class="smaller">
+            <a href="truffleruby/how-method-dispatch-works-in-jruby-truffle/">Blog post</a>
+        </span>
+    </li>
+    <li>
+        Chris Seaton. <strong><a href="truffleruby/announcement/">A Truffle/Graal High Performance Backend for JRuby</a></strong>. Blog post. 2014.<br>
+        <span class="smaller">
+            <a href="truffleruby/announcement/">Blog post</a>
         </span>
     </li>
 

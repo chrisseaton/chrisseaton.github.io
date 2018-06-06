@@ -43,7 +43,7 @@ views expressed are my own and not those of Oracle.
 
 *   [Optimising Small Data Structures in JRuby+Truffle](small-data-structures/). Specialised optimisations for small arrays and hashes.
 
-*   [Pushing Pixels with JRuby+Truffle](pushing-pixels). Running real-world Ruby gems.
+*   [Pushing Pixels with JRuby+Truffle](pushing-pixels/). Running real-world Ruby gems.
 
 *   [Tracing With Zero Overhead in JRuby+Truffle](set_trace_func/). How JRuby+Truffle implements `set_trace_func` with zero overhead, and how we use the same technique to implement debugging.
 

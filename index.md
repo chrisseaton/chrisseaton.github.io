@@ -304,9 +304,15 @@ in the UK regulated and CE marked as a medical device.</p>
     </li>
 </ul>
 
-<h3>Other Presentations and Publications</h3>
+<h3>Other Presentations and Blog Posts</h3>
 
 <ul class="publications">
+    <li>
+        Chris Seaton. <strong><a href="truffleruby/low-overhead-polling/">Low Overhead Polling For Ruby</a></strong>. Blog post. 2018.<br>
+        <span class="smaller">
+            <a href="truffleruby/low-overhead-polling/">Blog post</a>
+        </span>
+    </li>
     <li>
         Chris Seaton. <strong><a href="truffleruby/tenthings/">Top 10 Things To Do With GraalVM</a></strong>. Blog post. 2018.<br>
         <span class="smaller">

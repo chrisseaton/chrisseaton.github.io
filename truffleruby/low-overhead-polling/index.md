@@ -6,11 +6,11 @@ date: 8 June 2018
 copyright: Copyright © 2018 Chris Seaton.
 ---
 
-A few weeks ago, [Takashi Kokubun](https://twitter.com/k0kubun), one of the people working on the new JITs being developed for Ruby, asked me about how TruffleRuby was able to detect if optimised code that is already running was no longer valid without any branching.
+A few weeks ago, [Takashi Kokubun](https://twitter.com/k0kubun), one of the people working on the new just-in-time compilers being developed for Ruby, asked me about how [TruffleRuby](http://github.com/oracle/truffleruby) was able to detect if optimised code that is already running was no longer valid without any branching.
 
 <a href="https://twitter.com/k0kubun/status/992415679188951043"><img src="tweet.png"></a>
 
-This blog post explains what he is asking about, how Ruby implementations currently solve the problem, the technique TruffleRuby uses to solve the problem, how it could be implemented in MRI's new JITs, and why it's important for Ruby optimisation in general.
+This blog post explains what he is asking about, how Ruby implementations currently solve the problem, the technique TruffleRuby uses to solve the problem, how it could be implemented in MRI's new just-in-time compilers, and why it's important for Ruby optimisation in general.
 
 ## Guarding
 
@@ -24,7 +24,7 @@ Even in a trivial Ruby method that adds together two numbers you need to conside
 * What if tracing is enabled?
 * What if a debugger is attached?
 
-In simpler implementations of Ruby, these *what-ifs* take the form of a lot of `if` statements. We call these *guards*. We have a simpler case for when things are normal, and a more complicated and slower case for when unusual things have been turned on. The guard is the condition that chooses between the *fast-path* and the *slow-path*, as they're called.
+In simpler implementations of Ruby, these *what-ifs* take the form of a lot of `if` statements. We call these *guards*. We have a simpler case for when things are normal, and a more complicated and slower case for when unusual things have been turned on. The guard is a condition that chooses between the *fast-path* and the *slow-path*, as they're called.
 
 Here's some examples of guards.
 
@@ -39,7 +39,7 @@ else {
 }
 ```
 
-In Rubinius, the `thread_interrupted_p` method is regularly called to check a flag to see if a thread is supposed to raise an exception or be killed.
+In [Rubinius](http://rubinius.com), the `thread_interrupted_p` method is regularly called to check a flag to see if a thread is supposed to raise an exception or be killed.
 
 ```c++
 bool thread_interrupted_p(State* state) {
@@ -51,7 +51,7 @@ bool thread_interrupted_p(State* state) {
 }
 ```
 
-In JRuby, `Array#sort` has a special case for when the `<=>` operator has not been redefined. It checks the redefinition once, and then stores a variable to say which path to use later on.
+In [JRuby](http://jruby.org), `Array#sort` has a special case for when the `<=>` operator has not been redefined. It checks the redefinition once, and then stores a variable to say which path to use later on.
 
 ```java
 protected IRubyObject sortInternal(final ThreadContext context,
@@ -96,7 +96,7 @@ It's this interruption guard mechanism that Kokubun wants to implement.
 
 ## Interrupting loops
 
-Something important to note is that you need the have the interruption guard often enough in your compiled code that the compiled code will not run for very long without checking the guard.
+Something important to note is that you need to have the interruption guard often enough in your compiled code that the compiled code will not run for very long without checking the guard.
 
 Code that wants to trigger the interrupt has to wait until the code being interrupted realises this, so if we don't check the interrupt regularly enough we risk causing unbounded latency.
 
@@ -196,7 +196,7 @@ static void setup_protection_handler() {
   action.sa_flags = SA_SIGINFO;
   action.sa_sigaction = protection_handler;
   if (sigaction(SIGBUS, &action, NULL) != 0) {
-    fprintf(stderr, "error setting up segfault handler: %s\n", strerror(errno));
+    fprintf(stderr, "error setting up bus error handler: %s\n", strerror(errno));
     abort();
   }
 }
@@ -319,7 +319,7 @@ Virtual machines and just-in-time compilers are remarkably undocumented areas of
 
 This paper somewhat confirms my experimental results and finds that the best technique can vary, as well as providing lots of other useful information about what else we can do.
 
-The terminology in this area is also varied. We can call the method of interrupting functions *polling*, *yielding* or *safepoints*.
+The terminology in this area is also varied. We can call the method of interrupting functions *polling*, *yielding* or *safepoints*. Safepoints refers to the polling mechanism as well as the point in the program where the poll is found, and also some other concepts about metadata about compiled code.
 
 I have done some of my own research into safepoints, co-inventing a way to build on simple VM safepoints to run arbitrary user code inside a safepoint. Normally in a memory protection handler you cannot run anything non-trivial, and certainly not arbitrary user code.
 

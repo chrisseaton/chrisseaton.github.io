@@ -23,12 +23,21 @@ Manchester</a>.</p>
 Manchester under the supervision of Doctor Mikel Luján, where I researched programming languages and irregular
 parallelism. Before that, I completed an MEng at the <a href="http://www.bristol.ac.uk/">University of Bristol</a> on languages with mutable syntax and semantics.</p>
 
-<p>Between my undergraduate degree and starting my PhD I commissioned into the <a href="https://en.wikipedia.org/wiki/British_Army">British Army</a>, serving in training and operations in the UK and around the world. In my spare time I'm now a captain in the <a href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a> squadron of the <a href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own Yeomanry</a>, Cheshire's historic reserve <a href="https://en.wikipedia.org/wiki/Light_cavalry">light cavalry</a> squadron.</p>
+<p>Between my undergraduate degree and starting my PhD I commissioned into the
+<a href="https://en.wikipedia.org/wiki/British_Army">British Army</a>, serving
+in training and operations in the UK and around the world. In my spare time I'm
+now a captain in the <a
+href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a>
+squadron of the <a
+href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own
+Yeomanry</a>, Cheshire's historic reserve <a
+href="https://en.wikipedia.org/wiki/Light_cavalry">light cavalry</a>
+squadron.</p>
 
-<p>I used to develop an <a href="http://www.merseyburns.com/">award
-winning medical app</a> that is the first app regulated as a medical device in
-the UK, and ran a consultancy to help clients such as the NHS to develop
-revolutionary medical software.</p>
+<p>I used to develop an <a href="merseyburns/">award winning medical app</a>
+that is the first app regulated as a medical device in the UK, and ran a
+consultancy to help clients such as the NHS to develop revolutionary medical
+software.</p>
 
 </section>
 
@@ -108,7 +117,7 @@ packrat parsing.</p>
 <div class="project-logo">
 
 <p>
-<a href="http://www.merseyburns.com/"><img alt="Mersey Burns Logo" src="mb.png" width="96" height="96"></a>
+<a href="merseyburns/"><img alt="Mersey Burns Logo" src="mb.png" width="96" height="96"></a>
 </p>
 
 <p>
@@ -125,10 +134,10 @@ packrat parsing.</p>
 
 <h3>Mersey Burns</h3>
 
-<p><a href="http://www.merseyburns.com/">Mersey Burns</a> is a free iPhone® app
-for doctors to calculate how much fluid to give to a burns patient, making a
-traditional pen-and-paper method faster and more accurate. It is the first app
-in the UK regulated and CE marked as a medical device.</p>
+<p><a href="merseyburns/">Mersey Burns</a> is a free iPhone® app for doctors to
+calculate how much fluid to give to a burns patient, making a traditional
+pen-and-paper method faster and more accurate. It is the first app in the UK
+regulated and CE marked as a medical device.</p>
 
 <ul class="awards">
 <li><i class="icon-trophy"></i>Winner, Excellence in Mobile Healthcare and overall winner, eHealth Awards, 2013</li>
@@ -139,7 +148,7 @@ in the UK regulated and CE marked as a medical device.</p>
 </ul>
 
 <div class="buttons" style="text-align: right;">
-<a href="http://www.merseyburns.com/">Learn more <i class="icon-arrow-right"></i></a>
+<a href="merseyburns/">Learn more <i class="icon-arrow-right"></i></a>
 </div>
 
 </div>

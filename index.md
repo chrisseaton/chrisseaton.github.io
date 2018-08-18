@@ -189,7 +189,7 @@ regulated and CE marked as a medical device.</p>
     </li>
 </ul>
 
-<h3>Research Papers</h3>
+<h3>Research Papers, Journal Articles and Editorials</h3>
 
 <ul class="publications">
     <li>
@@ -248,6 +248,12 @@ regulated and CE marked as a medical device.</p>
         </span>
     </li>
     <li>
+        J. Barnes, A. Duffy, N. Hamnett, J. McPhail, C. Seaton, K. Shokrollahi, M. I. James, P. McArthur, and R. Pritchard-Jones, <strong><a href="http://emj.bmj.com/content/early/2014/11/04/emermed-2013-203416.short">The Mersey Burns App: evolving a model of validation</a></strong>, Emerg Med J, pp. emermed–2013–203416, Nov. 2014.<br>
+        <span class="smaller">
+            <a href="http://emj.bmj.com/content/early/2014/11/04/emermed-2013-203416.short">PDF (BMJ paywall)</a>
+        </span>
+    </li>
+    <li>
         C. Seaton, M. L. Van De Vanter, and M. Haupt. <strong><a href="http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf">Debugging at full speed</a></strong>. In Proceedings of the 8th Workshop on Dynamic Languages and Applications (DYLA), 2014.<br>
         <span class="smaller">
             <a href="http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf">PDF</a>,
@@ -263,29 +269,18 @@ regulated and CE marked as a medical device.</p>
         </span>
     </li>
     <li>
+        S. S. Sofos, R. Pritchard-Jones, C. Seaton, J. Dingley, P. McArthur, and K. Shokrollahi. <strong><a href="http://journals.lww.com/annalsplasticsurgery/Fulltext/2012/09000/Medical_Innovation_A_Starting_Point_for_Plastic.1.aspx">Medical innovation&mdash;a starting point for plastic surgeons</a></strong>. Annals of Plastic Surgery, 69(3):225–7, Sep 2012.<br>
+        <span class="smaller">
+            <a href="http://journals.lww.com/annalsplasticsurgery/Fulltext/2012/09000/Medical_Innovation_A_Starting_Point_for_Plastic.1.aspx">Publisher</a>
+        </span>
+    </li>
+    <li>
         C. Seaton, D. Goodman, M. Luj&aacute;n, and I. Watson. <strong><a href="multiprog2012/seaton-multiprog2012.pdf">Applying dataflow and transactions to Lee routing.</a></strong> In Proceedings of the 7th Workshop on Programmability Issues for Heterogeneous Multicores (MULTIPROG), 2012.<br>
         <span class="smaller">
             <a href="multiprog2012/seaton-multiprog2012.pdf">PDF</a>,
             <a href="multiprog2012/seaton-slides-multiprog2012.pdf">Slides</a>
         </span><br>
         <i class="icon-trophy"></i> Winner, Best Paper Award
-    </li>
-</ul>
-
-<h3>Journal Articles and Editorials</h3>
-
-<ul class="publications">
-    <li>
-        J. Barnes, A. Duffy, N. Hamnett, J. McPhail, C. Seaton, K. Shokrollahi, M. I. James, P. McArthur, and R. Pritchard-Jones, <strong><a href="http://emj.bmj.com/content/early/2014/11/04/emermed-2013-203416.short">The Mersey Burns App: evolving a model of validation</a></strong>, Emerg Med J, pp. emermed–2013–203416, Nov. 2014.<br>
-        <span class="smaller">
-            <a href="http://emj.bmj.com/content/early/2014/11/04/emermed-2013-203416.short">PDF (BMJ paywall)</a>
-        </span>
-    </li>
-    <li>
-        S. S. Sofos, R. Pritchard-Jones, C. Seaton, J. Dingley, P. McArthur, and K. Shokrollahi. <strong><a href="http://journals.lww.com/annalsplasticsurgery/Fulltext/2012/09000/Medical_Innovation_A_Starting_Point_for_Plastic.1.aspx">Medical innovation&mdash;a starting point for plastic surgeons</a></strong>. Annals of Plastic Surgery, 69(3):225–7, Sep 2012.<br>
-        <span class="smaller">
-            <a href="http://journals.lww.com/annalsplasticsurgery/Fulltext/2012/09000/Medical_Innovation_A_Starting_Point_for_Plastic.1.aspx">Publisher</a>
-        </span>
     </li>
 </ul>
 

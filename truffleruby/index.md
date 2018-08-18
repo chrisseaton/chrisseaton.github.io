@@ -57,6 +57,11 @@ views expressed are my own and not those of Oracle.
 
 # Research Papers and Thesis
 
+*    M. Van De Vanter, C. Seaton, M. Haupt, C. Humer, and T. Würthinger. [Fast, Flexible, Polyglot Instrumentation Support for Debuggers and other Tools](fastflexible/fastflexible.pdf). In The Art, Science, and Engineering of Programming, Vol. 2, No. 3, 2018.<br>
+        <span class="smaller">
+            <a href="fastflexible/fastflexible.pdf">PDF</a>
+        </span>
+
 *    M. Grimmer, R. Schatz, C. Seaton, T. Würthinger, M. Luján. [Cross-Language Interoperability in a Multi-Language Runtime](cross-language-interop.pdf). In ACM Transactions on Programming Languages and Systems (TOPLAS), Vol. 40, No. 2, 2018.<br>
     <span class="smaller">
         <a href="cross-language-interop.pdf">PDF</a>

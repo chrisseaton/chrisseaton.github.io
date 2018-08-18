@@ -193,6 +193,12 @@ regulated and CE marked as a medical device.</p>
 
 <ul class="publications">
     <li>
+        M. Van De Vanter, C. Seaton, M. Haupt, C. Humer, and T. Würthinger. <strong><a href="truffleruby/fastflexible/fastflexible.pdf">Fast, Flexible, Polyglot Instrumentation Support for Debuggers and other Tools</a></strong>. In The Art, Science, and Engineering of Programming, Vol. 2, No. 3, 2018.<br>
+        <span class="smaller">
+            <a href="truffleruby/fastflexible/fastflexible.pdf">PDF</a>
+        </span>
+    </li>
+    <li>
         M. Grimmer, R. Schatz, C. Seaton, T. Würthinger, M. Luján. <strong><a href="truffleruby/cross-language-interop.pdf">Cross-Language Interoperability in a Multi-Language Runtime</a></strong>. In ACM Transactions on Programming Languages and Systems (TOPLAS), Vol. 40, No. 2, 2018.<br>
         <span class="smaller">
             <a href="truffleruby/cross-language-interop.pd">PDF</a>

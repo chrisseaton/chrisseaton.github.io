@@ -513,7 +513,7 @@ regulated and CE marked as a medical device.</p>
 
 <ul class="publications">
     <li>
-        Training Captain, C (<a href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a>) Squadron, the <a href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own Yeomanry</a>, reserve military service in a light cavalry squadron
+        Second in Command, C (<a href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a>) Squadron, the <a href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own Yeomanry</a>, reserve military service in a light cavalry squadron
     </li>
     <li>
         Academic Visitor at the <a href="http://www.manchester.ac.uk/">University of

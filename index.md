@@ -163,9 +163,10 @@ regulated and CE marked as a medical device.</p>
 
 <div class="buttons" style="float: right; margin-top: -3.5em;">
 <a href="http://scholar.google.co.uk/citations?user=ykthVegAAAAJ"><i class="icon-beaker"></i> <span class="hide-small">My work on </span>Google Scholar</a>
+<a href="seaton.bib"><i class="icon-bookmark"></i> BibTeX</a>
 </div>
 
-<p style="font-style: italic">All publications hosted here are the authors' pre-prints.</p>
+<p style="font-style: italic">All publications hosted here are the authors' pre-prints or otherwise freely available.</p>
 
 <h3>Theses</h3>
 

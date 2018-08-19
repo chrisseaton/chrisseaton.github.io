@@ -534,7 +534,10 @@ regulated and CE marked as a medical device.</p>
         Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS) program committee member, 2017
     </li>
     <li>
-        Technical reviewer, <a href="http://aosabook.org/en/index.html">500 Lines or Less</a>
+        Technical reviewer, <a href="http://aosabook.org/en/">500 Lines or Less</a>
+    </li>
+    <li>
+        Contributed technical advice to <a href="https://pragprog.com/book/jkdepj2/deploying-with-jruby-9k">Deploying with JRuby 9k</a> and <a href="http://shop.oreilly.com/product/0636920042983.do">Optimizing Java</a>
     </li>
 </ul>
 

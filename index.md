@@ -169,7 +169,7 @@ regulated and CE marked as a medical device.</p>
 
 <h3>Theses</h3>
 
-<ul class="publications">
+<ul class="list">
     <li>
         C. Seaton. <strong><a href="phd">Specialising Dynamic Techniques for Implementing the Ruby Programming Language</a></strong>. PhD thesis, University of Manchester, 2015.<br>
         <span class="smaller">
@@ -191,7 +191,7 @@ regulated and CE marked as a medical device.</p>
 
 <h3>Research Papers, Journal Articles and Editorials</h3>
 
-<ul class="publications">
+<ul class="list">
     <li>
         M. Van De Vanter, C. Seaton, M. Haupt, C. Humer, and T. Würthinger. <strong><a href="truffleruby/fastflexible/fastflexible.pdf">Fast, Flexible, Polyglot Instrumentation Support for Debuggers and other Tools</a></strong>. In The Art, Science, and Engineering of Programming, Vol. 2, No. 3, 2018.<br>
         <span class="smaller">
@@ -292,7 +292,7 @@ regulated and CE marked as a medical device.</p>
 
 <h3>Summer Schools</h3>
 
-<ul class="publications">
+<ul class="list">
     <li>
         Chris Seaton. <strong><a href="truffleruby/metass16/metass.pdf">Self-Specialising Interpreters and Partial Evaluation</a></strong>. At the Metaprogramming Summer School. 2016.<br>
         <span class="smaller">
@@ -316,7 +316,7 @@ regulated and CE marked as a medical device.</p>
 
 <h3>Other Presentations and Blog Posts</h3>
 
-<ul class="publications">
+<ul class="list">
     <li>
         Chris Seaton. <strong><a href="truffleruby/low-overhead-polling/">Low Overhead Polling For Ruby</a></strong>. Blog post. 2018.<br>
         <span class="smaller">
@@ -475,7 +475,7 @@ regulated and CE marked as a medical device.</p>
 
 <h3>Posters</h3>
 
-<ul class="publications">
+<ul class="list">
     <li>
         Chris Seaton. <strong><a href="research-symposium-2012/seaton-irregular-parallelism-poster.pdf">The Challenges of Irregular Parallelism</a></strong>. At the University of Manchester School of Computer Science Research Symposium. 2012.<br>
         <span class="smaller">
@@ -493,7 +493,7 @@ regulated and CE marked as a medical device.</p>
 
 <h3>Patents</h3>
 
-<ul class="publications">
+<ul class="list">
     <li>
         <a href="https://patents.google.com/patent/US9880931B2/en?oq=9880931">9880931</a> and <a href="https://patents.google.com/patent/US9740463B2/en?oq=9740463">9740463</a>.
     </li>
@@ -503,7 +503,7 @@ regulated and CE marked as a medical device.</p>
 
 <h2>Education</h2>
 
-<ul class="publications">
+<ul class="list">
     <li>
         MEng (Bristol 2007), PhD (Manchester 2015) in computer science
     </li>
@@ -516,7 +516,7 @@ regulated and CE marked as a medical device.</p>
 
 <h2>Community</h2>
 
-<ul class="publications">
+<ul class="list">
     <li>
         Second in Command, C (<a href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a>) Squadron, the <a href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own Yeomanry</a>, reserve military service in a light cavalry squadron
     </li>

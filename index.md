@@ -113,7 +113,6 @@ packrat parsing.</p>
 
 </div>
 
-
 <div class="project-logo">
 
 <p>
@@ -500,7 +499,9 @@ regulated and CE marked as a medical device.</p>
     </li>
 </ul>
 
-<h3>Education</h3>
+<hr>
+
+<h2>Education</h2>
 
 <ul class="publications">
     <li>
@@ -511,7 +512,9 @@ regulated and CE marked as a medical device.</p>
     </li>
 </ul>
 
-<h3>Community</h3>
+<hr>
+
+<h2>Community</h2>
 
 <ul class="publications">
     <li>

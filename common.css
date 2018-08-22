@@ -4,12 +4,12 @@ html {
 
 /* Typography */
 
-h1, h2, h3, h4, div.buttons a {
+h1, h2, h3, h4 {
     font-weight: 300;
     font-family: 'Open Sans', sans;
 }
 
-p, li, th, td, caption {
+p, li, th, td, caption, div.buttons a {
     font-weight: 400;
     font-family: 'Open Sans', sans;
     line-height: 1.5em;

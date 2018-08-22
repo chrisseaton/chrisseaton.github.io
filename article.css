@@ -43,6 +43,8 @@ code {
     padding: 0.25em;
 
     background-color: #f2f0ed;
+    
+    overflow-x: scroll;
 }
 
 /* Table */

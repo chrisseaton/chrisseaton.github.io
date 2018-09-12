@@ -57,6 +57,11 @@ views expressed are my own and not those of Oracle.
 
 # Research Papers and Thesis
 
+*    K. Menard, C. Seaton, and B. Daloze. [Specializing Ropes for Ruby](ropes-manlang.pdf). In Proceedings of 15th International Conference on Managed Languages & Runtimes (ManLang), 2018.<br>
+        <span class="smaller">
+            <a href="ropes-manlang.pdf">PDF</a>
+        </span>
+
 *    M. Van De Vanter, C. Seaton, M. Haupt, C. Humer, and T. Würthinger. [Fast, Flexible, Polyglot Instrumentation Support for Debuggers and other Tools](fastflexible/fastflexible.pdf). In The Art, Science, and Engineering of Programming, Vol. 2, No. 3, 2018.<br>
         <span class="smaller">
             <a href="fastflexible/fastflexible.pdf">PDF</a>

@@ -193,6 +193,12 @@ regulated and CE marked as a medical device.</p>
 
 <ul class="list">
     <li>
+        K. Menard, C. Seaton, and B. Daloze. <strong><a href="truffleruby/ropes-manlang.pdf">Specializing Ropes for Ruby</a></strong>. In Proceedings of 15th International Conference on Managed Languages & Runtimes (ManLang), 2018.<br>
+        <span class="smaller">
+            <a href="truffleruby/ropes-manlang.pdf">PDF</a>
+        </span>
+    </li>
+    <li>
         M. Van De Vanter, C. Seaton, M. Haupt, C. Humer, and T. Würthinger. <strong><a href="truffleruby/fastflexible/fastflexible.pdf">Fast, Flexible, Polyglot Instrumentation Support for Debuggers and other Tools</a></strong>. In The Art, Science, and Engineering of Programming, Vol. 2, No. 3, 2018.<br>
         <span class="smaller">
             <a href="truffleruby/fastflexible/fastflexible.pdf">PDF</a>

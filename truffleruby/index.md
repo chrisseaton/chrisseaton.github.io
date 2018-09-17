@@ -171,6 +171,6 @@ views expressed are my own and not those of Oracle.
 
 # Source Code
 
-*   [TruffleRuby code](https://github.com/graalvm/truffleruby)
+*   [TruffleRuby code](https://github.com/oracle/truffleruby)
 
-*   [Graal and Truffle code](https://github.com/graalvm)
+*   [Graal and Truffle code](https://github.com/oracle/graal)

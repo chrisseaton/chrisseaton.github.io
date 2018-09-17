@@ -57,6 +57,11 @@ views expressed are my own and not those of Oracle.
 
 # Research Papers and Thesis
 
+*    J. Kreindl, M. Rigger, and H. Mössenböck. [Debugging Native Extensions of Dynamic Languages](https://arxiv.org/pdf/1808.00823.pdf). In Proceedings of 15th International Conference on Managed Languages & Runtimes (ManLang), 2018.
+        <span class="smaller">
+            <a href="https://arxiv.org/pdf/1808.00823.pdf">PDF</a>
+        </span>
+
 *    K. Menard, C. Seaton, and B. Daloze. [Specializing Ropes for Ruby](ropes-manlang.pdf). In Proceedings of 15th International Conference on Managed Languages & Runtimes (ManLang), 2018.<br>
         <span class="smaller">
             <a href="ropes-manlang.pdf">PDF</a>

@@ -88,7 +88,7 @@ views expressed are my own and not those of Oracle.
         <a href="meta16/meta16-ruby-slides.pdf">Slides</a>
       </span>
 
-*    C. Seaton. [Specialising Dynamic Techniques for Implementing the Ruby Programming Langauge](../phd). PhD thesis, University of Manchester, 2015.<br>
+*    C. Seaton. [Specialising Dynamic Techniques for Implementing the Ruby Programming Language](../phd). PhD thesis, University of Manchester, 2015.<br>
         <span class="smaller">
             <a href="../phd">Abstract</a>,
             <a href="../phd/specialising-ruby.pdf">PDF</a>

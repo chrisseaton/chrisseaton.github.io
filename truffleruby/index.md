@@ -57,6 +57,11 @@ views expressed are my own and not those of Oracle.
 
 # Research Papers and Thesis
 
+*    B. Daloze, A. Tal, S. Marr, H. Mössenböck, E. Petrank. [Parallellization of Dynamic Languages: Synchronizing Built-in Collections](http://ssw.jku.at/General/Staff/Daloze/thread-safe-collections.pdf). In Proceedings of the Conference on Object-Oriented Programming, Systems, Languages, and Applications (OOPSLA), 2018.
+        <span class="smaller">
+            <a href="http://ssw.jku.at/General/Staff/Daloze/thread-safe-collections.pdf">PDF</a>
+        </span>
+
 *    J. Kreindl, M. Rigger, and H. Mössenböck. [Debugging Native Extensions of Dynamic Languages](https://arxiv.org/pdf/1808.00823.pdf). In Proceedings of 15th International Conference on Managed Languages & Runtimes (ManLang), 2018.
         <span class="smaller">
             <a href="https://arxiv.org/pdf/1808.00823.pdf">PDF</a>

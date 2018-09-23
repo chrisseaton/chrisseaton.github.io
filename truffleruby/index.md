@@ -57,7 +57,7 @@ views expressed are my own and not those of Oracle.
 
 # Research Papers and Thesis
 
-*    B. Daloze, A. Tal, S. Marr, H. Mössenböck, E. Petrank. [Parallellization of Dynamic Languages: Synchronizing Built-in Collections](http://ssw.jku.at/General/Staff/Daloze/thread-safe-collections.pdf). In Proceedings of the Conference on Object-Oriented Programming, Systems, Languages, and Applications (OOPSLA), 2018.
+*    B. Daloze, A. Tal, S. Marr, H. Mössenböck, E. Petrank. [Parallelization of Dynamic Languages: Synchronizing Built-in Collections](http://ssw.jku.at/General/Staff/Daloze/thread-safe-collections.pdf). In Proceedings of the Conference on Object-Oriented Programming, Systems, Languages, and Applications (OOPSLA), 2018.
         <span class="smaller">
             <a href="http://ssw.jku.at/General/Staff/Daloze/thread-safe-collections.pdf">PDF</a>
         </span>

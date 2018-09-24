@@ -21,7 +21,7 @@ Manchester</a>.</p>
 
 <p>Before this I completed a PhD at the University of
 Manchester under the supervision of Doctor Mikel Luján, where I researched programming languages and irregular
-parallelism. Before that, I completed an MEng at the <a href="http://www.bristol.ac.uk/">University of Bristol</a> on languages with mutable syntax and semantics.</p>
+parallelism, and I earned an MEng at the <a href="http://www.bristol.ac.uk/">University of Bristol</a> on languages with mutable syntax and semantics.</p>
 
 <p>Between my undergraduate degree and starting my PhD I commissioned into the
 <a href="https://en.wikipedia.org/wiki/British_Army">British Army</a>, serving

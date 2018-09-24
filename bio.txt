@@ -5,8 +5,8 @@ of Manchester.
 
 Before this he completed a PhD at the University of Manchester under the
 supervision of Doctor Mikel Luján, where he researched programming languages and
-irregular parallelism. Before that, he completed an MEng at the University of
-Bristol on languages with mutable syntax and semantics.
+irregular parallelism, and he earned an MEng at the University of Bristol on
+languages with mutable syntax and semantics.
 
 Between his undergraduate degree and starting his PhD he commissioned into the
 British Army, serving in training and operations in the UK and around the world.

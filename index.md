@@ -324,6 +324,12 @@ regulated and CE marked as a medical device.</p>
 
 <ul class="list">
     <li>
+        Chris Seaton. <strong><a href="truffleruby/codeone18/ten-things-graal.pdf">Ten Things To Do With GraalVM</a></strong>. At Oracle Code One. 2018.<br>
+        <span class="smaller">
+            <a href="truffleruby/codeone18/ten-things-graal.pdf">Slides</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="truffleruby/low-overhead-polling/">Low Overhead Polling For Ruby</a></strong>. Blog post. 2018.<br>
         <span class="smaller">
             <a href="truffleruby/low-overhead-polling/">Blog post</a>

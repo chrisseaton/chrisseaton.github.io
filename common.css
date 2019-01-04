@@ -5,13 +5,11 @@ html {
 /* Typography */
 
 h1, h2, h3, h4 {
-    font-weight: 300;
-    font-family: 'Open Sans', sans;
+    font-family: 'Linux Libertine', sans;
 }
 
 p, li, th, td, caption, div.buttons a {
-    font-weight: 400;
-    font-family: 'Open Sans', sans;
+    font-family: 'Linux Libertine';
     line-height: 1.5em;
 }
 

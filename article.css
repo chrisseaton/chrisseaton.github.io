@@ -35,7 +35,8 @@ header img {
 /* Code */
 
 code {
-    font-family: Inconsolata, monospace;
+    font-family: 'Fira Mono', monospace;
+    font-size: 0.9em;
 }
 
 .highlight {

@@ -2,7 +2,7 @@
 layout: home
 title: Chris Seaton
 author: Chris Seaton
-copyright: Copyright © 2018 Chris Seaton.
+copyright: Copyright © 2019 Chris Seaton.
 footer: <p>TruffleRuby logo Copyright © 2018 Talkdesk, Inc. Licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p>
 ---
 

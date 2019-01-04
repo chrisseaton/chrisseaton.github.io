@@ -26,7 +26,7 @@ parallelism, and I earned an MEng at the <a href="http://www.bristol.ac.uk/">Uni
 <p>Between my undergraduate degree and starting my PhD I commissioned into the
 <a href="https://en.wikipedia.org/wiki/British_Army">British Army</a>, serving
 in training and operations in the UK and around the world. In my spare time I'm
-now a captain in the <a
+Second in Command of the <a
 href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a>
 squadron of the <a
 href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own

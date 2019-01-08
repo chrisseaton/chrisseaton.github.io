@@ -44,11 +44,11 @@ software.</p>
 <section>
 
 <div class="buttons">
-<a href="chris-seaton-cv.pdf"><i class="icon-file-alt"></i> My CV / Resumé</a>
-<a href="http://github.com/chrisseaton/"><i class="icon-github-alt"></i> My code on GitHub</a>
-<a href="mailto:chris@chrisseaton.com"><i class="icon-envelope-alt"></i> Email me</a>
-<a href="https://twitter.com/ChrisGSeaton"><i class="icon-twitter-sign"></i> Follow me</a>
-<a href="http://www.linkedin.com/in/chrisgseaton"><i class="icon-linkedin-sign"></i> Connect with me</a>
+<a href="chris-seaton-cv.pdf"><i class="fas fa-file-alt"></i> My CV / Resumé</a>
+<a href="http://github.com/chrisseaton/"><i class="fab fa-github"></i> My code on GitHub</a>
+<a href="mailto:chris@chrisseaton.com"><i class="fas fa-envelope"></i> Email me</a>
+<a href="https://twitter.com/ChrisGSeaton"><i class="fab fa-twitter"></i> Follow me</a>
+<a href="http://www.linkedin.com/in/chrisgseaton"><i class="fab fa-linkedin"></i> Connect with me</a>
 </div>
 
 </section>
@@ -74,11 +74,11 @@ software.</p>
 <p><a href="truffleruby/">TruffleRuby</a> started as my internship project at Oracle Labs in early 2013. It is an implementation of the Ruby programming language on the JVM, using the Graal JIT compiler and the Truffle AST interpreter framework. RubyTruffle can achieve peak performance well beyond that possible in JRuby at the same time as being a significantly simpler system. In early 2014 it was open sourced and integrated into JRuby, then in 2017 it became its own project, and now it is part of <a href="http://graalvm.org/">GraalVM</a>.</p>
 
 <ul class="awards">
-<li><i class="icon-trophy"></i>Finalist, Ruby Prize, 2016</li>
+<li><i class="fas fa-trophy"></i>Finalist, Ruby Prize, 2016</li>
 </ul>
 
 <div class="buttons" style="text-align: right;">
-<a href="truffleruby/" class="less-significant">Learn more <i class="icon-arrow-right"></i></a>
+<a href="truffleruby/" class="less-significant">Learn more <i class="fas fa-arrow-right"></i></a>
 </div>
 
 </div>
@@ -104,11 +104,11 @@ My research built on contemporary work on parsing expression grammars and
 packrat parsing.</p>
 
 <ul class="awards">
-<li><i class="icon-trophy"></i>Winner, Hele Shaw Prize, 2007</li>
+<li><i class="fas fa-trophy"></i>Winner, Hele Shaw Prize, 2007</li>
 </ul>
 
 <div class="buttons" style="text-align: right;">
-<a href="katahdin/" class="less-significant">Learn more <i class="icon-arrow-right"></i></a>
+<a href="katahdin/" class="less-significant">Learn more <i class="fas fa-arrow-right"></i></a>
 </div>
 
 </div>
@@ -139,15 +139,15 @@ pen-and-paper method faster and more accurate. It is the first app in the UK
 regulated and CE marked as a medical device.</p>
 
 <ul class="awards">
-<li><i class="icon-trophy"></i>Winner, Excellence in Mobile Healthcare and overall winner, eHealth Awards, 2013</li>
-<li><i class="icon-trophy"></i>Highly Commended, Improving Care with Technology, Health Service Journal Awards, 2013</li>
-<li><i class="icon-trophy"></i>Highly Commended, Innovative Mobile App of the Year, BCS UK IT Industry Awards, 2013</li>
-<li><i class="icon-trophy"></i>Highly Commended, eHealth Awards, 2012</li>
-<li><i class="icon-trophy"></i>Winner, NHS North West Innovations Awards, 2011</li>
+<li><i class="fas fa-trophy"></i>Winner, Excellence in Mobile Healthcare and overall winner, eHealth Awards, 2013</li>
+<li><i class="fas fa-trophy"></i>Highly Commended, Improving Care with Technology, Health Service Journal Awards, 2013</li>
+<li><i class="fas fa-trophy"></i>Highly Commended, Innovative Mobile App of the Year, BCS UK IT Industry Awards, 2013</li>
+<li><i class="fas fa-trophy"></i>Highly Commended, eHealth Awards, 2012</li>
+<li><i class="fas fa-trophy"></i>Winner, NHS North West Innovations Awards, 2011</li>
 </ul>
 
 <div class="buttons" style="text-align: right;">
-<a href="merseyburns/">Learn more <i class="icon-arrow-right"></i></a>
+<a href="merseyburns/">Learn more <i class="fas fa-arrow-right"></i></a>
 </div>
 
 </div>
@@ -176,7 +176,7 @@ regulated and CE marked as a medical device.</p>
             <a href="phd">Abstract</a>,
             <a href="phd/specialising-ruby.pdf">PDF</a>
         </span><br>
-        <i class="icon-trophy"></i> Finalist, Ruby Prize
+        <i class="fas fa-trophy"></i> Finalist, Ruby Prize
     </li>
     <li>
         C. Seaton. <strong><a href="katahdin/katahdin.pdf">A programming language where the syntax and semantics are mutable at runtime</a></strong>. MEng thesis, University of Bristol, 2007.<br>
@@ -185,7 +185,7 @@ regulated and CE marked as a medical device.</p>
             <a href="http://github.com/chrisseaton/katahdin/">Code</a>,
             <a href="katahdin/katahdin-slides.pdf">Slides</a>
         </span><br>
-        <i class="icon-trophy"></i> Winner, Hele Shaw Prize
+        <i class="fas fa-trophy"></i> Winner, Hele Shaw Prize
     </li>
 </ul>
 
@@ -292,7 +292,7 @@ regulated and CE marked as a medical device.</p>
             <a href="multiprog2012/seaton-multiprog2012.pdf">PDF</a>,
             <a href="multiprog2012/seaton-slides-multiprog2012.pdf">Slides</a>
         </span><br>
-        <i class="icon-trophy"></i> Winner, Best Paper Award
+        <i class="fas fa-trophy"></i> Winner, Best Paper Award
     </li>
 </ul>
 
@@ -493,7 +493,7 @@ regulated and CE marked as a medical device.</p>
         <span class="smaller">
             <a href="research-symposium-2012/seaton-irregular-parallelism-poster.pdf">Poster</a>
         </span><br>
-        <i class="icon-trophy"></i> Winner, Best Poster Award
+        <i class="fas fa-trophy"></i> Winner, Best Poster Award
     </li>
     <li>
         Mr R Pritchard Jones, Mr C Seaton, Mr N Hamnett, Mr I James, Professor P McArthur. <strong>Mersey Burns Tool — Improving Assessment and Resuscitation</strong>. British Association of Plastic and Reconstructive Surgeons Summer Meeting. 2011.<br>

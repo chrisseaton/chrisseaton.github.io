@@ -23,7 +23,7 @@ own project, and now it is part of [GraalVM](http://graalvm.org).
 This page links to the literature and code related to the project. Note that any
 views expressed are my own and not those of Oracle.
 
-<i class="icon-trophy"></i> Finalist, Ruby Prize, 2016
+<i class="fas fa-trophy"></i> Finalist, Ruby Prize, 2016
 
 ----
 

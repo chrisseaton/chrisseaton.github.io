@@ -119,14 +119,14 @@ ul.awards li {
     margin-bottom: 1em;
 }
 
-ul.awards i.icon-trophy {
+ul.awards i.fa-trophy {
     display: none;
     margin-right: 0.25em;
 }
 
 @media screen and (min-width: 0) {
 
-    ul.awards i.icon-trophy {
+    ul.awards i.fa-trophy {
         display: inline;
         margin-left: -1em;
         font-size: 150%;

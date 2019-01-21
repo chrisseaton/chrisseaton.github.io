@@ -24,6 +24,15 @@ use it to show that I can generate an idea, implement it, navigate regulation
 and industry politics, ship the project, market it, support it, and generate
 leads for future business opportunities.
 
+You can see Mersey Burns being used in anger on a badly burned baby in this
+clip from the 2018 Channel 4 documentary *Emergency Helicopter Medics*.
+
+<div style="text-align: center">
+  <video controls>
+    <source type="video/mp4" src="mersey-burns.mp4">
+  </video>
+</div>
+
 This article talks about what we achieved with Mersey Burns and how I built a
 successful side project for my portfolio.
 

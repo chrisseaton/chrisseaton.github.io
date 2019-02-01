@@ -6,7 +6,7 @@ date: 8 June 2018
 copyright: Copyright © 2018 Chris Seaton.
 ---
 
-A few weeks ago, [Takashi Kokubun](https://twitter.com/k0kubun), one of the people working on the new just-in-time compilers being developed for Ruby, asked me about how [TruffleRuby](http://github.com/oracle/truffleruby) was able to detect if optimised code that is already running was no longer valid without any branching.
+A few weeks ago, [Takashi Kokubun](https://twitter.com/k0kubun), one of the people working on the new just-in-time compilers being developed for Ruby, asked me about how [TruffleRuby](https://github.com/oracle/truffleruby) was able to detect if optimised code that is already running was no longer valid without any branching.
 
 <a href="https://twitter.com/k0kubun/status/992415679188951043"><img src="tweet.png"></a>
 

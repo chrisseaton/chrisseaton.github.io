@@ -45,7 +45,7 @@ software.</p>
 
 <div class="buttons">
 <a href="chris-seaton-cv.pdf"><i class="fas fa-file-alt"></i> My CV / Resumé</a>
-<a href="http://github.com/chrisseaton/"><i class="fab fa-github"></i> My code on GitHub</a>
+<a href="https://github.com/chrisseaton/"><i class="fab fa-github"></i> My code on GitHub</a>
 <a href="mailto:chris@chrisseaton.com"><i class="fas fa-envelope"></i> Email me</a>
 <a href="https://twitter.com/ChrisGSeaton"><i class="fab fa-twitter"></i> Follow me</a>
 <a href="http://www.linkedin.com/in/chrisgseaton"><i class="fab fa-linkedin"></i> Connect with me</a>
@@ -182,7 +182,7 @@ regulated and CE marked as a medical device.</p>
         C. Seaton. <strong><a href="katahdin/katahdin.pdf">A programming language where the syntax and semantics are mutable at runtime</a></strong>. MEng thesis, University of Bristol, 2007.<br>
         <span class="smaller">
             <a href="katahdin/katahdin.pdf">PDF</a>,
-            <a href="http://github.com/chrisseaton/katahdin/">Code</a>,
+            <a href="https://github.com/chrisseaton/katahdin/">Code</a>,
             <a href="katahdin/katahdin-slides.pdf">Slides</a>
         </span><br>
         <i class="fas fa-trophy"></i> Winner, Hele Shaw Prize

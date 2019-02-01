@@ -125,6 +125,6 @@ add one in just a minute.
 
 # Source Code
 
-The Katahdin [source code](http://github.com/chrisseaton/katahdin/) is
+The Katahdin [source code](https://github.com/chrisseaton/katahdin/) is
 available from GitHub, or as [katahdin-0.2.tar.gz](katahdin-0.2.tar.gz). It is
 available as public domain, or BSD licence if that causes problems for you.

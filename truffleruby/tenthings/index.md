@@ -22,7 +22,7 @@ the Enterprise Edition on macOS, but the instructions will also work on Linux as
 well as with the Community Edition.
 
 Follow along and run these programs while you're reading! The code I'm running
-on Graal can be cloned from [http://github.com/chrisseaton/graalvm-ten-things/](http://github.com/chrisseaton/graalvm-ten-things/).
+on Graal can be cloned from [https://github.com/chrisseaton/graalvm-ten-things/](https://github.com/chrisseaton/graalvm-ten-things/).
 
 # Setup
 

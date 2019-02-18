@@ -324,6 +324,12 @@ regulated and CE marked as a medical device.</p>
 
 <ul class="list">
     <li>
+        Chris Seaton. <strong><a href="truffleruby/graalworkshop19/graal-from-and-going.pdf">Graal: where it's from and where it's going</a></strong>, keynote. At the Graal Workshop. 2019.<br>
+        <span class="smaller">
+            <a href="truffleruby/graalworkshop19/graal-from-and-going.pdf">Slides</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="truffleruby/codeone18/ten-things-graal.pdf">Ten Things To Do With GraalVM</a></strong>. At Oracle Code One. 2018.<br>
         <span class="smaller">
             <a href="truffleruby/codeone18/ten-things-graal.pdf">Slides</a>

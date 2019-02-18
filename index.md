@@ -546,10 +546,13 @@ regulated and CE marked as a medical device.</p>
         Maintainer of <a href="http://rubybib.org/">The Ruby Bibliography</a>
     </li>
     <li>
+       Program Language Design and Implementation (PLDI) external review committee member, 2019
+    </li>
+    <li>
        JavaOne emerging languages program committee member, 2017, 2016
     </li>
     <li>
-        Dynamic Languages Symposium (DLS) program committee member, 2017, 2016, 2014
+        Dynamic Languages Symposium (DLS) program committee member, 2019, 2017, 2016, 2014
     </li>
     <li>
         Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS) program committee member, 2017

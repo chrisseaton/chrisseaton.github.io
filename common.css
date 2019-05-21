@@ -6,11 +6,11 @@ html {
 /* Typography */
 
 h1, h2, h3, h4 {
-  font-family: 'Linux Libertine', sans;
+  font-family: 'LinuxLibertineORegular', sans;
 }
 
 p, li, th, td, caption, div.buttons a {
-  font-family: 'Linux Libertine';
+  font-family: 'LinuxLibertineORegular';
   line-height: 1.5em;
 }
 

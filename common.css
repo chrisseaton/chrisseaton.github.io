@@ -1,115 +1,115 @@
 html {
-    background-color: #f7f6f4;
-    font-size: 105%;
+  background-color: #f7f6f4;
+  font-size: 105%;
 }
 
 /* Typography */
 
 h1, h2, h3, h4 {
-    font-family: 'Linux Libertine', sans;
+  font-family: 'Linux Libertine', sans;
 }
 
 p, li, th, td, caption, div.buttons a {
-    font-family: 'Linux Libertine';
-    line-height: 1.5em;
+  font-family: 'Linux Libertine';
+  line-height: 1.5em;
 }
 
 li {
-    margin-top: 1em;
+  margin-top: 1em;
 }
 
 .smaller {
-    font-size: 80%;
+  font-size: 80%;
 }
 
 /* Text alignment */
 
 p {
-    text-align: justify;
+  text-align: justify;
 }
 
 /* Links */
 
 a, a:visited {
-    color: #0a2c8f;
-    text-decoration: none;
+  color: #0a2c8f;
+  text-decoration: none;
 }
 
 a:hover {
-    color: #3857ae;
-    text-decoration: underline;
+  color: #3857ae;
+  text-decoration: underline;
 }
 
 /* Buttons */
 
 .buttons {
-    padding-top: 2em;
-    padding-bottom: 2em;
+  padding-top: 2em;
+  padding-bottom: 2em;
 
-    text-align: center;
+  text-align: center;
 }
 
 .buttons a {
-    display: inline-block;
+  display: inline-block;
 
-    margin: 0.5em;
-    padding: 0.5em 1em;
+  margin: 0.5em;
+  padding: 0.5em 1em;
 
-    background: #042fab;
+  background: #042fab;
 
-    -webkit-box-shadow: 0px 0px 0px 4px #e6e5e3;
-    -moz-box-shadow: 0px 0px 0px 4px #e6e5e3;
-    box-shadow: 0px 0px 0px 4px #e6e5e3;
-    
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    
-    text-shadow: 0px 1px 1px #494949;
+  -webkit-box-shadow: 0px 0px 0px 4px #e6e5e3;
+  -moz-box-shadow: 0px 0px 0px 4px #e6e5e3;
+  box-shadow: 0px 0px 0px 4px #e6e5e3;
+  
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  
+  text-shadow: 0px 1px 1px #494949;
 
-    color: #ffffff;
-    font-size: 110%;
+  color: #ffffff;
+  font-size: 110%;
 }
 
 .buttons a:hover {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 /* Rule - http://www.daveperrett.com/articles/2014/04/07/recreating-the-reeder-two-tone-horizontal-rule-in-pure-css/ */
 
 hr {
-    margin-top: 2em;
-    margin-bottom: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
 
-    height: 3px;
-    border: 0;
-    background-color: #c3c3c3;
-    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#f7f6f4), to(#f7f6f4), color-stop(50%, #fff));
-    background-image: -webkit-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
-    background-image: -moz-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
-    background-image: -ms-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
-    background-image: -o-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
+  height: 3px;
+  border: 0;
+  background-color: #c3c3c3;
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#f7f6f4), to(#f7f6f4), color-stop(50%, #fff));
+  background-image: -webkit-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
+  background-image: -moz-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
+  background-image: -ms-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
+  background-image: -o-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
 }
 
 hr::after {
-    content: "";
-    display: block;
-    height: 1px;
-    background-color: #f7f6f4;
-    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#f7f6f4), to(#f7f6f4), color-stop(50%, #c3c3c3));
-    background-image: -webkit-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
-    background-image: -moz-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
-    background-image: -ms-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
-    background-image: -o-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+  content: "";
+  display: block;
+  height: 1px;
+  background-color: #f7f6f4;
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#f7f6f4), to(#f7f6f4), color-stop(50%, #c3c3c3));
+  background-image: -webkit-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+  background-image: -moz-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+  background-image: -ms-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+  background-image: -o-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
 }
 
 /* Footer */
 
 footer {
-    margin-top: 3em;
-    margin-bottom: 3em;
+  margin-top: 3em;
+  margin-bottom: 3em;
 }
 
 footer p {
-    text-align: center;
+  text-align: center;
 }

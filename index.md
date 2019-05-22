@@ -326,6 +326,7 @@ regulated and CE marked as a medical device.</p>
     <li>
         Chris Seaton. <strong><a href="truffleruby/wrocloverb19/truffleruby-compilation-pipeline.pdf">The TruffleRuby Compilation Pipeline</a></strong> At Wroclove.rb. 2019.<br>
         <span class="smaller">
+            <a href="https://www.youtube.com/watch?v=bf5pQVgux3c">Video</a>,
             <a href="truffleruby/wrocloverb19/truffleruby-compilation-pipeline.pdf">Slides</a>
         </span>
     </li>

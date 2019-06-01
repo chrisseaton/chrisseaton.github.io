@@ -176,8 +176,6 @@ views expressed are my own and not those of Oracle.
 
 *    Charles Nutter. [Beyond JVM](http://www.slideshare.net/CharlesNutter/yow-sydney-2013-beyond-jvm) talk at Sydney in December 2013 made some references to this work in the context of JRuby (no video yet). Also a [video](http://www.youtube.com/watch?feature=player_detailpage&v=8ZEAwWLwmfQ#t=951) of a talk with earlier details at Baruco 2013.
 
-*    Thomas Würthinger. [Graal and Truffle: One VM To Rule Them All](http://www.slideshare.net/ThomasWuerthinger/graal-truffle-ethdec2013) recent project overview.
-
 ---
 
 # Source Code

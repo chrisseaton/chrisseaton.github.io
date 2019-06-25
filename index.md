@@ -19,8 +19,7 @@ href="http://openjdk.java.net/projects/graal/">next generation of Java Virtual
 Machine technology</a> and other projects, and a Visitor at the <a href="http://www.manchester.ac.uk/">University of
 Manchester</a>.</p>
 
-<p>Before this I <a href="phd/">completed a PhD</a> at the <a href="http://www.manchester.ac.uk/">University of
-Manchester</a> under the supervision of <a href="http://apt.cs.manchester.ac.uk/people/mlujan/">Doctor Mikel Luján</a>, where I researched programming languages and irregular
+<p>Before this I <a href="phd/">completed a PhD</a> at Manchester under the supervision of <a href="http://apt.cs.manchester.ac.uk/people/mlujan/">Doctor Mikel Luján</a>, where I researched programming languages and irregular
 parallelism, and I earned an MEng at the <a href="http://www.bristol.ac.uk/">University of Bristol</a> on languages with mutable syntax and semantics.</p>
 
 <p>Between my undergraduate degree and starting my PhD I commissioned into the

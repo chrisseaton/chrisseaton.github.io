@@ -555,6 +555,12 @@ regulated and CE marked as a medical device.</p>
         Contributor to the <a href="https://global.oup.com/academic/product/burns-9780199699537?lang=en&cc=gb">Oxford Specialist Handbooks in Surgery, Burns</a>, Oxford University Press, 2019
     </li>
     <li>
+        Technical reviewer, <a href="http://aosabook.org/en/">500 Lines or Less</a>, 2016
+    </li>
+    <li>
+        Contributed technical advice to <a href="https://pragprog.com/book/jkdepj2/deploying-with-jruby-9k">Deploying with JRuby 9k</a>, 2016, and <a href="http://shop.oreilly.com/product/0636920042983.do">Optimizing Java</a>, 2018
+    </li>
+    <li>
        Program Language Design and Implementation (PLDI) external review committee member, 2019
     </li>
     <li>
@@ -565,12 +571,6 @@ regulated and CE marked as a medical device.</p>
     </li>
     <li>
         Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS) program committee member, 2017
-    </li>
-    <li>
-        Technical reviewer, <a href="http://aosabook.org/en/">500 Lines or Less</a>
-    </li>
-    <li>
-        Contributed technical advice to <a href="https://pragprog.com/book/jkdepj2/deploying-with-jruby-9k">Deploying with JRuby 9k</a> and <a href="http://shop.oreilly.com/product/0636920042983.do">Optimizing Java</a>
     </li>
 </ul>
 

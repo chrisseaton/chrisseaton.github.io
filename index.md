@@ -84,36 +84,6 @@ software.</p>
 
 <div class="project-logo">
 
-<a href="katahdin/">
-<img alt="Katahdin Logo" src="katahdin.png" width="96" height="96">
-</a>
-
-</div>
-
-<div class="project-details">
-
-<h3>Katahdin</h3>
-
-<p><a href="katahdin/">Katahdin</a> was my master’s work at the University of
-Bristol. It is a research programming language where the syntax and semantics of
-the language are mutable at runtime. This allows for multiple languages to be
-implemented in a single runtime, and for different languages to be used in
-different parts of the same program, the same function, or even the same line.
-My research built on contemporary work on parsing expression grammars and
-packrat parsing.</p>
-
-<ul class="awards">
-<li><i class="fas fa-trophy"></i>Winner, Hele Shaw Prize, 2007</li>
-</ul>
-
-<div class="buttons" style="text-align: right;">
-<a href="katahdin/" class="less-significant">Learn more <i class="fas fa-arrow-right"></i></a>
-</div>
-
-</div>
-
-<div class="project-logo">
-
 <p>
 <a href="merseyburns/"><img alt="Mersey Burns Logo" src="mb.png" width="96" height="96"></a>
 </p>
@@ -147,6 +117,36 @@ regulated and CE marked as a medical device.</p>
 
 <div class="buttons" style="text-align: right;">
 <a href="merseyburns/">Learn more <i class="fas fa-arrow-right"></i></a>
+</div>
+
+</div>
+
+<div class="project-logo">
+
+<a href="katahdin/">
+<img alt="Katahdin Logo" src="katahdin.png" width="96" height="96">
+</a>
+
+</div>
+
+<div class="project-details">
+
+<h3>Katahdin</h3>
+
+<p><a href="katahdin/">Katahdin</a> was my master’s work at the University of
+Bristol. It is a research programming language where the syntax and semantics of
+the language are mutable at runtime. This allows for multiple languages to be
+implemented in a single runtime, and for different languages to be used in
+different parts of the same program, the same function, or even the same line.
+My research built on contemporary work on parsing expression grammars and
+packrat parsing.</p>
+
+<ul class="awards">
+<li><i class="fas fa-trophy"></i>Winner, Hele Shaw Prize, 2007</li>
+</ul>
+
+<div class="buttons" style="text-align: right;">
+<a href="katahdin/" class="less-significant">Learn more <i class="fas fa-arrow-right"></i></a>
 </div>
 
 </div>

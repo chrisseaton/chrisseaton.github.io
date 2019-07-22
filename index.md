@@ -123,6 +123,28 @@ regulated and CE marked as a medical device.</p>
 
 <div class="project-logo">
 
+<a href="https://rubybib.org/">
+<img alt="The Ruby Bibliography Logo" src="rubybib.png" width="96" height="96">
+</a>
+
+</div>
+
+<div class="project-details">
+
+<h3>The Ruby Bibliography</h3>
+
+<p><a href="https://rubybib.org/">The Ruby Bibliography</a> is the central
+list of academic research papers and theses about the Ruby programming language.
+I compile and currate the list as a community service.</p>
+
+<div class="buttons" style="text-align: right;">
+<a href="https://rubybib.org/" class="less-significant">Learn more <i class="fas fa-arrow-right"></i></a>
+</div>
+
+</div>
+
+<div class="project-logo">
+
 <a href="katahdin/">
 <img alt="Katahdin Logo" src="katahdin.png" width="96" height="96">
 </a>

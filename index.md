@@ -13,30 +13,20 @@ footer: <p>TruffleRuby logo Copyright © 2018 Talkdesk, Inc. Licensed under <a h
 
 <section id="intro">
 
-<p>I'm a Research Manager at the Virtual Machine Group in <a
-href="http://labs.oracle.com">Oracle Labs</a>, where I lead the work to implement Ruby using the <a
-href="http://openjdk.java.net/projects/graal/">next generation of Java Virtual
-Machine technology</a> and other projects, and a Visitor at the <a href="http://www.manchester.ac.uk/">University of
+<p>I'm a Researcher at <a href="https://engineering.shopify.com">Shopify</a>, where I work on the Ruby programming Language, and
+a Visitor at the <a href="http://www.manchester.ac.uk/">University of
 Manchester</a>.</p>
 
-<p>Before this I <a href="phd/">completed a PhD</a> at Manchester under the supervision of <a href="http://apt.cs.manchester.ac.uk/people/mlujan/">Doctor Mikel Luján</a>, where I researched programming languages and irregular
-parallelism, and I earned an MEng at the <a href="http://www.bristol.ac.uk/">University of Bristol</a> on languages with mutable syntax and semantics.</p>
+<p>I was formerly a Research Manager at the <a href="http://labs.oracle.com">Oracle Labs</a> Virtual Machine Research Group, where I led
+the <a href="truffleruby/">TruffleRuby</a> implementation of Ruby, and worked on other language and virtual
+machine projects. Before this I <a href="phd/">completed a PhD</a> at Manchester where I researched
+programming languages and irregular parallelism, and an MEng at the University
+of Bristol on languages with <a href="katahdin/">mutable syntax and semantics</a>.</p>
 
-<p>Between my undergraduate degree and starting my PhD I commissioned into the
-<a href="https://en.wikipedia.org/wiki/British_Army">British Army</a>, serving
-in training and operations in the UK and around the world. In my spare time I'm
-Second in Command of the <a
-href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a>
-squadron of the <a
-href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own
-Yeomanry</a>, Cheshire's historic reserve <a
-href="https://en.wikipedia.org/wiki/Light_cavalry">light cavalry</a>
-squadron.</p>
-
-<p>I used to develop an <a href="merseyburns/">award winning medical app</a>
-that is the first app regulated as a medical device in the UK, and ran a
-consultancy to help clients such as the NHS to develop revolutionary medical
-software.</p>
+<p>In my spare time I'm Second in Command of the <a
+href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a> squadron of the
+Queen's Own Yeomanry, Cheshire's historic reserve <a
+href="https://en.wikipedia.org/wiki/Light_cavalry">light cavalry</a> squadron.</p>
 
 </section>
 

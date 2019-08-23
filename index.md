@@ -33,7 +33,6 @@ href="https://en.wikipedia.org/wiki/Light_cavalry">light cavalry</a> squadron.</
 <section>
 
 <div class="buttons">
-<a href="chris-seaton-cv.pdf"><i class="fas fa-file-alt"></i> My CV / Resumé</a>
 <a href="https://github.com/chrisseaton/"><i class="fab fa-github"></i> My code on GitHub</a>
 <a href="mailto:chris@chrisseaton.com"><i class="fas fa-envelope"></i> Email me</a>
 <a href="https://twitter.com/ChrisGSeaton"><i class="fab fa-twitter"></i> Follow me</a>

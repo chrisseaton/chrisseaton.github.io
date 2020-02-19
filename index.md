@@ -572,16 +572,19 @@ packrat parsing.</p>
         Contributed technical advice to <a href="https://pragprog.com/book/jkdepj2/deploying-with-jruby-9k">Deploying with JRuby 9k</a>, 2016, and <a href="http://shop.oreilly.com/product/0636920042983.do">Optimizing Java</a>, 2018
     </li>
     <li>
-       Program Language Design and Implementation (PLDI) external review committee member, 2019
+       Program Language Design and Implementation (PLDI) program committee member, 2020, external review committee member, 2019
     </li>
     <li>
-       JavaOne emerging languages program committee member, 2017, 2016
+        Software Language Engineering (SLE) program committee member, 2020
     </li>
     <li>
         Dynamic Languages Symposium (DLS) program committee member, 2019, 2017, 2016, 2014
     </li>
     <li>
-        Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS) program committee member, 2017
+        Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS) program committee member, 2020, 2017
+    </li>
+    <li>
+       JavaOne emerging languages program committee member, 2017, 2016
     </li>
 </ul>
 

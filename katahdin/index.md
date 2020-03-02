@@ -10,12 +10,13 @@ copyright: Copyright © 2007-2012 Chris Seaton.
 
 Katahdin is a programming language where the syntax and semantics are mutable at
 runtime. It was the 2007 master’s project of [Chris
-Seaton](http://www.chrisseaton.com/) at the University of Bristol [Department of
-Computer Science](http://www.cs.bris.ac.uk/), under the supervision of Dr Henk
-Muller.
+Seaton](https://chrisseaton.com/) at the University of Bristol [Department of
+Computer
+Science](http://www.bris.ac.uk/engineering/departments/computerscience/), under
+the supervision of Dr Henk Muller.
 
 Katahdin employs the theory of [parsing expression grammars and packrat
-parsing](http://bford.info/packrat/). Unlike other contemporary work, Katahdin
+parsing](https://bford.info/packrat/). Unlike other contemporary work, Katahdin
 applies these techniques at runtime to allow the grammar to be modified by a
 running program. New constructs such as expressions and statements can be
 defined, or a new language can be implemented from scratch. It is built as an

@@ -14,10 +14,10 @@ footer: <p>TruffleRuby logo Copyright © 2018 Talkdesk, Inc. Licensed under <a h
 <section id="intro">
 
 <p>I'm a Researcher at <a href="https://engineering.shopify.com">Shopify</a>, where I work on the Ruby programming Language, and
-a Visitor at the <a href="http://www.manchester.ac.uk/">University of
+a Visitor at the <a href="https://www.manchester.ac.uk/">University of
 Manchester</a>.</p>
 
-<p>I was formerly a Research Manager at the <a href="http://labs.oracle.com">Oracle Labs</a> Virtual Machine Research Group, where I led
+<p>I was formerly a Research Manager at the <a href="https://labs.oracle.com/">Oracle Labs</a> Virtual Machine Research Group, where I led
 the <a href="truffleruby/">TruffleRuby</a> implementation of Ruby, and worked on other language and virtual
 machine projects. Before this I <a href="phd/">completed a PhD</a> at Manchester where I researched
 programming languages and irregular parallelism, and an MEng at the University
@@ -36,7 +36,7 @@ href="https://en.wikipedia.org/wiki/Light_cavalry">light cavalry</a> squadron.</
 <a href="https://github.com/chrisseaton/"><i class="fab fa-github"></i> My code on GitHub</a>
 <a href="mailto:chris@chrisseaton.com"><i class="fas fa-envelope"></i> Email me</a>
 <a href="https://twitter.com/ChrisGSeaton"><i class="fab fa-twitter"></i> Follow me</a>
-<a href="http://www.linkedin.com/in/chrisgseaton"><i class="fab fa-linkedin"></i> Connect with me</a>
+<a href="https://www.linkedin.com/in/chrisgseaton"><i class="fab fa-linkedin"></i> Connect with me</a>
 </div>
 
 </section>
@@ -59,7 +59,7 @@ href="https://en.wikipedia.org/wiki/Light_cavalry">light cavalry</a> squadron.</
 
 <h3>TruffleRuby</h3>
 
-<p><a href="truffleruby/">TruffleRuby</a> started as my internship project at Oracle Labs in early 2013. It is an implementation of the Ruby programming language on the JVM, using the Graal JIT compiler and the Truffle AST interpreter framework. RubyTruffle can achieve peak performance well beyond that possible in JRuby at the same time as being a significantly simpler system. In early 2014 it was open sourced and integrated into JRuby, then in 2017 it became its own project, and now it is part of <a href="http://graalvm.org/">GraalVM</a>.</p>
+<p><a href="truffleruby/">TruffleRuby</a> started as my internship project at Oracle Labs in early 2013. It is an implementation of the Ruby programming language on the JVM, using the Graal JIT compiler and the Truffle AST interpreter framework. RubyTruffle can achieve peak performance well beyond that possible in JRuby at the same time as being a significantly simpler system. In early 2014 it was open sourced and integrated into JRuby, then in 2017 it became its own project, and now it is part of <a href="https://www.graalvm.org/">GraalVM</a>.</p>
 
 <ul class="awards">
 <li><i class="fas fa-trophy"></i>Finalist, Ruby Prize, 2016</li>
@@ -78,7 +78,7 @@ href="https://en.wikipedia.org/wiki/Light_cavalry">light cavalry</a> squadron.</
 </p>
 
 <p>
-<a href="http://itunes.apple.com/gb/app/mersey-burns/id481808668?mt=8"><img alt="Available on the App Store" src="appstore.png" width="150" height="45"></a>
+<a href="https://apps.apple.com/gb/app/mersey-burns/id481808668"><img alt="Available on the App Store" src="appstore.png" width="150" height="45"></a>
 </p>
 
 <p>
@@ -171,7 +171,7 @@ packrat parsing.</p>
 <h2>Publications<span class="hide-small">, Presentations and Talks</span></h2>
 
 <div class="buttons" style="float: right; margin-top: -3.5em;">
-<a href="http://scholar.google.co.uk/citations?user=ykthVegAAAAJ"><i class="icon-beaker"></i> <span class="hide-small">My work on </span>Google Scholar</a>
+<a href="https://scholar.google.co.uk/citations?user=ykthVegAAAAJ"><i class="icon-beaker"></i> <span class="hide-small">My work on </span>Google Scholar</a>
 <a href="seaton.bib"><i class="icon-bookmark"></i> BibTeX</a>
 </div>
 
@@ -270,16 +270,16 @@ packrat parsing.</p>
         </span>
     </li>
     <li>
-        J. Barnes, A. Duffy, N. Hamnett, J. McPhail, C. Seaton, K. Shokrollahi, M. I. James, P. McArthur, and R. Pritchard-Jones, <strong><a href="http://emj.bmj.com/content/early/2014/11/04/emermed-2013-203416.short">The Mersey Burns App: evolving a model of validation</a></strong>, Emerg Med J, pp. emermed–2013–203416, Nov. 2014.<br>
+        J. Barnes, A. Duffy, N. Hamnett, J. McPhail, C. Seaton, K. Shokrollahi, M. I. James, P. McArthur, and R. Pritchard-Jones, <strong><a href="https://emj.bmj.com/content/32/8/637.short">The Mersey Burns App: evolving a model of validation</a></strong>, Emerg Med J, pp. emermed–2013–203416, Nov. 2014.<br>
         <span class="smaller">
-            <a href="http://emj.bmj.com/content/early/2014/11/04/emermed-2013-203416.short">PDF (BMJ paywall)</a>
+            <a href="https://emj.bmj.com/content/32/8/637.short">PDF (BMJ paywall)</a>
         </span>
     </li>
     <li>
-        C. Seaton, M. L. Van De Vanter, and M. Haupt. <strong><a href="http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf">Debugging at full speed</a></strong>. In Proceedings of the 8th Workshop on Dynamic Languages and Applications (DYLA), 2014.<br>
+        C. Seaton, M. L. Van De Vanter, and M. Haupt. <strong><a href="https://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf">Debugging at full speed</a></strong>. In Proceedings of the 8th Workshop on Dynamic Languages and Applications (DYLA), 2014.<br>
         <span class="smaller">
-            <a href="http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf">PDF</a>,
-            <a href="http://lafo.ssw.uni-linz.ac.at/truffle/debugging/dyla14-debugging-artifact-0557a4f756d4.tar.gz">Code</a>
+            <a href="https://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf">PDF</a>,
+            <a href="https://web.archive.org/web/20150117042919/https://lafo.ssw.uni-linz.ac.at/truffle/debugging/dyla14-debugging-artifact-0557a4f756d4.tar.gz">Code</a>
         </span>
     </li>
     <li>
@@ -291,9 +291,9 @@ packrat parsing.</p>
         </span>
     </li>
     <li>
-        S. S. Sofos, R. Pritchard-Jones, C. Seaton, J. Dingley, P. McArthur, and K. Shokrollahi. <strong><a href="http://journals.lww.com/annalsplasticsurgery/Fulltext/2012/09000/Medical_Innovation_A_Starting_Point_for_Plastic.1.aspx">Medical innovation&mdash;a starting point for plastic surgeons</a></strong>. Annals of Plastic Surgery, 69(3):225–7, Sep 2012.<br>
+        S. S. Sofos, R. Pritchard-Jones, C. Seaton, J. Dingley, P. McArthur, and K. Shokrollahi. <strong><a href="https://journals.lww.com/annalsplasticsurgery/Citation/2012/09000/Medical_Innovation_A_Starting_Point_for_Plastic.1.aspx">Medical innovation&mdash;a starting point for plastic surgeons</a></strong>. Annals of Plastic Surgery, 69(3):225–7, Sep 2012.<br>
         <span class="smaller">
-            <a href="http://journals.lww.com/annalsplasticsurgery/Fulltext/2012/09000/Medical_Innovation_A_Starting_Point_for_Plastic.1.aspx">Publisher</a>
+            <a href="https://journals.lww.com/annalsplasticsurgery/Citation/2012/09000/Medical_Innovation_A_Starting_Point_for_Plastic.1.aspx">Publisher</a>
         </span>
     </li>
     <li>
@@ -439,7 +439,7 @@ packrat parsing.</p>
     <li>
         Chris Seaton. <strong><a href="truffleruby/deoptimizing">Deoptimizing Ruby</a></strong>. At RubyConf. 2014.<br>
         <span class="smaller">
-            <a href="http://confreaks.tv/videos/rubyconf2014-deoptimizing-ruby">Video</a>,
+            <a href="https://confreaks.tv/videos/rubyconf2014-deoptimizing-ruby">Video</a>,
             <a href="truffleruby/deoptimizing/deoptimizing-ruby.pdf">Slides</a>,
             <a href="truffleruby/deoptimizing/">Blog post</a>
         </span>
@@ -483,14 +483,14 @@ packrat parsing.</p>
     <li>
         Christian Wimmer and Chris Seaton. <strong><a href="jvmls13-one-vm/jvmls13-one-vm.pdf">One VM to Rule Them All</a></strong>. At the JVM Language Summit. 2013.<br>
         <span class="smaller">
-            <a href="http://medianetwork.oracle.com/video/player/2623645003001">Video</a>,
+            <a href="https://www.youtube.com/watch?v=hDfYRjNynmQ">Video</a>,
             <a href="jvmls13-one-vm/jvmls13-one-vm.pdf">Slides</a>
         </span>
     </li>
     <li>
-        Chris Seaton. <strong><a href="http://www.youtube.com/watch?v=B1hh2kpGNQ4">The Challenges of Irregular Parallelism</a></strong>. At the University of Manchester Computer Science Research Showcase. 2012.<br>
+        Chris Seaton. <strong><a href="https://www.youtube.com/watch?v=B1hh2kpGNQ4">The Challenges of Irregular Parallelism</a></strong>. At the University of Manchester Computer Science Research Showcase. 2012.<br>
         <span class="smaller">
-            <a href="http://www.youtube.com/watch?v=B1hh2kpGNQ4">Video</a>,
+            <a href="https://www.youtube.com/watch?v=B1hh2kpGNQ4">Video</a>,
             <a href="research-showcase-2012/seaton-irregular-parallelism-slides.pdf">Slides</a>
         </span>
     </li>
@@ -520,9 +520,6 @@ packrat parsing.</p>
     </li>
     <li>
         Mr R Pritchard Jones, Mr C Seaton, Mr N Hamnett, Mr I James, Professor P McArthur. <strong>Mersey Burns Tool — Improving Assessment and Resuscitation</strong>. British Association of Plastic and Reconstructive Surgeons Summer Meeting. 2011.<br>
-        <span class="smaller">
-            <a href="http://www.bapras.org.uk/downloaddoc.asp?id=654">Programme and Abstracts</a>
-        </span><br>
     </li>
 </ul>
 
@@ -556,17 +553,17 @@ packrat parsing.</p>
         Second in Command, C (<a href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a>) Squadron, the <a href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own Yeomanry</a>, reserve military service in a light cavalry squadron
     </li>
     <li>
-        Academic Visitor at the <a href="http://www.manchester.ac.uk/">University of
+        Academic Visitor at the <a href="https://www.manchester.ac.uk/">University of
         Manchester</a>
     </li>
     <li>
-        Maintainer of <a href="http://rubybib.org/">The Ruby Bibliography</a>
+        Maintainer of <a href="https://rubybib.org/">The Ruby Bibliography</a>
     </li>
     <li>
         Contributor to the <a href="https://global.oup.com/academic/product/burns-9780199699537?lang=en&cc=gb">Oxford Specialist Handbooks in Surgery, Burns</a>, Oxford University Press, 2019
     </li>
     <li>
-        Technical reviewer, <a href="http://aosabook.org/en/">500 Lines or Less</a>, 2016
+        Technical reviewer, <a href="https://aosabook.org/en/">500 Lines or Less</a>, 2016
     </li>
     <li>
         Contributed technical advice to <a href="https://pragprog.com/book/jkdepj2/deploying-with-jruby-9k">Deploying with JRuby 9k</a>, 2016, and <a href="http://shop.oreilly.com/product/0636920042983.do">Optimizing Java</a>, 2018

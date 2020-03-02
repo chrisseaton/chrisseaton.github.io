@@ -31,7 +31,7 @@ This blog post is the companion piece to our RubyConf 2014 Talk, *Deoptimizing R
 
 ## Why is Ruby Hard to Optimize?
 
-There are lots of language features that make Ruby nice to use, but very tricky to optimize. Charles Nutter [identified several of these](http://blog.headius.com/2012/10/so-you-want-to-optimize-ruby.html) in a blog post, and in interviews other Ruby implementors have talked about the features they are most problematic, such as Laurent Sansonetti [talking about the problems with `#binding`](http://www.sitepoint.com/laurent-sansonetti-on-rubymotion-internals/). We'll consider some of these problematic features that are most relevant to deoptimization.
+There are lots of language features that make Ruby nice to use, but very tricky to optimize. Charles Nutter [identified several of these](http://blog.headius.com/2012/10/so-you-want-to-optimize-ruby.html) in a blog post, and in interviews other Ruby implementors have talked about the features they are most problematic, such as Laurent Sansonetti [talking about the problems with `#binding`](https://www.sitepoint.com/laurent-sansonetti-on-rubymotion-internals/). We'll consider some of these problematic features that are most relevant to deoptimization.
 
 ### Fixnum to Bignum Promotion
 
@@ -51,7 +51,7 @@ As with `Fixnum` to `Bignum` promotion, you also have the problem of the code pa
 
 `#binding` is a Ruby feature that allows you to get the local variables referenced in a method or a `Proc` and turn them into an object like a hash that you can read and write. `Kernel#binding` does it for the method you are currently in. `Proc#binding` does it for the environment in which a `Proc`, lambda or a block was declared.
 
-`#binding` is one of those features that is very easy for MRI to implement, but very troublesome for more advanced implementations. In fact some Ruby implementers cite it as one of [most problematic](http://www.sitepoint.com/laurent-sansonetti-on-rubymotion-internals/) Ruby features. It's easy for MRI because they represent all frames (the data structure that contains local variables) as an object on the C heap. They can just wrap up a reference to that data structure and give it to you as a `Binding` object.
+`#binding` is one of those features that is very easy for MRI to implement, but very troublesome for more advanced implementations. In fact some Ruby implementers cite it as one of [most problematic](https://www.sitepoint.com/laurent-sansonetti-on-rubymotion-internals/) Ruby features. It's easy for MRI because they represent all frames (the data structure that contains local variables) as an object on the C heap. They can just wrap up a reference to that data structure and give it to you as a `Binding` object.
 
 Other implementations of Ruby would like to use registers and the stack, rather than the heap, to store local variables. Registers are much faster than RAM, where the stack and the heap live, and the stack does not need complicate management or garbage collection. The stack is also almost certainly in cache, where an arbitrary heap location may not be.
 
@@ -67,7 +67,7 @@ There are a few problems preventing this - first of all the algorithm to work ou
 
 ### set_trace_func
 
-`set_trace_func` allows a `Proc` to be installed to be called as your program runs, once on every line, again when you enter and leave methods, and on some other events. The `Proc` can be installed and removed as the program runs. Like some of the other problems we've talked about, it could be installed by one thread and need to take effect on all others with [sequential consistency](http://en.wikipedia.org/wiki/Sequential_consistency) (if the thread sets a global variable and then uses `set_trace_func`, other threads need to see those two effects in order).
+`set_trace_func` allows a `Proc` to be installed to be called as your program runs, once on every line, again when you enter and leave methods, and on some other events. The `Proc` can be installed and removed as the program runs. Like some of the other problems we've talked about, it could be installed by one thread and need to take effect on all others with [sequential consistency](https://en.wikipedia.org/wiki/Sequential_consistency) (if the thread sets a global variable and then uses `set_trace_func`, other threads need to see those two effects in order).
 
 How do you support `set_trace_func` in a just-in-time compiler? When code is compiled you don't know what `Proc` might be installed in the future so you can't assume that there will be none, and you can't compile a direct reference to it. You could have a flag that you check, as with method definition, but we've already discussed the problems with that approach. Because of these problems, JRuby currently only supports `set_trace_func` with a flag which disables the just-in-time compiler (this will hopefully change in 9k) and Rubinius does not support it at all at the moment.
 
@@ -235,23 +235,23 @@ This first graph show the performance of JRuby+Truffle against other Ruby implem
 ![Production benchmarks summary](production-summary.png)
 ![Production benchmarks detail](production-detail.png)
 
-We also ran two production gems that we have been experimenting on over the last few months: `chunky_png` and `psd.rb`. This is real code taken unmodified from real applications, however it may be unusually computationally intensive and  represent an [extreme of metaprogramming](http://www.chrisseaton.com/truffleruby/pushing-pixels/) that probably isn't representative of the majority of Ruby programs. We can look at it as an upper bound of what we can achieve with real code at the moment. We've described how we achieve this in previous blog posts - it's a combination of deoptimization, specialization, and extraordinarily strong support for tracing values through data structures.
+We also ran two production gems that we have been experimenting on over the last few months: `chunky_png` and `psd.rb`. This is real code taken unmodified from real applications, however it may be unusually computationally intensive and  represent an [extreme of metaprogramming](https://chrisseaton.com/truffleruby/pushing-pixels/) that probably isn't representative of the majority of Ruby programs. We can look at it as an upper bound of what we can achieve with real code at the moment. We've described how we achieve this in previous blog posts - it's a combination of deoptimization, specialization, and extraordinarily strong support for tracing values through data structures.
 
 The two graphs above show a summary across all the routines from the two gems, showing an order of magnitude increase in performance, and then the second graph picks out a few benchmarks where JRuby+Truffle does particularly well - up to two orders of magnitude faster than other implementations in some cases.
 
 All experiments were run on an otherwise idle system with 2 Intel Xeon E5345 processors with 4 cores each at 2.33 GHz and 64 GB of RAM, running 64bit Ubuntu Linux 14.04. Where an unmodified Java VM was required, we used the 64bit JDK 1.8.0u5 with default settings. For JRuby+Truffle we used a development build of Graal VM. We ran iterations of benchmarks until they stabilized (after 30s and when range was below 10% over a moving window of 20 iterations), and then sampled 10 iterations. The summary shown is a geometric mean, and the error ± one standard deviation.
 
-Our benchmarks and harness core is [available on GitHub](https://github.com/jruby/bench9000) and the interactive report we generated these results from here also [available](benchmarks/).
+Our benchmarks and harness core is [available on GitHub](https://github.com/oracle/truffleruby/tree/master/bench) and the interactive report we generated these results from here also [available](benchmarks/).
 
 ## Conclusions
 
 Deoptimization is probably the most important optimization for implementation of the Ruby language. It allow us to remove most of the optimization barriers that are introduced by making the language as friendly and powerful as we'd like it to be. That frees us from worrying about using these features because of their performance impact, and will hopefully make us better Ruby programmers, less worried about the cost of what we're using and with less need to reach for tools like C extensions.
 
-Deoptimization is a powerful and extremely advanced programming language topic. JRuby+Truffle is the first implementation of Ruby to implement it as pervasively as we've described here, although Rubinius and JRuby should be able to use the same techniques, even if they aren't at the moment. For Rubinius there is [active research](http://llvm.org/docs/StackMaps.html) in the LLVM community on adding better support for techniques used in deoptimization, motivated by projects like [FTL](https://trac.webkit.org/wiki/FTLJIT). For JRuby the excellent work that Charles Nutter has done with `invokedynamic` comes very close to what we are doing in some of the techniques and in the case of `Thread#raise` it's pretty much the same.
+Deoptimization is a powerful and extremely advanced programming language topic. JRuby+Truffle is the first implementation of Ruby to implement it as pervasively as we've described here, although Rubinius and JRuby should be able to use the same techniques, even if they aren't at the moment. For Rubinius there is [active research](https://llvm.org/docs/StackMaps.html) in the LLVM community on adding better support for techniques used in deoptimization, motivated by projects like [FTL](https://trac.webkit.org/wiki/FTLJIT). For JRuby the excellent work that Charles Nutter has done with `invokedynamic` comes very close to what we are doing in some of the techniques and in the case of `Thread#raise` it's pretty much the same.
 
 ## Acknowledgements
 
-JRuby+Truffle is implemented using code from both [JRuby](http://jruby.org) and [Rubinius](http://rubini.us) and is tested using [RubySpec](http://rubyspec.org). Those projects are all essential for our research and we really appreciate the work and care that has gone into them. JRuby+Truffle also depends on the huge engineering effort that has gone into the Graal, Truffle and the OpenJDK.
+JRuby+Truffle is implemented using code from both [JRuby](https://www.jruby.org/) and [Rubinius](https://rubinius.com/) and is tested using [RubySpec](https://rubyspec.org). Those projects are all essential for our research and we really appreciate the work and care that has gone into them. JRuby+Truffle also depends on the huge engineering effort that has gone into the Graal, Truffle and the OpenJDK.
 
 We're particularly grateful to Charles Nutter, Thomas Enebo and the JRuby community for giving us commit rights to their repository.
 
@@ -261,21 +261,21 @@ Thomas Enebo, Gilles Duboscq and Yorick Pertese reviewed drafts of this article.
 
 The author, Chris Seaton, is grateful for the patience of his PhD supervisor, Mikel Luján, during this distraction.
 
-The John Tenniel illustrations are from [Project Guternberg](http://www.gutenberg.org/ebooks/114) and are public domain in the UK and US.
+The John Tenniel illustrations are from [Project Guternberg](https://www.gutenberg.org/ebooks/114) and are public domain in the UK and US.
 
 ## Appendix: The History of Deoptimization
 
-You may have heard many people say that Ruby is influenced by [Smalltalk](http://en.wikipedia.org/wiki/Smalltalk), and that's where deoptimization came from. The term that is actually used in the literature is generally *dynamic deoptimization* because many people talk about *dynamic optimization* instead of just-in-time compilation. You may also see the terms *uncommon trap* and *transfer to interpreter*. We talk about just *deoptimization* for simplicity - the terms have differences but they aren't very important for what we're talking about here.
+You may have heard many people say that Ruby is influenced by [Smalltalk](https://en.wikipedia.org/wiki/Smalltalk), and that's where deoptimization came from. The term that is actually used in the literature is generally *dynamic deoptimization* because many people talk about *dynamic optimization* instead of just-in-time compilation. You may also see the terms *uncommon trap* and *transfer to interpreter*. We talk about just *deoptimization* for simplicity - the terms have differences but they aren't very important for what we're talking about here.
 
 Smalltalk is even more object orientated than Ruby - where Ruby has an `if` expression, Smalltalk has an `ifTrue`/`ifFalse` method on Boolean objects that accepts two blocks and runs one if the value if true and the other if it is false. Smalltalk also featured a concept that is fashionable again today - program images where the code is stored as data and manipulated visually like projects such as Light Table are proposing.
 
-Smalltalk was developed in the 1970s by Alan Kay, Dan Ingalls and Adele Goldberg and standardized in the 1980s. Today it isn't in widespread use but there are a few modern implementations such [Pharo](http://en.wikipedia.org/wiki/Pharo). Most importantly it has had a huge impact in language design, including Ruby and, via Self, JavaScript.
+Smalltalk was developed in the 1970s by Alan Kay, Dan Ingalls and Adele Goldberg and standardized in the 1980s. Today it isn't in widespread use but there are a few modern implementations such [Pharo](https://en.wikipedia.org/wiki/Pharo). Most importantly it has had a huge impact in language design, including Ruby and, via Self, JavaScript.
 
-The typical reference for deoptimization is a paper from 1992 on applying it for debugging [1]. In their paper they want to deoptimize so that all the data structures are available for introspection. It's like how we deoptimize to introspect all live objects in `ObjectSpace`. There is also some similar ideas in the much earlier doctoral thesis of [Jim Mitchell](http://en.wikipedia.org/wiki/James_G._Mitchell) in 1970.
+The typical reference for deoptimization is a paper from 1992 on applying it for debugging [1]. In their paper they want to deoptimize so that all the data structures are available for introspection. It's like how we deoptimize to introspect all live objects in `ObjectSpace`. There is also some similar ideas in the much earlier doctoral thesis of [Jim Mitchell](https://en.wikipedia.org/wiki/James_G._Mitchell) in 1970.
 
-The OpenJDK JVM, HotSpot, uses deoptimization extensively [2, 3] and the new Graal compiler even more so [4, 5]. Our work on Ruby has again demonstrated the utility of deoptimization for debugging [6] and shows how the technique allows for [zero-overhead tracing](http://www.chrisseaton.com/truffleruby/set_trace_func/).
+The OpenJDK JVM, HotSpot, uses deoptimization extensively [2, 3] and the new Graal compiler even more so [4, 5]. Our work on Ruby has again demonstrated the utility of deoptimization for debugging [6] and shows how the technique allows for [zero-overhead tracing](https://chrisseaton.com/truffleruby/set_trace_func/).
 
-1. U. Hölzle, C. Chambers, and D. Ungar, "[Debugging optimized code with dynamic deoptimization](http://dl.acm.org/citation.cfm?id=143114)," presented at the PLDI '92: Proceedings of the ACM SIGPLAN 1992 conference on Programming language design and implementation, New York, New York, USA, 1992, pp. 32–43.
+1. U. Hölzle, C. Chambers, and D. Ungar, "[Debugging optimized code with dynamic deoptimization](https://dl.acm.org/citation.cfm?id=143114)," presented at the PLDI '92: Proceedings of the ACM SIGPLAN 1992 conference on Programming language design and implementation, New York, New York, USA, 1992, pp. 32–43.
 
 2. T. Kotzmann, C. Wimmer, H. Mössenböck, T. Rodriguez, K. Russell, and D. Cox, "[Design of the Java HotSpot™ client compiler for Java 6](https://www.complang.tuwien.ac.at/andi/java-hotspot.pdf)," Transactions on Architecture and Code Optimization (TACO, vol. 5, no. 1, pp. 1–32, May 2008.
 
@@ -283,8 +283,8 @@ The OpenJDK JVM, HotSpot, uses deoptimization extensively [2, 3] and the new Gra
 
 4. G. Duboscq, T. Würthinger, L. Stadler, C. Wimmer, D. Simon, and H. Mössenböck, "[An intermediate representation for speculative optimizations in a dynamic compiler](http://design.cs.iastate.edu/vmil/2013/papers/p04-Duboscq.pdf)," presented at the VMIL '13: Proceedings of the 7th ACM workshop on Virtual machines and intermediate languages, New York, New York, USA, 2013.
 
-5. G. Duboscq, T. Würthinger, and H. Mössenböck, "[Speculation without regret: reducing deoptimization meta-data in the Graal compiler](http://dl.acm.org/citation.cfm?id=2647521)," presented at the PPPJ '14: Proceedings of the 2014 International Conference on Principles and Practices of Programming on the Java platform: Virtual machines, Languages, and Tools, New York, New York, USA, 2014, pp. 187–193.
+5. G. Duboscq, T. Würthinger, and H. Mössenböck, "[Speculation without regret: reducing deoptimization meta-data in the Graal compiler](https://dl.acm.org/citation.cfm?id=2647521)," presented at the PPPJ '14: Proceedings of the 2014 International Conference on Principles and Practices of Programming on the Java platform: Virtual machines, Languages, and Tools, New York, New York, USA, 2014, pp. 187–193.
 
-6. C. Seaton, M. L. Van De Vanter, and M. Haupt, "[Debugging at Full Speed](http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf)," presented at the Proceedings of the 8th Workshop on Dynamic Languages and Applications (DYLA), 2014.
+6. C. Seaton, M. L. Van De Vanter, and M. Haupt, "[Debugging at Full Speed](https://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf)," presented at the Proceedings of the 8th Workshop on Dynamic Languages and Applications (DYLA), 2014.
 
 {% include trufflerubylinks.html %}

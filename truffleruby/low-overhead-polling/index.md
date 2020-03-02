@@ -39,7 +39,7 @@ else {
 }
 ```
 
-In [Rubinius](http://rubinius.com), the `thread_interrupted_p` method is regularly called to check a flag to see if a thread is supposed to raise an exception or be killed.
+In [Rubinius](https://rubinius.com), the `thread_interrupted_p` method is regularly called to check a flag to see if a thread is supposed to raise an exception or be killed.
 
 ```c++
 bool thread_interrupted_p(State* state) {
@@ -51,7 +51,7 @@ bool thread_interrupted_p(State* state) {
 }
 ```
 
-In [JRuby](http://jruby.org), `Array#sort` has a special case for when the `<=>` operator has not been redefined. It checks the redefinition once, and then stores a variable to say which path to use later on.
+In [JRuby](https://www.jruby.org/), `Array#sort` has a special case for when the `<=>` operator has not been redefined. It checks the redefinition once, and then stores a variable to say which path to use later on.
 
 ```java
 protected IRubyObject sortInternal(final ThreadContext context,
@@ -315,7 +315,7 @@ I think that this is where the real potential for optimising Ruby will be found.
 
 Virtual machines and just-in-time compilers are remarkably undocumented areas of technical knowledge. A lot of what we know only exists in source code and in the experience of individual engineers. There is only recently a good paper giving an overview of the area of polling.
 
-*[Stop and Go: Understanding Yieldpoint Behavior](http://users.cecs.anu.edu.au/~steveb/downloads/pdf/yieldpoint-ismm-2015.pdf)*. Y. Lin, K. Wang, S. Blackburn, A. Hosking, and M. Norrish, ISMM 2015.
+*[Stop and Go: Understanding Yieldpoint Behavior](https://users.cecs.anu.edu.au/~steveb/pubs/papers/yieldpoint-ismm-2015.pdf)*. Y. Lin, K. Wang, S. Blackburn, A. Hosking, and M. Norrish, ISMM 2015.
 
 This paper somewhat confirms my experimental results and finds that the best technique can vary, as well as providing lots of other useful information about what else we can do.
 
@@ -323,7 +323,7 @@ The terminology in this area is also varied. We can call the method of interrupt
 
 I have done some of my own research into safepoints, co-inventing a way to build on simple VM safepoints to run arbitrary user code inside a safepoint. Normally in a memory protection handler you cannot run anything non-trivial, and certainly not arbitrary user code.
 
-*[Techniques and Applications for Guest-Language Safepoints](http://chrisseaton.com/truffleruby/icooolps15-safepoints/safepoints.pdf)*. B. Daloze, C. Seaton, D. Bonetta, H. Mössenböck, ICOOOLPS 2015.
+*[Techniques and Applications for Guest-Language Safepoints](https://chrisseaton.com/truffleruby/icooolps15-safepoints/safepoints.pdf)*. B. Daloze, C. Seaton, D. Bonetta, H. Mössenböck, ICOOOLPS 2015.
 
 Another technique to implement interruption is to modify the running code. `nop` empty instructions can be placed where the interruption guard is supposed to be, and then replaced with a `jump` instruction to the slow path when the interruption is needed. This can be very slow to trigger if you have a lot of code installed, however.
 
@@ -333,6 +333,6 @@ JRuby uses the same implementation technique described here as TruffleRuby does,
 
 In the past I've said that the signal we use is a *segmentation fault*, `SIGSEGV`. It's actually a *bus error*, `SIGBUS`, but this doesn't make any practical difference.
 
-I've [written and talked more about what deoptimisation means for Ruby](http://chrisseaton.com/truffleruby/deoptimizing/) back at RubyConf 2014.
+I've [written and talked more about what deoptimisation means for Ruby](https://chrisseaton.com/truffleruby/deoptimizing/) back at RubyConf 2014.
 
 Thanks to Kevin Menard and Al Chou for proof-reading.

@@ -11,14 +11,15 @@ redirect_from: "/rubytruffle/"
 </p>
 
 TruffleRuby started as [my](..) internship project at [Oracle
-Labs](http://labs.oracle.com/) in early 2013. It is an implementation of the
+Labs](https://labs.oracle.com/) in early 2013. It is an implementation of the
 [Ruby](https://www.ruby-lang.org/) programming language on the JVM, using the
 [Graal dynamic compiler and the Truffle AST interpreter
-framework](http://openjdk.java.net/projects/graal/). TruffleRuby can achieve
+framework](https://openjdk.java.net/projects/graal/). TruffleRuby can achieve
 peak performance well beyond that possible in JRuby at the same time as being a
 significantly simpler system. In early 2014 it was open sourced and integrated
-into [JRuby](http://jruby.org/) for incubation, then in 2017 it became its
-own project, and now it is part of [GraalVM](http://graalvm.org).
+into [JRuby](https://www.jruby.org/) for incubation, then in 2017 it became its
+own project, and now it is part of [GraalVM](https://www.graalvm.org/). From 2019
+[Shopify](https://engineering.shopify.com/) has sponsored development.
 
 This page links to the literature and code related to the project. Note that any
 views expressed are my own and not those of Oracle.
@@ -109,9 +110,9 @@ views expressed are my own and not those of Oracle.
             <a href="dls15-interop/dls15-interop.pdf">PDF</a>
         </span>
 
-*    F. Niephaus, M. Springer, T. Felgentreff, T. Pape, R. Hirschfeld. [Call-target-specific Method Arguments](https://github.com/HPI-SWA-Lab/TargetSpecific-ICOOOLPS/raw/gh-pages/call_target_specific_method_arguments.pdf). In Proceedings of the 10th Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS), 2015.<br>
+*    F. Niephaus, M. Springer, T. Felgentreff, T. Pape, R. Hirschfeld. [Call-target-specific Method Arguments](https://raw.githubusercontent.com/HPI-SWA-Lab/TargetSpecific-ICOOOLPS/gh-pages/call_target_specific_method_arguments.pdf). In Proceedings of the 10th Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS), 2015.<br>
         <span class="smaller">
-            <a href="https://github.com/HPI-SWA-Lab/TargetSpecific-ICOOOLPS/raw/gh-pages/call_target_specific_method_arguments.pdf">PDF</a>
+            <a href="https://raw.githubusercontent.com/HPI-SWA-Lab/TargetSpecific-ICOOOLPS/gh-pages/call_target_specific_method_arguments.pdf">PDF</a>
         </span>
 
 *    B. Daloze, C. Seaton, D. Bonetta, H. Mössenböck. [Techniques and Applications for Guest-Language Safepoints](icooolps15-safepoints/safepoints.pdf). In Proceedings of the 10th Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS), 2015.<br>
@@ -134,10 +135,10 @@ views expressed are my own and not those of Oracle.
             <a href="pppj14-om/ppj14-om.pdf">PDF</a>
         </span>
 
-*   C. Seaton, M. L. Van De Vanter, and M. Haupt. [Debugging at full speed](http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf). In Proceedings of the 8th Workshop on Dynamic Languages and Applications (DYLA), 2014.<br>
+*   C. Seaton, M. L. Van De Vanter, and M. Haupt. [Debugging at full speed](https://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf). In Proceedings of the 8th Workshop on Dynamic Languages and Applications (DYLA), 2014.<br>
         <span class="smaller">
-            <a href="http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf">PDF</a>,
-            <a href="http://lafo.ssw.uni-linz.ac.at/truffle/debugging/dyla14-debugging-artifact-0557a4f756d4.tar.gz">Code</a>
+            <a href="https://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf">PDF</a>,
+            <a href="https://web.archive.org/web/20150117042919/https://lafo.ssw.uni-linz.ac.at/truffle/debugging/dyla14-debugging-artifact-0557a4f756d4.tar.gz">Code</a>
         </span>
 
 # Videos of Talks and Slide Decks
@@ -168,13 +169,13 @@ views expressed are my own and not those of Oracle.
 
 *   Chris Seaton and Benoit Daloze. [A Tour Through a New Ruby Implementation](fosdem15/truffle-tour.pdf). At FOSDEM 2015. [Slides](fosdem15/truffle-tour.pdf).
 
-*   Chris Seaton. [Deoptimizing Ruby](). At RubyConf 2014. [Video](http://confreaks.tv/videos/rubyconf2014-deoptimizing-ruby), [slides](deoptimizing/deoptimizing-ruby.pdf) and [blogpost](deoptimizing/).
+*   Chris Seaton. [Deoptimizing Ruby](). At RubyConf 2014. [Video](https://confreaks.tv/videos/rubyconf2014-deoptimizing-ruby), [slides](deoptimizing/deoptimizing-ruby.pdf) and [blogpost](deoptimizing/).
 
 *   Chris Seaton. [Implementing Ruby Using Truffle and Graal](ecoop14/ecoop14-ruby-truffle.pdf). At the European Conference on Object Oriented Programming (ECOOP) Summer School. 2014. [Slides](ecoop14/ecoop14-ruby-truffle.pdf).
 
-*   Christian Wimmer and Chris Seaton. [One VM to Rule Them All](../jvmls13-one-vm/jvmls13-one-vm.pdf). At the JVM Language Summit. 2013. [Video](http://medianetwork.oracle.com/video/player/2623645003001) and [slides](../jvmls13-one-vm/jvmls13-one-vm.pdf).
+*   Christian Wimmer and Chris Seaton. [One VM to Rule Them All](../jvmls13-one-vm/jvmls13-one-vm.pdf). At the JVM Language Summit. 2013. [Video](https://www.youtube.com/watch?v=hDfYRjNynmQ) and [slides](../jvmls13-one-vm/jvmls13-one-vm.pdf).
 
-*    Charles Nutter. [Beyond JVM](http://www.slideshare.net/CharlesNutter/yow-sydney-2013-beyond-jvm) talk at Sydney in December 2013 made some references to this work in the context of JRuby (no video yet). Also a [video](http://www.youtube.com/watch?feature=player_detailpage&v=8ZEAwWLwmfQ#t=951) of a talk with earlier details at Baruco 2013.
+*    Charles Nutter. [Beyond JVM](https://www.slideshare.net/CharlesNutter/yow-sydney-2013-beyond-jvm) talk at Sydney in December 2013 made some references to this work in the context of JRuby. Also a [video](https://www.youtube.com/watch?v=8ZEAwWLwmfQ#t=951) of a talk with earlier details at Baruco 2013.
 
 ---
 

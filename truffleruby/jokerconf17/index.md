@@ -641,7 +641,7 @@ tool - it lives in the OpenJDK repository but it isn't included in the JVM by
 default so we have to built it ourselves.
 
     $ cd openjdk/hotspot/src/share/tools/hsdis
-    $ curl -O http://ftp.heanet.ie/mirrors/gnu/binutils/binutils-2.24.tar.gz
+    $ curl -O https://ftp.gnu.org/gnu/binutils/binutils-2.24.tar.gz
     $ tar -xzf binutils-2.24.tar.gz
     $ make BINUTILS=binutils-2.24 ARCH=amd64 CFLAGS=-Wno-error
     $ cp build/macosx-amd64/hsdis-amd64.dylib ../../../../../..
@@ -1077,7 +1077,7 @@ framework, and so also uses Graal. TruffleRuby is easily the fastest
 implementation of Ruby, often 10x faster than other implementations, while still
 implementing almost all of the language and standard library.
 
-[https://github.com/graalvm/truffleruby](https://github.com/graalvm/truffleruby)
+[https://github.com/oracle/truffleruby](https://github.com/oracle/truffleruby)
 
 ## Summary
 

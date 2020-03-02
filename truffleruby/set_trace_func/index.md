@@ -11,9 +11,9 @@ redirect_from: "/rubytruffle/set_trace_func/"
 
 ## `set_trace_func`
 
-The new [Truffle backend in JRuby](https://github.com/jruby/jruby/wiki/Truffle) gives us an extremely fast implementation of Ruby, but as well as being fast its architecture allows us to tackle some of the features of Ruby that are traditionally seen as being very hard to implement, often in a refreshingly simple way.
+The new Truffle backend in JRuby gives us an extremely fast implementation of Ruby, but as well as being fast its architecture allows us to tackle some of the features of Ruby that are traditionally seen as being very hard to implement, often in a refreshingly simple way.
 
-Ruby's core library has a method [`Kernel#set_trace_func`](http://ruby-doc.org/core-2.1.2/Kernel.html#method-i-set_trace_func) that allows you to install a method to be called as the interpreter traces through your program. It's called on every source code line, every time you call or return from a method, and on some other events. The method is passed some information about the program state, including a [`Binding`](http://ruby-doc.org/core-2.1.2/Binding.html) object - an object like a hash that holds all the local variables in scope at the point the method was called.
+Ruby's core library has a method [`Kernel#set_trace_func`](https://ruby-doc.org/core-2.1.2/Kernel.html#method-i-set_trace_func) that allows you to install a method to be called as the interpreter traces through your program. It's called on every source code line, every time you call or return from a method, and on some other events. The method is passed some information about the program state, including a [`Binding`](https://ruby-doc.org/core-2.1.2/Binding.html) object - an object like a hash that holds all the local variables in scope at the point the method was called.
 
 ```ruby
 set_trace_func proc { |event, file, line, id, binding, classname|
@@ -35,7 +35,7 @@ The `set_trace_func` wrapper node's callback simply calls the trace method if on
 
 To switch between the two nodes, we use the dynamic deoptimisation functionality that is already in the JVM, and that we are already using for method dispatch. When we want to install a `set_trace_func` method we stop all running Ruby methods, whether they have been compiled or not, and replace the inactive nodes with active nodes. We can remove the trace method by again replacing the active nodes with inactive versions.
 
-Adding support for `set_trace_func` was not much more work than adding the [trace node](https://github.com/jruby/jruby/blob/master/core/src/main/java/org/jruby/truffle/nodes/debug/TraceNode.java) and the code to [install or remove a trace method](https://github.com/jruby/jruby/blob/master/core/src/main/java/org/jruby/truffle/runtime/subsystems/TraceManager.java).
+Adding support for `set_trace_func` was not much more work than adding the [trace node](https://github.com/jruby/jruby/blob/077a4ffb881e62b4d1fab78270a81cc500c0c252/core/src/main/java/org/jruby/truffle/nodes/debug/TraceNode.java) and the code to [install or remove a trace method](https://github.com/jruby/jruby/blob/077a4ffb881e62b4d1fab78270a81cc500c0c252/core/src/main/java/org/jruby/truffle/runtime/subsystems/TraceManager.java).
 
 The implementation isn't quite complete - it calls the trace method for every line, but not for method calls yet. It also doesn't pass in all the parameters the method expects, but it does construct the full binding, which is the expensive bit.
 
@@ -91,7 +91,7 @@ Keep in mind this is all on top of the significant performance lead JRuby+Truffl
 
 ## More Details
 
-A more formal description of how we implemented and evaluated `set_trace_func` and our prototype debugger was the subject of the paper [Debugging at Full Speed](http://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf) by [Chris Seaton](http://www.chrisseaton.com/), [Michael Van de Vanter](http://vandevanter.net/mlvdv/) and [Michael Haupt](https://labs.oracle.com/pls/apex/f?p=labs:bio:0:44), all of Oracle Labs, presented at the 2014 Workshop on Dynamic Languages and Applications in Edinburgh. The paper includes a full evaluation and a link to the experimental harness we built so you can reproduce the results.
+A more formal description of how we implemented and evaluated `set_trace_func` and our prototype debugger was the subject of the paper [Debugging at Full Speed](https://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf) by [Chris Seaton](https://chrisseaton.com/), [Michael Van de Vanter](https://vandevanter.net/mlvdv/) and [Michael Haupt](https://labs.oracle.com/pls/apex/f?p=labs:bio:0:44), all of Oracle Labs, presented at the 2014 Workshop on Dynamic Languages and Applications in Edinburgh. The paper includes a full evaluation and a link to the experimental harness we built so you can reproduce the results.
 
 If you'd like to know any more, please get in touch!
 

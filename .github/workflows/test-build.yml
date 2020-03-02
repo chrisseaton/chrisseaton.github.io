@@ -14,5 +14,7 @@ jobs:
         ruby-version: 2.7.0
     - name: Install
       run: bundle install
-    - name: Test build
-      run: bundle exec jekyll build
+    - name: Check
+      run: rake check
+    - name: Build
+      run: rake build

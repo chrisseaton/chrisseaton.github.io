@@ -11,9 +11,9 @@ Small data structures such as arrays and hashes with just a few elements or key-
 
 Of course, some of these data structures will grow as the program runs, but it's intuitively a reasonable hypothesis that many arrays and hashes begin small and stay small. If that's the case, then we want to optimise for that.
 
-Our immediate motivation for this work was that we found that small arrays and hashes were very common in the `chunky_png` and `psd.rb` gems that we wanted to experiment with optimising using Truffle. As we explained in a [previous blog post](http://www.chrisseaton.com/truffleruby/pushing-pixels/), both of these gems use many small arrays and hashes in the inner loop of image processing routines. Examples include storing pixel values as a small `{r:, g:, b:}` hash, or creating a small array of `[n, min, max]` and sorting it to clamp a value in bounds.
+Our immediate motivation for this work was that we found that small arrays and hashes were very common in the `chunky_png` and `psd.rb` gems that we wanted to experiment with optimising using Truffle. As we explained in a [previous blog post](https://chrisseaton.com/truffleruby/pushing-pixels/), both of these gems use many small arrays and hashes in the inner loop of image processing routines. Examples include storing pixel values as a small `{r:, g:, b:}` hash, or creating a small array of `[n, min, max]` and sorting it to clamp a value in bounds.
 
-In this blog post we'll show what [JRuby+Truffle](http://www.chrisseaton.com/truffleruby/) does to optimise these small data structures. It will help to explain how we are able to entirely constant fold the acid test benchmark in the previous post.
+In this blog post we'll show what [JRuby+Truffle](https://chrisseaton.com/truffleruby/) does to optimise these small data structures. It will help to explain how we are able to entirely constant fold the acid test benchmark in the previous post.
 
 ## Storage Strategies
 
@@ -23,7 +23,7 @@ The problem with this is that it's often way over the top for what we actually n
 
 We have to meet the contract that the `Array` and `Hash` classes specify, which includes the explicit contract such as the methods they provide, and the implicit contract that is the algorithmic complexity of these methods. But as long as we can do that, we're free to implement these data structures however we like.
 
-JRuby+Truffle uses a novel variant of a technique that is already in use in the various PyPy projects, called strategies, [published by Carl Friedrich Bolz, Lukas Diekmann and Laurence Tratt](http://tratt.net/laurie/research/pubs/html/bolz_diekmann_tratt__storage_strategies_for_collections_in_dynamically_typed_languages/). The idea is that we have a range of different ways of implementing each data structure. Each array and hash references the strategy that they're currently using and you delegate operations to the current strategy. As the program runs, objects can change their strategy if the current one isn't appropriate any more.
+JRuby+Truffle uses a novel variant of a technique that is already in use in the various PyPy projects, called strategies, [published by Carl Friedrich Bolz, Lukas Diekmann and Laurence Tratt](https://tratt.net/laurie/research/pubs/html/bolz_diekmann_tratt__storage_strategies_for_collections_in_dynamically_typed_languages/). The idea is that we have a range of different ways of implementing each data structure. Each array and hash references the strategy that they're currently using and you delegate operations to the current strategy. As the program runs, objects can change their strategy if the current one isn't appropriate any more.
 
 In JRuby+Truffle our most simple strategy is the `null` strategy. If a hash or array is empty, we don't allocate any storage at all. Many operations on a `null` strategy are often no-ops returning constant values.
 
@@ -112,7 +112,7 @@ We get all of this for free from Truffle and Graal - the only work we need to do
 
 Truffle is all about specialisation. Here we've talked about specialisations for the way data structures are implemented. For simpler cases we use simpler strategies, which allow for simpler implementations of operations on them. That simpler code is easier to optimise and produces better machine code, and we end up with a faster program at the end.
 
-The acid test benchmark presented in our [previous blog post](http://www.chrisseaton.com/truffleruby/pushing-pixels/) is fast because of the use of several of these strategies working together.
+The acid test benchmark presented in our [previous blog post](https://chrisseaton.com/truffleruby/pushing-pixels/) is fast because of the use of several of these strategies working together.
 
 Of course it's not the case that JRuby and Rubinius haven't implemented strategies because they haven't thought of it. I know that Charles Nutter has been considering more efficient implementations of small hashes for a while, and 9k recently gained [an optimisation for empty hashes](https://github.com/jruby/jruby/pull/1676) that is also in MRI. But in general JRuby and Rubinius will always fully heap-allocate arrays and hashes in their current implementations, and almost always box or tag immediate objects like `Fixum` and `Float`. If you're allocating on the heap, the speedup from these optimisations will be relatively minimal.
 

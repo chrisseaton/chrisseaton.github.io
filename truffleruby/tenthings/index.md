@@ -19,19 +19,19 @@ some of the diverse features of GraalVM and show you what they can do for you.
 
 You can reproduce everything that I'm showing in this article with GraalVM
 19.0.0, which is available today from
-[graalvm.org/downloads](https://www.graalvm.org/downloads). I'm using the
+[graalvm.org/downloads](https://www.graalvm.org/downloads/). I'm using the
 Enterprise Edition on macOS, which is free to evalute as we're doing here, but
 the instructions will also work on Linux. Most of them will also work with the
 Community Edition.
 
 Follow along and run these programs while you're reading! The code I'm running
 on GraalVM can be cloned from
-[github.com/chrisseaton/graalvm-ten-things/](http://github.com/chrisseaton/graalvm-ten-things/).
+[github.com/chrisseaton/graalvm-ten-things/](https://github.com/chrisseaton/graalvm-ten-things/).
 
 # Setup
 
 I've downloaded the Enterprise Edition of GraalVM 19.0.0 from
-[graalvm.org/downloads](https://www.graalvm.org/downloads), and put the
+[graalvm.org/downloads](https://www.graalvm.org/downloads/), and put the
 programs from it onto my `$PATH`. This gives me the Java and JavaScript
 languages by default.
 
@@ -273,7 +273,7 @@ topten:
   /usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1252.250.1)
   /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation (compatibility version 150.0.0, current version 1575.12.0)
   /usr/lib/libz.1.dylib (compatibility version 1.0.0, current version 1.2.11)
-$ du -h topten 
+$ du -h topten
 7.5M  topten
 ```
 
@@ -376,7 +376,7 @@ app.get('/css/:name', function (req, res) {
 });
 
 app.listen(8080, function () {
-  console.log('serving at http://localhost:8080')
+  console.log('serving at https://localhost:8080')
 });
 ```
 
@@ -407,10 +407,10 @@ default doesn't include more than JavaScript.
 
 ```
 $ node --polyglot --jvm color-server.js
-serving at http://localhost:8080
+serving at https://localhost:8080
 ```
 
-Then open http://localhost:8080/css/aquamarine, or some other colour name, as
+Then open https://localhost:8080/css/aquamarine, or some other colour name, as
 normal in your browser.
 
 ![color-server.js](color-server.png)
@@ -466,7 +466,7 @@ app.listen(3000, function () {
 $ node --jvm --polyglot polyglot.js
 ```
 
-Open http://localhost:3000/ in your browser to see the result.
+Open https://localhost:3000/ in your browser to see the result.
 
 ![polyglot.js](polyglot.png)
 
@@ -486,8 +486,8 @@ LLVM bitcode - rather than directly supporting C. This means you can use your
 existing tooling with C, and also other languages that can output LLVM, such as
 C++, Fortran, and potentially other languages in the future. To make things
 simple for a demo I'm running a special [single-file
-version](http://people.csail.mit.edu/smcc/projects/single-file-programs/) of
-gzip, maintained by [Stephen McCamant](http://people.csail.mit.edu/smcc/). It's
+version](https://people.csail.mit.edu/smcc/projects/single-file-programs/) of
+gzip, maintained by [Stephen McCamant](https://people.csail.mit.edu/smcc/). It's
 just the `gzip` source code and the `autoconf` configuration concatenated into
 one file for simplicity. I've also had to patch a couple of things to make it
 work on macOS and with clang, but not to get it working on GraalVM.
@@ -666,7 +666,7 @@ under *Summary* we can select *Ruby Heap* and see proper Ruby objects instead.
 ![VisualVM with Ruby](visualvm-rb.png)
 
 The Truffle framework is a [kind of nexus for languages and
-tools](http://programming-journal.org/2018/2/14/). If you program your languages
+tools](https://programming-journal.org/2018/2/14/). If you program your languages
 using Truffle, and you program your tools like this debugger against Truffle's
 tool API, then each tool works with each language, and you only have to write
 the tool once.
@@ -741,7 +741,7 @@ The library is already built when you get GraalVM, but by default it only
 includes the builtin language JavaScript. You can rebuild the polyglot library
 to include other languages using the command below, but you'll need to
 download *Oracle GraalVM Enterprise Edition Native Image preview for macOS
-(19.0.0)* from [OTN](https://www.oracle.com/technetwork/graalvm/downloads/).
+(19.0.0)* from [OTN](https://www.oracle.com/downloads/graalvm-downloads.html).
 Rebuilding does take a few minutes, so you may want to just experiment with
 JavaScript if you're following along - you don't need to rebuild if you just
 want JavaScript.
@@ -764,21 +764,21 @@ passed on the command line. We're going to be doing the equivalent of our
 int main(int argc, char **argv) {
   poly_isolate isolate = NULL;
   poly_thread thread = NULL;
-  
+
   if (poly_create_isolate(NULL, &isolate, &thread) != poly_ok) {
     fprintf(stderr, "poly_create_isolate error\n");
     return 1;
   }
-  
+
   poly_context context = NULL;
-  
+
   if (poly_create_context(thread, NULL, 0, &context) != poly_ok) {
     fprintf(stderr, "poly_create_context error\n");
     goto exit_isolate;
   }
-  
+
   char* language = "js";
-  
+
   for (int n = 1; n < argc; n++) {
     if (argv[n][0] == '-') {
       language = &argv[n][1];
@@ -789,12 +789,12 @@ int main(int argc, char **argv) {
         fprintf(stderr, "poly_open_handle_scope error\n");
         goto exit_context;
       }
-      
+
       if (poly_context_eval(thread, context, language, "eval", argv[n], &result) != poly_ok) {
         fprintf(stderr, "poly_context_eval error\n");
-        
+
         const poly_extended_error_info *error;
-        
+
         if (poly_get_last_error_info(thread, &error) != poly_ok) {
           fprintf(stderr, "poly_get_last_error_info error\n");
           goto exit_scope;
@@ -803,10 +803,10 @@ int main(int argc, char **argv) {
         fprintf(stderr, "%s\n", error->error_message);
         goto exit_scope;
       }
-      
+
       char buffer[1024];
       size_t length;
-      
+
       if (poly_value_to_string_utf8(thread, result, buffer, sizeof(buffer), &length) != poly_ok) {
         fprintf(stderr, "poly_value_to_string_utf8 error\n");
         goto exit_scope;
@@ -831,7 +831,7 @@ int main(int argc, char **argv) {
     fprintf(stderr, "poly_tear_down_isolate error\n");
     return 1;
   }
-  
+
   return 0;
 
 exit_scope:
@@ -884,7 +884,7 @@ JVM to run.
 
 I wrote an application that uses the excellent Apache SIS geospatial library to
 calculate the great-circle distance between two points on Earth. I used SIS 0.8
-which I downloaded separately from http://sis.apache.org/ and extracted the jar
+which I downloaded separately from https://sis.apache.org/ and extracted the jar
 from.
 
 ```java
@@ -939,7 +939,7 @@ public class Distance {
           double b_lat, double b_long) {
         return DistanceUtils.getHaversineDistance(a_lat, a_long, b_lat, b_long);
     }
-    
+
     ...
 
 }
@@ -975,24 +975,24 @@ instance of the system, and tell it about our main thread.
 int main(int argc, char **argv) {
   graal_isolate_t *isolate = NULL;
   graal_isolatethread_t *thread = NULL;
-  
+
   if (graal_create_isolate(NULL, &isolate, &thread) != 0) {
     fprintf(stderr, "graal_create_isolate error\n");
     return 1;
   }
-  
+
   double a_lat   = strtod(argv[1], NULL);
   double a_long  = strtod(argv[2], NULL);
   double b_lat   = strtod(argv[3], NULL);
   double b_long  = strtod(argv[4], NULL);
-  
+
   printf("%.2f km\n", distance(thread, a_lat, a_long, b_lat, b_long));
 
   if (graal_detach_thread(thread) != 0) {
     fprintf(stderr, "graal_detach_thread error\n");
     return 1;
   }
-  
+
   return 0;
 }
 ```
@@ -1111,14 +1111,14 @@ We don't have space here to show a complete language, even a tiny one, but
 [SimpleLanguage](https://github.com/graalvm/simplelanguage) is an executable
 tutorial of how to create your own language using Truffle, based around a
 simplified JavaScript-style language. For example [see the
-implementation](https://github.com/graalvm/simplelanguage/blob/master/src/main/java/com/oracle/truffle/sl/nodes/controlflow/SLIfNode.java)
+implementation](https://github.com/graalvm/simplelanguage/blob/master/language/src/main/java/com/oracle/truffle/sl/nodes/controlflow/SLIfNode.java)
 of the `if` statement.
 
 Other languages written using Truffle by people outside of Oracle Labs includes
 a [Smalltalk variant](https://github.com/SOM-st/TruffleSOM), a [Newspeak
 variant](https://github.com/smarr/SOMns), and a [Lisp
 variant](https://github.com/cesquivias/mumbler). The Lisp example has a
-[tutorial](http://cesquivias.github.io) you can follow.
+[tutorial](https://cesquivias.github.io) you can follow.
 
 # Conclusion
 

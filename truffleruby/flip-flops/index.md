@@ -9,7 +9,7 @@ copyright: Copyright © 2016 Chris Seaton.
 redirect_from: "/rubytruffle/flip-flops/"
 ---
 
-The Ruby [flip-flop operator](https://blog.newrelic.com/2015/02/24/weird-ruby-part-3-fun-flip-flop-phenom/) is an example of a very obscure part of Ruby. Probably few people have heard of it. It’s not covered in any book I’ve read and it doesn’t even appear to be mentioned in the old ISO standard.
+The Ruby [flip-flop operator](https://blog.newrelic.com/engineering/weird-ruby-part-3-fun-flip-flop-phenom/) is an example of a very obscure part of Ruby. Probably few people have heard of it. It’s not covered in any book I’ve read and it doesn’t even appear to be mentioned in the old ISO standard.
 
 Briefly, it’s a form of `if` with two conditions, using syntax that looks like a range literal. It’s usually run in some kind of loop. The body is not executed until the first condition becomes true, and then it is executed again until the second condition becomes true, at which point it the body is not executed again. You can use it to count the number of days between Tuesday and Thursday, for example.
 
@@ -75,7 +75,7 @@ description.lines.each_with_index do |line, i|
 end
 ```
 
-There is also an `unless` flip-flop, which isn’t covered in the Ruby spec suite or the MRI tests, so I’m not even sure anyone knows that one exists, except for the author of `blue-shell` [[6]](https://github.com/pivotal/blue-shell/blob/c1d0c1fbfb1343d68bc10eb432e98ceb49ca6c12/lib/blue-shell/buffered_reader_expector.rb#L54). The same line appears in the `cf`, `static` and `vmc` gems.
+There is also an `unless` flip-flop, which isn’t covered in the Ruby spec suite or the MRI tests, so I’m not even sure anyone knows that one exists, except for the author of `blue-shell` [[6]](https://github.com/pivotal-legacy/blue-shell/blob/c1d0c1fbfb1343d68bc10eb432e98ceb49ca6c12/lib/blue-shell/buffered_reader_expector.rb#L54). The same line appears in the `cf`, `static` and `vmc` gems.
 
 ```ruby
 unless (c == "\e") .. (c == "m")
@@ -254,6 +254,6 @@ Using a flip-flop is 24% slower in MRI than using local variables directly, whic
 
 I tried to benchmark `topaz` but I was unable to get it to run `benchmark-ips`, even with a few fixes.
 
-Kevin Menard reviewed a draft and suggested I look at uses of `unless` flip-flops. The [flip-flop schematic](https://commons.wikimedia.org/wiki/File:RS_Flip-flop_(NOR).svg) is by [inductiveload](https://commons.wikimedia.org/wiki/User:Inductiveload) and is in the public domain.
+Kevin Menard reviewed a draft and suggested I look at uses of `unless` flip-flops. The [flip-flop schematic](https://commons.wikimedia.org/wiki/File:RS_Flip-flop_%28NOR%29.svg) is by [inductiveload](https://commons.wikimedia.org/wiki/User:Inductiveload) and is in the public domain.
 
 {% include trufflerubylinks.html %}

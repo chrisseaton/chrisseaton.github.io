@@ -15,7 +15,7 @@ recommend that anyone uses it. However, I know that some people still have a
 need to read CSPassword files so I am making the software available.  You should
 only use CSPassord to migrate to a different password manager. Modern and
 properly engineered alternatives include [1Password](https://1password.com) and
-[GnuPG](http://www.gnupg.org).
+[GnuPG](https://www.gnupg.org).
 
 ----
 

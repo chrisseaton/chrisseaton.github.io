@@ -33,7 +33,7 @@ With almost everything being a method call, the speed at which we can execute th
 
 This article is going to talk about how the new Truffle backend in JRuby implements a very high performance method dispatch system on top the JVM. In fact I'll show you that it's so efficient that with important types like `Fixnum` we entirely optimize away the method call and how a call to something like `Fixnum#+` becomes just a few inline instructions.
 
-You won't need any deep technical understanding of JRuby, Java, the JVM or Truffle to follow this article. I'll explain all the concepts we build on as I go. Hopefully you'll enjoy some of the technical depth, even if you don't understand it all. As method dispatch is such an important part of a JRuby+Truffle, seeing how it works will give you a good overview of how Truffle in general works. If you want some more background on the Truffle backed in JRuby there is an [announcement blog post](http://www.chrisseaton.com/truffleruby/announcement/) and a [wiki page](https://github.com/jruby/jruby/wiki/Truffle) with lots of pointers to more information.
+You won't need any deep technical understanding of JRuby, Java, the JVM or Truffle to follow this article. I'll explain all the concepts we build on as I go. Hopefully you'll enjoy some of the technical depth, even if you don't understand it all. As method dispatch is such an important part of a JRuby+Truffle, seeing how it works will give you a good overview of how Truffle in general works. If you want some more background on the Truffle backed in JRuby there is an [announcement blog post](https://chrisseaton.com/truffleruby/announcement/).
 
 If you want to try out the practical examples, you'll need to install a development version of JRuby 9000 and the Graal VM. If you are on Linux or Mac and use rbenv with the latest ruby-build this is easy:
 
@@ -42,7 +42,7 @@ rbenv install jruby-9000+graal-dev
 rbenv shell jruby-9000+graal-dev
 ```
 
-If you aren't using those tools, follow the instructions on the [JRuby Truffle wiki page](https://github.com/jruby/jruby/wiki/Truffle) to get started.
+If you aren't using those tools, follow the instructions on the [JRuby Truffle wiki page](https://github.com/jruby/jruby/wiki) to get started.
 
 ## Method Lookup
 
@@ -52,7 +52,7 @@ All Ruby implementations work out which method to call in the same way, using th
 
 Even based on that simplified description, you can imagine the complexity of the method lookup algorithm. All Ruby implementations store the methods in each class in some kind of hash table, so each level of the lookup is a hash lookup. Hash table lookups can be fast, but if everything you do in your program ended up being a hash lookup, it's still going to make your program very slow.
 
-To solve that we don't do the method lookup each time we call a method. Instead we predict that the method we called last time is likely going to be same method we want the next time we make that call and cache it to use it again. 
+To solve that we don't do the method lookup each time we call a method. Instead we predict that the method we called last time is likely going to be same method we want the next time we make that call and cache it to use it again.
 
 ### Global Caches
 
@@ -101,7 +101,7 @@ public Object dispatch(VirtualFrame frame,
         RubyBasicObject receiverObject,
         RubyProc blockObject,
         Object[] argumentsObjects) {
-    
+
     // Check the lookup node is what we expect
 
     if (receiverObject.getLookupNode() != expectedLookupNode) {

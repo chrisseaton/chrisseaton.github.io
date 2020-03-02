@@ -21,7 +21,7 @@ The problem is that for many languages the C extension API is simply the interna
 We've seen this problem before in Python, where new implementations such as PyPy can make great progress re-designing the internals of these languages to achieve high performance, but then they get stuck when they need to somehow provide the same API for C extensions.
 For some people, good support for C extensions is a deal-breaker.
 
-One solution is to use a different kind of native interface such as a formal FFI designed independently of any implementation. Here the C code that you call doesn't use any kind of specific language API, and it is up to the dynamic language to marshal types so that they can be used from C. Python has this in [CFFI](https://cffi.readthedocs.org) and Ruby in [FFI](https://github.com/ffi/ffi/wiki). FFIs provide a clean interface that is easier to implement, but the reality is most extensions are not using them, and we can't rewrite people's extensions on their behalf.
+One solution is to use a different kind of native interface such as a formal FFI designed independently of any implementation. Here the C code that you call doesn't use any kind of specific language API, and it is up to the dynamic language to marshal types so that they can be used from C. Python has this in [CFFI](https://cffi.readthedocs.io/en/latest/) and Ruby in [FFI](https://github.com/ffi/ffi/wiki). FFIs provide a clean interface that is easier to implement, but the reality is most extensions are not using them, and we can't rewrite people's extensions on their behalf.
 
 Our new solution in JRuby+Truffle is pretty radical - we're going to interpret the C source code of your extension.
 We use the same high performance language implementation framework, Truffle, and dynamic compiler Graal, to implement C in the same way as we have implemented Ruby.
@@ -44,7 +44,7 @@ The same kind of problems also exist for `String` and the `RSTRING_PTR` macro.
 The Ruby C extension API described above is a very convenient interface for MRI to provide. MRI always represents objects as a `VALUE`, and always represents an array of objects as `VALUE*`, so it can just provide direct access to that array to the C extension.
 
 More recent implementations of Ruby such as Rubinius, JRuby and Truffle may want to store arrays in a more efficient manner.
-For example if we have an array of `Fixnum` objects, instead of [tagging](http://en.wikipedia.org/wiki/Tagged_pointer) them and storing them as a `VALUE` we might like to store the type once and then store the values as a `int[]`.
+For example if we have an array of `Fixnum` objects, instead of [tagging](https://en.wikipedia.org/wiki/Tagged_pointer) them and storing them as a `VALUE` we might like to store the type once and then store the values as a `int[]`.
 Rubinius and JRuby currently do not have a way to do that while still providing the same API that C extensions expect.
 
 JRuby used to have support for C extensions, built as part of a Google Summer of Code project a few years ago.
@@ -91,7 +91,7 @@ The benchmarks we evaluated below are just C source code and do not link to comp
 This is often the model for C extensions that are designed to improve on the performance of pure Ruby gems.
 Some C extensions are written to call binary libraries such as database drivers.
 We support this by allowing for native calls that leave the Truffle C interpreter.
-We've added [special support to the Graal compiler for making these calls very fast](http://dl.acm.org/citation.cfm?doid=2500828.2500832).
+We've added [special support to the Graal compiler for making these calls very fast](https://dl.acm.org/citation.cfm?doid=2500828.2500832).
 
 ## Performance
 
@@ -122,7 +122,7 @@ With these kind of optimisations we can actually achieve higher performance than
 
 ## Evaluation
 
-We used the same benchmarks as we used in the [Pushing Pixels](http://www.chrisseaton.com/truffleruby/pushing-pixels/) blog post, `psd_native` and `oily_png`.
+We used the same benchmarks as we used in the [Pushing Pixels](https://chrisseaton.com/truffleruby/pushing-pixels/) blog post, `psd_native` and `oily_png`.
 These are two gems for processing PNG and Photoshop files. There are pure Ruby versions, `psd.rb` and `chunky_png`, and then the gems we are using are optional C extensions to increase performance.
 
 These C extensions are used in production today and we haven't modified them except to [fix a couple of bugs](https://github.com/layervault/psd_native/pull/4/files) and to replace a couple instances of dynamic sized arrays allocated on the stack - this is a C99 feature we don't support yet. We took all the methods with C extension equivalents - we didn't pick and choose which to run.
@@ -154,7 +154,7 @@ The currently proposed solution for C extensions is to transition to an FFI, but
 Many of our features would be compelling on their own, but when combined with the 3x speedup compared to MRI running native code, the advantage of the approach of interpreting C extensions rather than running them natively is really clear.
 
 Charles Nutter has suggested that we could also use the Truffle implementation of C extensions without using the Truffle implementation of Ruby.
-This should be possible; but without the cross-language inlining capability 
+This should be possible; but without the cross-language inlining capability
 and so performance is more likely to be around that of MRI with C extensions.
 
 ## More details

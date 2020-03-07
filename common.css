@@ -1,5 +1,5 @@
 html {
-  background-color: #f7f6f4;
+  background-color: #faf9f7;
   font-size: 105%;
 }
 
@@ -60,11 +60,11 @@ a:hover {
   -webkit-box-shadow: 0px 0px 0px 4px #e6e5e3;
   -moz-box-shadow: 0px 0px 0px 4px #e6e5e3;
   box-shadow: 0px 0px 0px 4px #e6e5e3;
-  
+
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  
+
   text-shadow: 0px 1px 1px #494949;
 
   color: #ffffff;
@@ -84,11 +84,11 @@ hr {
   height: 3px;
   border: 0;
   background-color: #c3c3c3;
-  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#f7f6f4), to(#f7f6f4), color-stop(50%, #fff));
-  background-image: -webkit-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
-  background-image: -moz-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
-  background-image: -ms-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
-  background-image: -o-linear-gradient(left, #f7f6f4, #fff, #f7f6f4);
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#faf9f7), to(#faf9f7), color-stop(50%, #fff));
+  background-image: -webkit-linear-gradient(left, #faf9f7, #fff, #faf9f7);
+  background-image: -moz-linear-gradient(left, #faf9f7, #fff, #faf9f7);
+  background-image: -ms-linear-gradient(left, #faf9f7, #fff, #faf9f7);
+  background-image: -o-linear-gradient(left, #faf9f7, #fff, #faf9f7);
 }
 
 hr::after {
@@ -96,11 +96,11 @@ hr::after {
   display: block;
   height: 1px;
   background-color: #f7f6f4;
-  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#f7f6f4), to(#f7f6f4), color-stop(50%, #c3c3c3));
-  background-image: -webkit-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
-  background-image: -moz-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
-  background-image: -ms-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
-  background-image: -o-linear-gradient(left, #f7f6f4, #c3c3c3, #f7f6f4);
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#faf9f7), to(#faf9f7), color-stop(50%, #c3c3c3));
+  background-image: -webkit-linear-gradient(left, #faf9f7, #c3c3c3, #faf9f7);
+  background-image: -moz-linear-gradient(left, #faf9f7, #c3c3c3, #faf9f7);
+  background-image: -ms-linear-gradient(left, #faf9f7, #c3c3c3, #faf9f7);
+  background-image: -o-linear-gradient(left, #faf9f7, #c3c3c3, #faf9f7);
 }
 
 /* Footer */

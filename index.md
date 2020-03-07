@@ -13,9 +13,10 @@ footer: <p>TruffleRuby logo Copyright © 2018 Talkdesk, Inc. Licensed under <a h
 
 <section id="intro">
 
-<p>I'm a Researcher at <a href="https://engineering.shopify.com">Shopify</a>, where I work on the Ruby programming Language, and
-a Visitor at the <a href="https://www.manchester.ac.uk/">University of
-Manchester</a>.</p>
+<p>I'm a Researcher (Senior Staff Engineer) at
+<a href="https://engineering.shopify.com">Shopify</a>, where I work on the Ruby
+programming Language, and a Visitor at the
+<a href="https://www.manchester.ac.uk/">University of Manchester</a>.</p>
 
 <p>I was formerly a Research Manager at the <a href="https://labs.oracle.com/">Oracle Labs</a> Virtual Machine Research Group, where I led
 the <a href="truffleruby/">TruffleRuby</a> implementation of Ruby, and worked on other language and virtual
@@ -59,7 +60,7 @@ href="https://en.wikipedia.org/wiki/Light_cavalry">light cavalry</a> squadron.</
 
 <h3>TruffleRuby</h3>
 
-<p><a href="truffleruby/">TruffleRuby</a> started as my internship project at Oracle Labs in early 2013. It is an implementation of the Ruby programming language on the JVM, using the Graal JIT compiler and the Truffle AST interpreter framework. RubyTruffle can achieve peak performance well beyond that possible in JRuby at the same time as being a significantly simpler system. In early 2014 it was open sourced and integrated into JRuby, then in 2017 it became its own project, and now it is part of <a href="https://www.graalvm.org/">GraalVM</a>.</p>
+<p><a href="truffleruby/">TruffleRuby</a> started as my internship project at Oracle Labs in early 2013. It is an implementation of the Ruby programming language on the JVM, using the Graal JIT compiler and the Truffle AST interpreter framework. RubyTruffle can achieve peak performance well beyond that possible in JRuby at the same time as being a significantly simpler system. In early 2014 it was open sourced and integrated into JRuby, then in 2017 it became its own project, and now it is part of <a href="https://www.graalvm.org/">GraalVM</a>. Since 2019 <a href="https://engineering.shopify.com">Shopify</a> has sponsored development.</p>
 
 <ul class="awards">
 <li><i class="fas fa-trophy"></i>Finalist, Ruby Prize, 2016</li>

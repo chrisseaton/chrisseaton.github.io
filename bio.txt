@@ -1,5 +1,5 @@
-Chris is a Researcher at Shopify, where he works on the Ruby programming
-Language, and a Visitor at the University of Manchester.
+Chris is a Researcher (Senior Staff Engineer) at Shopify, where he works on the
+Ruby programming Language, and a Visitor at the University of Manchester.
 
 He was formerly a Research Manager at the Oracle Labs Virtual Machine Research
 Group, where he led the TruffleRuby implementation of Ruby, and worked on other

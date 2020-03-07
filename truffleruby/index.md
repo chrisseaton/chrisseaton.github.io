@@ -18,7 +18,7 @@ framework](https://openjdk.java.net/projects/graal/). TruffleRuby can achieve
 peak performance well beyond that possible in JRuby at the same time as being a
 significantly simpler system. In early 2014 it was open sourced and integrated
 into [JRuby](https://www.jruby.org/) for incubation, then in 2017 it became its
-own project, and now it is part of [GraalVM](https://www.graalvm.org/). From 2019
+own project, and now it is part of [GraalVM](https://www.graalvm.org/). Since 2019
 [Shopify](https://engineering.shopify.com/) has sponsored development.
 
 This page links to the literature and code related to the project. Note that any

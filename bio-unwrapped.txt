@@ -1,7 +1,5 @@
-Chris Seaton is a Research Manager at the Virtual Machine Group in Oracle Labs, where he leads the work to implement Ruby using the next generation of Java Virtual Machine technology and other projects, and a Visitor at the University of Manchester.
+Chris is a Researcher (Senior Staff Engineer) at Shopify, where he works on the Ruby programming Language, and a Visitor at the University of Manchester.
 
-Before this he completed a PhD at Manchester under the supervision of Doctor Mikel Luján, where he researched programming languages and irregular parallelism, and he earned an MEng at the University of Bristol on languages with mutable syntax and semantics.
+He was formerly a Research Manager at the Oracle Labs Virtual Machine Research Group, where he led the TruffleRuby implementation of Ruby, and worked on other language and virtual machine projects. Before this he completed a PhD at Manchester where he researched programming languages and irregular parallelism, and an MEng at the University of Bristol on languages with mutable syntax and semantics.
 
-Between his undergraduate degree and starting his PhD he commissioned into the British Army, serving in training and operations in the UK and around the world. In his spare time he's now a captain in the Cheshire Yeomanry squadron of the Queen's Own Yeomanry, Cheshire's historic reserve light cavalry squadron.
-
-He used to develop an award winning medical app that is the first app regulated as a medical device in the UK, and ran a consultancy to help clients such as the NHS to develop revolutionary medical software.
+In his spare time he's Second in Command of the Cheshire Yeomanry squadron of the Queen's Own Yeomanry, Cheshire's historic reserve light cavalry squadron.

@@ -3,6 +3,8 @@ layout: article
 title: Understanding Basic Graal Graphs
 author: Chris Seaton
 date: 12 March 2020
+image: fib.svg
+image_alt: Truffle and C
 copyright: Copyright © 2020 Chris Seaton.
 ---
 
@@ -30,6 +32,10 @@ private static int exampleArithOperator(int x, int y) {
 }
 ```
 
+<figure>
+<a href="exampleArithOperator@6.svg"><img src="exampleArithOperator@6.svg"></a>
+</figure>
+
 A Graal graph has *nodes* (the little boxes and ovals) and *edges* (the lines between them.) The text in each node starts with a unique number for easy reference. Broadly, the nodes mean an instruction of some kind, and the edges mean data-flow or control-flow passing between instructions. This distinction is important, so here we show data edges in green and control edges in red. A green data-flow edge means that the result of a node (instruction) is used as input to another node. A red control-flow edge means that control passes from one node, which is executed first, to another, which is executed next. Graal typically models the data-flow edges as going upward, showing one node being dependent on another which supplies the data it needs. We've found in practice that people find it easier to understand the direction of data-flow rather than the direction of dependency, so we draw them going downward.
 
 What we have in this graph is an addition node, from the Java addition operator. It takes as input `P(0)` and `P(1)` which mean the first and second parameters to the method. Their edges are labelled `x` and `y` for the two operands to an addition operator. Note that these are the names of the operands to the addition node - they aren't related to any names from the Java source code. It produces a result, which is sent to the `Return` node. The function also has a `Start` node, and control flows from start to return. You can execute the function in your head by beginning at the start node, following the red control-flow edges, and each time you need to do something you execute all the nodes that produce data that you need for input.
@@ -40,6 +46,10 @@ private static boolean exampleCompareOperator(int x, int y) {
 }
 ```
 
+<figure>
+<a href="exampleCompareOperator@6.svg"><img src="exampleCompareOperator@6.svg"></a>
+</figure>
+
 In this graph, we can start to see how Graal uses the free-form graph data structure to reason about your program. We have a less-than node, but we wrote less-than-or-equal to in our code. And notice that the `trueValue` edge comes from `C(0)`, meaning constant value `0`, or `false`, and `falseValue` comes from `C(1)`.
 
 What has happened is that Graal has rewritten our program from `x <= y`, to `!(y < x)`. This is part of a process called *canonicalization*, similar to a concept called *desugaring* that you may have heard of in other contexts. The idea is that if we only ever use less-than, rather than less-than-or-equal-to, then the rest of the compiler can be simpler by never having to handle less-than-or-equal-to. Graal could use either less-than or greater-than as the canonical form - it doesn't make a difference and they just picked one. The `Conditional` node is like the ternary operator - it selects one of two values from a condition.
@@ -49,6 +59,10 @@ private static int exampleExactArith(int x, int y) throws ArithmeticException {
     return Math.addExact(x, y);
 }
 ```
+
+<figure>
+<a href="exampleExactArith@6.svg"><img style='max-height: 25em' src="exampleExactArith@6.svg"></a>
+</figure>
 
 `Math.addExact` performs addition but throws an exception if it overflows. Graal doesn't implement this by a method call to the runtime routine, but instead inserts nodes through a system called replacements and graph builder plugins. The `addExact` here is composed of two nodes, the `AddExactOverflow` and the `AddExact`. The first node tells you if the operation would overflow, and the second performs the operation. Separating the two operations allows them to optimize independently.
 
@@ -62,6 +76,10 @@ private static int exampleLocalVariables(int x, int y) {
     return a * 2 + a;
 }
 ```
+
+<figure>
+<a href="exampleLocalVariables@6.svg"><img src="exampleLocalVariables@6.svg"></a>
+</figure>
 
 The difference that a graph representation makes becomes more clear when we think about local variables. Looking at this graph, the local variables seem to have gone away entirely. You cannot see any local variable names here, just edges. It doesn't matter if a value came from a parameter, a local variable, or an expression, it's always just an edge. We can also see how Graal has chosen to represent the multiplication operation by the simpler shift-left-one-bit operation.
 
@@ -79,6 +97,10 @@ private static int exampleLocalVariablesState(int x, int y) {
     return a * 2 + a;
 }
 ```
+
+<figure>
+<a href="exampleLocalVariablesState@6.svg"><img src="exampleLocalVariablesState@6.svg"></a>
+</figure>
 
 How can Graal throw away information about local variables like this? If we attached a debugger at the second line of that method we'd want to see the value of the local variable a at that point. How does that work? Graal maintains metadata about the state of the program at locations called *frame states*. These are only added where needed, such as at the start of a method, or at locations such as method calls (the call to `opaqueCall` here). As well as the debugger they're also used so that optimized code and be deoptimized if you attach a debugger. These are hidden by default in most tools, but we can show them if wanted. The value of the local variable a was the result of the addition operation, and we can see an edge from that operation into the `FrameState`, as well as to the two places where it is actually used.
 
@@ -103,6 +125,10 @@ private static int exampleSimpleCall(ExampleObject object, int x) {
 }
 ```
 
+<figure>
+<a href="exampleSimpleCall@6.svg"><img style='max-height: 20em' src="exampleSimpleCall@6.svg"></a>
+</figure>
+
 Simple method calls in Graal are represented by a `Call` node. Information about the call is attached to a separate node, the `MethodCallTarget`. We show that the edge is just information by drawing a dashed line. You can see how `arg[0]` and `arg[1]` are inputs to the `MethodCallTarget`. `arg[0]` is the receiver, or the *this* object, called *self* in Ruby or Python, for instance calls.
 
 ```java
@@ -110,6 +136,10 @@ private static int exampleStaticCall(int x) {
     return staticCall(x);
 }
 ```
+
+<figure>
+<a href="exampleStaticCall@6.svg"><img style='max-height: 20em' src="exampleStaticCall@6.svg"></a>
+</figure>
 
 A static call is the same, except now we aren't passing any receiver.
 
@@ -130,7 +160,15 @@ private static int exampleInterfaceCallOneImpl(InterfaceOneImpl x) {
 }
 ```
 
+<figure>
+<a href="exampleInterfaceCallOneImpl@6.svg"><img style='max-height: 20em' src="exampleInterfaceCallOneImpl@6.svg"></a>
+</figure>
+
 The interface call is initially represented by a *Call* node.
+
+<figure>
+<a href="exampleInterfaceCallOneImpl@9.svg"><img style='max-height: 30em' src="exampleInterfaceCallOneImpl@9.svg"></a>
+</figure>
 
 After later compiler phases we can see that Graal is checking that the object is of the type expected, and the π (pronounced *pi*) node then narrows the type to be exactly `InterfaceOneImpl`. We'll talk more about π nodes later in the sections on stamps. When the Call node is compiled now it will be able to make a devirtualized call to the specific method.
 
@@ -156,6 +194,10 @@ private static int exampleInterfaceCallManyImpls(InterfaceManyImpls x) {
 }
 ```
 
+<figure>
+<a href="exampleInterfaceCallManyImpls@6.svg"><img style='max-height: 20em' src="exampleInterfaceCallManyImpls@6.svg"></a>
+</figure>
+
 The many-implementation case does not get these extra nodes. It appears to be simpler, but there is no stamp on the value of the receiver going into the `Call` node from a π node so it remains a proper virtual interface call.
 
 ## Control flow
@@ -174,6 +216,10 @@ private static int exampleIf(boolean condition, int x, int y) {
 }
 ```
 
+<figure>
+<a href="exampleIf@6.svg"><img style='max-height: 40em' src="exampleIf@6.svg"></a>
+</figure>
+
 In the examples so far the red control line has formed a single path through the program. If we write an `if-else` statement, the control-flow line diverges. In this case it merges again for the `return` statement following the `if-else` block. An input to the `If` node is the condition to use for branching. We'll talk about the ϕ (pronounced *phi*) node next.
 
 ```java
@@ -187,6 +233,10 @@ private static int examplePhi(boolean condition, int x) {
     return a + x;
 }
 ```
+
+<figure>
+<a href="examplePhi@6.svg"><img style='max-height: 40em' src="examplePhi@6.svg"></a>
+</figure>
 
 A concept people find challenging in both typical SSA form, and graphs like Graal, is ϕ, or *phi*, nodes. The name is from *ph-ony*! Meaning they're not a real instruction. In this Java code we assign the local variable `a` in two locations, but we said that in SSA a value is only assigned in one location. How can you get the value of two different expressions after control-flow merges? What we do is send both values as input to the ϕ node, and then a single output is produced, based on which value was produced. The ϕ node is attached to the point where control-flow merges. We label the edges into the ϕ node with the control flow edge that triggers this value being taken. We'll see some more complicated ϕ nodes later when we talk about loops.
 
@@ -205,6 +255,10 @@ private static int exampleIfNeverTaken(boolean condition, int x, int y) {
 
 exampleIfNeverTaken(false, RANDOM.nextInt(), RANDOM.nextInt());
 ```
+
+<figure>
+<a href="exampleIfNeverTaken@6.svg"><img style='max-height: 20em' src="exampleIfNeverTaken@6.svg"></a>
+</figure>
 
 If we write a version of an `if-else` statement where we never actually use the `true` case, then Graal will not compile it into the code, with the expectation that it will never be used. In its place it leaves a `Guard` node that checks the value is still not true. If the value is true, the code will deoptimize and jump back into the interpreter. This is sometimes called an *uncommon trap*.
 
@@ -229,6 +283,10 @@ private static int exampleIntSwitch(int value, int x, int y, int z) {
 }
 ```
 
+<figure>
+<a href="exampleIntSwitch@6.svg"><img src="exampleIntSwitch@6.svg"></a>
+</figure>
+
 `switch` statements on integers look like a multi-way `If` node. The key values are labelled in the node, and then the edges coming out of it are labelled with the keys they correspond to, or if they're the default case. Our ϕ now has three values going into it. Note how it looks strange with the values being computed outside of the `switch` - the control-flow and data-flow are completely separate here.
 
 ```java
@@ -252,6 +310,9 @@ private static int exampleStringSwitch(String value, int x, int y, int z) {
 }
 ```
 
+<figure>
+<a href="exampleStringSwitch@6.svg"><img style='max-height: 60em' src="exampleStringSwitch@6.svg"></a>
+</figure>
 
 `switch` statements on strings look like those on integers, but we can learn from the Graal graph how much more complicated they really are. Part of this translation is done in the `javac` Java compiler, and part in Graal.
 
@@ -272,6 +333,10 @@ private static int exampleWhile(int count) {
 }
 ```
 
+<figure>
+<a href="exampleWhile@6.svg"><img style='max-height: 40em' src="exampleWhile@6.svg"></a>
+</figure>
+
 So far all the arrows have pointed downward (except the dashed information edges.) This means the program has been going in only one direction. In a program with loops, we need to go backward to earlier parts of the program. This is shown with a thick red arrow. We draw it thickly because these edges are so important - loops are where key optimisations are to be found, and where many complex constraints come from.
 
 Looking at just the control-flow to begin with, we see how this loop has a begin, and then it has both an end and an exit. The end has the arrow back up to the beginning - the exit is where we leave the loop and go on to other code such as the return in this case.
@@ -288,6 +353,10 @@ private static int exampleFor(int count) {
     return count;
 }
 ```
+
+<figure>
+<a href="exampleFor@6.svg"><img style='max-height: 40em' src="exampleFor@6.svg"></a>
+</figure>
 
 The graph for a `for` loop is exactly the same as the `while` loop - the extra syntax of for desugars in the `javac` Java compiler to the same bytecode.
 
@@ -306,6 +375,10 @@ private static int exampleNestedWhile(int count) {
 }
 ```
 
+<figure>
+<a href="exampleNestedWhile@6.svg"><img style='max-height: 40em' src="exampleNestedWhile@6.svg"></a>
+</figure>
+
 The control-flow structure starts to become very interesting when we nest loops. We have two thick backward control-flow edges now. Notice how the return statement is in the middle of the graph.
 
 ```java
@@ -321,6 +394,10 @@ private static int exampleWhileBreak(int count) {
     return count;
 }
 ```
+
+<figure>
+<a href="exampleWhileBreak@6.svg"><img style='max-height: 40em' src="exampleWhileBreak@6.svg"></a>
+</figure>
 
 A loop with a `break` statement in it produces two loop exits. Notice how the exit from the `break` is no different to the exit from the condition.
 
@@ -342,6 +419,10 @@ private static int exampleNestedWhileBreak(int count) {
 }
 ```
 
+<figure>
+<a href="exampleNestedWhileBreak@6.svg"><img style='max-height: 40em' src="exampleNestedWhileBreak@6.svg"></a>
+</figure>
+
 For a `break` from within a nested loop, notice how the dashed line identifying which loop is being exited is useful.
 
 ```java
@@ -358,6 +439,10 @@ private static int exampleReducible(boolean condition, int count) {
     return count;
 }
 ```
+
+<figure>
+<a href="exampleReducible@6.svg"><img style='max-height: 40em' src="exampleReducible@6.svg"></a>
+</figure>
 
 Graal has a structured representation of loops. They're kept as first-class parts of the graph all the way through - they aren't lowered to some kind of goto like you may have seen other compilers doing. This works fine for what a kind of structure loop that we call *reducible* loops. This is the only kind of loop that you can write in Java code, as Java has no `goto`. However by writing JVM bytecode directly, we can create a loop that is not so simply structured, and that we call *irreducible* (or *not-reducible* in some texts.)
 
@@ -424,6 +509,10 @@ private static ExampleObject exampleObjectAllocation(int x) {
 }
 ```
 
+<figure>
+<a href="exampleObjectAllocation@6.svg"><img style='max-height: 20em' src="exampleObjectAllocation@6.svg"></a>
+</figure>
+
 An object is allocated using a `New` node. You can see a separate call to the constructor. Notice that there is a control-flow edge from the `New` node to the `Call` node - this is because the `New` node creates space in the heap - it must happen first.
 
 ```java
@@ -431,6 +520,10 @@ private static int[] exampleArrayAllocation(int x, int y) {
     return new int[]{x, y};
 }
 ```
+
+<figure>
+<a href="exampleArrayAllocation@6.svg"><img style='max-height: 20em' src="exampleArrayAllocation@6.svg"></a>
+</figure>
 
 An array allocation creates the array and then you can see two store operations.
 
@@ -441,9 +534,17 @@ private static int exampleFieldRead(ExampleObject object) {
 }
 ```
 
+<figure>
+<a href="exampleFieldRead@6.svg"><img style='max-height: 20em' src="exampleFieldRead@6.svg"></a>
+</figure>
+
 A field read generates a `LoadField` node.
 
 Note that we must add additional code to this method, in the form of an assert, because otherwise it is classed as *trivial* by the JVM, which just means it's so simple that it's probably not worth compiling on its own because it's more likely to be inlined by something else and compiled as part of that.
+
+<figure>
+<a href="exampleFieldRead@42.svg"><img style='max-height: 30em' src="exampleFieldRead@42.svg"></a>
+</figure>
 
 We can look at what this same graph looks like after later optimizations have run. The high-level load operation has become a low-level memory read operation, with the address calculation being made explicit in more nodes. Again, this is so that they can optimise independently. The constant value `C(12)` there is the offset within the object. We'll explain the π node later.
 
@@ -461,13 +562,29 @@ private static int exampleArrayRead(int[] array, int n) {
 private static void exampleArrayWrite(int[] array, int n, int x) {
     array[n] = x;
 }
+```
 
+<figure>
+<a href="exampleFieldWrite@6.svg"><img style='max-height: 15em' src="exampleFieldWrite@6.svg"></a>
+<a href="exampleArrayRead@6.svg"><img style='max-height: 15em' src="exampleArrayRead@6.svg"></a>
+<a href="exampleArrayWrite@6.svg"><img style='max-height: 15em' src="exampleArrayWrite@6.svg"></a>
+</figure>
+
+```java
 private static boolean exampleInstanceOfOneImpl(Object x) {
     return x instanceof InterfaceOneImpl;
 }
 ```
 
+<figure>
+<a href="exampleInstanceOfOneImpl@6.svg"><img style='max-height: 20em' src="exampleInstanceOfOneImpl@6.svg"></a>
+</figure>
+
 An `instanceof` expression is initially represented by a node, but it is lowered in later compiler passes.
+
+<figure>
+<a href="exampleInstanceOfOneImpl@65.svg"><img style='max-height: 40em' src="exampleInstanceOfOneImpl@65.svg"></a>
+</figure>
 
 Here the `instanceof` for an interface with one implementation has become a simple compare of the class pointer - called the hub in Graal terminology. What happens if a new instance of the interface is loaded? In that case the VM will deoptimize, throwing away this compiled code, and compiling again.
 
@@ -477,7 +594,15 @@ private static boolean exampleInstanceOfManyImpls(Object x) {
 }
 ```
 
+<figure>
+<a href="exampleInstanceOfManyImpls@6.svg"><img style='max-height: 30em' src="exampleInstanceOfManyImpls@6.svg"></a>
+</figure>
+
 An `instanceof` expression on an interface with multiple implementations must check against them all.
+
+<figure>
+<a href="exampleInstanceOfManyImpls@65.svg"><img style='max-height: 60em' src="exampleInstanceOfManyImpls@65.svg"></a>
+</figure>
 
 In later compiler passes we can see how this expands into a relatively complicated loop.
 
@@ -488,6 +613,10 @@ private static int exampleStamp(int x) {
     return x & 0x1234;
 }
 ```
+
+<figure>
+<a href="exampleStamp@6.svg"><img src="exampleStamp@6.svg"></a>
+</figure>
 
 A *stamp* is information that Graal knows about a value in the program. Stamps may convey more information than is expressible in the Java type system. For example if we write `x & 0x1234`, then we know that this value is not going to be larger than `0x1234` (`4660` in decimal). We can annotate that on the edges and it may be useful for subsequent nodes to optimize with that information in mind.
 
@@ -501,7 +630,15 @@ private static int exampleFullEscape(int x) {
 }
 ```
 
+<figure>
+<a href="exampleFullEscape@6.svg"><img style='max-height: 30em' src="exampleFullEscape@6.svg"></a>
+</figure>
+
 Graal has sophisticated support for *virtualisation* of objects, and *escape analysis*, including *partial escape analysis*. We can see some evidence of this in how it represents object allocations and references in later phases. Initially this graph has a `NewArray` node, but this is decomposed later on.
+
+<figure>
+<a href="exampleFullEscape@33.svg"><img style='max-height: 30em' src="exampleFullEscape@33.svg"></a>
+</figure>
 
 Now we have a separate virtual representation of the array, which is input to the actual allocation, and a node to represent the allocated object.
 
@@ -512,7 +649,15 @@ private static int exampleNoEscape(int x) {
 }
 ```
 
+<figure>
+<a href="exampleNoEscape@6.svg"><img style='max-height: 30em' src="exampleNoEscape@6.svg"></a>
+</figure>
+
 If we now try a version of the same code but where the array never escapes the method, we can see that this allows the allocation of the object to be removed, and the value that we wrote into it, then read back, can be returned directly.
+
+<figure>
+<a href="exampleNoEscape@33.svg"><img src="exampleNoEscape@33.svg"></a>
+</figure>
 
 ```java
 private static int examplePartialEscape(boolean condition, int x) {
@@ -526,7 +671,15 @@ private static int examplePartialEscape(boolean condition, int x) {
 }
 ```
 
+<figure>
+<a href="examplePartialEscape@6.svg"><img style='max-height: 30em' src="examplePartialEscape@6.svg"></a>
+</figure>
+
 This is even more clear in the case of a partial escape, where the object escapes on one code path but not another. This is a real strength of Graal.
+
+<figure>
+<a href="examplePartialEscape@33.svg"><img style='max-height: 30em' src="examplePartialEscape@33.svg"></a>
+</figure>
 
 In the later graph we can see the allocation remains on just one branch, and has been removed on the other.
 
@@ -537,6 +690,10 @@ private static void exampleThrow() {
     throw RUNTIME_EXCEPTION;
 }
 ```
+
+<figure>
+<a href="exampleThrow@6.svg"><img src="exampleThrow@6.svg"></a>
+</figure>
 
 An exception `throw` is represented by an `Unwind` node that takes the exception to be thrown.
 
@@ -550,6 +707,10 @@ private static void exampleCatch() {
 }
 ```
 
+<figure>
+<a href="exampleCatch@6.svg"><img style='max-height: 40em' src="exampleCatch@6.svg"></a>
+</figure>
+
 A call that can throw an exception has two control-flow edges coming out of it - one for the normal case and one for the exceptional case where we are unwinding. We can then get the exception with the `ExceptionObject` and then use an `InstanceOf` node as before to match it to the right catch branch.
 
 ```java
@@ -560,6 +721,10 @@ private static void exampleThrowCatch() {
   }
 }
 ```
+
+<figure>
+<a href="exampleThrowCatch@6.svg"><img style='max-height: 20em' src="exampleThrowCatch@6.svg"></a>
+</figure>
 
 If we try and catch in the same method, and the exception does not escape, then notice how Graal compiles it away. There's some cruft leftover here - an If branch with `true` - that will be cleaned up later.
 
@@ -572,6 +737,10 @@ private static void exampleSynchronized(Object object, int x) {
     }
 }
 ```
+
+<figure>
+<a href="exampleSynchronized@6.svg"><img style='max-height: 20em' src="exampleSynchronized@6.svg"></a>
+</figure>
 
 Synchronized blocks are represented by pairs of `MonitorEnter` and `MonitorExit` nodes. Another node, `MonitorId`, identifies which monitor we're using.
 
@@ -586,9 +755,21 @@ private static void exampleDoubleSynchronized(Object object, int x) {
 }
 ```
 
+<figure>
+<a href="exampleDoubleSynchronized@6.svg"><img style='max-height: 40em' src="exampleDoubleSynchronized@6.svg"></a>
+</figure>
+
 An optimization I like to demonstrate is that if you have two synchronized blocks next to each other using the same lock, Graal will combine them into one.
 
+<figure>
+<a href="exampleDoubleSynchronized@48.svg"><img style='max-height: 40em' src="exampleDoubleSynchronized@48.svg"></a>
+</figure>
+
 First we see the nodes lowered somewhat.
+
+<figure>
+<a href="exampleDoubleSynchronized@49.svg"><img style='max-height: 40em' src="exampleDoubleSynchronized@49.svg"></a>
+</figure>
 
 And here we see them combined - now a single enter and exit with both bodies inside it.
 
@@ -601,7 +782,15 @@ private static void exampleLocalSynchronized(int x) {
 }
 ```
 
+<figure>
+<a href="exampleLocalSynchronized@6.svg"><img style='max-height: 30em' src="exampleLocalSynchronized@6.svg"></a>
+</figure>
+
 Like with object allocations with escape analysis, a monitor that does not escape a method can be optimized away, since we know that nobody else could be contending with it.
+
+<figure>
+<a href="exampleLocalSynchronized@33.svg"><img style='max-height: 20em' src="exampleLocalSynchronized@33.svg"></a>
+</figure>
 
 ## Summary
 

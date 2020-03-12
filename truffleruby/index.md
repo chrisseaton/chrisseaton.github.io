@@ -31,6 +31,8 @@ views expressed are my own and not those of Oracle.
 
 # Blog Posts and Articles
 
+*   [Understanding Basic Graal Graphs](basic-graal-graphs). How can you make sense of Graal graphs?
+
 *   [Low Overhead Polling For Ruby](low-overhead-polling/). How can Ruby check for interruptions without a branch?
 
 *   [Top 10 Things To Do With GraalVM](tenthings/). What does GraalVM actually do?

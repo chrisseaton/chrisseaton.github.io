@@ -335,6 +335,12 @@ packrat parsing.</p>
 
 <ul class="list">
     <li>
+        Chris Seaton. <strong><a href="truffleruby/basic-graal-graphs/">Understanding Basic Graal Graphs</a></strong>. Blog post. 2020.<br>
+        <span class="smaller">
+            <a href="truffleruby/basic-graal-graphs/">Blog post</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="truffleruby/graalworkshop20/visualizing-graal.pdf">Visualizing Graal</a></strong>. At Science, Art, Voodoo: Using and Developing The Graal Compiler. 2020.<br>
         <span class="smaller">
             <a href="truffleruby/graalworkshop20/visualizing-graal.pdf">Slides</a>,

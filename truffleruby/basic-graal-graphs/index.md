@@ -4,23 +4,23 @@ title: Understanding Basic Graal Graphs
 author: Chris Seaton
 date: 12 March 2020
 image: fib.svg
-image_alt: Truffle and C
+image_alt: Fibonacci as a Graal graph
 copyright: Copyright © 2020 Chris Seaton.
 ---
 
-*Graal* is a new just-in-time, or *JIT*, compiler for the Java Virtual Machine, or *JVM*. It translates your Java program to machine code while it's running. Graal can also be used for other languages beyond Java, through the *Truffle* language implementation framework. At Shopify we're using Graal to JIT compile Ruby to native code, using *TruffleRuby*, but this blog post is just about Java in order to keep things as simple as possible.
+*Graal* is a new just-in-time, or *JIT*, compiler for the Java Virtual Machine, or *JVM*. It translates your Java program to machine code while it's running. Graal can also be used for other languages beyond Java, through the [*Truffle*](#truffle) language implementation framework. At [Shopify](https://engineering.shopify.com/) we're using Graal to JIT compile Ruby to native code, using [*TruffleRuby*](..), but this blog post is just about Java in order to keep things as simple as possible.
 
 Many people will know that when you use Java you compile your application using the `javac` compiler to a data structure called bytecode. Many people will also be familiar with a data structure called an abstract-syntax-tree, or *AST*, which is the way that the Java compiler represents your Java source code while compiling.
 
-Fewer people will be aware that there's another key data structure used at runtime to JIT compile Java programs to native code - the compiler intermediate representation, or the IR. The compiler transforms and optimizes your code by manipulating this data structure, so you can get a lot of insight into what the compiler is doing by looking at it. We have to use special tools to do this - for example the *Ideal Graph Visualizer*, or IGV, from Oracle Labs, or Shopify's internal *Seafoam* tool, which we're using here.
+Fewer people will be aware that there's another key data structure used at runtime to JIT compile Java programs to native code - the compiler intermediate representation, or the IR. The compiler transforms and optimizes your code by manipulating this data structure, so you can get a lot of insight into what the compiler is doing by looking at it. We have to use special tools to do this - for example the [*Ideal Graph Visualizer*](https://www.oracle.com/downloads/graalvm-downloads.html), or IGV, from Oracle Labs, or Shopify's internal *Seafoam* tool, which we're using here.
 
-Graal's IR is particularly interesting because it's a cyclic graph - this means that if you follow the edges you can go in circles. Most representations of source code are some form of tree, without cycles, so for many people it's a new way of looking at and thinking about their code. I also find them really satisfying to look at and work with - I think they can be very artistic.
+[Graal's IR](#graal) is particularly interesting because it's a cyclic graph - this means that if you follow the edges you can go in circles. Most representations of source code are some form of tree, without cycles, so for many people it's a new way of looking at and thinking about their code. I also find them really satisfying to look at and work with - I think they can be very artistic.
 
 In this blog post I'm going to show a gallery of some Graal graphs for basic Java language constructs, and explain what each part of the graph means and what we can learn from this to understand how Java is compiled and optimized.
 
-A little bit of history is that compilers traditionally use a linear format for their IR, meaning there is a sequence of one instruction after another in chunks called basic blocks. Instructions pass information between each other using temporary names or entries on a stack. There is a graph of control flow between these blocks, but within each block the instructions are linear. This is easy to reason about and easy to output as text. A model called Static Single Assignment, or *SSA*, constrains each temporary name to be only assigned in one source location.
+A little bit of history is that compilers traditionally use a linear format for their IR, meaning there is a sequence of one instruction after another in chunks called basic blocks. Instructions pass information between each other using temporary names or entries on a stack. There is a graph of control flow between these blocks, but within each block the instructions are linear. This is easy to reason about and easy to output as text. A model called [Static Single Assignment](#ssa), or *SSA*, constrains each temporary name to be only assigned in one source location.
 
-If we do away with the explicit ordering of instructions one after the other, we get a more free representation of the program. We can also do away with the temporary names and instead make the values edges between instruction nodes in a graph. This has been done for a long time, known as a Program Dependence Graph, or *PDG*, but it became particularly notable in the most common Java optimising JIT, called *C2*, which is what you normally use if you are using HotSpot or OpenJDK. This compiler, designed by Cliff Click, uses a very free-form graph, called a *sea-of-nodes*, or sometimes a *soup-of-nodes*. This highlights one drawback, which is that the loosely structured graph can be hard to comprehend - humans aren't great at reasoning about graphs and it's hard to express them as text. That's why we might want to draw them as graphs, which is what we're going to do here.
+If we do away with the explicit ordering of instructions one after the other, we get a more free representation of the program. We can also do away with the temporary names and instead make the values edges between instruction nodes in a graph. This has been done for a long time, known as a [Program Dependence Graph](#pdg), or *PDG*, but it became particularly notable in the most common Java optimising JIT, called [*C2*](#c2), which is what you normally use if you are using HotSpot or OpenJDK. This compiler, designed by Cliff Click, uses a very free-form graph, called a *sea-of-nodes*, or sometimes a *soup-of-nodes*. This highlights one drawback, which is that the loosely structured graph can be hard to comprehend - humans aren't great at reasoning about graphs and it's hard to express them as text. That's why we might want to draw them as graphs, which is what we're going to do here.
 
 The Graal compiler that we're using uses a similar sea-of-nodes graphical IR to C2.
 
@@ -620,7 +620,7 @@ private static int exampleStamp(int x) {
 
 A *stamp* is information that Graal knows about a value in the program. Stamps may convey more information than is expressible in the Java type system. For example if we write `x & 0x1234`, then we know that this value is not going to be larger than `0x1234` (`4660` in decimal). We can annotate that on the edges and it may be useful for subsequent nodes to optimize with that information in mind.
 
-The π node that we saw earlier is there to attach extra stamps to a value. The idea of π nodes came from work on checking array bounds - the name was arbitrary and doesn't mean anything.
+The π node that we saw earlier is there to attach extra stamps to a value. The idea of π nodes came from [work on checking array bounds](#abcd) - the name was arbitrary and doesn't mean anything according to the author.
 
 ```java
 private static int exampleFullEscape(int x) {
@@ -634,7 +634,7 @@ private static int exampleFullEscape(int x) {
 <a href="exampleFullEscape@6.svg"><img style='max-height: 30em' src="exampleFullEscape@6.svg"></a>
 </figure>
 
-Graal has sophisticated support for *virtualisation* of objects, and *escape analysis*, including *partial escape analysis*. We can see some evidence of this in how it represents object allocations and references in later phases. Initially this graph has a `NewArray` node, but this is decomposed later on.
+Graal has sophisticated support for *virtualisation* of objects, and [*escape analysis*](#escape), including [*partial escape analysis*](#partial-escape). We can see some evidence of this in how it represents object allocations and references in later phases. Initially this graph has a `NewArray` node, but this is decomposed later on.
 
 <figure>
 <a href="exampleFullEscape@33.svg"><img style='max-height: 30em' src="exampleFullEscape@33.svg"></a>
@@ -794,7 +794,7 @@ Like with object allocations with escape analysis, a monitor that does not escap
 
 ## Summary
 
-These basics are enough to make sense of most Graal graphs to be able to understand what they're doing. If you see nodes you don't recognise here you can usually judge what they do from their name, or look them up in the Graal source repository.
+These basics are enough to make sense of most Graal graphs to be able to understand what they're doing. If you see nodes you don't recognise here you can usually judge what they do from their name, or look them up in the [Graal source repository](https://github.com/oracle/graal/tree/master/compiler/src).
 
 The free-form structure of a Graal graph allows the program to be easily manipulated as the program passes through the compiler, with nodes being swapped, reconnected, removed, or replaced with multiple simpler nodes. The balance is that the loose structure can make them hard to read, especially if they're very large.
 
@@ -802,15 +802,15 @@ I'm going to be writing some more about Graal graphs, showing more tools for wor
 
 ## References
 
-* PDG: Ferrante, 1987
-* SSA: Rosen, 1998
-* C2: Click, 1995
-* Pi nodes: Bodík, 2000
-* Graal: Duboscq, 2013
-* Truffle: Wuerthinger, 2017
-* TruffleRuby: Seaton, 2015
-* Escape analysis: Blanchett, 2003
-* Partial escape analysis: Stadler, 2014
+* <a id="pdg"></a>[The Program Dependence Graph and its use in optimization](https://www.cs.utexas.edu/~pingali/CS395T/2009fa/papers/ferrante87.pdf), Jeanne Ferrante, Karl Ottenstein, Joe Warren, 1987, or [on Wikipedia](https://en.wikipedia.org/wiki/Program_dependence_graph)
+* <a id="ssa"></a>[Global value numbers and redundant computations](https://www.cse.wustl.edu/~cytron/cs531/Resources/Papers/valnum.pdf), Barry Rosen, Mark Wegman, Kenneth Zadeck, 1998, or [on Wikipedia](https://en.wikipedia.org/wiki/Static_single_assignment_form)
+* <a id="c2"></a>[A simple graph-based intermeidate representation](https://www.oracle.com/technetwork/java/javase/tech/c2-ir95-150110.pdf), Cliff Click, Michael Paleczny, 1995
+* <a id="pi"></a>[ABCD: eliminating array bounds checks on demand](https://dl.acm.org/doi/10.1145/358438.349342), Rastislav Bodík, Rajiv Gupta, Vivek Sarkar
+* <a id="graal"></a>[An intermediate representation for speculative optimizations in a dynamic compiler](https://dl.acm.org/doi/10.1145/2542142.2542143), Gilles Duboscq, Thomas Würthinger, Lukas Stadler, Christian Wimmer, Doug Simon, Hanspeter Mössenböck, 2013
+* <a id="truffle"></a>[Practical partial evaluation for high-performance dynamic language runtimes](https://dl.acm.org/doi/10.1145/3062341.3062381), Thomas Würthinger, Christian Wimmer, Christian Humer, Andreas Wöß, Lukas Stadler, Chris Seaton, Gilles Duboscq, Doug Simon, Matthias Grimmer, 2017
+* <a id="truffleruby"></a>[Specialising dynamic techniques for implementing the Ruby programming language](../../phd)
+* [Escape analysis for Java: theory and practice](https://dl.acm.org/doi/10.1145/945885.945886), Bruno Blanchet, 2003, or [on Wikipedia](https://en.wikipedia.org/wiki/Escape_analysis)
+* <a id="partial-escape"></a>[Partial escape analysis and scalar replacement for Java](https://dl.acm.org/citation.cfm?id=2544157), Lukas Stadler, Thomas Würthinger, Hanspeter Mössenböck, 2014
 
 ## Notes
 

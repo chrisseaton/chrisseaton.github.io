@@ -110,7 +110,7 @@ replacement because development is so difficult.
 
 ![Things Cliff Click won't do again](click-2.png)
 
-[https://www.youtube.com/watch?v=Hqw57GJSrac](https://www.youtube.com/watch?v=Hqw57GJSrac)
+<iframe width="720" height="433" src="//www.youtube.com/embed/Hqw57GJSrac" frameborder="0" allowfullscreen></iframe>
 
 So, going back to the question, what is it about Java that helps solve these
 problems? Well, it's all the same things that mean you write your applications

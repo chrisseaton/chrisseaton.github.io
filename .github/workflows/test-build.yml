@@ -15,6 +15,6 @@ jobs:
     - name: Install
       run: bundle install
     - name: Check
-      run: rake check
+      run: bundle exec rake check
     - name: Build
-      run: rake build
+      run: bundle exec rake build

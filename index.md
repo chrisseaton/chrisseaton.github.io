@@ -335,6 +335,13 @@ packrat parsing.</p>
 
 <ul class="list">
     <li>
+        Chris Seaton. <strong><a href="truffleruby/graalworkshop20/visualizing-graal.pdf">Visualizing Graal</a></strong>. At Science, Art, Voodoo: Using and Developing The Graal Compiler. 2020.<br>
+        <span class="smaller">
+            <a href="truffleruby/graalworkshop20/visualizing-graal.pdf">Slides</a>,
+            <a href="https://www.pscp.tv/w/1DXxyezOjpbxM">Video</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="truffleruby/wrocloverb19/truffleruby-compilation-pipeline.pdf">The TruffleRuby Compilation Pipeline</a></strong> At Wroclove.rb. 2019.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=bf5pQVgux3c">Video</a>,

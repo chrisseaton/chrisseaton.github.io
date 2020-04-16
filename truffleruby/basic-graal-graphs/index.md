@@ -804,7 +804,7 @@ I'm going to be writing some more about Graal graphs, showing more tools for wor
 
 * <a id="pdg"></a>[The Program Dependence Graph and its use in optimization](https://www.cs.utexas.edu/~pingali/CS395T/2009fa/papers/ferrante87.pdf), Jeanne Ferrante, Karl Ottenstein, Joe Warren, 1987, or [on Wikipedia](https://en.wikipedia.org/wiki/Program_dependence_graph)
 * <a id="ssa"></a>[Global value numbers and redundant computations](https://www.cse.wustl.edu/~cytron/cs531/Resources/Papers/valnum.pdf), Barry Rosen, Mark Wegman, Kenneth Zadeck, 1998, or [on Wikipedia](https://en.wikipedia.org/wiki/Static_single_assignment_form)
-* <a id="c2"></a>[A simple graph-based intermeidate representation](https://www.oracle.com/technetwork/java/javase/tech/c2-ir95-150110.pdf), Cliff Click, Michael Paleczny, 1995
+* <a id="c2"></a>[A simple graph-based intermediate representation](https://www.oracle.com/technetwork/java/javase/tech/c2-ir95-150110.pdf), Cliff Click, Michael Paleczny, 1995
 * <a id="pi"></a>[ABCD: eliminating array bounds checks on demand](https://dl.acm.org/doi/10.1145/358438.349342), Rastislav Bodík, Rajiv Gupta, Vivek Sarkar, 2000
 * <a id="graal"></a>[An intermediate representation for speculative optimizations in a dynamic compiler](https://dl.acm.org/doi/10.1145/2542142.2542143), Gilles Duboscq, Thomas Würthinger, Lukas Stadler, Christian Wimmer, Doug Simon, Hanspeter Mössenböck, 2013
 * <a id="truffle"></a>[Practical partial evaluation for high-performance dynamic language runtimes](https://dl.acm.org/doi/10.1145/3062341.3062381), Thomas Würthinger, Christian Wimmer, Christian Humer, Andreas Wöß, Lukas Stadler, Chris Seaton, Gilles Duboscq, Doug Simon, Matthias Grimmer, 2017

@@ -478,11 +478,6 @@ Graal cannot simply represent this unstructured loop with multiple entry points.
 You may be surprised if you try to decompile this code that it can be represented in Java code - we said it couldn't. What is happening here is that one iteration is being peeled off and duplicated so that the rest of the loop doesn't need a second entry point. So why doesn't Graal do this? Since Java code doesn't generate these kinds of loops, it hasn't been a priority yet.
 
 ```java
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 public class IrreducibleDecompiled {
     private static volatile int intField;
 

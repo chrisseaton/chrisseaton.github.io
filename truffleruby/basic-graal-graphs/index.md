@@ -2,7 +2,7 @@
 layout: article
 title: Understanding Basic Graal Graphs
 author: Chris Seaton
-date: 12 March 2020
+date: 13 June 2020
 image: fib.svg
 image_alt: Fibonacci as a Graal graph
 copyright: Copyright © 2020 Chris Seaton.

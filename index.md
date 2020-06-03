@@ -341,6 +341,12 @@ packrat parsing.</p>
         </span>
     </li>
     <li>
+        Chris Seaton. <strong><a href="https://engineering.shopify.com/blogs/engineering/understanding-programs-using-graphs/">Understanding Programs Using Graphs</a></strong>. Blog post. 2020.<br>
+        <span class="smaller">
+            <a href="https://engineering.shopify.com/blogs/engineering/understanding-programs-using-graphs/">Blog post</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="truffleruby/graalworkshop20/visualizing-graal.pdf">Visualizing Graal</a></strong>. At Science, Art, Voodoo: Using and Developing The Graal Compiler. 2020.<br>
         <span class="smaller">
             <a href="truffleruby/graalworkshop20/visualizing-graal.pdf">Slides</a>,

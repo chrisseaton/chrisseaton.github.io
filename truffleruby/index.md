@@ -33,6 +33,8 @@ views expressed are my own and not those of Oracle.
 
 *   [Understanding Basic Graal Graphs](basic-graal-graphs). How can you make sense of Graal graphs?
 
+*   [Understanding Programs Using Graphs](https://engineering.shopify.com/blogs/engineering/understanding-programs-using-graphs). What can we learn about a program using graphs?
+
 *   [Low Overhead Polling For Ruby](low-overhead-polling/). How can Ruby check for interruptions without a branch?
 
 *   [Top 10 Things To Do With GraalVM](tenthings/). What does GraalVM actually do?

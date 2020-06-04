@@ -615,7 +615,7 @@ private static int exampleStamp(int x) {
 
 A *stamp* is information that Graal knows about a value in the program. Stamps may convey more information than is expressible in the Java type system. For example if we write `x & 0x1234`, then we know that this value is not going to be larger than `0x1234` (`4660` in decimal). We can annotate that on the edges and it may be useful for subsequent nodes to optimize with that information in mind.
 
-The π node that we saw earlier is there to attach extra stamps to a value. The idea of π nodes came from [work on checking array bounds](#abcd) - the name was arbitrary and doesn't mean anything according to the author.
+The π node that we saw earlier is there to attach extra stamps to a value. The idea of π nodes came from [work on checking array bounds](#pi) - the name was arbitrary and doesn't mean anything according to the author.
 
 ```java
 private static int exampleFullEscape(int x) {
@@ -629,7 +629,7 @@ private static int exampleFullEscape(int x) {
 <a href="exampleFullEscape@6.svg"><img style='max-height: 30em' src="exampleFullEscape@6.svg"></a>
 </figure>
 
-Graal has sophisticated support for *virtualisation* of objects, and [*escape analysis*](#escape), including [*partial escape analysis*](#partial-escape). We can see some evidence of this in how it represents object allocations and references in later phases. Initially this graph has a `NewArray` node, but this is decomposed later on.
+Graal has sophisticated support for *virtualisation* of objects, and escape analysis, including [*partial escape analysis*](#partial-escape). We can see some evidence of this in how it represents object allocations and references in later phases. Initially this graph has a `NewArray` node, but this is decomposed later on.
 
 <figure>
 <a href="exampleFullEscape@33.svg"><img style='max-height: 30em' src="exampleFullEscape@33.svg"></a>

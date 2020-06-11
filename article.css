@@ -45,7 +45,7 @@ code {
 
   background-color: #f5f3f0;
 
-  overflow-x: scroll;
+  overflow-x: auto;
 }
 
 /* Table */

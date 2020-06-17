@@ -570,7 +570,7 @@ packrat parsing.</p>
 
 <ul class="list">
     <li>
-        Second in Command, C (<a href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a>) Squadron, the <a href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own Yeomanry</a>, reserve military service in a light cavalry squadron
+        Acting Squadron Leader of C (<a href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a>) Squadron, the <a href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own Yeomanry</a>, reserve military service in a light cavalry squadron
     </li>
     <li>
         Academic Visitor at the <a href="https://www.manchester.ac.uk/">University of

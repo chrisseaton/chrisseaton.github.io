@@ -24,7 +24,7 @@ machine projects. Before this I <a href="phd/">completed a PhD</a> at Manchester
 programming languages and irregular parallelism, and an MEng at the University
 of Bristol on languages with <a href="katahdin/">mutable syntax and semantics</a>.</p>
 
-<p>In my spare time I'm Acting Squadron Leader of the <a
+<p>In my spare time I'm Squadron Leader of the <a
 href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a> squadron of the
 Queen's Own Yeomanry, Cheshire's historic reserve <a
 href="https://en.wikipedia.org/wiki/Light_cavalry">light cavalry</a> squadron.</p>
@@ -570,7 +570,7 @@ packrat parsing.</p>
 
 <ul class="list">
     <li>
-        Acting Squadron Leader of C (<a href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a>) Squadron, the <a href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own Yeomanry</a>, reserve military service in a light cavalry squadron
+        Squadron Leader of C (<a href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a>) Squadron, the <a href="https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry">Queen's Own Yeomanry</a>, reserve military service in a light cavalry squadron
     </li>
     <li>
         Academic Visitor at the <a href="https://www.manchester.ac.uk/">University of

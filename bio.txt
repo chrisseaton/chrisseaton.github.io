@@ -8,5 +8,5 @@ Manchester where he researched programming languages and irregular parallelism,
 and an MEng at the University of Bristol on languages with mutable syntax and
 semantics.
 
-In his spare time he's Acting Squadron Leader of the Cheshire Yeomanry squadron
-of the Queen's Own Yeomanry, Cheshire's historic reserve light cavalry squadron.
+In his spare time he's Squadron Leader of the Cheshire Yeomanry squadron of
+the Queen's Own Yeomanry, Cheshire's historic reserve light cavalry squadron.

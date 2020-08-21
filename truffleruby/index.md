@@ -31,6 +31,8 @@ views expressed are my own and not those of Oracle.
 
 # Blog Posts and Articles
 
+*   [Seeing Register Allocation Working in Java](register-allocation). Can se we the theory of register allocation working in practice?
+
 *   [Understanding Basic Graal Graphs](basic-graal-graphs). How can you make sense of Graal graphs?
 
 *   [Understanding Programs Using Graphs](https://engineering.shopify.com/blogs/engineering/understanding-programs-using-graphs). What can we learn about a program using graphs?

@@ -819,3 +819,5 @@ while (true) {
 ```
 
 *On-stack-replacement* (compiling loop bodies independently) and *inlining* are disabled, in order to constrain compilation units to the method as expressed in the source code. The random input prevents value profiling from turning parameters into constants.
+
+{% include trufflerubylinks.html %}

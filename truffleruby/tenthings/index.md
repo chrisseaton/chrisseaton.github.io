@@ -1135,3 +1135,5 @@ what else you can do. Let us know how you're experimenting with GraalVM in your
 application and send us any feedback
 [@ChrisGSeaton](https://twitter.com/ChrisGSeaton) or
 [@shelajev](https://twitter.com/shelajev).
+
+{% include trufflerubylinks.html %}

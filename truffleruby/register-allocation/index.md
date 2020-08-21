@@ -110,7 +110,7 @@ On the left we can see the program move through various phases of the compilatio
 
 ![c1visualizer](c1visualizer.png)
 
-If we look at *Before stack slot allocation*, we can see `v0` to `v3`. In this view, the variables are rows, and the source code is the columns, but it's showing bytecode rather than Java source lines now. We can see the same four intervals we had in the source code.
+If we look at *Before stack slot allocation*, we can see `v0` to `v3`. In this view, the variables are rows, and the now each column is a Java bytecode instruction in the method, so it's been rotated ninety degrees. We can see the same four intervals we had in the source code.
 
 If we look at *After stack slot allocation*, we can see it's now allocated machine stack locations for these variables. These numbers are the offset from the start of the stack frame. They don't go up by four each time, as they are byte addresses, and we're storing a Java `int` which is four bytes, and they don't start at zero as Java stores some other information on the stack beside our variables.
 

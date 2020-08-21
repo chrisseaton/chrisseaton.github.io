@@ -115,7 +115,7 @@ If we look at *Before stack slot allocation*, we can see `v0` to `v3`. In this v
 
 If we look at *After stack slot allocation*, we can see it's now allocated machine stack locations for these variables. These numbers are the offset from the start of the stack frame. They don't go up by four each time, as they are byte addresses, and we're storing a Java `int` which is four bytes, and they don't start at zero as Java stores some other information on the stack beside our variables.
 
-We also can see it's done what we did with pen and paper - it's stored `v0` and `v2` in the same stack location - they're both in `stack:28`.
+We also can see it's done what we did with pencil-and-paper - it's stored `v0` and `v2` in the same stack location - they're both in `stack:28`.
 
 ![virtual](virtual.png)
 
@@ -164,6 +164,6 @@ The actual register allocation algorithm Graal is using is the *linear scan*.
 
 If you noticed that the stack locations show by the c1visualizer don't match the offsets in the machine code, it's because they count in different directions and c1visualizer is also accounting for the return address on the stack. If you noticed that there is apparently empty space in the stack frame, which is due to an extra slot used during deoptimization, and alignment.
 
-## Acknowledgements
-
 Tom Rodriguez helped me answer some questions about the HotSpot calling convention and frame layout.
+
+{% include trufflerubylinks.html %}

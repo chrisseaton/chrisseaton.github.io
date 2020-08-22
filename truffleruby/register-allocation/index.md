@@ -83,7 +83,7 @@ Then we solve the problem of giving each node a color, so that adjacent nodes ne
 
 ![graph-unique](graph-unique.png)
 
-We can see the two solutions are already came up with.
+We can see the two solutions we already came up with.
 
 ![graph-1](graph-1.png)
 ![graph-1](graph-2.png)

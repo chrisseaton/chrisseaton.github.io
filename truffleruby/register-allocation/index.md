@@ -157,9 +157,9 @@ We started talking about *register* allocation, but then generalized that to *st
 
 The purpose of the `barrier` call is that without it the live ranges shrink somewhat due to them not having to be kept alive for as long, so that they end up not overlapping as we intend. We turned off inlining because without it our `barrier` call would not work as intended.
 
-The actual register allocation algorithm Graal is using is the *linear scan*.
+The actual register allocation algorithm Graal is using is the *linear scan* algorithm.
 
-If you noticed that the stack locations show by the c1visualizer don't match the offsets in the machine code, it's because they count in different directions and c1visualizer is also accounting for the return address on the stack. If you noticed that there is apparently empty space in the stack frame, which is due to an extra slot used during deoptimization, and alignment.
+If you noticed that the stack locations shown by the c1visualizer don't match the offsets in the machine code, it's because they count in different directions and c1visualizer is also accounting for the return address on the stack. If you noticed that there is apparently empty space in the stack frame, which is due to an extra slot used during deoptimization, and alignment.
 
 Tom Rodriguez helped me answer some questions about the HotSpot calling convention and frame layout.
 

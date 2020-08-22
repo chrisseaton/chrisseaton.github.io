@@ -8,7 +8,7 @@ image_alt: An interference graph
 copyright: Copyright © 2020 Chris Seaton.
 ---
 
-When the Java Virtual Machine compiles your Java code to machine code, it needs to allocate registers and other storage locations for variables. In this short post we're going to show how we can relate the original Java code first to the theory, then to how the compiler sees it, and then to the resulting machine code. What we want to show is that we can easily see the concepts working in practice in a real compiler.
+When the Java Virtual Machine compiles your Java code to machine code, one of the jobs it needs to do is to decide where to store Java local variables and other similar temporary values. Your machine has no concept of local variables, so during compilation we need to decide what location in the stack memory, or in a machine register, it'll use for each variable. This is called *register allocation*. Register allocation may seem like a complex, abstract, theoretical concept, but in this short post we're going to show how we can relate the original Java code first to the theory, then to how the compiler sees it, and then to the resulting machine code. What we want to show is that we can easily see the concepts working in practice in a real compiler.
 
 We're going to be showing output of the Graal just-in-time compiler, but the concepts are similar for other Java just-in-time and ahead-of-time compilers, and for compilers for many other languages.
 

@@ -336,3 +336,5 @@ In the past I've said that the signal we use is a *segmentation fault*, `SIGSEGV
 I've [written and talked more about what deoptimisation means for Ruby](https://chrisseaton.com/truffleruby/deoptimizing/) back at RubyConf 2014.
 
 Thanks to Kevin Menard and Al Chou for proof-reading.
+
+{% include trufflerubylinks.html %}

@@ -301,7 +301,7 @@ suscipit = 2
 ```
 
 The `native-image` tool has some
-[restrictions](https://github.com/oracle/graal/blob/master/substratevm/LIMITATIONS.md)
+[restrictions](https://github.com/oracle/graal/blob/master/substratevm/Limitations.md)
 such as all classes having to be available during compilation, and some
 limitations around reflection. It has some additional advantages over basic
 compilation as well in that static initializers are run during compilation, so
@@ -1026,7 +1026,7 @@ written in SQL or PLSQL we'd like to be able to use exactly the same validator
 so that the results are the same.
 
 You can download the MLE as Docker image from
-https://oracle.github.io/oracle-db-mle/releases/0.2.7/docker/. Then load it into
+~~https://oracle.github.io/oracle-db-mle/releases/0.2.7/docker/~~ (page no longer available). Then load it into
 Docker.
 
 ```
@@ -1127,7 +1127,7 @@ which you can build more powerful languages and tools and put them into more
 environments. It lets you pick the language and modules you want no matter where
 the program is running or which languages you're using already.
 
-To try GraalVM go to https://www.graalvm.org/. There are links to downloads and
+To try GraalVM go to [graalvm.org](https://www.graalvm.org/). There are links to downloads and
 documentation there, and more examples like we've shown in this blog post.
 
 Try following along with the instructions here, and try adapting them to see

@@ -592,7 +592,7 @@ packrat parsing.</p>
         Technical reviewer, <a href="https://aosabook.org/en/">500 Lines or Less</a>, 2016
     </li>
     <li>
-        Contributed technical advice to <a href="https://pragprog.com/book/jkdepj2/deploying-with-jruby-9k">Deploying with JRuby 9k</a>, 2016, and <a href="http://shop.oreilly.com/product/0636920042983.do">Optimizing Java</a>, 2018
+        Contributed technical advice to Deploying with JRuby 9k, 2016, and <a href="https://www.oreilly.com/library/view/optimizing-java/9781492039259/">Optimizing Java</a>, 2018
     </li>
     <li>
        Program Language Design and Implementation (PLDI) program committee member, 2020, external review committee member, 2019

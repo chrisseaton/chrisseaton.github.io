@@ -1,0 +1,18 @@
+ignore:
+  exact:
+  - https://www.linkedin.com/in/chrisgseaton
+  - https://oracle.github.io/oracle-db-mle/releases/0.2.7/docker/ # noted as being a dead link
+  prefixes:
+  - https://localhost
+  forbidden:
+    exact:
+    - https://emj.bmj.com/content/32/8/637 # works ok with a browser
+  redirect:
+    exact:
+    - https://labs.oracle.com/
+    prefixes:
+    - https://github.com/chrisseaton/cspassword/releases/
+    - https://dl.acm.org/doi/
+    - https://dl.acm.org/citation.cfm?
+    suffixes:
+    - .git

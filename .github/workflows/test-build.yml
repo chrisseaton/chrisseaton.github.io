@@ -14,3 +14,5 @@ jobs:
       run: bundle install
     - name: Build
       run: bundle exec jekyll build
+    - name: Check
+      run: bundle exec checklinks --config .checklinks.yaml **/*.md

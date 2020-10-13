@@ -1,0 +1,51 @@
+/* Page size */
+
+article {
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 45em;
+}
+
+@media screen and (max-width: 50em) {
+  article {
+    width: 90%;
+  }
+}
+
+/* Header */
+
+header {
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+header h1 {
+  font-size: 3em;
+}
+
+header h2 {
+  font-size: 1.5em;
+  font-style: italic;
+}
+
+/* Bio */
+
+#portrait {
+  text-align: center;
+}
+
+#portrait img {
+  -webkit-box-shadow: 0px 0px 0px 4px #e6e5e3;
+  -moz-box-shadow: 0px 0px 0px 4px #e6e5e3;
+  box-shadow: 0px 0px 0px 4px #e6e5e3;
+  
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+
+  border: 1px solid #9f9f9f;
+
+  margin-left: 3em;
+  max-width: 40%;
+}

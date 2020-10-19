@@ -586,6 +586,9 @@ packrat parsing.</p>
         Maintainer of <a href="https://rubybib.org/">The Ruby Bibliography</a>
     </li>
     <li>
+        Trustee of the Cheshire Yeomanry Association, registered charity 256143
+    </li>
+    <li>
         Contributor to the <a href="https://global.oup.com/academic/product/burns-9780199699537?lang=en&cc=gb">Oxford Specialist Handbooks in Surgery, Burns</a>, Oxford University Press, 2019
     </li>
     <li>

@@ -10,7 +10,7 @@ There's a proposal to add *Software Transactional Memory*, or *STM*, to the Ruby
 
 <img src="testBoard.gif" width="25%">
 
-This article gives some context on what STM is, how you use it, and why you might want to use it. We'll show an application which is well-suited to STM and we'll use this to talk about how benefits, issues, and some open questions.
+This article gives some context on what STM is, how you use it, and why you might want to use it. We'll show an application which is well-suited to STM and we'll use this to talk about the benefits, issues, and some open questions.
 
 We'll finish by setting a challenge for STM in Ruby.
 
@@ -18,7 +18,7 @@ I wrote the first half of my PhD on STM, and the second half on Ruby, so I've go
 
 ## Motivating STM
 
-Let's say we're a bank managing many bank accounts. Each account has a total. We get a never-ending stream of request to move a sum of money `m` from an account `a` to account `b`.
+Let's say we're a bank managing many bank accounts. Each account has a total. We get a never-ending stream of requests to move a sum of money `m` from an account `a` to account `b`.
 
 ```ruby
 loop do
@@ -40,7 +40,7 @@ loop do
 end
 ```
 
-We've got a lot of transfer to run through, so we'll have multiple threads processing these transfers.
+We've got a lot of transfers to run through, so we'll have multiple threads processing these transfers.
 
 ```ruby
 n.times do
@@ -155,7 +155,7 @@ n.times do
 end
 ```
 
-It's starting to get very complicated. And this locks more than it needs to to - it locks both `b` and `c` but then only uses one of them. If you use `b` in the end, ideally another thread could be serving a transfer to `c` at the same time, but you've locked it and it can't. Imagine if instead of two potential accounts it was thousands and you had to lock them all. Imagine if you couldn't work out at all which account you'd be transferring to until you started the transfer - then you'd never be able to process two transfers at the same time.
+It's starting to get very complicated. And this locks more than it needs to - it locks both `b` and `c` but then only uses one of them. If you use `b` in the end, ideally another thread could be serving a transfer to `c` at the same time, but you've locked it and it can't. Imagine if instead of two potential accounts it was thousands and you had to lock them all. Imagine if you couldn't work out at all which account you'd be transferring to until you started the transfer - then you'd never be able to process two transfers at the same time.
 
 At this point as well we're likely to start to make errors trying to do all this locking and ordering of locks and things.
 
@@ -207,7 +207,7 @@ n.times do
 end
 ```
 
-He's using a `Ractor` but you can think of it as a thread for the purposes of this article. Instead of array of account balances, we now have an array of `TVar` objects that contain values. A `TVar` is a *transactional variable*. Only these variables are transactional - not any other Ruby value you read or write. His design requires that the `TVar` objects you're going to use as passed into the `Ractor`, due to rules about sharing that aren't relevant for this article.
+He's using a `Ractor` but you can think of it as a thread for the purposes of this article. Instead of an array of account balances, we now have an array of `TVar` objects that contain values. A `TVar` is a *transactional variable*. Only these variables are transactional - not any other Ruby value you read or write. His design requires that the `TVar` objects you're going to use are passed into the `Ractor`, due to rules about sharing that aren't relevant for this article.
 
 This looks good, doesn't it!
 
@@ -377,15 +377,15 @@ This shows two routes solved concurrently. The area they needed to read from (th
 
 <img src="overlaps.svg" width="50%">
 
-This shows two routes with expansion areas that overlap. This means to solve the two routes there were some locations on the board that they both had to read, but neither route wrote a location read by the other. Think about if we had used the approach where we locked before reading any location - these routes would not have been able to be solved concurrently, but because we use an STM that considers both the read and write sets of both routes, they could be solved concurrently!
+This next example shows two routes with expansion areas that overlap. This means to solve the two routes there were some locations on the board that they both had to read, but neither route wrote a location read by the other. Think about if we had used the approach where we locked before reading any location - these routes would not have been able to be solved concurrently, but because we use an STM that considers both the read and write sets of both routes, they could be solved concurrently!
 
 <img src="massive-conflict.svg" width="50%">
 
-This shows two routes that clearly conflict. They both write locations that were read by the other, and the routes are also on top of each other. This will cause one route to abort, but the other can be committed, so we can still make progress.
+Next we can see two routes that clearly conflict. They both write locations that were read by the other, and the routes are also on top of each other. This will cause one route to abort, but the other can be committed, so we can still make progress.
 
 <img src="large-expansion.svg" width="50%">
 
-This shows a very important point. Note how large the lower expansion area is for the short route. This route is being solved later in the process, so the area it's operating in is very congested, and the expansion has to move further out to keep looking for the lowest cost solution. Note that we could not have worked out how large this area was going to grow until we started to do the time-consuming work of the actual expansion. We cannot work out the read set before we start, which is what we were doing in our bank account example when we collected up all the locks and sorted them.
+This board shows a very important point. Note how large the lower expansion area is for the short route. This route is being solved later in the process, so the area it's operating in is very congested, and the expansion has to move further out to keep looking for the lowest cost solution. Note that we could not have worked out how large this area was going to grow until we started to do the time-consuming work of the actual expansion. We cannot work out the read set before we start, which is what we were doing in our bank account example when we collected up all the locks and sorted them.
 
 Through those examples we can see how the problems we had are being solved and how additional concurrency is being created.
 
@@ -436,7 +436,7 @@ You have to follow some rules to use an STM like the proposed design. The transa
 
 Why have these `TVar` objects? Why not make all Ruby variable locations transactional? Maybe that'd be better, and it'd mean you could make existing code transactional. But realistically the implementation of MRI is not set up to make this kind of change easy to experiment with. Maybe it could be possible to experiment in TruffleRuby, which works at a higher level of abstraction.
 
-One overhead we have in our code at the moment is we have a `Matrix` containing `TVar` objects. Maybe instead we could have a `TArray`, `THash`, `Matrix`, and other transactional variants of data structures. This could reduce some book-keeping overhead.
+One overhead we have in our code at the moment is that we have a `Matrix` containing `TVar` objects. Maybe instead we could have a `TArray`, `THash`, `Matrix`, and other transactional variants of data structures. This could reduce some book-keeping overhead.
 
 Other concepts we could explore are *privatisation* which means taking a snapshot of the board state at the start of each route, and *early release* which means then surrendering your claim to have read a location if you know it's not important for your final result - so we could possibly *early release* the expansion area not along the final route.
 
@@ -446,7 +446,7 @@ Then there are questions about what we do when people nest transactions, and a h
 
 There are many ways we could implement STM in Ruby - there's a huge number of possible algorithms to use with different tradeoffs. Koichi is using an algorithm called TL2. We could also try McRT, Bartok, Swiss, Judo, NOrec, Ring, and many more.
 
-We could also use special hardware to implement a transactional memory - a *HTM*. Intel added [support](https://en.wikipedia.org/wiki/Transactional_Synchronization_Extensions) for HTM in their Haswell cores but it had to be disabled due to bugs. Newer Intel architectures have it and working I believe, but I'm not sure how many people are using it. AMD have [abondoned](https://en.wikipedia.org/wiki/Advanced_Synchronization_Facility) a similar idea. Most realistic is probably a kind of hybrid transactional memory, that has a core in the hardware but implements a more extensive interface in software on top of that core.
+We could also use special hardware to implement a transactional memory - a *HTM*. Intel added [support](https://en.wikipedia.org/wiki/Transactional_Synchronization_Extensions) for HTM in their Haswell cores but it had to be disabled due to bugs. Newer Intel architectures have it and working I believe, but I'm not sure how many people are using it. AMD have [abandoned](https://en.wikipedia.org/wiki/Advanced_Synchronization_Facility) a similar idea. Most realistic is probably a kind of hybrid transactional memory, that has a core in the hardware but implements a more extensive interface in software on top of that core.
 
 In general, STM and HTM research seems to have slowed down now. Around 2010 it was a hugely popular idea, but now it's not so fashionable, although new ideas around persistent memory are referring back to it. Maybe that means it's time to sift through and figure out what really made sense and apply it in languages like Ruby?
 
@@ -456,7 +456,7 @@ You've probably already guessed that STM has some overhead. We're using `TVar` o
 
 By making the algorithm parallel it should hopefully run faster. But due to the overhead we may have to run a on a machine with a very large number of cores.
 
-I've got a challenge for STM in Ruby from this: how many cores do you need running my Lee benchmark transactionally, with all that overhead, to beat Lee just running sequentially, without the overhead? How many cores do you need to actually solve the board in less time, in other words? A typical datacentre processor for a compute instance might have around 16 cores. Can you get the overhead low enough to beat sequential Lee with transactional Lee running on 16 cores?
+I've got a challenge for STM in Ruby from this: how many cores do you need running my Lee benchmark transactionally, with all that overhead, to beat Lee just running sequentially, without the overhead? In other words - how many cores do you need to actually solve the board in less time? A typical datacentre processor for a compute instance might have around 16 cores. Can you get the overhead low enough to beat sequential Lee with transactional Lee running on 16 cores?
 
 More transactional benchmarks are available beyond Lee - such as [Stanford's STAMP suite](https://github.com/chrisseaton/stamp), written in C, which includes a variant of Lee called Labyrinth. We could possibly port all of these to Ruby.
 
@@ -498,7 +498,7 @@ There was an attempt in 2004 to use HTM to parallelise Ruby, but making it invis
 
 * T D Spiers and D A Edwards. _A high performance routing engine_. In Proceedings of the 24th ACM/IEEE conference on Design Automation, 1987.
 
-* . Odaira, J G Castanos, H Tomari. _Eliminating Global Interpreter Locks in Ruby Through Hardware Transactional Memory_. In Proceedings of the 19th Symposium on Principles and Practice of Parallel Programming (PPoPP), 2014.
+* R Odaira, J G Castanos, H Tomari. _Eliminating Global Interpreter Locks in Ruby Through Hardware Transactional Memory_. In Proceedings of the 19th Symposium on Principles and Practice of Parallel Programming (PPoPP), 2014.
 
 * I Watson, C Kirkham, and M Luján. _A study of a transactional parallel routing algorithm_. In the Proceedings of the 16th International Conference on Parallel Architectures and Compilation Techniques, 2007.
 

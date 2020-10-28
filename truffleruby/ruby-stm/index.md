@@ -216,7 +216,7 @@ This looks good, doesn't it!
 
 ## A more complex application
 
-Let's consider a larger application, in order to illustrate further and to talk about some issues and open questions.
+Let's consider a larger application, in order to illustrate further and to talk about some issues and open questions. The [code is available on GitHub](https://github.com/chrisseaton/ruby-stm-lee-demo).
 
 Let's say it's our job to lay out the wires on a circuit board. We get a board with *pads* (connections to components mounted on the board) and a list of *routes* that we need to draw between these pads. There are a great many pads and routes, there isn't much space on the tiny board, and another catch is that it's very expensive to have wires crossing each other. Let's say it's exponentially more expensive for more deeply stacked wires.
 

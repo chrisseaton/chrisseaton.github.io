@@ -10,7 +10,7 @@ There's a proposal to add *Software Transactional Memory*, or *STM*, to the Ruby
 
 <figure>
 <img src="testBoard.gif" width="50%">
-<figcaption>An animation of the algorithm we're going to use as an example of STM</figcaption>
+<figcaption>An animation of the algorithm we're going to use as an example of STM - we'll explain this later on</figcaption>
 </figure>
 
 This article gives some context on what STM is, how you use it, and why you might want to use it. We'll show an application which is well-suited to STM and we'll use this to talk about the benefits, issues, and some open questions.
@@ -19,7 +19,7 @@ We'll finish by setting a challenge for STM in Ruby.
 
 I wrote the first half of my PhD on STM, and the second half on Ruby, so I've got quite a bit of experience with both and the idea of their combination is very interesting to me.
 
-## Motivating STM
+## Why might we want an STM?
 
 Let's say we're a bank managing many bank accounts. Each account has a total. We get a never-ending stream of requests to move a sum of money `m` from an account `a` to account `b`.
 
@@ -75,7 +75,7 @@ accounts[a] = balance + 10
                                     # accounts[a] = 110
 ```
 
-The two transfers have run, but your balance is 110. The other 10 has been lost - a *lost update*.
+The two transfers have run, but your balance is 110. The other 10 has been lost - this is called a *lost update*, meaning it's as if the update was never made.
 
 Also consider what happens if the thread crashes after taking money from `a` but before putting it into `b`? The transfer would be applied partially and again we'd lose money.
 
@@ -122,7 +122,7 @@ end
 
 Now in both transfers account 1001 is locked first and 1002 is locked second. That will work.
 
-We have to get a little abstract to explain the next issue, but consider if for some good reason we wanted to transfer to one account if we had a lot of money, and a different account if we only had a little money. Maybe if we're rich this month we donate to charity, otherwise we unfortunately need to save for ourselves.
+We have to make up a somewhat artificial requirement to explain the next issue, but consider if for some good reason we wanted to transfer to one account if we had a lot of money, and a different account if we only had a little money. Maybe if we're rich this month we donate to charity, otherwise we unfortunately need to save for ourselves.
 
 ```
 if account balance > 1000
@@ -188,7 +188,7 @@ end
 This is what a *transactional* memory can let us do. It will automatically monitor what you read and write inside the `atomically` block, which is a *transaction*, and will make sure it is either applied fully or not, that the balance of the whole system is always consistent, that transactions do not see the result of each other partially applied, and that writes appear and stay.
 
 It may be implemented using the code we eventually arrived at ourselves, or it could do something else instead. In practice how it is often implemented is that
-reads and writes are stored in a log, then at the end the transaction works out if anyone else has written locations that you've read. If they have then the values you read are no longer valid, so your transaction *conflicts* with another, is *aborted* and retries, reading the locations again. When it eventually does not conflict with any other transactions it is *committed* and succeeds. This means you don't need to lock everything up-front, which means you avoid the problem of what happens if you may potentially need every account.
+reads and writes are stored in a log, then at the end the transaction works out if anyone else has written locations that you've read. If they have then the values you read are no longer valid, so your transaction *conflicts* with another, is *aborted* and retries, reading the locations again. When it eventually does not conflict with any other transactions it is *committed* and succeeds. This means you don't need to lock everything up-front, which means you avoid the problem of what happens if you may potentially need every account. Locking everything up-front is called *pessimistic locking*. We're moving to *optimistic locking*
 
 ## The proposed STM
 
@@ -218,7 +218,7 @@ This looks good, doesn't it!
 
 Let's consider a larger application, in order to illustrate further and to talk about some issues and open questions.
 
-Let's say it's our job to lay out the wires on a circuit board. We get a board with *pads* (connections to components mounted on the board) and a list of *routes* that we need to draw between these pads. There are a great many pads and routes, there isn't much space on the tiny board, and another catch is that it's very expensive to have wires crossing each other. Let's say it's expontentially more expensive for more deeply stacked wires.
+Let's say it's our job to lay out the wires on a circuit board. We get a board with *pads* (connections to components mounted on the board) and a list of *routes* that we need to draw between these pads. There are a great many pads and routes, there isn't much space on the tiny board, and another catch is that it's very expensive to have wires crossing each other. Let's say it's exponentially more expensive for more deeply stacked wires.
 
 <figure>
 <img src="minimal.svg" width="25%">
@@ -248,7 +248,7 @@ This example is a memory module. It has many shorter routes which we may expect 
 
 We'll use this test board, which is somewhere between all these extremes.
 
-There's an algorithm to lay each routes, and it actually produces an optimal solution for an individual route, but not for all routes. It's called *Lee's algorithm* and was published back in 1960.
+There's an algorithm to lay each routes, and it actually produces an optimal solution for an individual route, but not for all routes. It's called *Lee's algorithm* and was published back in 1960. We'll show the code for the algorithm here, but it's a little simplified and even then you don't need to follow it all.
 
 The state of the board is a grid, with the value of each square being the number of wires stacked in that location. We go through our list of routes in turn.
 
@@ -282,8 +282,6 @@ def expand(board, obstructed, depth, route)
       end
     end
 
-    raise 'stuck' if new_wavefront.empty?
-
     cost_at_route_end = cost[end_point.y, end_point.x]
     minimum_new_cost = new_wavefront.map { |marked| cost[marked.y, marked.x] }.min
 
@@ -313,8 +311,6 @@ def solve(board, route, cost)
     solution.push lowest_cost
     break if lowest_cost == end_point
   end
-
-  solution.reverse
 end
 ```
 
@@ -467,9 +463,9 @@ depth:       3
 
 You have to follow some rules to use an STM like the proposed design. The transactional properties only apply to the `TVar` objects. If you modify other objects, they won't be part of the transaction, and if your transaction is retried they'll be run multiple times. This also applies to side effects - if you write to a file in your transaction that may happen many times. Exceptions are also a case to consider.
 
-Why have these `TVar` objects? Why not make all Ruby variable locations transactional? Maybe that'd be better, and it'd mean you could make existing code transactional. But realistically the implementation of MRI is not set up to make this kind of change easy to experiment with. Maybe it could be possible to experiment in TruffleRuby, which works at a higher level of abstraction.
+Why have these `TVar` objects? Why not make all Ruby variable locations transactional? Maybe that'd be better, and it'd mean you could make existing code transactional. But realistically the implementation of MRI is not set up to make this kind of change easy to experiment with. Maybe it could be possible to experiment in TruffleRuby, which is designed to allow data structures to have multiple implementations because it's part of how TruffleRuby optimizes Ruby code.
 
-One overhead we have in our code at the moment is that we have a `Matrix` containing `TVar` objects. Maybe instead we could have a `TArray`, `THash`, `Matrix`, and other transactional variants of data structures. This could reduce some book-keeping overhead.
+One overhead we have in our code at the moment is that we have a `Matrix` containing `TVar` objects. Instead we could have a `TArray`, `THash`, `Matrix`, and other transactional variants of data structures. This could reduce some book-keeping overhead.
 
 Other concepts we could explore are *privatisation* which means taking a snapshot of the board state at the start of each route, and *early release* which means then surrendering your claim to have read a location if you know it's not important for your final result - so we could possibly *early release* the expansion area not along the final route.
 
@@ -479,7 +475,7 @@ Then there are questions about what we do when people nest transactions, and a h
 
 There are many ways we could implement STM in Ruby - there's a huge number of possible algorithms to use with different tradeoffs. Koichi is using an algorithm called TL2. We could also try McRT, Bartok, Swiss, Judo, NOrec, Ring, and many more.
 
-We could also use special hardware to implement a transactional memory - a *HTM*. Intel added [support](https://en.wikipedia.org/wiki/Transactional_Synchronization_Extensions) for HTM in their Haswell cores but it had to be disabled due to bugs. Newer Intel architectures have it and working I believe, but I'm not sure how many people are using it. AMD have [abandoned](https://en.wikipedia.org/wiki/Advanced_Synchronization_Facility) a similar idea. Most realistic is probably a kind of hybrid transactional memory, that has a core in the hardware but implements a more extensive interface in software on top of that core.
+We could also use special hardware to implement a transactional memory - a *HTM*. Intel added [support](https://en.wikipedia.org/wiki/Transactional_Synchronization_Extensions) for HTM in their Haswell cores but it had to be disabled due to bugs. Newer Intel architectures have it and working I believe, but I'm not sure how many people are using it. AMD have [abandoned](https://en.wikipedia.org/wiki/Advanced_Synchronization_Facility) a similar idea. A problem with HTM is that it often has low limits for the size of transactions. Most realistic is probably a kind of hybrid transactional memory, that has a core in the hardware but implements a more extensive interface in software on top of that core.
 
 In general, STM and HTM research seems to have slowed down now. Around 2010 it was a hugely popular idea, but now it's not so fashionable, although new ideas around persistent memory are referring back to it. Maybe that means it's time to sift through and figure out what really made sense and apply it in languages like Ruby?
 
@@ -493,9 +489,9 @@ I've got a challenge for STM in Ruby from this: how many cores do you need runni
 
 More transactional benchmarks are available beyond Lee - such as [Stanford's STAMP suite](https://github.com/chrisseaton/stamp), written in C, which includes a variant of Lee called Labyrinth. We could possibly port all of these to Ruby.
 
-## Performance
+## Appendix: Sequential performance
 
-It's too early to measure the performance of the Ruby STM implementation itself yet, as it's only a proof-of-concept implementation and I'm sure it will be refined further. But the sequential version of Lee does make an interesting Ruby benchmark as well - it's producing a real result using an industrial algorithm and it takes a long time to run. I compared the performance of it on several Ruby implementations.
+It's too early to measure the performance of the Ruby STM implementation itself yet, as it's only a proof-of-concept implementation and I'm sure it will be refined further. But the sequential version of Lee does make an interesting Ruby benchmark on its own as well - it's producing a real result using an industrial algorithm and it takes a long time to run. I compared the performance of it on several Ruby implementations.
 
 `i/s` means iterations per second (board solves per second) so higher is better. Relative speed is relative to MRI 2.7.2 without a JIT.
 

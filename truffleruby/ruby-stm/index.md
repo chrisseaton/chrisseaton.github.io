@@ -465,7 +465,7 @@ You have to follow some rules to use an STM like the proposed design. The transa
 
 Why have these `TVar` objects? Why not make all Ruby variable locations transactional? Maybe that'd be better, and it'd mean you could make existing code transactional. But realistically the implementation of MRI is not set up to make this kind of change easy to experiment with. Maybe it could be possible to experiment in TruffleRuby, which is designed to allow data structures to have multiple implementations because it's part of how TruffleRuby optimizes Ruby code.
 
-One overhead we have in our code at the moment is that we have a `Matrix` containing `TVar` objects. Instead we could have a `TArray`, `THash`, `Matrix`, and other transactional variants of data structures. This could reduce some book-keeping overhead.
+One overhead we have in our code at the moment is that we have a `Matrix` containing `TVar` objects. Instead we could have a `TArray`, `THash`, `TMatrix`, and other transactional variants of data structures. This could reduce some book-keeping overhead.
 
 Other concepts we could explore are *privatisation* which means taking a snapshot of the board state at the start of each route, and *early release* which means then surrendering your claim to have read a location if you know it's not important for your final result - so we could possibly *early release* the expansion area not along the final route.
 

@@ -8,7 +8,10 @@ copyright: Copyright © 2020 Chris Seaton.
 
 There's a proposal to add *Software Transactional Memory*, or *STM*, to the Ruby programming language. This is part of a wider effort to add better support for concurrency and parallelism in Ruby, and in particular the idea of *ractors*. A concept has been [proposed](https://bugs.ruby-lang.org/issues/17261) and [implemented](https://github.com/ruby/ruby/pull/3652) by Koichi Sasada.
 
-<img src="testBoard.gif" width="25%">
+<figure>
+<img src="testBoard.gif" width="50%">
+<figcaption>An animation of the algorithm we're going to use as an example of STM</figcaption>
+</figure>
 
 This article gives some context on what STM is, how you use it, and why you might want to use it. We'll show an application which is well-suited to STM and we'll use this to talk about the benefits, issues, and some open questions.
 
@@ -217,19 +220,31 @@ Let's consider a larger application, in order to illustrate further and to talk 
 
 Let's say it's our job to lay out the wires on a circuit board. We get a board with *pads* (connections to components mounted on the board) and a list of *routes* that we need to draw between these pads. There are a great many pads and routes, there isn't much space on the tiny board, and another catch is that it's very expensive to have wires crossing each other. Let's say it's expontentially more expensive for more deeply stacked wires.
 
+<figure>
 <img src="minimal.svg" width="25%">
+<figcaption>A minimal board and a solution</figcaption>
+</figure>
 
 In this minimal example we we can see two routes, and how they have to cross each other.
 
-<img src="mainboard.svg" width="25%">
+<figure>
+<img src="mainboard.svg" width="50%">
+<figcaption>A processor module board and a solution</figcaption>
+</figure>
 
 This example is a processor module and shows what kind of scale we might want to be working at. This board has many longer routes which are more likely to conflict.
 
-<img src="memboard.svg" width="25%">
+<figure>
+<img src="memboard.svg" width="50%">
+<figcaption>A memory module board and a solution</figcaption>
+</figure>
 
 This example is a memory module. It has many shorter routes which we may expect to conflict less.
 
-<img src="testBoard.svg" width="25%">
+<figure>
+<img src="testBoard.svg" width="50%">
+<figcaption>The test board we'll use and a solution</figcaption>
+</figure>
 
 We'll use this test board, which is somewhere between all these extremes.
 
@@ -371,19 +386,31 @@ I implemented a version of this code using instrumentation so we can see what's 
 
 We can use this to understand how Lee works transactionally.
 
+<figure>
 <img src="clearly-independent.svg" width="50%">
+<figcaption>Two clearly independent routes</figcaption>
+</figure>
 
 This shows two routes solved concurrently. The area they needed to read from (their expansions) are shaded and the final route shown in the very thick lines. Routes already successfully laid down are shown in grey. These two routes are clearly independent - the expansions and the routes don't overlap at all. Nothing that you needed to read to solve one route has been modified by the other. This is the perfect case - both routes get committed, we wasted no time, and we've successfully solved them concurrently.
 
+<figure>
 <img src="overlaps.svg" width="50%">
+<figcaption>Two routes that overlap in their read-sets but not their write-sets</figcaption>
+</figure>
 
 This next example shows two routes with expansion areas that overlap. This means to solve the two routes there were some locations on the board that they both had to read, but neither route wrote a location read by the other. Think about if we had used the approach where we locked before reading any location - these routes would not have been able to be solved concurrently, but because we use an STM that considers both the read and write sets of both routes, they could be solved concurrently!
 
+<figure>
 <img src="massive-conflict.svg" width="50%">
+<figcaption>Two routes with a large conflict</figcaption>
+</figure>
 
 Next we can see two routes that clearly conflict. They both write locations that were read by the other, and the routes are also on top of each other. This will cause one route to abort, but the other can be committed, so we can still make progress.
 
+<figure>
 <img src="large-expansion.svg" width="50%">
+<figcaption>A route with a surprisingly large expansion</figcaption>
+</figure>
 
 This board shows a very important point. Note how large the lower expansion area is for the short route. This route is being solved later in the process, so the area it's operating in is very congested, and the expansion has to move further out to keep looking for the lowest cost solution. Note that we could not have worked out how large this area was going to grow until we started to do the time-consuming work of the actual expansion. We cannot work out the read set before we start, which is what we were doing in our bank account example when we collected up all the locks and sorted them.
 
@@ -416,9 +443,15 @@ depth:       3        3
 
 We can also generate some extremes - this first board will conflict on every single pair of routes you try to solve concurrently, and the second board will never conflict.
 
-<img src="sparselong.svg" width="25%">
+<figure>
+<img src="sparselong.svg" width="50%">
+<figcaption>Many long routes will always conflict</figcaption>
+</figure>
 
-<img src="sparseshort.svg" width="25%">
+<figure>
+<img src="sparseshort.svg" width="50%">
+<figcaption>Many short routes with never conflict</figcaption>
+</figure>
 
 We can also run Koichi's implementation on our test board actually concurrently. I've used `Thread` rather than `Ractor` to do this though, for simplicity. I use a `Queue` for the list of routes to solve. We get a surprisingly low number of aborts here - I'm not sure why that is yet.
 
@@ -468,13 +501,13 @@ It's too early to measure the performance of the Ruby STM implementation itself 
 
 | Ruby | Result | Relative speed |
 |--|--|--|
-| `ruby 2.7.2p137 (2020-10-01 revision 5445e04352) [x86_64-darwin19]` | 0.918  (± 0.0%) i/s | 1.00x |
-| `ruby 2.7.2p137 (2020-10-01 revision 5445e04352) +JIT [x86_64-darwin19]` | 1.101  (± 0.0%) i/s | 1.20x |
-| `ruby 3.0.0dev (2020-10-12T07:16:50Z thread_tvar 66e45dc50c) [x86_64-darwin19]` | 0.836  (± 0.0%) i/s | 0.91x |
-| `jruby 9.2.13.0 (2.5.7) 2020-08-03 9a89c94bcc OpenJDK 64-Bit Server VM 25.252-b14 on 1.8.0_252-b14 +jit [darwin-x86_64]` | 2.002  (± 0.0%) i/s | 2.18x |
-| `jruby 9.2.13.0 (2.5.7) 2020-08-03 9a89c94bcc OpenJDK 64-Bit Server VM 25.252-b14 on 1.8.0_252-b14 +indy +jit [darwin-x86_64]` | 2.549  (± 0.0%) i/s | 2.78x |
-| `truffleruby 20.2.0, like ruby 2.6.6, GraalVM CE Native [x86_64-darwin]` | 11.238  (±26.7%) i/s | 12.24x |
-| `truffleruby 20.2.0, like ruby 2.6.6, GraalVM CE JVM [x86_64-darwin]` | 9.475  (±10.6%) i/s | 10.32x |
+| `ruby 2.7.2p137` <!-- ruby 2.7.2p137 (2020-10-01 revision 5445e04352) [x86_64-darwin19] --> | 0.918  (± 0.0%) i/s | 1.00x |
+| `ruby 2.7.2p137 +JIT` <!-- ruby 2.7.2p137 (2020-10-01 revision 5445e04352) +JIT [x86_64-darwin19] --> | 1.101  (± 0.0%) i/s | 1.20x |
+| `ruby 3.0.0dev 66e45dc50c` <!-- ruby 3.0.0dev (2020-10-12T07:16:50Z thread_tvar 66e45dc50c) [x86_64-darwin19] --> | 0.836  (± 0.0%) i/s | 0.91x |
+| `jruby 9.2.13.0 1.8.0_252-b14 +jit` <!-- jruby 9.2.13.0 (2.5.7) 2020-08-03 9a89c94bcc OpenJDK 64-Bit Server VM 25.252-b14 on 1.8.0_252-b14 +jit [darwin-x86_64] --> | 2.002  (± 0.0%) i/s | 2.18x |
+| `jruby 9.2.13.0 25.252-b14 +indy +jit` <!-- jruby 9.2.13.0 (2.5.7) 2020-08-03 9a89c94bcc OpenJDK 64-Bit Server VM 25.252-b14 on 1.8.0_252-b14 +indy +jit [darwin-x86_64] --> | 2.549  (± 0.0%) i/s | 2.78x |
+| `truffleruby 20.2.0 GraalVM CE Native` <!-- truffleruby 20.2.0, like ruby 2.6.6, GraalVM CE Native [x86_64-darwin] --> | 11.238  (±26.7%) i/s | 12.24x |
+| `truffleruby 20.2.0 GraalVM CE JVM` <!-- truffleruby 20.2.0, like ruby 2.6.6, GraalVM CE JVM [x86_64-darwin] --> | 9.475  (±10.6%) i/s | 10.32x |
 
 We can see that the JIT in MRI makes Ruby run 1.2x as fast as without the JIT. There also seems to be an unfortunate slowdown in 3.0 at the moment, but this is pre-release.
 

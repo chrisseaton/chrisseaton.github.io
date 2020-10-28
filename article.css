@@ -87,3 +87,11 @@ p.center-image {
 figure {
   text-align: center;
 }
+
+figcaption {
+  font-size: 75%;
+  font-weight: bold;
+  font-style: italic;
+  padding-top: -0.25em;
+  padding-bottom: 0.25em;
+}

@@ -536,3 +536,5 @@ There was an attempt in 2004 to use HTM to parallelise Ruby, but making it invis
 * C Cao Minh, J Woong Chung, C Kozyrakis, and K Olukotun. _STAMP: Stanford transactional applications for multi-processing_. In Proceedings of The IEEE International Symposium on Workload Characterization, 2008.
 
 * T Harris, J Larus, and R Rajwar, _Transactional Memory_, 2nd Edition, Morgan & Claypool, 2010.
+
+{% include trufflerubylinks.html %}

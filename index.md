@@ -334,6 +334,15 @@ packrat parsing.</p>
 <h3>Other Presentations and Blog Posts</h3>
 
 <ul class="list">
+
+
+
+    <li>
+        Chris Seaton. <strong><a href="truffleruby/ruby-stm/">Context on STM in Ruby</a></strong>. Blog post. 2020.<br>
+        <span class="smaller">
+            <a href="truffleruby/ruby-stm/">Blog post</a>
+        </span>
+    </li>
     <li>
         Chris Seaton. <strong><a href="truffleruby/register-allocation/">Seeing Register Allocation Working in Java</a></strong>. Blog post. 2020.<br>
         <span class="smaller">

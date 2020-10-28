@@ -2,7 +2,7 @@
 layout: article
 title: Context on STM in Ruby
 author: Chris Seaton
-date: 22 October 2020
+date: 28 October 2020
 copyright: Copyright © 2020 Chris Seaton.
 ---
 

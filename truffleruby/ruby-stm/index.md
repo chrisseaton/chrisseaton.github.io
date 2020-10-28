@@ -519,7 +519,7 @@ There are several minor variations of Lee's algorithm with different models for 
 
 There are other ways we could parallelise Lee - transactional memory isn't the only one and may not be the best. You can combine transactional memory with other techniques, such as pre-sorting routes by size or location to reduce conflicts. You could also parallelise the solution of single routes, rather than trying to solve more than one route at a time.
 
-There was an attempt in 2004 to use HTM to parallelise Ruby, but making it invisible to the user, so that each GIL qauntum was implicitly a transaction. There have been similar efforts in Python - in both PyPy and in Larry Hasting's [Gilectomy](https://lwn.net/Articles/754577/) project.
+There was an attempt in 2004 to use HTM to parallelise Ruby, but making it invisible to the user, so that each GIL quantum was implicitly a transaction. There have been similar efforts in Python - in both PyPy and in Larry Hasting's [Gilectomy](https://lwn.net/Articles/754577/) project.
 
 ## References
 

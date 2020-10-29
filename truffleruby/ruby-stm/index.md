@@ -86,8 +86,8 @@ n.times do
   Thread.new
     loop do
       a, b, m = get_next_transfer
-      locks[a].lock do
-        locks[b].lock do
+      locks[a].synchronize do
+        locks[b].synchronize do
           accounts[a] -= m
           accounts[b] += m
         end
@@ -109,8 +109,8 @@ n.times do
     loop do
       a, b, m = get_next_transfer
       x, y = [a, b].sort
-      locks[x].lock do
-        locks[y].lock do
+      locks[x].synchronize do
+        locks[y].synchronize do
           accounts[a] -= m
           accounts[b] += m
         end
@@ -140,9 +140,9 @@ n.times do
     loop do
       a, b, c, t, m = get_next_transfer
       x, y, z = [a, b, c].sort
-      locks[x].lock do
-        locks[y].lock do
-          locks[z].lock do
+      locks[x].synchronize do
+        locks[y].synchronize do
+          locks[z].synchronize do
             if accounts[a] > t
               accounts[a] -= m
               accounts[b] += m

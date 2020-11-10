@@ -335,8 +335,12 @@ packrat parsing.</p>
 
 <ul class="list">
 
-
-
+    <!--<li>
+        Chris Seaton. <strong><a href="truffleruby/basic-truffle-graphs/">Understanding Basic Truffle Graphs</a></strong>. Blog post. 2020.<br>
+        <span class="smaller">
+            <a href="truffleruby/basic-truffle-graphs/">Blog post</a>
+        </span>
+    </li>-->
     <li>
         Chris Seaton. <strong><a href="truffleruby/ruby-stm/">Context on STM in Ruby</a></strong>. Blog post. 2020.<br>
         <span class="smaller">
@@ -346,7 +350,7 @@ packrat parsing.</p>
     <li>
         Chris Seaton. <strong><a href="truffleruby/register-allocation/">Seeing Register Allocation Working in Java</a></strong>. Blog post. 2020.<br>
         <span class="smaller">
-            <a href="truffleruby/basic-graal-graphs/">Blog post</a>
+            <a href="truffleruby/register-allocation/">Blog post</a>
         </span>
     </li>
     <li>

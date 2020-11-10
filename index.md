@@ -14,7 +14,7 @@ footer: <p>TruffleRuby logo Copyright © 2018 Talkdesk, Inc. Licensed under <a h
 <section id="intro">
 
 <p>I'm a Researcher (Senior Staff Engineer) at
-<a href="https://engineering.shopify.com">Shopify</a>, where I work on the Ruby
+<a href="https://shopify.engineering">Shopify</a>, where I work on the Ruby
 programming Language, and a Visitor at the
 <a href="https://www.manchester.ac.uk/">University of Manchester</a>.</p>
 
@@ -60,7 +60,7 @@ href="https://en.wikipedia.org/wiki/Light_cavalry">light cavalry</a> squadron.</
 
 <h3>TruffleRuby</h3>
 
-<p><a href="truffleruby/">TruffleRuby</a> started as my internship project at Oracle Labs in early 2013. It is an implementation of the Ruby programming language on the JVM, using the Graal JIT compiler and the Truffle AST interpreter framework. RubyTruffle can achieve peak performance well beyond that possible in JRuby at the same time as being a significantly simpler system. In early 2014 it was open sourced and integrated into JRuby, then in 2017 it became its own project, and now it is part of <a href="https://www.graalvm.org/">GraalVM</a>. It was the subject of my <a href="phd/">PhD</a>, and since 2019 <a href="https://engineering.shopify.com">Shopify</a> has sponsored development.</p>
+<p><a href="truffleruby/">TruffleRuby</a> started as my internship project at Oracle Labs in early 2013. It is an implementation of the Ruby programming language on the JVM, using the Graal JIT compiler and the Truffle AST interpreter framework. RubyTruffle can achieve peak performance well beyond that possible in JRuby at the same time as being a significantly simpler system. In early 2014 it was open sourced and integrated into JRuby, then in 2017 it became its own project, and now it is part of <a href="https://www.graalvm.org/">GraalVM</a>. It was the subject of my <a href="phd/">PhD</a>, and since 2019 <a href="https://shopify.engineering">Shopify</a> has sponsored development.</p>
 
 <ul class="awards">
 <li><i class="fas fa-trophy"></i>Finalist, Ruby Prize, 2016</li>
@@ -360,9 +360,9 @@ packrat parsing.</p>
         </span>
     </li>
     <li>
-        Chris Seaton. <strong><a href="https://engineering.shopify.com/blogs/engineering/understanding-programs-using-graphs/">Understanding Programs Using Graphs</a></strong>. Blog post. 2020.<br>
+        Chris Seaton. <strong><a href="https://shopify.engineering/understanding-programs-using-graphs">Understanding Programs Using Graphs</a></strong>. Blog post. 2020.<br>
         <span class="smaller">
-            <a href="https://engineering.shopify.com/blogs/engineering/understanding-programs-using-graphs/">Blog post</a>
+            <a href="https://shopify.engineering/understanding-programs-using-graphs">Blog post</a>
         </span>
     </li>
     <li>

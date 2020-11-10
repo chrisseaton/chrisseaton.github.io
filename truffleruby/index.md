@@ -20,7 +20,7 @@ significantly simpler system. In early 2014 it was open sourced and integrated
 into [JRuby](https://www.jruby.org/) for incubation, then in 2017 it became its
 own project, and now it is part of [GraalVM](https://www.graalvm.org/). It was
 the subject of my [PhD](../phd/), and since 2019
-[Shopify](https://engineering.shopify.com/) has sponsored development.
+[Shopify](https://shopify.engineering/) has sponsored development.
 
 This page links to the literature and code related to the project. Note that any
 views expressed are my own and not those of Oracle.
@@ -39,7 +39,7 @@ views expressed are my own and not those of Oracle.
 
 *   [Understanding Basic Graal Graphs](basic-graal-graphs). How can you make sense of Graal graphs?
 
-*   [Understanding Programs Using Graphs](https://engineering.shopify.com/blogs/engineering/understanding-programs-using-graphs). What can we learn about a program using graphs?
+*   [Understanding Programs Using Graphs](https://shopify.engineering/blogs/engineering/understanding-programs-using-graphs). What can we learn about a program using graphs?
 
 *   [Low Overhead Polling For Ruby](low-overhead-polling/). How can Ruby check for interruptions without a branch?
 

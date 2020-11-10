@@ -8,7 +8,7 @@ image_alt: Fibonacci as a Graal graph
 copyright: Copyright © 2020 Chris Seaton.
 ---
 
-*Graal* is a new just-in-time, or *JIT*, compiler for the Java Virtual Machine, or *JVM*. It translates your Java program to machine code while it's running. Graal can also be used for other languages beyond Java, through the [*Truffle*](#truffle) language implementation framework. At [Shopify](https://engineering.shopify.com/) we're using Graal to JIT compile Ruby to native code, using [*TruffleRuby*](..), but this blog post is just about Java in order to keep things as simple as possible.
+*Graal* is a new just-in-time, or *JIT*, compiler for the Java Virtual Machine, or *JVM*. It translates your Java program to machine code while it's running. Graal can also be used for other languages beyond Java, through the [*Truffle*](#truffle) language implementation framework. At [Shopify](https://shopify.engineering/) we're using Graal to JIT compile Ruby to native code, using [*TruffleRuby*](..), but this blog post is just about Java in order to keep things as simple as possible.
 
 Many people will know that when you use Java you compile your application using the `javac` compiler to a data structure called bytecode. Many people will also be familiar with a data structure called an abstract-syntax-tree, or *AST*, which is the way that the Java compiler represents your Java source code while compiling.
 

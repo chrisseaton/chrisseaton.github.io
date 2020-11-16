@@ -31,7 +31,7 @@ views expressed are my own and not those of Oracle.
 
 # Blog Posts and Articles
 
-<!--*   [Understanding Basic Truffle Graphs](basic-truffle-graphs). How can you make sense of Graal graphs from Truffle?-->
+*   [Understanding Basic Truffle Graphs](basic-truffle-graphs). How can you make sense of Graal graphs from Truffle?
 
 *   [Context on STM in Ruby](ruby-stm). What is STM and how does it apply to Ruby?
 

@@ -335,12 +335,12 @@ packrat parsing.</p>
 
 <ul class="list">
 
-    <!--<li>
+    <li>
         Chris Seaton. <strong><a href="truffleruby/basic-truffle-graphs/">Understanding Basic Truffle Graphs</a></strong>. Blog post. 2020.<br>
         <span class="smaller">
             <a href="truffleruby/basic-truffle-graphs/">Blog post</a>
         </span>
-    </li>-->
+    </li>
     <li>
         Chris Seaton. <strong><a href="truffleruby/ruby-stm/">Context on STM in Ruby</a></strong>. Blog post. 2020.<br>
         <span class="smaller">

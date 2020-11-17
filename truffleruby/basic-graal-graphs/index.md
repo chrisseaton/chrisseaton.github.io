@@ -102,7 +102,7 @@ private static int exampleLocalVariablesState(int x, int y) {
 <a href="exampleLocalVariablesState@6.svg"><img src="exampleLocalVariablesState@6.svg"></a>
 </figure>
 
-How can Graal throw away information about local variables like this? If we attached a debugger at the second line of that method we'd want to see the value of the local variable a at that point. How does that work? Graal maintains metadata about the state of the program at locations called *frame states*. These are only added where needed, such as at the start of a method, or at locations such as method calls (the call to `opaqueCall` here). As well as the debugger they're also used so that optimized code and be deoptimized if you attach a debugger. These are hidden by default in most tools, but we can show them if wanted. The value of the local variable a was the result of the addition operation, and we can see an edge from that operation into the `FrameState`, as well as to the two places where it is actually used.
+How can Graal throw away information about local variables like this? If we attached a debugger at the second line of that method we'd want to see the value of the local variable a at that point. How does that work? Graal maintains metadata about the state of the program at locations called *frame states*. These are only added where needed, such as at the start of a method, or at locations such as method calls (the call to `opaqueCall` here). As well as the debugger they're also used so that optimized code can be deoptimized if you attach a debugger. These are hidden by default in most tools, but we can show them if wanted. The value of the local variable a was the result of the addition operation, and we can see an edge from that operation into the `FrameState`, as well as to the two places where it is actually used.
 
 ## Method calls
 
@@ -242,7 +242,7 @@ A concept people find challenging in both typical SSA form, and graphs like Graa
 
 ```java
 private static int exampleIfNeverTaken(boolean condition, int x, int y) {
-    final int a;t
+    final int a;
     if (condition) {
         intField = x;
         a = x;

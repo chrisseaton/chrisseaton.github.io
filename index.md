@@ -334,7 +334,12 @@ packrat parsing.</p>
 <h3>Other Presentations and Blog Posts</h3>
 
 <ul class="list">
-
+    <li>
+        Chris Seaton. <strong><a href="https://www.youtube.com/watch?v=ypETuCHnmxA">Understanding Graal IR</a></strong>. Keynote at VMIL. 2020.<br>
+        <span class="smaller">
+            <a href="https://www.youtube.com/watch?v=ypETuCHnmxA">Video</a>
+        </span>
+    </li>
     <li>
         Chris Seaton. <strong><a href="truffleruby/basic-truffle-graphs/">Understanding Basic Truffle Graphs</a></strong>. Blog post. 2020.<br>
         <span class="smaller">
@@ -612,6 +617,9 @@ packrat parsing.</p>
     </li>
     <li>
        Program Language Design and Implementation (PLDI) program committee member, 2020, external review committee member, 2019
+    </li>
+    <li>
+        Science, Art, Voodoo: Using and Developing The Graal Compiler program committee member, 2021, 2020
     </li>
     <li>
         Software Language Engineering (SLE) program committee member, 2020

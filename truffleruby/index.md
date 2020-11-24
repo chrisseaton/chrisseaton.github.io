@@ -154,6 +154,8 @@ views expressed are my own and not those of Oracle.
 
 # Videos of Talks and Slide Decks
 
+*   Chris Seaton. [Understanding Graal IR](https://www.youtube.com/watch?v=ypETuCHnmxA). At VMIL 2020. [Video](https://www.youtube.com/watch?v=ypETuCHnmxA).
+
 *   Chris Seaton. [Visualizing Graal](graalworkshop20/visualizing-graal.pdf). At Science, Art, Voodoo: Using and Developing The Graal Compiler 2020. [Slides](graalworkshop20/visualizing-graal.pdf) and [video](https://www.pscp.tv/w/1DXxyezOjpbxM).
 
 *   Chris Seaton. [The TruffleRuby Compilation Pipeline](wrocloverb19/truffleruby-compilation-pipeline.pdf). At Wroclove.rb 2019. [Slides](wrocloverb19/truffleruby-compilation-pipeline.pdf) and [video](https://www.youtube.com/watch?v=bf5pQVgux3c).

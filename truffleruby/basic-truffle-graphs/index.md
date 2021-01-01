@@ -152,6 +152,8 @@ private static int exampleSimpleCall(ExampleObject object, int x) {
 
 ```ruby
 class ExampleObject
+  attr_accessor :x
+
   def initialize(x)
     @x = x
   end

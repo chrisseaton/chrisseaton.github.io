@@ -335,6 +335,12 @@ packrat parsing.</p>
 
 <ul class="list">
     <li>
+        Chris Seaton. <strong><a href="truffleruby/seeing-escape-analysis/">Seeing Escape Analysis Working</a></strong>. Blog post. 2020.<br>
+        <span class="smaller">
+            <a href="truffleruby/seeing-escape-analysis/">Blog post</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="https://www.youtube.com/watch?v=ypETuCHnmxA">Understanding Graal IR</a></strong>. Keynote at VMIL. 2020.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=ypETuCHnmxA">Video</a>

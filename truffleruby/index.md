@@ -31,6 +31,8 @@ views expressed are my own and not those of Oracle.
 
 # Blog Posts and Articles
 
+*   [Seeing Escape Analysis Working](seeing-escape-analysis). Can we see escape analysis working in practice?
+
 *   [Understanding Basic Truffle Graphs](basic-truffle-graphs). How can you make sense of Graal graphs from Truffle?
 
 *   [Context on STM in Ruby](ruby-stm). What is STM and how does it apply to Ruby?

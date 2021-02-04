@@ -496,6 +496,8 @@ public class IrreducibleDecompiled {
 }
 ```
 
+(As of 2021 Graal can now compile irreducible loops using this technique.)
+
 ## Objects
 
 ```java

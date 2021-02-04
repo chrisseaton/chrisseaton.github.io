@@ -204,21 +204,23 @@ private static int exampleIf(boolean condition, int x, int y) {
 ```ruby
 def example_if(condition, x, y)
   if condition
-    escape x
+    Primitive.blackhole x
     a = x
   else
-    escape y
+    Primitive.blackhole y
     a = y
   end
   a
 end
 ```
 
+
+
 <figure>
 <a href="example_if@4.svg"><img style="max-height: 40em" src="example_if@4.svg"></a>
 </figure>
 
-There's a lot of nodes here, but that's because of the two calls we make to `escape` to stop the program optimising away. If you look at the `If` node, it points to an `==` between an unboxed `T(8)` and `C(0)`, which is the same as what the Java code does. The ϕ at the bottom is the same as well. Again, Ruby's `if` has more complex semantics than Java's, with the concepts of truthiness and falseiness, but here it compiles to the same as the Java code.
+We use `Primitive.blackhole` to stop the program optimising away - it consumes a value in a way that is never elided. It's represented as the black circle in the graph. If you look at the `If` node, it points to an `==` between an unboxed `T(8)` and `C(0)`, which is the same as what the Java code does. The ϕ at the bottom is the same as well. Again, Ruby's `if` has more complex semantics than Java's, with the concepts of truthiness and falseiness, but here it compiles to the same as the Java code.
 
 <figure>
 <a href="example_if_never_taken@4.svg"><img style="max-height: 40em" src="example_if_never_taken@4.svg"></a>
@@ -255,13 +257,13 @@ private static int exampleIntSwitch(int value, int x, int y, int z) {
 def example_int_switch(value, x, y, z)
   case value
   when 0
-    escape x
+    Primitive.blackhole x
     a = x
   when 1
-    escape y
+    Primitive.blackhole y
     a = y
   else
-    escape z
+    Primitive.blackhole z
     a = z
   end
   a
@@ -303,13 +305,13 @@ private static int exampleStringSwitch(String value, int x, int y, int z) {
 def example_string_switch(value, x, y, z)
   case value
   when 'foo'
-    escape x
+    Primitive.blackhole x
     a = x
   when 'bar'
-    escape y
+    Primitive.blackhole y
     a = y
   else
-    escape z
+    Primitive.blackhole z
     a = z
   end
   a
@@ -343,7 +345,7 @@ private static int exampleWhile(int count) {
 def example_while(count)
   a = count
   while a > 0
-    escape a
+    Primitive.blackhole a
     a -= 1
   end
   count
@@ -372,7 +374,7 @@ private static int exampleFor(int count) {
 ```ruby
 def example_for(count)
   count.times do |a|
-    escape a
+    Primitive.blackhole a
   end
 end
 ```
@@ -389,7 +391,7 @@ def example_nested_while(count)
   while (a > 0)
     y = count
     while (y > 0)
-      escape a
+      Primitive.blackhole a
       y -= 1
     end
     a -= 1
@@ -411,7 +413,7 @@ def example_while_break(count)
     if a == 4
       break
     end
-    escape a
+    Primitive.blackhole a
     a -= 1
   end
   count
@@ -546,10 +548,6 @@ end
 </figure>
 
 `instanceof` (`is_a?` in Ruby) is implemented in Ruby much like the inline caching - a comparison against the expected class. We get some redundancy here, as looking up the method `is_a?` is one check, and then the check itself is another.
-
-
-
-
 
 ## Stamps and escape analysis
 

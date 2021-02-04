@@ -32,27 +32,27 @@
 <polygon fill="#da2d4f" stroke="black" points="459.97,-1234 160.97,-1234 160.97,-1198 459.97,-1198 459.97,-1234"/>
 <text text-anchor="middle" x="310.47" y="-1212.3" font-family="Arial" font-size="14.00" fill="#ffffff">912 LoadField RubyDynamicObject.metaClass</text>
 </g>
-<!-- node990 -->
+<!-- node976 -->
 <g id="node3" class="node">
-<title>node990</title>
-<polygon fill="#e98693" stroke="black" points="302.47,-1060 248.47,-1060 248.47,-1024 302.47,-1024 302.47,-1060"/>
-<text text-anchor="middle" x="275.47" y="-1038.3" font-family="Arial" font-size="14.00" fill="#1a1919">990 If</text>
+<title>node976</title>
+<polygon fill="#e98693" stroke="black" points="301.47,-1060 247.47,-1060 247.47,-1024 301.47,-1024 301.47,-1060"/>
+<text text-anchor="middle" x="274.47" y="-1038.3" font-family="Arial" font-size="14.00" fill="#1a1919">976 If</text>
 </g>
-<!-- node912&#45;&gt;node990 -->
+<!-- node912&#45;&gt;node976 -->
 <g id="edge1" class="edge">
-<title>node912&#45;&gt;node990</title>
-<path fill="none" stroke="#da2d4f" stroke-width="2" d="M306.99,-1197.88C300.91,-1168 288.31,-1106.11 281.02,-1070.27"/>
-<polygon fill="#da2d4f" stroke="#da2d4f" stroke-width="2" points="284.36,-1069.15 278.94,-1060.05 277.5,-1070.55 284.36,-1069.15"/>
+<title>node912&#45;&gt;node976</title>
+<path fill="none" stroke="#da2d4f" stroke-width="2" d="M306.89,-1197.88C300.63,-1168 287.68,-1106.11 280.18,-1070.27"/>
+<polygon fill="#da2d4f" stroke="#da2d4f" stroke-width="2" points="283.51,-1069.12 278.04,-1060.05 276.66,-1070.56 283.51,-1069.12"/>
 </g>
-<!-- node991 -->
+<!-- node977 -->
 <g id="node4" class="node">
-<title>node991</title>
+<title>node977</title>
 <polygon fill="#3cb4a4" stroke="black" points="197.47,-1147 143.01,-1129 197.47,-1111 251.93,-1129 197.47,-1147"/>
-<text text-anchor="middle" x="197.47" y="-1125.3" font-family="Arial" font-size="14.00" fill="#1a1919">991 ==</text>
+<text text-anchor="middle" x="197.47" y="-1125.3" font-family="Arial" font-size="14.00" fill="#1a1919">977 ==</text>
 </g>
-<!-- node912&#45;&gt;node991 -->
+<!-- node912&#45;&gt;node977 -->
 <g id="edge5" class="edge">
-<title>node912&#45;&gt;node991</title>
+<title>node912&#45;&gt;node977</title>
 <path fill="none" stroke="#3cb4a4" d="M287.6,-1197.8C268.39,-1183.35 241.02,-1162.76 221.49,-1148.07"/>
 <polygon fill="#3cb4a4" stroke="#3cb4a4" points="223.48,-1145.19 213.39,-1141.97 219.28,-1150.78 223.48,-1145.19"/>
 <text text-anchor="middle" x="263.97" y="-1168.8" font-family="arial" font-size="14.00" fill="#3cb4a4">x</text>
@@ -66,41 +66,41 @@
 <!-- node912&#45;&gt;node1068 -->
 <g id="edge9" class="edge">
 <title>node912&#45;&gt;node1068</title>
-<path fill="none" stroke="#3cb4a4" d="M314.25,-1197.92C323.56,-1156.79 348.23,-1053.49 367.47,-1024 380.87,-1003.46 402.29,-985.73 419.59,-973.52"/>
-<polygon fill="#3cb4a4" stroke="#3cb4a4" points="421.9,-976.18 428.2,-967.66 417.96,-970.4 421.9,-976.18"/>
-<text text-anchor="middle" x="347.97" y="-1081.8" font-family="arial" font-size="14.00" fill="#3cb4a4">x</text>
+<path fill="none" stroke="#3cb4a4" d="M312.15,-1197.79C316.28,-1162.54 329.42,-1080.7 366.47,-1024 379.98,-1003.32 401.67,-985.59 419.2,-973.43"/>
+<polygon fill="#3cb4a4" stroke="#3cb4a4" points="421.56,-976.06 427.93,-967.59 417.67,-970.24 421.56,-976.06"/>
+<text text-anchor="middle" x="342.97" y="-1081.8" font-family="arial" font-size="14.00" fill="#3cb4a4">x</text>
 </g>
-<!-- node992 -->
+<!-- node978 -->
 <g id="node5" class="node">
-<title>node992</title>
+<title>node978</title>
 <polygon fill="#e98693" stroke="black" points="272.97,-973 195.97,-973 195.97,-937 272.97,-937 272.97,-973"/>
-<text text-anchor="middle" x="234.47" y="-951.3" font-family="Arial" font-size="14.00" fill="#1a1919">992 Begin</text>
+<text text-anchor="middle" x="234.47" y="-951.3" font-family="Arial" font-size="14.00" fill="#1a1919">978 Begin</text>
 </g>
-<!-- node990&#45;&gt;node992 -->
+<!-- node976&#45;&gt;node978 -->
 <g id="edge3" class="edge">
-<title>node990&#45;&gt;node992</title>
-<path fill="none" stroke="#da2d4f" stroke-width="2" d="M267.17,-1023.8C261.45,-1011.93 253.73,-995.93 247.23,-982.45"/>
-<polygon fill="#da2d4f" stroke="#da2d4f" stroke-width="2" points="250.25,-980.66 242.76,-973.18 243.95,-983.7 250.25,-980.66"/>
+<title>node976&#45;&gt;node978</title>
+<path fill="none" stroke="#da2d4f" stroke-width="2" d="M266.38,-1023.8C260.79,-1011.93 253.26,-995.93 246.92,-982.45"/>
+<polygon fill="#da2d4f" stroke="#da2d4f" stroke-width="2" points="249.98,-980.73 242.55,-973.18 243.64,-983.71 249.98,-980.73"/>
 <text text-anchor="middle" x="260.97" y="-994.8" font-family="arial" font-size="14.00" fill="#da2d4f">T</text>
 </g>
-<!-- node993 -->
+<!-- node979 -->
 <g id="node6" class="node">
-<title>node993</title>
+<title>node979</title>
 <polygon fill="#e98693" stroke="black" points="367.97,-973 290.97,-973 290.97,-937 367.97,-937 367.97,-973"/>
-<text text-anchor="middle" x="329.47" y="-951.3" font-family="Arial" font-size="14.00" fill="#1a1919">993 Begin</text>
+<text text-anchor="middle" x="329.47" y="-951.3" font-family="Arial" font-size="14.00" fill="#1a1919">979 Begin</text>
 </g>
-<!-- node990&#45;&gt;node993 -->
+<!-- node976&#45;&gt;node979 -->
 <g id="edge4" class="edge">
-<title>node990&#45;&gt;node993</title>
-<path fill="none" stroke="#da2d4f" stroke-width="2" d="M286.4,-1023.8C294.08,-1011.7 304.5,-995.3 313.16,-981.67"/>
-<polygon fill="#da2d4f" stroke="#da2d4f" stroke-width="2" points="316.15,-983.49 318.56,-973.18 310.24,-979.74 316.15,-983.49"/>
-<text text-anchor="middle" x="309.97" y="-994.8" font-family="arial" font-size="14.00" fill="#da2d4f">F</text>
+<title>node976&#45;&gt;node979</title>
+<path fill="none" stroke="#da2d4f" stroke-width="2" d="M285.6,-1023.8C293.43,-1011.7 304.04,-995.3 312.86,-981.67"/>
+<polygon fill="#da2d4f" stroke="#da2d4f" stroke-width="2" points="315.86,-983.47 318.36,-973.18 309.99,-979.67 315.86,-983.47"/>
+<text text-anchor="middle" x="308.97" y="-994.8" font-family="arial" font-size="14.00" fill="#da2d4f">F</text>
 </g>
-<!-- node991&#45;&gt;node990 -->
+<!-- node977&#45;&gt;node976 -->
 <g id="edge2" class="edge">
-<title>node991&#45;&gt;node990</title>
-<path fill="none" stroke="#3cb4a4" d="M209.66,-1114.72C221.12,-1102.23 238.56,-1083.23 252.6,-1067.92"/>
-<polygon fill="#3cb4a4" stroke="#3cb4a4" points="255.41,-1070.04 259.59,-1060.3 250.25,-1065.31 255.41,-1070.04"/>
+<title>node977&#45;&gt;node976</title>
+<path fill="none" stroke="#3cb4a4" d="M209.5,-1114.72C220.81,-1102.23 238.03,-1083.23 251.9,-1067.92"/>
+<polygon fill="#3cb4a4" stroke="#3cb4a4" points="254.68,-1070.06 258.8,-1060.3 249.49,-1065.36 254.68,-1070.06"/>
 <text text-anchor="middle" x="245.47" y="-1081.8" font-family="arial" font-size="14.00" fill="#3cb4a4">?</text>
 </g>
 <!-- node1243 -->
@@ -109,9 +109,9 @@
 <polygon fill="#e98693" stroke="black" points="386.47,-632 328.47,-632 328.47,-596 386.47,-596 386.47,-632"/>
 <text text-anchor="middle" x="357.47" y="-610.3" font-family="Arial" font-size="14.00" fill="#1a1919">1243 If</text>
 </g>
-<!-- node991&#45;&gt;node1243 -->
+<!-- node977&#45;&gt;node1243 -->
 <g id="edge14" class="edge">
-<title>node991&#45;&gt;node1243</title>
+<title>node977&#45;&gt;node1243</title>
 <path fill="none" stroke="#3cb4a4" d="M188.95,-1113.5C180.08,-1097.01 167.47,-1068.98 167.47,-1043 167.47,-1043 167.47,-1043 167.47,-686 167.47,-654.09 262.68,-631.78 318.31,-621.47"/>
 <polygon fill="#3cb4a4" stroke="#3cb4a4" points="318.98,-624.9 328.2,-619.68 317.74,-618.01 318.98,-624.9"/>
 <text text-anchor="middle" x="171.47" y="-864.3" font-family="arial" font-size="14.00" fill="#3cb4a4">?</text>
@@ -122,9 +122,9 @@
 <polygon fill="#e98693" stroke="black" points="292.47,-832 218.47,-832 218.47,-796 292.47,-796 292.47,-832"/>
 <text text-anchor="middle" x="255.47" y="-810.3" font-family="Arial" font-size="14.00" fill="#1a1919">1125 End</text>
 </g>
-<!-- node992&#45;&gt;node1125 -->
+<!-- node978&#45;&gt;node1125 -->
 <g id="edge7" class="edge">
-<title>node992&#45;&gt;node1125</title>
+<title>node978&#45;&gt;node1125</title>
 <path fill="none" stroke="#da2d4f" stroke-width="2" d="M227.59,-936.77C220.21,-915.58 211,-878.89 222.47,-850 223.85,-846.54 225.74,-843.22 227.94,-840.1"/>
 <polygon fill="#da2d4f" stroke="#da2d4f" stroke-width="2" points="230.67,-842.29 234.3,-832.34 225.26,-837.85 230.67,-842.29"/>
 </g>
@@ -134,9 +134,9 @@
 <polygon fill="#ffa500" stroke="black" points="482.97,-886 231.97,-886 231.97,-850 482.97,-850 482.97,-886"/>
 <text text-anchor="middle" x="357.47" y="-864.3" font-family="Arial" font-size="14.00" fill="#1a1919">1411 Guard, else TransferToInterpreter</text>
 </g>
-<!-- node993&#45;&gt;node1411 -->
+<!-- node979&#45;&gt;node1411 -->
 <g id="edge8" class="edge">
-<title>node993&#45;&gt;node1411</title>
+<title>node979&#45;&gt;node1411</title>
 <path fill="none" stroke="#da2d4f" stroke-width="2" d="M335.14,-936.8C339.01,-925.05 344.22,-909.24 348.63,-895.84"/>
 <polygon fill="#da2d4f" stroke="#da2d4f" stroke-width="2" points="352.01,-896.77 351.81,-886.18 345.36,-894.58 352.01,-896.77"/>
 </g>
@@ -326,51 +326,51 @@
 <path fill="none" stroke="#da2d4f" stroke-width="2" d="M256.44,-1278.86C265.94,-1267.99 278.37,-1253.75 288.92,-1241.67"/>
 <polygon fill="#da2d4f" stroke="#da2d4f" stroke-width="2" points="291.59,-1243.94 295.53,-1234.11 286.31,-1239.34 291.59,-1243.94"/>
 </g>
-<!-- inline789x991 -->
+<!-- inline691x977 -->
 <g id="node23" class="node">
-<title>inline789x991</title>
+<title>inline691x977</title>
 <ellipse fill="#d7ede7" stroke="black" cx="71.47" cy="-1216" rx="71.44" ry="18"/>
-<text text-anchor="middle" x="71.47" y="-1214.1" font-family="Arial" font-size="8.00" fill="#1a1919">789 C(RubyClass@56cbb949)</text>
+<text text-anchor="middle" x="71.47" y="-1214.1" font-family="Arial" font-size="8.00" fill="#1a1919">691 C(RubyClass@48589dcb)</text>
 </g>
-<!-- inline789x991&#45;&gt;node991 -->
+<!-- inline691x977&#45;&gt;node977 -->
 <g id="edge6" class="edge">
-<title>inline789x991&#45;&gt;node991</title>
+<title>inline691x977&#45;&gt;node977</title>
 <path fill="none" stroke="#3cb4a4" d="M95.17,-1199.01C119.98,-1182.28 158.32,-1156.41 180.34,-1141.55"/>
 <text text-anchor="middle" x="144.47" y="-1170.6" font-family="arial" font-size="8.00" fill="#3cb4a4">y</text>
 </g>
-<!-- inline691x1068 -->
+<!-- inline789x1068 -->
 <g id="node24" class="node">
-<title>inline691x1068</title>
-<ellipse fill="#d7ede7" stroke="black" cx="447.47" cy="-1042" rx="70.81" ry="18"/>
-<text text-anchor="middle" x="447.47" y="-1040.1" font-family="Arial" font-size="8.00" fill="#1a1919">691 C(RubyClass@7ecc2ee4)</text>
+<title>inline789x1068</title>
+<ellipse fill="#d7ede7" stroke="black" cx="447.47" cy="-1042" rx="72.08" ry="18"/>
+<text text-anchor="middle" x="447.47" y="-1040.1" font-family="Arial" font-size="8.00" fill="#1a1919">789 C(RubyClass@2379b6d0)</text>
 </g>
-<!-- inline691x1068&#45;&gt;node1068 -->
+<!-- inline789x1068&#45;&gt;node1068 -->
 <g id="edge10" class="edge">
-<title>inline691x1068&#45;&gt;node1068</title>
+<title>inline789x1068&#45;&gt;node1068</title>
 <path fill="none" stroke="#3cb4a4" d="M447.47,-1023.8C447.47,-1009.05 447.47,-987.92 447.47,-973.18"/>
 <text text-anchor="middle" x="449.47" y="-996.6" font-family="arial" font-size="8.00" fill="#3cb4a4">y</text>
 </g>
-<!-- inline23x1375 -->
+<!-- inline5x1375 -->
 <g id="node25" class="node">
-<title>inline23x1375</title>
+<title>inline5x1375</title>
 <ellipse fill="#d7ede7" stroke="black" cx="525.47" cy="-273" rx="27" ry="18"/>
-<text text-anchor="middle" x="525.47" y="-271.1" font-family="Arial" font-size="8.00" fill="#1a1919">23 C(1)</text>
+<text text-anchor="middle" x="525.47" y="-271.1" font-family="Arial" font-size="8.00" fill="#1a1919">5 C(0)</text>
 </g>
-<!-- inline23x1375&#45;&gt;node1375 -->
+<!-- inline5x1375&#45;&gt;node1375 -->
 <g id="edge23" class="edge">
-<title>inline23x1375&#45;&gt;node1375</title>
+<title>inline5x1375&#45;&gt;node1375</title>
 <path fill="none" stroke="#3cb4a4" d="M523.52,-254.86C522.01,-241.61 519.93,-223.35 518.42,-210.11"/>
 <text text-anchor="middle" x="538.97" y="-230.6" font-family="arial" font-size="8.00" fill="#3cb4a4">from 1374</text>
 </g>
-<!-- inline5x1375 -->
+<!-- inline23x1375 -->
 <g id="node26" class="node">
-<title>inline5x1375</title>
+<title>inline23x1375</title>
 <ellipse fill="#d7ede7" stroke="black" cx="597.47" cy="-273" rx="27" ry="18"/>
-<text text-anchor="middle" x="597.47" y="-271.1" font-family="Arial" font-size="8.00" fill="#1a1919">5 C(0)</text>
+<text text-anchor="middle" x="597.47" y="-271.1" font-family="Arial" font-size="8.00" fill="#1a1919">23 C(1)</text>
 </g>
-<!-- inline5x1375&#45;&gt;node1375 -->
+<!-- inline23x1375&#45;&gt;node1375 -->
 <g id="edge24" class="edge">
-<title>inline5x1375&#45;&gt;node1375</title>
+<title>inline23x1375&#45;&gt;node1375</title>
 <path fill="none" stroke="#3cb4a4" d="M586.25,-256.62C579.51,-247.82 570.51,-236.82 561.47,-228 555.09,-221.78 547.64,-215.61 540.65,-210.22"/>
 <text text-anchor="middle" x="587.97" y="-230.6" font-family="arial" font-size="8.00" fill="#3cb4a4">from 1376</text>
 </g>

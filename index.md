@@ -8,7 +8,7 @@ footer: <p>TruffleRuby logo Copyright © 2018 Talkdesk, Inc. Licensed under <a h
 
 <header>
 <h1>Doctor Chris Seaton</h1>
-<a href="bio.jpeg"><img src="chrisseaton.jpeg" width="250" height="250" alt="Chris Seaton"></a>
+<a href="bio.jpeg"><img src="bio/" width="250" height="250" alt="Chris Seaton"></a>
 </header>
 
 <section id="intro">

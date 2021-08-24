@@ -73,14 +73,6 @@ Blackberry's store.
 Mersey Burns is regulated by Her Majesty's Government as a medical device and
 recommended by NHS trusts.
 
-<p style="text-align: center">
-<a href="https://apps.apple.com/gb/app/mersey-burns/id481808668"><img alt="Available on the App Store" src="appstore.png" width="150" height="45"></a>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="https://play.google.com/store/apps/details?id=com.merseyburns"><img alt="Available on the Google Play Store" src="playstore.png" width="130" height="45"></a>
-&nbsp;&nbsp;&nbsp;&nbsp;
-<img alt="Available on the App Store" src="ce.png" width="45" height="45">
-</p>
-
 ## How Mersey Burns came about
 
 In 2010 I was a captain in the Royal Army Medical Corps and thinking about

@@ -626,7 +626,7 @@ packrat parsing.</p>
         Dynamic Languages Symposium (DLS) program committee member, 2019, 2017, 2016, 2014
     </li>
     <li>
-        Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS) program committee member, 2020, 2017
+        Implementation, Compilation, Optimization of Object-Oriented Languages, Programs and Systems Workshop (ICOOOLPS) program committee member, 2020, 2017, organising committee member, 2021.
     </li>
     <li>
        JavaOne emerging languages program committee member, 2017, 2016

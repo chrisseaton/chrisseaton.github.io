@@ -577,7 +577,7 @@ virtualized and never really allocated.
 My headline practical recommendation is let's implement object shapes in MRI. I
 think the complexity is relatively low, it may even have an immediate speed
 benefit for the current MRI interpreter, and it'll certainly help MJIT, YJIT,
-and Sorbet Compiler as the continue to develop.
+and Sorbet Compiler as they continue to develop.
 
 TruffleRuby shows that the idea works well, and there's also some exciting
 possibilities for building things beyond that, which we already went through.

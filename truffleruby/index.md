@@ -31,6 +31,8 @@ views expressed are my own and not those of Oracle.
 
 # Blog Posts and Articles
 
+*   [The Future Shape of Ruby Objects](rubykaigi21/). How does TruffleRuby represent objects and could MRI do the same?
+
 *   [Seeing Escape Analysis Working](seeing-escape-analysis). Can we see escape analysis working in practice?
 
 *   [Understanding Basic Truffle Graphs](basic-truffle-graphs). How can you make sense of Graal graphs from Truffle?

@@ -158,7 +158,7 @@ views expressed are my own and not those of Oracle.
 
 # Videos of Talks and Slide Decks
 
-*   Chris Seaton. [The Future Shape of Ruby Objects](https://www.youtube.com/embed/RqwVEw-Rd5c). At RubyKaigi 2021. [Video](https://www.youtube.com/embed/RqwVEw-Rd5c) and [blogpost](rubykaigi21).
+*   Chris Seaton. [The Future Shape of Ruby Objects](https://www.youtube.com/embed/RqwVEw-Rd5c). At RubyKaigi 2021. [Video](https://www.youtube.com/embed/RqwVEw-Rd5c) and [blog post](rubykaigi21).
 
 *   Chris Seaton. [Understanding Graal IR](https://www.youtube.com/watch?v=ypETuCHnmxA). At VMIL 2020. [Video](https://www.youtube.com/watch?v=ypETuCHnmxA).
 
@@ -172,7 +172,7 @@ views expressed are my own and not those of Oracle.
 
 *   Eric Sedlar and Chris Seaton. [Run Programs Faster with GraalVM](https://www.youtube.com/watch?v=wBegU4d4GRc). At Oracle Code Boston 2018. [Video](https://www.youtube.com/watch?v=wBegU4d4GRc).
 
-*   Chris Seaton. [Understanding How Graal Works - a Java JIT Compiler Written in Java](jokerconf17). At JokerConf 2017. [Slides](jokerconf17/understanding-how-graal-works.pdf), [video](https://www.youtube.com/watch?v=D2IbrPCiupA) and [blogpost](jokerconf17/).
+*   Chris Seaton. [Understanding How Graal Works - a Java JIT Compiler Written in Java](jokerconf17). At JokerConf 2017. [Slides](jokerconf17/understanding-how-graal-works.pdf), [video](https://www.youtube.com/watch?v=D2IbrPCiupA) and [blog post](jokerconf17/).
 
 *   Chris Seaton. [Polyglot From the Very Old to the Very New](polyconf17/polyglot-old-to-new-seaton.pdf) (keynote). At PolyConf 2017. [Slides](polyconf17/polyglot-old-to-new-seaton.pdf) and [video](https://www.youtube.com/watch?v=FPN4IScbE60).
 
@@ -190,7 +190,7 @@ views expressed are my own and not those of Oracle.
 
 *   Chris Seaton and Benoit Daloze. [A Tour Through a New Ruby Implementation](fosdem15/truffle-tour.pdf). At FOSDEM 2015. [Slides](fosdem15/truffle-tour.pdf).
 
-*   Chris Seaton. [Deoptimizing Ruby](). At RubyConf 2014. [Video](https://confreaks.tv/videos/rubyconf2014-deoptimizing-ruby), [slides](deoptimizing/deoptimizing-ruby.pdf) and [blogpost](deoptimizing/).
+*   Chris Seaton. [Deoptimizing Ruby](). At RubyConf 2014. [Video](https://confreaks.tv/videos/rubyconf2014-deoptimizing-ruby), [slides](deoptimizing/deoptimizing-ruby.pdf) and [blog post](deoptimizing/).
 
 *   Chris Seaton. [Implementing Ruby Using Truffle and Graal](ecoop14/ecoop14-ruby-truffle.pdf). At the European Conference on Object Oriented Programming (ECOOP) Summer School. 2014. [Slides](ecoop14/ecoop14-ruby-truffle.pdf).
 

@@ -329,6 +329,7 @@ packrat parsing.</p>
     <li>
         Chris Seaton. <strong><a href="truffleruby/rubykaigi21/">The Future Shape of Ruby Objects</a></strong>. Keynote at RubyKaigi. 2021.<br>
         <span class="smaller">
+            <a href="https://www.youtube.com/watch?v=RqwVEw-Rd5c">Video</a>,
             <a href="truffleruby/rubykaigi21/">Blog post</a>
         </span>
     </li>

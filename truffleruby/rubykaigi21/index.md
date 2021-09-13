@@ -11,6 +11,8 @@ copyright: Copyright © 2021 Chris Seaton.
 *These are the notes for a talk I gave at RubyKaigi 2021, which is why they're
 written as if we were talking and going through some slides and code together.*
 
+<iframe width="720" height="433" src="//www.youtube.com/embed/RqwVEw-Rd5c" frameborder="0" allowfullscreen></iframe>
+
 Hello I'm [Chris Seaton](../../). I'm a Senior Staff Engineer at
 [Shopify](https://shopify.engineering) where I'm working on Ruby performance.
 I'm the founder of [TruffleRuby](https://www.graalvm.org/ruby/), which is a

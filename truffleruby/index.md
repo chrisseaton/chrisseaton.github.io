@@ -31,6 +31,8 @@ views expressed are my own and not those of Oracle.
 
 # Blog Posts and Articles
 
+*   [Stamping Out Overflow Checks in Ruby](stamping-out-overflow-checks/). Can you remove overflow checks on integer arithmetic in Ruby?
+
 *   [The Future Shape of Ruby Objects](rubykaigi21/). How does TruffleRuby represent objects and could MRI do the same?
 
 *   [Seeing Escape Analysis Working](seeing-escape-analysis). Can we see escape analysis working in practice?

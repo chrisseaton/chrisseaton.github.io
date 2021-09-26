@@ -327,6 +327,12 @@ packrat parsing.</p>
 
 <ul class="list">
     <li>
+        Chris Seaton. <strong><a href="truffleruby/stamping-out-overflow-checks/">Stamping Out Overflow Checks in Ruby</a></strong>. Blog post. 2021.<br>
+        <span class="smaller">
+            <a href="truffleruby/stamping-out-overflow-checks/">Blog post</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="truffleruby/rubykaigi21/">The Future Shape of Ruby Objects</a></strong>. Keynote at RubyKaigi. 2021.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=RqwVEw-Rd5c">Video</a>,

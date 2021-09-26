@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 352 473" style="enable-background:new 0 0 352 473;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E98693;stroke:#000000;}
+	.st1{fill:#1A1919;}
+	.st2{font-family:'ArialMT';}
+	.st3{font-size:14px;}
+	.st4{fill:#F9F9F9;stroke:#000000;}
+	.st5{fill:none;stroke:#DA2D4F;stroke-width:2;}
+	.st6{fill:#DA2D4F;stroke:#DA2D4F;stroke-width:2;}
+	.st7{fill:none;stroke:#3CB4A4;}
+	.st8{fill:#3CB4A4;stroke:#3CB4A4;}
+	.st9{fill:#3CB4A4;}
+	.st10{fill:#3CB4A4;stroke:#000000;}
+	.st11{fill:#D7EDE7;stroke:#000000;}
+	.st12{font-size:8px;}
+</style>
+<g id="node1">
+	<polygon class="st0" points="98.2,85 40.2,85 40.2,121 98.2,121 	"/>
+	<text transform="matrix(1 0 0 1 48.6294 106.7)" class="st1 st2 st3">0 Start</text>
+</g>
+<g id="node3">
+	<polygon class="st4" points="127.2,172 43.2,172 43.2,208 127.2,208 	"/>
+	<text transform="matrix(1 0 0 1 51.3916 193.7)" class="st1 st2 st3">509 Unbox</text>
+</g>
+<g id="edge8">
+	<path class="st5" d="M72.5,121.2c2.2,11.6,5.1,27.3,7.6,40.6"/>
+	<polygon class="st6" points="83.6,161.4 82,171.8 76.7,162.6 	"/>
+</g>
+<g id="node2">
+	<polygon class="st4" points="347.8,85 116.8,85 116.8,121 347.8,121 	"/>
+	<text transform="matrix(1 0 0 1 125.2334 106.7)" class="st1 st2 st3">167 BoxNode$TrustedBoxedValue</text>
+</g>
+<g id="edge1">
+	<path class="st7" d="M202.5,121.2c-22.7,13.1-54.2,31.3-78.8,45.6"/>
+	<polygon class="st8" points="125.4,169.9 114.9,171.8 121.9,163.8 	"/>
+	<text transform="matrix(1 0 0 1 167.5156 150.2)" class="st9 st2 st3">value</text>
+</g>
+<g id="node4">
+	<polygon class="st10" points="162.2,259 113.3,277 162.2,295 211.2,277 	"/>
+	<text transform="matrix(1 0 0 1 143.957 280.7)" class="st1 st2 st3">834 &amp;</text>
+</g>
+<g id="edge3">
+	<path class="st7" d="M100.8,208.2c12.4,13.7,29.7,32.8,42.8,47.3"/>
+	<polygon class="st8" points="146.3,253.2 150.5,263 141.2,257.9 	"/>
+	<text transform="matrix(1 0 0 1 128.25 237.2)" class="st9 st2 st3">x</text>
+</g>
+<g id="node6">
+	<polygon class="st4" points="198.2,346 4.2,346 4.2,382 198.2,382 	"/>
+	<text transform="matrix(1 0 0 1 12.5229 367.7)" class="st1 st2 st3">880 BoxNode$AllocatingBox</text>
+</g>
+<g id="edge2">
+	<path class="st5" d="M86.8,208.1c2.8,29.9,8.5,91.8,11.9,127.6"/>
+	<polygon class="st6" points="102.2,335.7 99.7,345.9 95.2,336.3 	"/>
+</g>
+<g id="edge6">
+	<path class="st7" d="M152.4,291.7c-8.8,12.3-22.1,30.8-32.9,45.8"/>
+	<polygon class="st8" points="122.2,339.8 113.6,345.9 116.5,335.7 	"/>
+	<text transform="matrix(1 0 0 1 135.3882 324.2)" class="st9 st2 st3">value [0 - 255]</text>
+</g>
+<g id="node5">
+	<polygon class="st0" points="144.2,433 58.2,433 58.2,469 144.2,469 	"/>
+	<text transform="matrix(1 0 0 1 66.6157 454.7)" class="st1 st2 st3">863 Return</text>
+</g>
+<g id="edge5">
+	<path class="st7" d="M86.5,382.1c-3.8,5.4-7.3,11.6-9.3,17.9c-2.5,8.1-0.4,16.6,3.3,24.2"/>
+	<polygon class="st8" points="83.7,422.5 85.9,432.9 77.7,426.2 	"/>
+	<text transform="matrix(1 0 0 1 77.6328 411.2)" class="st9 st2 st3">result</text>
+</g>
+<g id="edge7">
+	<path class="st5" d="M108.2,382c3.1,9.6,5.8,21.9,4.1,33c-0.4,2.7-1,5.4-1.7,8.2"/>
+	<polygon class="st6" points="113.9,424.2 107.8,432.8 107.2,422.2 	"/>
+</g>
+<g id="node7">
+	<ellipse class="st11" cx="177.2" cy="190" rx="32.2" ry="18"/>
+	<text transform="matrix(1 0 0 1 157.2383 191.9)" class="st1 st2 st12">650 C(255)</text>
+</g>
+<g id="edge4">
+	<path class="st7" d="M174.2,208.2c-2.7,15.1-6.5,37-9.1,51.8"/>
+	<text transform="matrix(1 0 0 1 170.25 235.4)" class="st9 st2 st12">y</text>
+</g>
+<g id="node8">
+	<ellipse class="st11" cx="232.2" cy="22" rx="27" ry="18"/>
+	<text transform="matrix(1 0 0 1 217.2051 23.9)" class="st1 st2 st12">888 T(7)</text>
+</g>
+<g id="edge9">
+	<path class="st7" d="M232.2,40.1c0,13.2,0,31.5,0,44.8"/>
+	<text transform="matrix(1 0 0 1 232.6875 64.4)" class="st9 st2 st12">value</text>
+</g>
+</svg>

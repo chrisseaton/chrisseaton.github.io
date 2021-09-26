@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 786 995" style="enable-background:new 0 0 786 995;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#E98693;stroke:#000000;}
+	.st1{fill:#1A1919;}
+	.st2{font-family:'ArialMT';}
+	.st3{font-size:14px;}
+	.st4{fill:#F9F9F9;stroke:#000000;}
+	.st5{fill:none;stroke:#DA2D4F;stroke-width:2;}
+	.st6{fill:#DA2D4F;stroke:#DA2D4F;stroke-width:2;}
+	.st7{fill:none;stroke:#3CB4A4;}
+	.st8{fill:#3CB4A4;stroke:#3CB4A4;}
+	.st9{fill:#3CB4A4;}
+	.st10{fill:#3CB4A4;stroke:#000000;}
+	.st11{fill:#FFA500;stroke:#000000;}
+	.st12{fill:#D7EDE7;stroke:#000000;}
+	.st13{font-size:8px;}
+</style>
+<g id="node1">
+	<polygon class="st0" points="781.8,85 723.8,85 723.8,121 781.8,121 	"/>
+	<text transform="matrix(1 0 0 1 732.1294 106.7)" class="st1 st2 st3">0 Start</text>
+</g>
+<g id="node5">
+	<polygon class="st4" points="653.8,172 569.8,172 569.8,208 653.8,208 	"/>
+	<text transform="matrix(1 0 0 1 577.8916 193.7)" class="st1 st2 st3">545 Unbox</text>
+</g>
+<g id="edge24">
+	<path class="st5" d="M724.2,121.2c-21.7,13.1-51.7,31.2-75.3,45.4"/>
+	<polygon class="st6" points="650.6,169.7 640.2,171.8 647,163.7 	"/>
+</g>
+<g id="node2">
+	<polygon class="st4" points="705.2,85 474.2,85 474.2,121 705.2,121 	"/>
+	<text transform="matrix(1 0 0 1 482.7334 106.7)" class="st1 st2 st3">167 BoxNode$TrustedBoxedValue</text>
+</g>
+<g id="edge1">
+	<path class="st7" d="M594.2,121.2c3,11.6,7.1,27.3,10.5,40.6"/>
+	<polygon class="st8" points="608.2,161.3 607.3,171.8 601.4,163 	"/>
+	<text transform="matrix(1 0 0 1 602.0156 150.2)" class="st9 st2 st3">value</text>
+</g>
+<g id="node3">
+	<polygon class="st4" points="501.2,172 270.2,172 270.2,208 501.2,208 	"/>
+	<text transform="matrix(1 0 0 1 278.7334 193.7)" class="st1 st2 st3">185 BoxNode$TrustedBoxedValue</text>
+</g>
+<g id="node6">
+	<polygon class="st4" points="427.8,259 343.8,259 343.8,295 427.8,295 	"/>
+	<text transform="matrix(1 0 0 1 351.8916 280.7)" class="st1 st2 st3">702 Unbox</text>
+</g>
+<g id="edge3">
+	<path class="st7" d="M385.8,208.2c0,11.6,0,27.2,0,40.6"/>
+	<polygon class="st8" points="389.2,248.8 385.8,258.8 382.2,248.8 	"/>
+	<text transform="matrix(1 0 0 1 386.0156 237.2)" class="st9 st2 st3">value</text>
+</g>
+<g id="node4">
+	<polygon class="st4" points="235.2,259 4.2,259 4.2,295 235.2,295 	"/>
+	<text transform="matrix(1 0 0 1 12.7334 280.7)" class="st1 st2 st3">203 BoxNode$TrustedBoxedValue</text>
+</g>
+<g id="node7">
+	<polygon class="st4" points="161.8,346 77.8,346 77.8,382 161.8,382 	"/>
+	<text transform="matrix(1 0 0 1 85.8916 367.7)" class="st1 st2 st3">858 Unbox</text>
+</g>
+<g id="edge5">
+	<path class="st7" d="M119.8,295.2c0,11.6,0,27.2,0,40.6"/>
+	<polygon class="st8" points="123.2,335.8 119.8,345.8 116.2,335.8 	"/>
+	<text transform="matrix(1 0 0 1 120.0156 324.2)" class="st9 st2 st3">value</text>
+</g>
+<g id="edge2">
+	<path class="st5" d="M569.5,206.9c-37.4,14.1-92.2,34.6-132.2,49.7"/>
+	<polygon class="st6" points="438.4,260 427.8,260.2 435.9,253.4 	"/>
+</g>
+<g id="node9">
+	<polygon class="st10" points="372.8,346 179.7,364 372.8,382 565.8,364 	"/>
+	<text transform="matrix(1 0 0 1 275.8608 367.7)" class="st1 st2 st3">1243 IntegerAddExactOverflow</text>
+</g>
+<g id="edge9">
+	<path class="st7" d="M588,208.1c-44,31.7-138,99.3-185.9,133.8"/>
+	<polygon class="st8" points="403.9,344.9 393.7,347.9 399.8,339.2 	"/>
+	<text transform="matrix(1 0 0 1 515.75 280.7)" class="st9 st2 st3">x</text>
+</g>
+<g id="node10">
+	<polygon class="st10" points="593.8,520 451.3,538 593.8,556 736.2,538 	"/>
+	<text transform="matrix(1 0 0 1 524.478 541.7)" class="st1 st2 st3">1245 IntegerAddExact</text>
+</g>
+<g id="edge11">
+	<path class="st7" d="M623.4,208.1c10.2,16.6,23.3,42.9,23.3,67.9c0,0,0,0,0,176c0,23.7-15,46.2-29.1,62.2"/>
+	<polygon class="st8" points="619.9,516.9 610.5,521.8 614.8,512.1 	"/>
+	<text transform="matrix(1 0 0 1 646.75 367.7)" class="st9 st2 st3">x</text>
+</g>
+<g id="edge4">
+	<path class="st5" d="M343.7,291.1c-41.4,12.9-106.5,33.4-172.2,54.7"/>
+	<polygon class="st6" points="172.4,349.2 161.8,348.9 170.2,342.5 	"/>
+</g>
+<g id="edge10">
+	<path class="st7" d="M383.1,295.2c-1.8,11.7-4.2,27.5-6.2,40.8"/>
+	<polygon class="st8" points="380.3,336.8 375.3,346.1 373.4,335.7 	"/>
+	<text transform="matrix(1 0 0 1 380.75 324.2)" class="st9 st2 st3">y</text>
+</g>
+<g id="edge12">
+	<path class="st7" d="M427.9,287.6c49.9,12.3,128.4,34.8,146.8,58.4c37.3,47.8,31.2,124,24.5,164.2"/>
+	<polygon class="st8" points="602.7,511.1 597.5,520.3 595.8,509.9 	"/>
+	<text transform="matrix(1 0 0 1 600.75 411.2)" class="st9 st2 st3">y</text>
+</g>
+<g id="node8">
+	<polygon class="st11" points="484.8,433 210.8,433 210.8,469 484.8,469 	"/>
+	<text transform="matrix(1 0 0 1 218.9541 454.7)" class="st1 st2 st3">1242 Guard not, else ArithmeticException</text>
+</g>
+<g id="edge6">
+	<path class="st5" d="M161.8,380.7c36.8,13.7,90.5,33.8,130.8,48.8"/>
+	<polygon class="st6" points="293.9,426.2 302,432.9 291.4,432.7 	"/>
+</g>
+<g id="node12">
+	<polygon class="st10" points="416.8,607 223.7,625 416.8,643 609.8,625 	"/>
+	<text transform="matrix(1 0 0 1 319.8608 628.7)" class="st1 st2 st3">1480 IntegerAddExactOverflow</text>
+</g>
+<g id="edge16">
+	<path class="st7" d="M131,382c14.7,21.6,42.1,59.4,70.8,87c58.1,55.7,137.2,107.6,181.5,135"/>
+	<polygon class="st8" points="385.2,601 391.9,609.3 381.5,607 	"/>
+	<text transform="matrix(1 0 0 1 237.75 498.2)" class="st9 st2 st3">x</text>
+</g>
+<g id="node13">
+	<polygon class="st10" points="206.8,781 64.3,799 206.8,817 349.2,799 	"/>
+	<text transform="matrix(1 0 0 1 137.478 802.7)" class="st1 st2 st3">1482 IntegerAddExact</text>
+</g>
+<g id="edge18">
+	<path class="st7" d="M119.8,382.3c0,17.2,0,44.3,0,67.7c0,0,0,0,0,263c0,29.4,25.7,52,49.2,66.4"/>
+	<polygon class="st8" points="170.9,776.5 177.8,784.6 167.4,782.6 	"/>
+	<text transform="matrix(1 0 0 1 119.75 585.2)" class="st9 st2 st3">x</text>
+</g>
+<g id="edge13">
+	<path class="st7" d="M397.2,469.1c44,15.2,107.8,37.3,150.7,52.1"/>
+	<polygon class="st8" points="549.2,517.9 557.5,524.5 546.9,524.5 	"/>
+	<text transform="matrix(1 0 0 1 484.8467 498.2)" class="st9 st2 st3">guard</text>
+</g>
+<g id="node11">
+	<polygon class="st11" points="458.8,694 184.8,694 184.8,730 458.8,730 	"/>
+	<text transform="matrix(1 0 0 1 192.9541 715.7)" class="st1 st2 st3">1479 Guard not, else ArithmeticException</text>
+</g>
+<g id="edge8">
+	<path class="st5" d="M325.4,469c-31.7,25.8-88.5,78.1-110.6,138c-5.6,15-7.7,22,0,36c11.2,20.4,31.4,35.6,51.3,46.3"/>
+	<polygon class="st6" points="267.8,686.3 275.1,694 264.6,692.5 	"/>
+</g>
+<g id="edge7">
+	<path class="st7" d="M367.8,381.8c-3.5,11.8-8.2,27.8-12.2,41.4"/>
+	<polygon class="st8" points="358.9,424.3 352.8,433 352.2,422.4 	"/>
+	<text transform="matrix(1 0 0 1 361.8569 411.2)" class="st9 st2 st3">?</text>
+</g>
+<g id="edge17">
+	<path class="st7" d="M565.7,552.5c-29.6,14.2-76.6,36.8-109.8,52.8"/>
+	<polygon class="st8" points="457,608.6 446.4,609.7 453.9,602.3 	"/>
+	<text transform="matrix(1 0 0 1 515.75 585.2)" class="st9 st2 st3">y</text>
+</g>
+<g id="edge19">
+	<path class="st7" d="M604.3,554.8c12.8,21.3,30.8,59.9,14.4,88.2c-59.6,103.1-199.4,138.1-299.6,149.8"/>
+	<polygon class="st8" points="319.3,796.3 309,793.9 318.5,789.3 	"/>
+	<text transform="matrix(1 0 0 1 605.75 672.2)" class="st9 st2 st3">y</text>
+</g>
+<g id="edge20">
+	<path class="st7" d="M298.5,730.2c-18.4,13.6-44.2,32.6-63.7,47.1"/>
+	<polygon class="st8" points="236.7,780.2 226.5,783.4 232.5,774.6 	"/>
+	<text transform="matrix(1 0 0 1 271.8467 759.2)" class="st9 st2 st3">guard</text>
+</g>
+<g id="node15">
+	<polygon class="st4" points="392.8,868 190.8,868 190.8,904 392.8,904 	"/>
+	<text transform="matrix(1 0 0 1 199.1299 889.7)" class="st1 st2 st3">1538 BoxNode$AllocatingBox</text>
+</g>
+<g id="edge15">
+	<path class="st5" d="M335.3,730.1c14.7,20.8,34.6,56.8,22.4,86.9c-7,17.2-20.6,32.4-33.6,44.1"/>
+	<polygon class="st6" points="326,864 316.1,867.8 321.5,858.7 	"/>
+</g>
+<g id="edge14">
+	<path class="st7" d="M399.3,641.6c-14.2,12.7-34.4,30.8-50.7,45.4"/>
+	<polygon class="st8" points="350.8,689.7 341,693.8 346.1,684.5 	"/>
+	<text transform="matrix(1 0 0 1 375.8569 672.2)" class="st9 st2 st3">?</text>
+</g>
+<g id="edge22">
+	<path class="st7" d="M221.9,815.2c12.6,12.6,30.8,30.8,45.4,45.4"/>
+	<polygon class="st8" points="270,858.3 274.6,867.9 265.1,863.3 	"/>
+	<text transform="matrix(1 0 0 1 255.0156 846.2)" class="st9 st2 st3">value</text>
+</g>
+<g id="node14">
+	<polygon class="st0" points="338.2,955 245.2,955 245.2,991 338.2,991 	"/>
+	<text transform="matrix(1 0 0 1 253.7422 976.7)" class="st1 st2 st3">1511 Return</text>
+</g>
+<g id="edge21">
+	<path class="st7" d="M277,904.1c-3.8,5.4-7.3,11.6-9.3,17.9c-2.5,8.1-0.5,16.6,3.3,24.2"/>
+	<polygon class="st8" points="274.2,944.5 276.4,954.9 268.2,948.2 	"/>
+	<text transform="matrix(1 0 0 1 268.1328 933.2)" class="st9 st2 st3">result</text>
+</g>
+<g id="edge23">
+	<path class="st5" d="M298.7,904c3.1,9.6,5.8,21.9,4.1,33c-0.4,2.7-1,5.4-1.7,8.2"/>
+	<polygon class="st6" points="304.4,946.2 298.3,954.8 297.7,944.2 	"/>
+</g>
+<g id="node16">
+	<ellipse class="st12" cx="589.8" cy="22" rx="28.9" ry="18"/>
+	<text transform="matrix(1 0 0 1 572.4805 23.9)" class="st1 st2 st13">1546 T(7)</text>
+</g>
+<g id="edge25">
+	<path class="st7" d="M589.8,40.1c0,13.2,0,31.5,0,44.8"/>
+	<text transform="matrix(1 0 0 1 590.1875 64.4)" class="st9 st2 st13">value</text>
+</g>
+<g id="node17">
+	<ellipse class="st12" cx="385.8" cy="103" rx="28.9" ry="18"/>
+	<text transform="matrix(1 0 0 1 368.4805 104.9)" class="st1 st2 st13">1547 T(8)</text>
+</g>
+<g id="edge26">
+	<path class="st7" d="M385.8,121.2c0,14.8,0,35.9,0,50.6"/>
+	<text transform="matrix(1 0 0 1 386.1875 148.4)" class="st9 st2 st13">value</text>
+</g>
+<g id="node18">
+	<ellipse class="st12" cx="119.8" cy="190" rx="28.9" ry="18"/>
+	<text transform="matrix(1 0 0 1 102.4805 191.9)" class="st1 st2 st13">1548 T(9)</text>
+</g>
+<g id="edge27">
+	<path class="st7" d="M119.8,208.2c0,14.8,0,35.9,0,50.6"/>
+	<text transform="matrix(1 0 0 1 120.1875 235.4)" class="st9 st2 st13">value</text>
+</g>
+</svg>

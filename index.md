@@ -155,6 +155,26 @@ packrat parsing.</p>
 
 </div>
 
+<div class="project-logo">
+
+<a href="https://github.com/chrisseaton/rhizome/">
+<img alt="The Rhizome Logo" src="rhizome.png" width="96" height="96">
+</a>
+
+</div>
+
+<div class="project-details">
+
+<h3>Rhizome</h3>
+
+<p><a href="https://github.com/chrisseaton/rhizome/">Rhizome</a> is a paedagogical just-in-time compiler (JIT) for Ruby, implemented in pure Ruby. It's not really designed to be used. It's designed to show you how JITs work and why perhaps a JIT for Ruby should be written in Ruby. It's also designed to try to go beyond the trivial aspects of a simple template compiler that introductions to JITs often show - instead it has a proper intermediate representation (IR) and shows how more advanced parts of compilers such as lowering and schedulers work, that people don't usually cover.</p>
+
+<div class="buttons" style="text-align: right;">
+<a href="https://github.com/chrisseaton/rhizome/" class="less-significant">Learn more <i class="fas fa-arrow-right"></i></a>
+</div>
+
+</div>
+
 </section>
 
 <hr>

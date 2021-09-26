@@ -3,6 +3,8 @@ layout: article
 title: Stamping Out Overflow Checks in Ruby
 author: Chris Seaton
 date: 26 September 2021
+image: stamp.svg
+image_alt: A stamp
 copyright: Copyright © 2021 Chris Seaton.
 ---
 

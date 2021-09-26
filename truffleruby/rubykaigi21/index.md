@@ -623,3 +623,5 @@ Thank you to [Sam Tam](https://twitter.com/samanthamaytam) for editing my video 
 * `ruby 3.0.2p107 (2021-07-07 revision 0db68f0233) [x86_64-darwin20]`
 * `jruby 9.2.19.0 (2.5.8) 2021-06-15 55810c552b OpenJDK 64-Bit Server VM 11.0.2+9 on 11.0.2+9 +indy +jit [darwin-x86_64]`
 * `truffleruby 21.2.0, like ruby 2.7.3, GraalVM CE JVM [x86_64-darwin]`
+
+{% include trufflerubylinks.html %}

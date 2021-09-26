@@ -408,3 +408,5 @@ So there you go - yes there is a way using pure Ruby to hint to a compiler that 
 ## Related idea in asm.js
 
 Do you think you've seen this idea of masking values with `& 0xff` before? [asm.js](https://en.wikipedia.org/wiki/Asm.js) is a subset of JavaScript designed to run more efficiently by using more hardware primitives in the same way we are. It uses a pattern `value | 0` to similarly force a value to be treated as a machine integer.
+
+{% include trufflerubylinks.html %}

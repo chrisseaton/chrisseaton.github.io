@@ -143,7 +143,7 @@ public void simplify(SimplifierTool tool) {
 }
 ```
 
-The simplify operation gets the value of the stamp - the mask, and injects it using something called a π node, which means a node that is just there to add a stamp. Remember that it's actually the overflow operation which looks for the stamp. Here we can see it checking if the stamp permits the operation to overflow or not. You can see that if it cannot, it replaces itself with the boolean constant `false`, meaning can never overflow.
+The simplify operation gets the value of the stamp - the mask, and injects it using something called a π node, which means a node that is just there to add a stamp. Remember that it's actually the overflow operation which looks for the stamp. Here we can see it checking if the stamp permits the operation to overflow or not. You can see that if it cannot, it replaces itself with the boolean constant `false`, meaning it can never overflow.
 
 ```java
 public ValueNode canonical(CanonicalizerTool tool, ValueNode forX, ValueNode forY) {
@@ -222,7 +222,7 @@ end
 
 Does this actually do anything useful?
 
-I took this code from [`ChunkyPNG`](https://github.com/wvanbergen/chunky_png), a Ruby graphics library. It's been slightly simplified It composes two colours based on a transparency value. The colours are stored as packed RGB values, and composing them requires some integer arithmetic. 
+I took this code from [`ChunkyPNG`](https://github.com/wvanbergen/chunky_png), a Ruby graphics library. It's been slightly simplified. It composes two colours based on a transparency value. The colours are stored as packed RGB values, and composing them requires some integer arithmetic. 
 
 ```ruby
 def r(value)
@@ -397,7 +397,7 @@ Yes it's nearly twice as fast to use a mask! All for adding one line of pure Rub
 
 Didn't we say that `jo` didn't add much of an impact? Well that's what I was always taught - maybe I should reconsider that and measure it a bit more. Also, removing the linear overflow checks generally relaxes the entire graph, allowing perhaps a better scheduling. I could measure that as well.
 
-And just for fun, let's compare TruffleRuby, with it's sophisticated stamp system, to YARV, some other optimising Ruby implementations.
+And just for fun, let's compare TruffleRuby, with its sophisticated stamp system, to MRI and some optimising Ruby implementations.
 
 <figure>
 <a href="impls.svg"><img src="impls.svg"></a>

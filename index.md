@@ -347,6 +347,15 @@ packrat parsing.</p>
 
 <ul class="list">
     <li>
+        Chris Seaton. <strong>Understanding JIT Optimisations By Decompilation</strong>. At QCon Plus Online. 2021.<br>
+    </li>
+    <li>
+        Chris Seaton. <strong><a href="https://www.youtube.com/watch?v=EybsDKXGsEc">The Importance of Optimising Little Languages</a></strong>. At VMM. 2021.<br>
+        <span class="smaller">
+            <a href="https://www.youtube.com/watch?v=EybsDKXGsEc">Video</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="truffleruby/stamping-out-overflow-checks/">Stamping Out Overflow Checks in Ruby</a></strong>. Blog post. 2021.<br>
         <span class="smaller">
             <a href="truffleruby/stamping-out-overflow-checks/">Blog post</a>

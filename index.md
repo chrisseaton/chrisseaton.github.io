@@ -117,10 +117,30 @@ regulated and CE marked as a medical device.</p>
 
 <p><a href="https://rubybib.org/">The Ruby Bibliography</a> is the central
 list of academic research papers and theses about the Ruby programming language.
-I compile and currate the list as a community service.</p>
+I compile and curate the list as a community service.</p>
 
 <div class="buttons" style="text-align: right;">
 <a href="https://rubybib.org/" class="less-significant">Learn more <i class="fas fa-arrow-right"></i></a>
+</div>
+
+</div>
+
+<div class="project-logo">
+
+<a href="https://ruby-compilers.com/">
+<img alt="The Ruby Compiler Survey Logo" src="rubycompilersurvey.png" width="96" height="96">
+</a>
+
+</div>
+
+<div class="project-details">
+
+<h3>The Ruby Compiler Survey</h3>
+
+<p><a href="https://ruby-compilers.com/">The Ruby Compiler Survey</a> is a project cataloguing, preserving, and dissecting compilers for the Ruby programming language.</p>
+
+<div class="buttons" style="text-align: right;">
+<a href="https://ruby-compilers.com/" class="less-significant">Learn more <i class="fas fa-arrow-right"></i></a>
 </div>
 
 </div>
@@ -642,6 +662,9 @@ packrat parsing.</p>
     </li>
     <li>
         Maintainer of <a href="https://rubybib.org/">The Ruby Bibliography</a>
+    </li>
+    <li>
+        Maintainer of <a href="https://ruby-compilers.com/">The Ruby Compiler Survey</a>
     </li>
     <li>
         Trustee of the Cheshire Yeomanry Association, registered charity 256143

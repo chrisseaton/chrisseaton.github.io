@@ -367,6 +367,13 @@ packrat parsing.</p>
 
 <ul class="list">
     <li>
+        Chris Seaton. <strong><a href="https://www.youtube.com/watch?v=Zg-1_7ed0hE">A History of Compiling Ruby</a></strong>. At RubyConf. 2021.<br>
+        <span class="smaller">
+            <a href="https://www.youtube.com/watch?v=Zg-1_7ed0hE">Video</a>,
+            <a href="https://ruby-compilers.com/">website</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong>Understanding JIT Optimisations By Decompilation</strong>. At QCon Plus Online. 2021.<br>
     </li>
     <li>

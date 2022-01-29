@@ -160,6 +160,8 @@ views expressed are my own and not those of Oracle.
 
 # Videos of Talks and Slide Decks
 
+*   Chris Seaton. [A History of Compiling Ruby](https://www.youtube.com/watch?v=Zg-1_7ed0hE). At RubyConf 2021. [Video](https://www.youtube.com/watch?v=Zg-1_7ed0hE) and [website](https://ruby-compilers.com/).
+
 *   Chris Seaton. Understanding JIT Optimisations By Decompilation. At QCon Plus Online 2021.
 
 *   Chris Seaton. [The Importance of Optimising Little Languages](https://www.youtube.com/watch?v=EybsDKXGsEc). At VMM 2021. [Video](https://www.youtube.com/watch?v=EybsDKXGsEc).

@@ -164,7 +164,7 @@ views expressed are my own and not those of Oracle.
 
 *   Chris Seaton. [The Importance of Optimising Little Languages](https://www.youtube.com/watch?v=EybsDKXGsEc). At VMM 2021. [Video](https://www.youtube.com/watch?v=EybsDKXGsEc).
 
-*   Chris Seaton. [The Future Shape of Ruby Objects](https://www.youtube.com/embed/RqwVEw-Rd5c). At RubyKaigi 2021. [Video](https://www.youtube.com/embed/RqwVEw-Rd5c) and [blog post](rubykaigi21).
+*   Chris Seaton. [The Future Shape of Ruby Objects](https://www.youtube.com/embed/RqwVEw-Rd5c). Keynote at RubyKaigi 2021. [Video](https://www.youtube.com/embed/RqwVEw-Rd5c) and [blog post](rubykaigi21).
 
 *   Chris Seaton. [Understanding Graal IR](https://www.youtube.com/watch?v=ypETuCHnmxA). At VMIL 2020. [Video](https://www.youtube.com/watch?v=ypETuCHnmxA).
 

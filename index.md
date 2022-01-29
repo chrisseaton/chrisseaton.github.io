@@ -385,7 +385,7 @@ packrat parsing.</p>
         Chris Seaton. <strong><a href="truffleruby/rubykaigi21/">The Future Shape of Ruby Objects</a></strong>. Keynote at RubyKaigi. 2021.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=RqwVEw-Rd5c">Video</a>,
-            <a href="truffleruby/rubykaigi21/">Blog post</a>
+            <a href="truffleruby/rubykaigi21/">blog post</a>
         </span>
     </li>
     <li>
@@ -434,14 +434,14 @@ packrat parsing.</p>
         Chris Seaton. <strong><a href="truffleruby/graalworkshop20/visualizing-graal.pdf">Visualizing Graal</a></strong>. At Science, Art, Voodoo: Using and Developing The Graal Compiler. 2020.<br>
         <span class="smaller">
             <a href="truffleruby/graalworkshop20/visualizing-graal.pdf">Slides</a>,
-            <a href="https://www.pscp.tv/w/1DXxyezOjpbxM">Video</a>
+            <a href="https://www.pscp.tv/w/1DXxyezOjpbxM">video</a>
         </span>
     </li>
     <li>
         Chris Seaton. <strong><a href="truffleruby/wrocloverb19/truffleruby-compilation-pipeline.pdf">The TruffleRuby Compilation Pipeline</a></strong> At Wroclove.rb. 2019.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=bf5pQVgux3c">Video</a>,
-            <a href="truffleruby/wrocloverb19/truffleruby-compilation-pipeline.pdf">Slides</a>
+            <a href="truffleruby/wrocloverb19/truffleruby-compilation-pipeline.pdf">slides</a>
         </span>
     </li>
     <li>
@@ -484,29 +484,29 @@ packrat parsing.</p>
         Chris Seaton. <strong><a href="truffleruby/jokerconf17/understanding-how-graal-works.pdf">Understanding How Graal Works - a Java JIT Compiler Written in Java</a></strong>. At JokerConf 2017.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=D2IbrPCiupA">Video</a>,
-            <a href="truffleruby/jokerconf17/understanding-how-graal-works.pdf">Slides</a>,
-            <a href="truffleruby/jokerconf17/">Blog post</a>
+            <a href="truffleruby/jokerconf17/understanding-how-graal-works.pdf">slides</a>,
+            <a href="truffleruby/jokerconf17/">blog post</a>
         </span>
     </li>
     <li>
         Chris Seaton. <strong><a href="truffleruby/polyconf17/polyglot-old-to-new-seaton.pdf">Polyglot From the Very Old to the Very New</a></strong>. At PolyConf 2017 (invited keynote).<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=FPN4IScbE60">Video</a>,
-            <a href="truffleruby/polyconf17/polyglot-old-to-new-seaton.pdf">Slides</a>
+            <a href="truffleruby/polyconf17/polyglot-old-to-new-seaton.pdf">slides</a>
         </span>
     </li>
     <li>
         Chris Seaton. <strong><a href="truffleruby/oraclecode17/oraclecode17.pdf">Turning the JVM into a Polyglot VM with Graal</a></strong>. At Oracle Code London 2017.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=oWX2tpIO4Yc">Video</a>,
-            <a href="truffleruby/oraclecode17/oraclecode17.pdf">Slides</a>
+            <a href="truffleruby/oraclecode17/oraclecode17.pdf">slides</a>
         </span>
     </li>
     <li>
         Chris Seaton. <strong><a href="truffleruby/rubyconf16/rubyconf16-cexts.pdf">Ruby's C Extension Problem and How We're Fixing It</a></strong>. At RubyConf 2016.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=YLtjkP9bD_U">Video</a>,
-            <a href="truffleruby/rubyconf16/rubyconf16-cexts.pdf">Slides</a>
+            <a href="truffleruby/rubyconf16/rubyconf16-cexts.pdf">slides</a>
         </span>
     </li>
     <li>
@@ -519,7 +519,7 @@ packrat parsing.</p>
         Chris Seaton. <strong><a href="truffleruby/llvm-cauldron-16/llvm-cauldron-sulong.pdf">Using LLVM and Sulong for Language C Extensions</a></strong>. At the LLVM Cauldron. 2016.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=bJzMfYX6n9A">Video</a>,
-            <a href="truffleruby/llvm-cauldron-16/llvm-cauldron-sulong.pdf">Slides</a>
+            <a href="truffleruby/llvm-cauldron-16/llvm-cauldron-sulong.pdf">slides</a>
         </span>
     </li>
     <li>
@@ -544,8 +544,8 @@ packrat parsing.</p>
         Chris Seaton. <strong><a href="truffleruby/deoptimizing">Deoptimizing Ruby</a></strong>. At RubyConf. 2014.<br>
         <span class="smaller">
             <a href="https://confreaks.tv/videos/rubyconf2014-deoptimizing-ruby">Video</a>,
-            <a href="truffleruby/deoptimizing/deoptimizing-ruby.pdf">Slides</a>,
-            <a href="truffleruby/deoptimizing/">Blog post</a>
+            <a href="truffleruby/deoptimizing/deoptimizing-ruby.pdf">slides</a>,
+            <a href="truffleruby/deoptimizing/">blog post</a>
         </span>
     </li>
     <li>
@@ -588,14 +588,14 @@ packrat parsing.</p>
         Christian Wimmer and Chris Seaton. <strong><a href="jvmls13-one-vm/jvmls13-one-vm.pdf">One VM to Rule Them All</a></strong>. At the JVM Language Summit. 2013.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=hDfYRjNynmQ">Video</a>,
-            <a href="jvmls13-one-vm/jvmls13-one-vm.pdf">Slides</a>
+            <a href="jvmls13-one-vm/jvmls13-one-vm.pdf">slides</a>
         </span>
     </li>
     <li>
         Chris Seaton. <strong><a href="https://www.youtube.com/watch?v=B1hh2kpGNQ4">The Challenges of Irregular Parallelism</a></strong>. At the University of Manchester Computer Science Research Showcase. 2012.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=B1hh2kpGNQ4">Video</a>,
-            <a href="research-showcase-2012/seaton-irregular-parallelism-slides.pdf">Slides</a>
+            <a href="research-showcase-2012/seaton-irregular-parallelism-slides.pdf">slides</a>
         </span>
     </li>
     <li>

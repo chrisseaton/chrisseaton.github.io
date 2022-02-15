@@ -644,9 +644,12 @@ packrat parsing.</p>
 
 <hr>
 
-<h2>Education</h2>
+<h2>Qualification</h2>
 
 <ul class="list">
+    <li>
+        CEng MBCS
+    </li>
     <li>
         MEng (Bristol 2007), PhD (Manchester 2015) in computer science
     </li>

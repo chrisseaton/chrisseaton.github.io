@@ -33,7 +33,14 @@
 
 <header>
 <h1 class="article-smaller">{{ page.title }}</h1>
+
+{% if page.subtitle != null %}
+<h2 class="article-smaller">{{ page.subtitle }}</h1>
+<h3><a href="/">{{ page.author }}</a>, {{ page.date }}</h3>
+{% else %}
 <h2><a href="/">{{ page.author }}</a>, {{ page.date }}</h2>
+{% endif %}
+
 
 {% if page.image != null %}
 <img src="{{ page.image }}" style="max-width: 50%;" alt="{{ page.splash_alt }}">

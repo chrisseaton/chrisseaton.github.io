@@ -24,7 +24,7 @@ machine projects. Before this I <a href="phd/">completed a PhD</a> at Manchester
 programming languages and irregular parallelism, and an MEng at the University
 of Bristol on languages with <a href="katahdin/">mutable syntax and semantics</a>.</p>
 
-<p>In my spare time I'm Squadron Leader of the <a
+<p>In my spare time I'm <a href="army/">Squadron Leader</a> of the <a
 href="https://en.wikipedia.org/wiki/Cheshire_Yeomanry">Cheshire Yeomanry</a> squadron of the
 Queen's Own Yeomanry, Cheshire's historic reserve <a
 href="https://en.wikipedia.org/wiki/Light_cavalry">light cavalry</a> squadron.</p>

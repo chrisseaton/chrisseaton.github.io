@@ -17,6 +17,7 @@ article {
 
 header {
   text-align: center;
+  margin-bottom: 3em;
 }
 
 header h1 {
@@ -25,6 +26,13 @@ header h1 {
 
 header h1.article-smaller {
   font-size: 3em;
+}
+
+header h2.article-smaller {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  font-size: 1.75em;
+  font-style: italic;
 }
 
 header img {

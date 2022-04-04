@@ -3,7 +3,7 @@ layout: article
 title: A Hobby Gotten Out of Hand
 subtitle: Why I'm in the Army Reserve—an explainer for my friends in tech
 author: Major Chris Seaton
-date: 2022
+date: April 2022
 footer: All opinions are my own and not of Shopify nor the British Army.
 copyright: Copyright © 2022 Chris Seaton.
 ---

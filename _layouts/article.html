@@ -52,7 +52,11 @@
 <hr>
 
 <footer>
+{% if page.footer != null %}
+<p>{{ page.footer }}</p>
+{% endif %}
 <p>{{ page.copyright }}</p>
+</header>
 </footer>
 
 </article>

@@ -34,7 +34,7 @@ At the start of the Second World War we were sent to Palestine, still on horseba
 
 In the 1970s with defence cuts the Cheshire Yeomanry went from an independent Regiment to just one sabre squadron of the larger [Queen's Own Yeomanry](https://en.wikipedia.org/wiki/Queen%27s_Own_Yeomanry), which is where we remain today with sister squadrons around the north of England in York, Wigan, and Newcastle. Over the years went through a wide range of tanks and reconnaissance cars, and we now mounted on the [Jackal](https://en.wikipedia.org/wiki/Jackal_(vehicle)) fighting vehicle. It's a large 4x4, with machine guns mounted in front of the passenger (the commander) and on the top.
 
-What we do today is remarkably similar to what we've always done. We fight from armoured cars rather than horses, but we still work ahead of heavier forces, finding the enemy, and striking at targets of opportunity. I still carry a short whip called a crop when in uniform to represent our identity as horse cavalry.
+What we do today is remarkably similar to what we've always done. We fight from 4x4s rather than horses, but we still work ahead of heavier forces, finding the enemy, and striking at targets of opportunity. Officers still carry a short whip called a crop when in uniform to represent our identity as horse cavalry.
 
 ## How did I get into this?
 

@@ -365,6 +365,12 @@ packrat parsing.</p>
 
 <ul class="list">
     <li>
+        Maple Ong and Chris Seaton. <strong><a href="truffleruby/graalworkshop22/call-target-agnostic-keyword-arguments.pdf">Call-Target Agnostic Keyword Arguments</a></strong>. At the Graal Workshop. 2022.<br>
+        <span class="smaller">
+            <a href="truffleruby/graalworkshop22/call-target-agnostic-keyword-arguments.pdf">Slides</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="https://www.youtube.com/watch?v=Zg-1_7ed0hE">A History of Compiling Ruby</a></strong>. At RubyConf. 2021.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=Zg-1_7ed0hE">Video</a>,

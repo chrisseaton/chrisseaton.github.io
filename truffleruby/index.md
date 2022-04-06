@@ -160,6 +160,8 @@ views expressed are my own and not those of Oracle.
 
 # Videos of Talks and Slide Decks
 
+*   Chris Seaton. [Call-Target Agnostic Keyword Arguments](graalworkshop22/call-target-agnostic-keyword-arguments.pdf). At the Graal Workshop 2022. [Slides](graalworkshop22/call-target-agnostic-keyword-arguments.pdf).
+
 *   Chris Seaton. [A History of Compiling Ruby](https://www.youtube.com/watch?v=Zg-1_7ed0hE). At RubyConf 2021. [Video](https://www.youtube.com/watch?v=Zg-1_7ed0hE) and [website](https://ruby-compilers.com/).
 
 *   Chris Seaton. Understanding JIT Optimisations By Decompilation. At QCon Plus Online 2021.

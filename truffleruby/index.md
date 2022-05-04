@@ -200,7 +200,7 @@ views expressed are my own and not those of Oracle.
 
 *   Chris Seaton and Benoit Daloze. [A Tour Through a New Ruby Implementation](fosdem15/truffle-tour.pdf). At FOSDEM 2015. [Slides](fosdem15/truffle-tour.pdf).
 
-*   Chris Seaton. [Deoptimizing Ruby](). At RubyConf 2014. [Video](https://confreaks.tv/videos/rubyconf2014-deoptimizing-ruby), [slides](deoptimizing/deoptimizing-ruby.pdf) and [blog post](deoptimizing/).
+*   Chris Seaton. [Deoptimizing Ruby](). At RubyConf 2014. [Video](https://www.youtube.com/watch?v=z-YVygbDHLE), [slides](deoptimizing/deoptimizing-ruby.pdf) and [blog post](deoptimizing/).
 
 *   Chris Seaton. [Implementing Ruby Using Truffle and Graal](ecoop14/ecoop14-ruby-truffle.pdf). At the European Conference on Object Oriented Programming (ECOOP) Summer School. 2014. [Slides](ecoop14/ecoop14-ruby-truffle.pdf).
 

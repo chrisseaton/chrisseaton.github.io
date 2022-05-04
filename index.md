@@ -554,7 +554,7 @@ packrat parsing.</p>
     <li>
         Chris Seaton. <strong><a href="truffleruby/deoptimizing">Deoptimizing Ruby</a></strong>. At RubyConf. 2014.<br>
         <span class="smaller">
-            <a href="https://confreaks.tv/videos/rubyconf2014-deoptimizing-ruby">Video</a>,
+            <a href="https://www.youtube.com/watch?v=z-YVygbDHLE">Video</a>,
             <a href="truffleruby/deoptimizing/deoptimizing-ruby.pdf">slides</a>,
             <a href="truffleruby/deoptimizing/">blog post</a>
         </span>

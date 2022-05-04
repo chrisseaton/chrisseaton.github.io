@@ -91,7 +91,7 @@ Keep in mind this is all on top of the significant performance lead JRuby+Truffl
 
 ## More Details
 
-A more formal description of how we implemented and evaluated `set_trace_func` and our prototype debugger was the subject of the paper [Debugging at Full Speed](https://www.lifl.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf) by [Chris Seaton](https://chrisseaton.com/), [Michael Van de Vanter](https://vandevanter.net/mlvdv/) and [Michael Haupt](https://labs.oracle.com/pls/apex/f?p=labs:bio:0:44), all of Oracle Labs, presented at the 2014 Workshop on Dynamic Languages and Applications in Edinburgh. The paper includes a full evaluation and a link to the experimental harness we built so you can reproduce the results.
+A more formal description of how we implemented and evaluated `set_trace_func` and our prototype debugger was the subject of the paper [Debugging at Full Speed](https://www.cristal.univ-lille.fr/dyla14/papers/dyla14-3-Debugging_at_Full_Speed.pdf) by [Chris Seaton](https://chrisseaton.com/), [Michael Van de Vanter](https://vandevanter.net/mlvdv/) and [Michael Haupt](https://labs.oracle.com/pls/apex/f?p=labs:bio:0:44), all of Oracle Labs, presented at the 2014 Workshop on Dynamic Languages and Applications in Edinburgh. The paper includes a full evaluation and a link to the experimental harness we built so you can reproduce the results.
 
 If you'd like to know any more, please get in touch!
 

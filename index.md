@@ -371,6 +371,12 @@ packrat parsing.</p>
         </span>
     </li>
     <li>
+        Stefan Marr, Octave Larose, Sophie Kaleba, and Chris Seaton. <strong><a href="https://kar.kent.ac.uk/93938/1/Truffle_Interpreter_Performance_without_the_Holy_Graal.pdf">Truffle Interpreter Performance without the Holy Graal</a></strong>. At the Graal Workshop. 2022.<br>
+        <span class="smaller">
+            <a href="https://kar.kent.ac.uk/93938/1/Truffle_Interpreter_Performance_without_the_Holy_Graal.pdf">Slides</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="https://www.youtube.com/watch?v=Zg-1_7ed0hE">A History of Compiling Ruby</a></strong>. At RubyConf. 2021.<br>
         <span class="smaller">
             <a href="https://www.youtube.com/watch?v=Zg-1_7ed0hE">Video</a>,

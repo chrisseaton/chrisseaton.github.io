@@ -162,6 +162,8 @@ views expressed are my own and not those of Oracle.
 
 *   Chris Seaton. [Call-Target Agnostic Keyword Arguments](graalworkshop22/call-target-agnostic-keyword-arguments.pdf). At the Graal Workshop 2022. [Slides](graalworkshop22/call-target-agnostic-keyword-arguments.pdf).
 
+*   Stefan Marr, Octave Larose, Sophie Kaleba, and Chris Seaton. [Truffle Interpreter Performance without the Holy Graal](https://kar.kent.ac.uk/93938/1/Truffle_Interpreter_Performance_without_the_Holy_Graal.pdf). At the Graal Workshop 2022. [Slides](https://kar.kent.ac.uk/93938/1/Truffle_Interpreter_Performance_without_the_Holy_Graal.pdf).
+
 *   Chris Seaton. [A History of Compiling Ruby](https://www.youtube.com/watch?v=Zg-1_7ed0hE). At RubyConf 2021. [Video](https://www.youtube.com/watch?v=Zg-1_7ed0hE) and [website](https://ruby-compilers.com/).
 
 *   Chris Seaton. Understanding JIT Optimisations By Decompilation. At QCon Plus Online 2021.

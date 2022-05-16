@@ -365,6 +365,12 @@ packrat parsing.</p>
 
 <ul class="list">
     <li>
+        Chris Seaton. <strong><a href="army/">A Hobby Gotten Out of Hand: Why I'm in the Army Reserve—an explainer for my friends in tech</a></strong>. Blog post. 2022.<br>
+        <span class="smaller">
+            <a href="army/">Blog post</a>
+        </span>
+    </li>
+    <li>
         Maple Ong and Chris Seaton. <strong><a href="truffleruby/graalworkshop22/call-target-agnostic-keyword-arguments.pdf">Call-Target Agnostic Keyword Arguments</a></strong>. At the Graal Workshop. 2022.<br>
         <span class="smaller">
             <a href="truffleruby/graalworkshop22/call-target-agnostic-keyword-arguments.pdf">Slides</a>

@@ -160,7 +160,7 @@ views expressed are my own and not those of Oracle.
 
 # Videos of Talks and Slide Decks
 
-*   Chris Seaton. [Call-Target Agnostic Keyword Arguments](graalworkshop22/call-target-agnostic-keyword-arguments.pdf). At the Graal Workshop 2022. [Slides](graalworkshop22/call-target-agnostic-keyword-arguments.pdf).
+*   Maple Ong and Chris Seaton. [Call-Target Agnostic Keyword Arguments](graalworkshop22/call-target-agnostic-keyword-arguments.pdf). At the Graal Workshop 2022. [Video](https://www.youtube.com/watch?v=RVqY1FRUm_8) and [slides](graalworkshop22/call-target-agnostic-keyword-arguments.pdf).
 
 *   Stefan Marr, Octave Larose, Sophie Kaleba, and Chris Seaton. [Truffle Interpreter Performance without the Holy Graal](https://kar.kent.ac.uk/93938/1/Truffle_Interpreter_Performance_without_the_Holy_Graal.pdf). At the Graal Workshop 2022. [Slides](https://kar.kent.ac.uk/93938/1/Truffle_Interpreter_Performance_without_the_Holy_Graal.pdf).
 

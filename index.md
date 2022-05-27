@@ -373,7 +373,8 @@ packrat parsing.</p>
     <li>
         Maple Ong and Chris Seaton. <strong><a href="truffleruby/graalworkshop22/call-target-agnostic-keyword-arguments.pdf">Call-Target Agnostic Keyword Arguments</a></strong>. At the Graal Workshop. 2022.<br>
         <span class="smaller">
-            <a href="truffleruby/graalworkshop22/call-target-agnostic-keyword-arguments.pdf">Slides</a>
+            <a href="https://www.youtube.com/watch?v=RVqY1FRUm_8">Video</a>,
+            <a href="truffleruby/graalworkshop22/call-target-agnostic-keyword-arguments.pdf">slides</a>
         </span>
     </li>
     <li>

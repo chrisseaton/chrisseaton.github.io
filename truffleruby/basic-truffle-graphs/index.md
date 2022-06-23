@@ -175,7 +175,7 @@ end
 
 Most Ruby method calls are dynamically dispatched. This means that conceptually the method has to be looked up in the object each time. Most Ruby implementations will use a form of inline caching to make this simpler. Call sites store which method they expect to call for a given object, and then each time they check that the object is the same type as before and that the method has not been modified, which lets them go ahead and just call the method. In Truffle languages these inline caches are implemented using Java code, so instead of a single Java `Call` node, we have a call made up of many different Java nodes to implement the inline cache and call. I've disabled inlining of `instance_call` here, to make the logic for the inline cache stand out.
 
-In the Ruby graph the `Call` node calls `callBoundary`, which is the generic Truffle method internal entry point. It passes in `MethodCallTarget`, which is the method to call (the `HotSpotOptimizedCallTarget` above it) and the arguments. These are complicated because it's a virtualized array, as described in the previous blog post, but follow it to the `Alloc` and then the input value - `T(8)`, which is the Truffle self argument, and `T(9)` which is the Truffle argument `x`, as we'd expect. Note that `x` is unboxed and reboxed here. That actually seems to not be optimised away - I'm not sure why. If we continue to follow the control-flow path back up we can see a the class being read out of the object in the `LoadField`, which is then compared against the cached class - the `C(instance:RubyClass)` - which is used as input to a guard. If the guard fails, we transfer to interpreter (deoptimise).
+In the Ruby graph the `Call` node calls `callBoundary`, which is the generic Truffle method internal entry point. It passes in `MethodCallTarget`, which is the method to call (the `HotSpotOptimizedCallTarget` above it) and the arguments. These are complicated because it's a virtualized array, as described in the previous blog post, but follow it to the `Alloc` and then the input value - `T(7)`, which is the Truffle self argument, and `T(8)` which is the Truffle argument `x`, as we'd expect. Note that `x` is unboxed and reboxed here. That actually seems to not be optimised away - I'm not sure why. If we continue to follow the control-flow path back up we can see a the class being read out of the object in the `LoadField`, which is then compared against the cached class - the `C(instance:RubyClass)` - which is used as input to a guard. If the guard fails, we transfer to interpreter (deoptimise).
 
 So what is the overhead of the dynamic dispatch and inline caching. Really it's loading the class address and comparing it against a known value. That's it. The arguments have to be allocated in a Java array as well, and passed all through in one Java parameter. This is a big difference and means every method call allocates memory.
 
@@ -383,7 +383,7 @@ end
 <a href="example_for@4.svg"><img style="max-height: 40em" src="example_for@4.svg"></a>
 </figure>
 
-As in Java, the Ruby `for` loop looks very much like the `while` loop. But that's pretty extraordinary actually - Ruby's `for` loop is a higher-order function, `count`, which takes a block (anonymous function) to call back to that many times. The anonymous function is also a closure, capturing `count`. Yet the result of all that indirection and abstraction is partially-evaluated away here to give us code with the same structure as the Ruby `while` loop, and in fact with the same structure as the Java `while` loop.
+As in Java, the Ruby `for` loop looks very much like the `while` loop. But that's pretty extraordinary actually - Ruby's `for` loop is a higher-order function, `times`, which takes a block (anonymous function) to call back to that many times. The anonymous function is also a closure, capturing `count`. Yet the result of all that indirection and abstraction is partially-evaluated away here to give us code with the same structure as the Ruby `while` loop, and in fact with the same structure as the Java `while` loop.
 
 ```ruby
 def example_nested_while(count)
@@ -571,7 +571,7 @@ end
 <a href="example_stamp@4.svg"><img src="example_stamp@4.svg"></a>
 </figure>
 
-Stamps work the same way in Java and Truffle. You get them for free for your Truffle interpreter. Here we can see the same `[0 - 4660]` applied on the edge coming out of the `%` in graphs for both languages. 
+Stamps work the same way in Java and Truffle. You get them for free for your Truffle interpreter. Here we can see the same `[0 - 4660]` applied on the edge coming out of the `&` in graphs for both languages.
 
 ```java
 private static int exampleNoEscape(int x) {

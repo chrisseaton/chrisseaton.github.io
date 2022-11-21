@@ -365,6 +365,12 @@ packrat parsing.</p>
 
 <ul class="list">
     <li>
+        Chris Seaton. <strong><a href="truffleruby/rubys-call-site-behaviour.pdf">Ruby's Call-Site Behaviour - An Advertisement for Sophie Kaleba's Research</a></strong>. Lightning Talk, RubyConf Mini. 2022.<br>
+        <span class="smaller">
+            <a href="truffleruby/rubys-call-site-behaviour.pdf">Slides</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="army/">A Hobby Gotten Out of Hand: Why I'm in the Army Reserve—an explainer for my friends in tech</a></strong>. Blog post. 2022.<br>
         <span class="smaller">
             <a href="army/">Blog post</a>

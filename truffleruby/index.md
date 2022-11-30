@@ -160,6 +160,8 @@ views expressed are my own and not those of Oracle.
 
 # Videos of Talks and Slide Decks
 
+*   Chris Seaton. [Ruby's Core Gem](rubys-core-gem-rubyconf-2022.pdf). RubyConf. 2022. [Slides](rubys-core-gem-rubyconf-2022.pdf).
+
 *   Chris Seaton. [Ruby's Call-Site Behaviour - An Advertisement for Sophie Kaleba's Research](rubys-call-site-behaviour.pdf). Lightning Talk, RubyConf Mini. 2022. [Slides](rubys-call-site-behaviour.pdf).
 
 *   Maple Ong and Chris Seaton. [Call-Target Agnostic Keyword Arguments](graalworkshop22/call-target-agnostic-keyword-arguments.pdf). At the Graal Workshop 2022. [Video](https://www.youtube.com/watch?v=RVqY1FRUm_8) and [slides](graalworkshop22/call-target-agnostic-keyword-arguments.pdf).

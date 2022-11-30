@@ -365,6 +365,12 @@ packrat parsing.</p>
 
 <ul class="list">
     <li>
+        Chris Seaton. <strong><a href="truffleruby/rubys-core-gem-rubyconf-2022.pdf">Ruby's Core Gem</a></strong>. RubyConf. 2022.<br>
+        <span class="smaller">
+            <a href="truffleruby/rubys-core-gem-rubyconf-2022.pdf">Slides</a>
+        </span>
+    </li>
+    <li>
         Chris Seaton. <strong><a href="truffleruby/rubys-call-site-behaviour.pdf">Ruby's Call-Site Behaviour - An Advertisement for Sophie Kaleba's Research</a></strong>. Lightning Talk, RubyConf Mini. 2022.<br>
         <span class="smaller">
             <a href="truffleruby/rubys-call-site-behaviour.pdf">Slides</a>
